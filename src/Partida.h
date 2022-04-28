@@ -1,13 +1,13 @@
 #pragma once
 #include"Tablero.h"
-#include"Reina.h"
+#include"Peon.h"
 
 
 
 class Partida {
 public:
 	Tablero* tablero;
-	Reina* reina;
+	Peon* peon;
 
 	Partida();
 	void Inicializa();

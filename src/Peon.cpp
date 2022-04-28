@@ -1,8 +1,8 @@
-#include"Reina.h"
+#include"Peon.h"
 #include"freeglut.h"
 
 
-Reina::Reina()
+Peon::Peon()
 {
 	posicion.Set_vector(0, 0, 0);
 	color.Set_color('b');
@@ -10,7 +10,7 @@ Reina::Reina()
 }
 
 
-void Reina::Inicializa(unsigned char c)
+void Peon::Inicializa(unsigned char c)
 {
 	posicion.Set_vector(0,0,0);
 	color.Set_color(c);
@@ -20,29 +20,31 @@ void Reina::Inicializa(unsigned char c)
 
 //PINTAR FIGURA
 
-void Reina::Dibuja()
+void Peon::Dibuja()
 {
 	//color de la figura
 	glColor3ub(color.rojo, color.verde, color.azul);
 
 	//formas geométricas
 	
+
+	//base
 	glTranslatef(posicion.x, posicion.y, posicion.z+(escala*1));
 	glutSolidTorus((escala*1), (escala * 3), 40, 40);   //  innerRadius, outerRadius, sides, rings
 	glTranslatef(-posicion.x, -posicion.y, -(posicion.z+ (escala * 1)));
 
-
+	//cono
 	glTranslatef(posicion.x, posicion.y, posicion.z + (escala * 2));
 	glutSolidCone((escala * 3), (escala * 6), 100, 100); //   radio base, height, slices, stacks
 	glTranslatef(-posicion.x, -posicion.y, -(posicion.z + (escala * 2)));
 
-
+	//esfera
 	glTranslatef(posicion.x, posicion.y, posicion.z + (escala * 8));
 	glutSolidSphere((escala * 2), 100, 100); //   radio base, height, slices, stacks
 	glTranslatef(-posicion.x, -posicion.y, -(posicion.z + (escala * 8)));
 }
 
-void Reina::Escala(unsigned char c)
+void Peon::Escala(unsigned char c)
 {
 	if (c == 'q')
 		escala = escala * 1.2;
@@ -52,7 +54,7 @@ void Reina::Escala(unsigned char c)
 
 //MOVER FIGURA CON TECLADO
 
-void Reina::Mover(unsigned char c)
+void Peon::Mover(unsigned char c)
 {
 	if (c == 'i')
 	{

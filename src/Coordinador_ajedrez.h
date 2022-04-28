@@ -4,23 +4,28 @@
 #include"Partida.h"
 
 #include"Vista.h"
-#include"Reina.h"
+
+//PIEZAS
+
+#include"Pieza.h"
+#include"Peon.h"
 
 
 class Coordinador_ajedrez
 {
+private:
+	
+	Peon* peon;
+
 protected:
-	enum class Estado { INICIO, JUEGO, EXIT};
+	enum class Estado { INICIO, PARTIDA_M, VISTA_PIEZA, CONTROLES, PAUSA, EXIT };
 	Estado estado;
 
 
-	/*
-	Reina *r;
-	Tablero t;
-	*/
-
 	Partida *partida;
 	Vista vista;
+
+
 public:
 
 	Coordinador_ajedrez();
@@ -28,3 +33,6 @@ public:
 	void Dibuja();
 	void Tecla(unsigned char key);
 };
+
+
+

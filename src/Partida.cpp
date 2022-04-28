@@ -3,18 +3,18 @@
 Partida::Partida()
 {
 	tablero = new Tablero;
-	reina = new Reina;
+	peon = new Peon;
 }
 
 void Partida::Inicializa()
 {
 	tablero->Inicializa();
-	reina->Inicializa('n');
+	peon->Inicializa('b');
 
 }
 
 void Partida::Dibuja()
 {
 	tablero->Dibuja();
-	reina->Dibuja();
+	peon->Dibuja();
 }
