@@ -1,12 +1,5 @@
-//SINXRO1
-
-
-#include<iostream>
 #include"freeglut.h"
-
 #include"Coordinador_ajedrez.h"
-
-
 
 Coordinador_ajedrez coord;
 

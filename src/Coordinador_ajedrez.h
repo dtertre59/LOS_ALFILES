@@ -10,7 +10,7 @@
 class Coordinador_ajedrez
 {
 protected:
-	enum class Estado { INICIO, JUEGO};
+	enum class Estado { INICIO, JUEGO, EXIT};
 	Estado estado;
 
 

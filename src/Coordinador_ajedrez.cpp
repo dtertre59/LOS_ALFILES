@@ -28,7 +28,12 @@ void Coordinador_ajedrez::Dibuja()
 		ETSIDI::setTextColor(1, 1, 0);
 		ETSIDI::setFont("fuentes/Bitwise.ttf", 20);
 		ETSIDI::printxy("AJEDREZ", -4, 13);
-		ETSIDI::printxy("PULSA -P- PARA EMPEZAR PARTIDA", -4, 8);
+
+		ETSIDI::setTextColor(1, 1, 1);
+		ETSIDI::setFont("fuentes/Bitwise.ttf", 15);
+		ETSIDI::printxy("PULSA -P- PARA EMPEZAR PARTIDA", -8, 8);
+		ETSIDI::printxy("PULSA -E- PARA SALIR", -8, 6);
+
 
 		Reina* r;
 		r = new Reina;
@@ -40,6 +45,11 @@ void Coordinador_ajedrez::Dibuja()
 		vista.Camara();
 		partida->Dibuja();
 	}
+	else if (estado == Estado::EXIT)
+	{
+		exit(0);
+	}
+		
 
 }
 
@@ -48,5 +58,9 @@ void Coordinador_ajedrez::Tecla(unsigned char key)
 	if (key == 'p' || key == 'P')
 	{
 		estado = Estado::JUEGO;
+	}
+	if (key == 'e' || key == 'E')
+	{
+		estado = Estado::EXIT;
 	}
 }

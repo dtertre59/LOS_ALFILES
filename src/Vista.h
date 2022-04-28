@@ -1,6 +1,7 @@
 #pragma once
 #include"Vector3d.h"
 
+
 class Vista 
 {
 	private:
