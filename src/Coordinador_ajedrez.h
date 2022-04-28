@@ -7,15 +7,18 @@
 
 //PIEZAS
 
-#include"Pieza.h"
 #include"Peon.h"
+#include"Casilla.h"
+
 
 
 class Coordinador_ajedrez
 {
 private:
 	
-	Peon* peon;
+	unsigned char pi;
+	Peon peon;
+	Casilla casilla;
 
 protected:
 	enum class Estado { INICIO, PARTIDA_M, VISTA_PIEZA, CONTROLES, PAUSA, EXIT };
@@ -33,6 +36,7 @@ public:
 	void Dibuja();
 	void Tecla(unsigned char key);
 };
+
 
 
 

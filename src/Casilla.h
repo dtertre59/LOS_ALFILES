@@ -1,14 +1,12 @@
 #pragma once
-#include"Vector3d.h"
-#include"Color_RGB.h"
 
-class Casilla
+#include"Pieza.h"
+
+
+class Casilla:public Pieza
 {
 public:
-	Vector3d posicion;
-	Color_RGB color;
-	float escala;
-
+	Casilla();
 	void Inicializa(unsigned char c,int x,int y);
 	void Dibuja();
 };

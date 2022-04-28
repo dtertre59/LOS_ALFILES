@@ -2,9 +2,6 @@
 
 #include"Pieza.h"
 
-#include"Vector3d.h"
-#include"Color_RGB.h"
-
 class Peon:public Pieza
 {
 public:

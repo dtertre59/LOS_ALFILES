@@ -1,6 +1,15 @@
 #include "Casilla.h"
 #include"freeglut.h"
 
+
+Casilla::Casilla()
+{
+	posicion.Set_vector(0, 0, 0);
+	color.Set_color('n');
+	escala = 1;
+}
+
+
 void Casilla::Inicializa(unsigned char c,int x, int y)
 {
 	posicion.Set_vector(x, y, 0);

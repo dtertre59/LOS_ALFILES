@@ -1,13 +1,18 @@
 #include"Coordinador_ajedrez.h"
 
+void Gestor_dibuja(Pieza& p)
+{
+	p.Dibuja();
+}
+
+
 
 Coordinador_ajedrez::Coordinador_ajedrez()
 {
 	estado = Estado::INICIO;
 	partida = new Partida;
 
-	peon = new Peon;
-	
+	pi = 'P';
 }
 
 
@@ -16,9 +21,10 @@ void Coordinador_ajedrez::Inicializa()
 	partida->Inicializa();
 
 
-	peon->Inicializa('b');
+	peon.Inicializa('b');
 	 
 }
+
 
 void Coordinador_ajedrez::Dibuja()
 {
@@ -53,10 +59,33 @@ void Coordinador_ajedrez::Dibuja()
 
 	else if (estado == Estado::VISTA_PIEZA)
 	{
-		vista.Set_vista(20, 20, 10, 0, 0, 5);
+		gluLookAt(0, 7.5, 30, // posicion del ojo
+			0.0, 7.5, 0.0, // hacia que punto mira (0,7.5,0)
+			0.0, 1.0, 0.0); // definimos hacia arriba (eje Y)
+		/*
+		vista.Set_vista(0, 7.5, 30, 0, 7.5, 0);
 		vista.Camara();
+		*/
+		ETSIDI::setTextColor(1, 1, 1);
+		ETSIDI::setFont("fuentes/Bitwise.ttf", 20);
+		ETSIDI::printxy("Pulsa -I- para volver al inicio", -10, 14);
+		ETSIDI::printxy("Pulsa -P- para ver peon", -10, 12);
+		ETSIDI::printxy("Pulsa -T- para ver torre", -10, 11);
 
-		//Dibuja();
+
+		
+		vista.Set_vista(10, 5,10, 0, 0, 2);
+		vista.Camara();
+		
+		if (pi == 'P')
+		{
+			Gestor_dibuja(peon);
+		}
+		if (pi == 'A')
+		{
+			Gestor_dibuja(casilla);
+		}
+
 
 
 	}
@@ -91,6 +120,9 @@ void Coordinador_ajedrez::Dibuja()
 
 }
 
+
+
+
 void Coordinador_ajedrez::Tecla(unsigned char key)
 {
 	if (estado == Estado::INICIO)
@@ -124,7 +156,22 @@ void Coordinador_ajedrez::Tecla(unsigned char key)
 
 	if (estado == Estado::VISTA_PIEZA)
 	{
-
+		if (key == 'i' || key == 'I')
+		{
+			estado = Estado::INICIO;
+		}
+		else if (key == 'p' || key == 'P')
+			pi = 'P';
+		else if (key == 't' || key == 'T')
+			pi = 'T';
+		else if (key == 'c' || key == 'C')
+			pi = 'C';
+		else if (key == 'a' || key == 'A')
+			pi = 'A';
+		else if (key == 'd' || key == 'D')
+			pi = 'D';
+		else if (key == 'r' || key == 'r')
+			pi = 'R';
 	}
 
 	if (estado == Estado::CONTROLES)
@@ -143,3 +190,5 @@ void Coordinador_ajedrez::Tecla(unsigned char key)
 	}
 	
 }
+
+

@@ -3,7 +3,6 @@
 #include"Vector3d.h"
 #include"Color_RGB.h"
 
-#include"Peon.h"
 
 class Pieza 
 {
@@ -19,7 +18,8 @@ public:
 	//METODOS
 	Pieza() : posicion(), color(), escala(1) {};
 
-	//virtual void Dibuja();
-
+	virtual void Dibuja()=0;
+	//friend void Gestor_dibuja(Pieza&);
 };
+
 
