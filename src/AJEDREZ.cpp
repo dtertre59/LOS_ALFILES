@@ -1,3 +1,6 @@
+//SINXRO1
+
+
 #include<iostream>
 #include"freeglut.h"
 
