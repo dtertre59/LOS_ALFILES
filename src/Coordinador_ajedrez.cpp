@@ -26,7 +26,7 @@ void Coordinador_ajedrez::Dibuja()
 		vista.Camara();
 		*/
 		ETSIDI::setTextColor(1, 1, 0);
-		ETSIDI::setFont("fuentes/Bitwise.ttf", 20);
+		ETSIDI::setFont("fuentes/fast99.ttf", 20);
 		ETSIDI::printxy("AJEDREZ", -4, 13);
 
 		ETSIDI::setTextColor(1, 1, 1);
