@@ -103,11 +103,20 @@ void Coordinador_ajedrez::Dibuja()
 
 		ETSIDI::setTextColor(1, 1, 1);
 		ETSIDI::setFont("fuentes/Bitwise.ttf", 15);
-		ETSIDI::printxy("PULSA -V- PARA VOLVER", -8, 8);		
+		ETSIDI::printxy("PULSA -I- PARA VOLVER al inicio", -8, 8);		
 	}
 
 	else if (estado == Estado::PAUSA)
 	{
+		gluLookAt(0, 7.5, 30, // posicion del ojo
+			0.0, 7.5, 0.0, // hacia que punto mira (0,7.5,0)
+			0.0, 1.0, 0.0); // definimos hacia arriba (eje Y)
+
+
+		ETSIDI::setTextColor(1, 1, 1);
+		ETSIDI::setFont("fuentes/Bitwise.ttf", 15);
+		ETSIDI::printxy("PULSA -I- PARA VOLVER al inicio", -8, 8);
+		ETSIDI::printxy("PULSA -C- PARA  continuar la partida", -8, 6);
 		
 
 	}
@@ -151,6 +160,10 @@ void Coordinador_ajedrez::Tecla(unsigned char key)
 
 	if (estado == Estado::PARTIDA_M)
 	{
+		if (key == 27)
+		{
+			estado = Estado::PAUSA;
+		}
 
 	}
 
@@ -170,13 +183,13 @@ void Coordinador_ajedrez::Tecla(unsigned char key)
 			pi = 'A';
 		else if (key == 'd' || key == 'D')
 			pi = 'D';
-		else if (key == 'r' || key == 'r')
+		else if (key == 'r' || key == 'R')
 			pi = 'R';
 	}
 
 	if (estado == Estado::CONTROLES)
 	{
-		if (key == 'v' || key == 'V')
+		if (key == 'i' || key == 'I')
 		{
 			estado = Estado::INICIO;
 		}
@@ -186,7 +199,14 @@ void Coordinador_ajedrez::Tecla(unsigned char key)
 
 	if (estado == Estado::PAUSA)
 	{
-
+		if (key == 'i' || key == 'I')
+		{
+			estado = Estado::INICIO;
+		}
+		if (key == 'c' || key == 'C')
+		{
+			estado = Estado::PARTIDA_M;
+		}
 	}
 	
 }
