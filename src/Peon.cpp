@@ -10,6 +10,13 @@ Peon::Peon()
 }
 
 
+void Peon::Inicializa(unsigned char c, float x,float y,float z)
+{
+	posicion.Set_vector(x,y,z);
+	color.Set_color(c);
+	escala = 1;
+}
+
 void Peon::Inicializa(unsigned char c)
 {
 	posicion.Set_vector(0,0,0);

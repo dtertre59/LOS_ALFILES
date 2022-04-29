@@ -12,6 +12,12 @@ void Vector3d::Set_vector(float equis,float i, float ceta)
 	z = ceta;
 }
 
+void Vector3d::Set_vector(Vector3d v)
+{
+	x = v.x;
+	y = v.y;
+	z = v.z;
+}
 
 
 

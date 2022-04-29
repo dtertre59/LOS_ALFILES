@@ -85,7 +85,10 @@ void Coordinador_ajedrez::Dibuja()
 		{
 			Gestor_dibuja(casilla);
 		}
-
+		if (pi == 'T')
+		{
+			Gestor_dibuja(vacio);
+		}
 
 
 	}

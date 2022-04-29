@@ -21,6 +21,7 @@
   <ItemGroup>
     <ClCompile Include="src\AJEDREZ.cpp" />
     <ClCompile Include="src\Casilla.cpp" />
+    <ClCompile Include="src\Casilla_vacia.cpp" />
     <ClCompile Include="src\Color_RGB.cpp" />
     <ClCompile Include="src\Coordinador_ajedrez.cpp" />
     <ClCompile Include="src\Partida.cpp" />
@@ -32,6 +33,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Casilla.h" />
+    <ClInclude Include="src\Casilla_vacia.h" />
     <ClInclude Include="src\Color_RGB.h" />
     <ClInclude Include="src\Coordinador_ajedrez.h" />
     <ClInclude Include="src\Partida.h" />

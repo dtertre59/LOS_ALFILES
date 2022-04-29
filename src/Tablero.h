@@ -3,9 +3,9 @@
 
 class Tablero 
 {
-public:
+private:
 	Casilla** pcasilla;
-	
+public:	
 	void Inicializa();
 	void Dibuja();
 

@@ -8,6 +8,7 @@
 //PIEZAS
 
 #include"Peon.h"
+#include"Casilla_vacia.h"
 #include"Casilla.h"
 
 
@@ -18,6 +19,7 @@ private:
 	
 	unsigned char pi;
 	Peon peon;
+	Casilla_vacia vacio;
 	Casilla casilla;
 
 protected:
