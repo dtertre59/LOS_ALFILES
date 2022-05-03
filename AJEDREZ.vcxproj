@@ -28,6 +28,7 @@
     <ClCompile Include="src\Peon.cpp" />
     <ClCompile Include="src\Pieza.cpp" />
     <ClCompile Include="src\Tablero.cpp" />
+    <ClCompile Include="src\Torre.cpp" />
     <ClCompile Include="src\Vector3d.cpp" />
     <ClCompile Include="src\Vista.cpp" />
   </ItemGroup>
