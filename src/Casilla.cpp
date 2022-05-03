@@ -9,7 +9,7 @@ Casilla::Casilla()
 	escala = 1;
 }
 
-
+//EDU TRABAJA CABRON
 void Casilla::Inicializa(unsigned char c,int x, int y)
 {
 	posicion.Set_vector(x, y, 0);
