@@ -13,6 +13,9 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Archivos de encabezado\piezas">
+      <UniqueIdentifier>{978d66e8-d2e0-4b34-a86a-5234b54c7b24}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\AJEDREZ.cpp">
@@ -56,9 +59,6 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\Peon.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
     <ClInclude Include="src\Vector3d.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
@@ -87,7 +87,13 @@
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
     <ClInclude Include="src\Alfil.h">
-      <Filter>Archivos de encabezado</Filter>
+      <Filter>Archivos de encabezado\piezas</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Peon.h">
+      <Filter>Archivos de encabezado\piezas</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Torre.h">
+      <Filter>Archivos de encabezado\piezas</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
