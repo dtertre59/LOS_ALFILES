@@ -3,6 +3,8 @@
 
 #include"Peon.h"
 #include"Casilla_vacia.h"
+#include "Caballo.h"
+#include "caja.h"
 
 
 
@@ -12,6 +14,8 @@ public:
 	Tablero* tablero;
 	Peon* peon;
 	Casilla_vacia* vacio;
+	Caballo caballo;
+	caja caja;
 
 	Partida();
 	void Inicializa();

@@ -5,6 +5,7 @@ Partida::Partida()
 	tablero = new Tablero;
 	peon = new Peon[16];
 	vacio = new Casilla_vacia[2];
+	//caballo = new Caballo[2];
 }
 
 void Partida::Inicializa()
@@ -32,7 +33,7 @@ void Partida::Dibuja()
 {
 	//dibujar tablero
 	tablero->Dibuja();
-
+	caja.dibuja();
 
 	//dibujar  peones
 	for (int i = 0; i < 16; i++)
@@ -49,6 +50,7 @@ void Partida::Dibuja()
 	//dibujar torres, caballos y alfiles
 	for (int i = 0; i < 4; i++)
 	{
+		caballo.Dibuja();
 		//los dibuja de torres, caballos y alfiles
 	}
 }
