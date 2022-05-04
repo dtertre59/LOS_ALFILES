@@ -20,6 +20,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\AJEDREZ.cpp" />
+    <ClCompile Include="src\Alfil.cpp" />
     <ClCompile Include="src\Casilla.cpp" />
     <ClCompile Include="src\Casilla_vacia.cpp" />
     <ClCompile Include="src\Color_RGB.cpp" />
@@ -33,6 +34,7 @@
     <ClCompile Include="src\Vista.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\Alfil.h" />
     <ClInclude Include="src\Casilla.h" />
     <ClInclude Include="src\Casilla_vacia.h" />
     <ClInclude Include="src\Color_RGB.h" />
