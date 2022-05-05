@@ -5,27 +5,11 @@
 #include <stdlib.h>
 #include "Color_RGB.h"
 
-Caballo::Caballo()
-{
-	posicion.Set_vector(0, 0, 0);
-	color.Set_color('b');
-	escala = 1;
-	i0 = 0;
-	j0 = 0;
-}
-void Caballo::Inicializa(unsigned char c, float x, float y, float z)
-{
-	posicion.Set_vector(x, y, z);
-	color.Set_color(c);
-	escala = 1;
-}
-
 void Caballo::Inicializa(unsigned char c)
 {
 	posicion.Set_vector(0, 0, 0);
 	color.Set_color(c);
 	escala =1;
-	/*
 	if (c == 'b')
 	{
 		i0 = 2;
@@ -39,7 +23,7 @@ void Caballo::Inicializa(unsigned char c)
 		
 		//glRotatef(-180, 0, 0,- 1);
 	}
-	*/
+
 }
 
 void Caballo::Dibuja()

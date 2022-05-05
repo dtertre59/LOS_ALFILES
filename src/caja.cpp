@@ -21,5 +21,5 @@ void caja::dibuja()
 	suelo.dibuja();
 	techo.dibuja();
 	pared_dcha.dibuja();
-	//pared_izq.dibuja();
+	pared_izq.dibuja();
 }

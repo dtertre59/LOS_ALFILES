@@ -54,17 +54,7 @@
     <ClCompile Include="src\Torre.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
-<<<<<<< HEAD
-    <ClCompile Include="src\Caballo.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="src\caja.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Pared.cpp">
-=======
     <ClCompile Include="src\Alfil.cpp">
->>>>>>> a0061e40194d7b282f799403c2c0d1d526eed29d
       <Filter>Archivos de origen</Filter>
     </ClCompile>
   </ItemGroup>
@@ -96,11 +86,6 @@
     <ClInclude Include="src\Casilla_vacia.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
-<<<<<<< HEAD
-<<<<<<< HEAD
-    <ClInclude Include="src\Caballo.h">
-      <Filter>Archivos de encabezado</Filter>
-=======
     <ClInclude Include="src\Alfil.h">
       <Filter>Archivos de encabezado\piezas</Filter>
     </ClInclude>
@@ -109,23 +94,6 @@
     </ClInclude>
     <ClInclude Include="src\Torre.h">
       <Filter>Archivos de encabezado\piezas</Filter>
->>>>>>> a0061e40194d7b282f799403c2c0d1d526eed29d
-    </ClInclude>
-    <ClInclude Include="src\caja.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Pared.h">
-      <Filter>Archivos de encabezado</Filter>
-=======
-    <ClInclude Include="src\Alfil.h">
-      <Filter>Archivos de encabezado\piezas</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Peon.h">
-      <Filter>Archivos de encabezado\piezas</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Torre.h">
-      <Filter>Archivos de encabezado\piezas</Filter>
->>>>>>> a0061e40194d7b282f799403c2c0d1d526eed29d
     </ClInclude>
   </ItemGroup>
 </Project>
