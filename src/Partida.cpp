@@ -4,7 +4,7 @@ Partida::Partida()
 {
 	tablero = new Tablero;
 	peon = new Peon[16];
-	vacio = new Casilla_vacia[2];
+
 }
 
 void Partida::Inicializa()
@@ -24,8 +24,6 @@ void Partida::Inicializa()
 
 	//inicializar piezas vacias (futuros reyes)
 
-	vacio[0].Inicializa('b', 7 * 10, 4 * 10, 0);
-	vacio[1].Inicializa('n', 0 * 10, 3 * 10, 0);
 }
 
 void Partida::Dibuja()
@@ -43,7 +41,7 @@ void Partida::Dibuja()
 	//dibujar damas y reyes
 	for (int i = 0; i < 2; i++)
 	{
-		vacio[i].Dibuja();
+		//ALGO.dIBUJA
 	}
 
 	//dibujar torres, caballos y alfiles

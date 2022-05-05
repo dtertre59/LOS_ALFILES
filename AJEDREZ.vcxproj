@@ -22,7 +22,6 @@
     <ClCompile Include="src\AJEDREZ.cpp" />
     <ClCompile Include="src\Alfil.cpp" />
     <ClCompile Include="src\Casilla.cpp" />
-    <ClCompile Include="src\Casilla_vacia.cpp" />
     <ClCompile Include="src\Color_RGB.cpp" />
     <ClCompile Include="src\Coordinador_ajedrez.cpp" />
     <ClCompile Include="src\Partida.cpp" />
@@ -32,11 +31,11 @@
     <ClCompile Include="src\Torre.cpp" />
     <ClCompile Include="src\Vector3d.cpp" />
     <ClCompile Include="src\Vista.cpp" />
+    <ClCompile Include="src\Visualizar_piezas.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Alfil.h" />
     <ClInclude Include="src\Casilla.h" />
-    <ClInclude Include="src\Casilla_vacia.h" />
     <ClInclude Include="src\Color_RGB.h" />
     <ClInclude Include="src\Coordinador_ajedrez.h" />
     <ClInclude Include="src\Partida.h" />
@@ -46,6 +45,7 @@
     <ClInclude Include="src\Torre.h" />
     <ClInclude Include="src\Vector3d.h" />
     <ClInclude Include="src\Vista.h" />
+    <ClInclude Include="src\Visualizar_piezas.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>

@@ -4,12 +4,14 @@
 #include"Partida.h"
 
 #include"Vista.h"
+#include"Visualizar_piezas.h"
 
+/////////////////
 //PIEZAS
 
-#include"Peon.h"
-#include"Casilla_vacia.h"
 #include"Casilla.h"
+
+#include"Peon.h"
 
 
 
@@ -19,7 +21,6 @@ private:
 	
 	unsigned char pi;
 	Peon peon;
-	Casilla_vacia vacio;
 	Casilla casilla;
 
 protected:

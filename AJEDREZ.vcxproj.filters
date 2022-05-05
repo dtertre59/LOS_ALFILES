@@ -16,12 +16,12 @@
     <Filter Include="Archivos de encabezado\piezas">
       <UniqueIdentifier>{978d66e8-d2e0-4b34-a86a-5234b54c7b24}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Archivos de origen\piezas">
+      <UniqueIdentifier>{14363fd4-58dc-4e07-b74d-2131ca557fe1}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\AJEDREZ.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Peon.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
     <ClCompile Include="src\Vector3d.cpp">
@@ -33,9 +33,6 @@
     <ClCompile Include="src\Vista.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
-    <ClCompile Include="src\Casilla.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
     <ClCompile Include="src\Tablero.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
@@ -45,16 +42,22 @@
     <ClCompile Include="src\Partida.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
-    <ClCompile Include="src\Pieza.cpp">
-      <Filter>Archivos de origen</Filter>
+    <ClCompile Include="src\Alfil.cpp">
+      <Filter>Archivos de origen\piezas</Filter>
     </ClCompile>
-    <ClCompile Include="src\Casilla_vacia.cpp">
-      <Filter>Archivos de origen</Filter>
+    <ClCompile Include="src\Casilla.cpp">
+      <Filter>Archivos de origen\piezas</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Peon.cpp">
+      <Filter>Archivos de origen\piezas</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Pieza.cpp">
+      <Filter>Archivos de origen\piezas</Filter>
     </ClCompile>
     <ClCompile Include="src\Torre.cpp">
-      <Filter>Archivos de origen</Filter>
+      <Filter>Archivos de origen\piezas</Filter>
     </ClCompile>
-    <ClCompile Include="src\Alfil.cpp">
+    <ClCompile Include="src\Visualizar_piezas.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
   </ItemGroup>
@@ -68,9 +71,6 @@
     <ClInclude Include="src\Vista.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
-    <ClInclude Include="src\Casilla.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
     <ClInclude Include="src\Tablero.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
@@ -78,12 +78,6 @@
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
     <ClInclude Include="src\Partida.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Pieza.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Casilla_vacia.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
     <ClInclude Include="src\Alfil.h">
@@ -94,6 +88,15 @@
     </ClInclude>
     <ClInclude Include="src\Torre.h">
       <Filter>Archivos de encabezado\piezas</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Casilla.h">
+      <Filter>Archivos de encabezado\piezas</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Pieza.h">
+      <Filter>Archivos de encabezado\piezas</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Visualizar_piezas.h">
+      <Filter>Archivos de encabezado</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

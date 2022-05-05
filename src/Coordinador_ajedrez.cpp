@@ -1,11 +1,7 @@
 #include"Coordinador_ajedrez.h"
 
-void Gestor_dibuja(Pieza& p)
-{
-	p.Dibuja();
-}
 
-
+//CONSTRUCTOR 
 
 Coordinador_ajedrez::Coordinador_ajedrez()
 {
@@ -15,6 +11,7 @@ Coordinador_ajedrez::Coordinador_ajedrez()
 	pi = 'P';
 }
 
+//INICIALIZAR
 
 void Coordinador_ajedrez::Inicializa()
 {
@@ -25,6 +22,7 @@ void Coordinador_ajedrez::Inicializa()
 	 
 }
 
+//DIBUJAR
 
 void Coordinador_ajedrez::Dibuja()
 {
@@ -46,7 +44,7 @@ void Coordinador_ajedrez::Dibuja()
 		ETSIDI::printxy("PULSA -P- PARA EMPEZAR PARTIDA MULTIJUGADOR", -8, 8);
 		ETSIDI::printxy("PULSA -V- PARA VER PIEZAS", -8, 6);
 		ETSIDI::printxy("PULSA -C- PARA VER CONTOLES", -8, 4);
-		ETSIDI::printxy("PULSA -E- PARA SALIR", -8, 2);
+		ETSIDI::printxy("PULSA -ESC- PARA SALIR", -8, 2);
 
 	}
 
@@ -67,29 +65,22 @@ void Coordinador_ajedrez::Dibuja()
 		vista.Camara();
 		*/
 		ETSIDI::setTextColor(1, 1, 1);
-		ETSIDI::setFont("fuentes/Bitwise.ttf", 20);
-		ETSIDI::printxy("Pulsa -I- para volver al inicio", -10, 14);
+		ETSIDI::setFont("fuentes/Bitwise.ttf", 18);
+		ETSIDI::printxy("Pulsa -ESC- para volver al inicio", -10, 14);
 		ETSIDI::printxy("Pulsa -P- para ver peon", -10, 12);
 		ETSIDI::printxy("Pulsa -T- para ver torre", -10, 11);
+		ETSIDI::printxy("Pulsa -C- para ver caballo", -10, 10);
+		ETSIDI::printxy("Pulsa -A- para ver alfil", -10, 9);
 
 
 		
 		vista.Set_vista(10, 5,10, 0, 0, 2);
 		vista.Camara();
 		
-		if (pi == 'P')
-		{
-			Gestor_dibuja(peon);
-		}
-		if (pi == 'A')
-		{
-			Gestor_dibuja(casilla);
-		}
-		if (pi == 'T')
-		{
-			Gestor_dibuja(vacio);
-		}
+	//////////////////////
 
+		Visualizar_piezas vi;
+		vi.visualizar(pi);
 
 	}
 
@@ -106,7 +97,7 @@ void Coordinador_ajedrez::Dibuja()
 
 		ETSIDI::setTextColor(1, 1, 1);
 		ETSIDI::setFont("fuentes/Bitwise.ttf", 15);
-		ETSIDI::printxy("PULSA -I- PARA VOLVER al inicio", -8, 8);		
+		ETSIDI::printxy("PULSA -ESC- PARA VOLVER al inicio", -8, 8);		
 	}
 
 	else if (estado == Estado::PAUSA)
@@ -133,7 +124,7 @@ void Coordinador_ajedrez::Dibuja()
 }
 
 
-
+//TECLADO
 
 void Coordinador_ajedrez::Tecla(unsigned char key)
 {
@@ -155,7 +146,7 @@ void Coordinador_ajedrez::Tecla(unsigned char key)
 			estado = Estado::CONTROLES;
 		}
 
-		if (key == 'e' || key == 'E')
+		if (key == 27)
 		{
 			estado = Estado::EXIT;
 		}
@@ -172,7 +163,7 @@ void Coordinador_ajedrez::Tecla(unsigned char key)
 
 	if (estado == Estado::VISTA_PIEZA)
 	{
-		if (key == 'i' || key == 'I')
+		if (key == 27)
 		{
 			estado = Estado::INICIO;
 		}
@@ -192,7 +183,7 @@ void Coordinador_ajedrez::Tecla(unsigned char key)
 
 	if (estado == Estado::CONTROLES)
 	{
-		if (key == 'i' || key == 'I')
+		if (key == 27)
 		{
 			estado = Estado::INICIO;
 		}
