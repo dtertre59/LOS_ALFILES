@@ -16,10 +16,6 @@ Coordinador_ajedrez::Coordinador_ajedrez()
 void Coordinador_ajedrez::Inicializa()
 {
 	partida->Inicializa();
-
-
-	peon.Inicializa('b');
-	 
 }
 
 //DIBUJAR

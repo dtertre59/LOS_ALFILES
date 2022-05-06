@@ -60,6 +60,9 @@
     <ClCompile Include="src\Visualizar_piezas.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
+    <ClCompile Include="src\Caballo.cpp">
+      <Filter>Archivos de origen\piezas</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Vector3d.h">
@@ -97,6 +100,9 @@
     </ClInclude>
     <ClInclude Include="src\Visualizar_piezas.h">
       <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Caballo.h">
+      <Filter>Archivos de encabezado\piezas</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

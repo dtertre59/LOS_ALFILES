@@ -3,16 +3,19 @@
 //PIEZAS
 
 #include"Peon.h"
-#include"Alfil.h"
 #include"Torre.h"
+#include"Caballo.h"
+#include"Alfil.h"
 
 
 
 class Visualizar_piezas
 {
 	Peon* peon;
-	Alfil* alfil;
 	Torre* torre;
+	//Caballo* caballo;
+	Alfil* alfil;
+	
 public:
 	Visualizar_piezas();
 	void visualizar(unsigned char c);

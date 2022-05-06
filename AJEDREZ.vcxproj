@@ -21,6 +21,7 @@
   <ItemGroup>
     <ClCompile Include="src\AJEDREZ.cpp" />
     <ClCompile Include="src\Alfil.cpp" />
+    <ClCompile Include="src\Caballo.cpp" />
     <ClCompile Include="src\Casilla.cpp" />
     <ClCompile Include="src\Color_RGB.cpp" />
     <ClCompile Include="src\Coordinador_ajedrez.cpp" />
@@ -35,6 +36,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Alfil.h" />
+    <ClInclude Include="src\Caballo.h" />
     <ClInclude Include="src\Casilla.h" />
     <ClInclude Include="src\Color_RGB.h" />
     <ClInclude Include="src\Coordinador_ajedrez.h" />

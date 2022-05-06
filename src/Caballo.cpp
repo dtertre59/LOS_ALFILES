@@ -5,6 +5,12 @@
 #include <stdlib.h>
 #include "Color_RGB.h"
 
+
+Caballo::Caballo()
+{
+	//
+}
+
 void Caballo::Inicializa(unsigned char c)
 {
 	posicion.Set_vector(0, 0, 0);

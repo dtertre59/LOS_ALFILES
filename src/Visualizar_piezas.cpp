@@ -12,8 +12,10 @@ void Gestor_dibuja(Pieza& p)
 Visualizar_piezas::Visualizar_piezas()
 {
 	peon = new Peon;
-	alfil = new Alfil;
 	torre = new Torre;
+	//caballo = new Caballo;
+	alfil = new Alfil;
+	
 }
 
 void Visualizar_piezas::visualizar(unsigned char pi)
@@ -28,7 +30,7 @@ void Visualizar_piezas::visualizar(unsigned char pi)
 	}
 	if (pi == 'C')
 	{
-
+		//caballo->Dibuja();
 	}
 	if (pi == 'A')
 	{

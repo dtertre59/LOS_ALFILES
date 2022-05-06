@@ -11,6 +11,7 @@ public:
 	int i0, j0;
 	bool movimiento = false;
 
+	Caballo();
 	void Inicializa(unsigned char);
 	void Dibuja();
 	void Escala(unsigned char);

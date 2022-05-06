@@ -20,8 +20,6 @@ class Coordinador_ajedrez
 private:
 	
 	unsigned char pi;
-	Peon peon;
-	Casilla casilla;
 
 protected:
 	enum class Estado { INICIO, PARTIDA_M, VISTA_PIEZA, CONTROLES, PAUSA, EXIT };
