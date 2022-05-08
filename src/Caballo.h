@@ -12,6 +12,7 @@ public:
 	bool movimiento = false;
 
 	Caballo();
+	void Inicializa(unsigned char c, float x, float y, float z);
 	void Inicializa(unsigned char);
 	void Dibuja();
 	void Escala(unsigned char);

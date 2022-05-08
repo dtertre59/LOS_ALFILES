@@ -16,7 +16,7 @@ class Visualizar_piezas
 {
 	Peon* peon;
 	Torre* torre;
-	//Caballo* caballo;
+	Caballo* caballo;
 	Alfil* alfil;
 	Dama* dama;
 	Rey* rey;

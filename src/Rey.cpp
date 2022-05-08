@@ -4,12 +4,17 @@
 
 Rey::Rey()
 {
-	posicion.Set_vector(0, 0, 0);
+	posicion.Set_vector(-1, 3, 0);
 	color.Set_color('b');
 	escala = 1;
 }
 
-
+void Rey::Inicializa(unsigned char c, float x, float y, float z)
+{
+	posicion.Set_vector(x, y, z);
+	color.Set_color(c);
+	escala = 1;
+}
 
 void Rey::Inicializa(unsigned char c)
 {
@@ -69,13 +74,13 @@ void Rey::Dibuja()
 	glutSolidCube(escala * 0.7);
 	glTranslatef(-posicion.x, -posicion.y, -(posicion.z + (escala * 14.3)));
 
-	glTranslatef(posicion.x + (escala * 0.7), posicion.y, posicion.z + (escala * 14.3));
+	glTranslatef(posicion.x , posicion.y + (escala * 0.7), posicion.z + (escala * 14.3));
 	glutSolidCube(escala * 0.7);
-	glTranslatef(-(posicion.x + (escala * 0.7)), -posicion.y, -(posicion.z + (escala * 14.3)));
+	glTranslatef(-(posicion.x ), -(posicion.y + (escala * 0.7)), -(posicion.z + (escala * 14.3)));
 
-	glTranslatef(posicion.x + (escala * -0.7), posicion.y, posicion.z + (escala * 14.3));
+	glTranslatef(posicion.x , posicion.y+(escala * -0.7), posicion.z + (escala * 14.3));
 	glutSolidCube(escala * 0.7);
-	glTranslatef(-(posicion.x + (escala * -0.7)), -posicion.y, -(posicion.z + (escala * 14.3)));
+	glTranslatef(-posicion.x , -(posicion.y + (escala * -0.7)), -(posicion.z + (escala * 14.3)));
 
 	glTranslatef(posicion.x, posicion.y, posicion.z + (escala * 15));
 	glutSolidCube(escala * 0.7);

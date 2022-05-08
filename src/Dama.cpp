@@ -4,8 +4,14 @@
 
 Dama::Dama()
 {
-	posicion.Set_vector(0, 0, 0);
+	posicion.Set_vector(-1, 3, 0);
 	color.Set_color('b');
+	escala = 1;
+}
+void Dama::Inicializa(unsigned char c, float x, float y, float z)
+{
+	posicion.Set_vector(x, y, z);
+	color.Set_color(c);
 	escala = 1;
 }
 

@@ -4,7 +4,7 @@
 
 Peon::Peon()
 {
-	posicion.Set_vector(0, 0, 0);
+	posicion.Set_vector(-1, 3, 0);
 	color.Set_color('b');
 	escala = 1;
 }

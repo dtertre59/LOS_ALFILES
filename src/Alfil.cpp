@@ -3,11 +3,17 @@
 
 Alfil::Alfil()
 {
-	posicion.Set_vector(0, 0, 0);
+	posicion.Set_vector(-1, 3, 0);
 	color.Set_color('b');
 	escala = 1;
 }
 
+void Alfil::Inicializa(unsigned char c, float x, float y, float z)
+{
+	posicion.Set_vector(x, y, z);
+	color.Set_color(c);
+	escala = 1;
+}
 
 void Alfil::Inicializa(unsigned char c)
 {
@@ -61,18 +67,18 @@ void Alfil::Mover(unsigned char c)
 {
 	if (c == 'i')
 	{
-		posicion.x = posicion.x - 0.25;
+		posicion.x = posicion.x - 10.0;
 	}
 	if (c == 'k')
 	{
-		posicion.x = posicion.x + 0.25;
+		posicion.x = posicion.x + 10.0;
 	}
 	if (c == 'j')
 	{
-		posicion.y = posicion.y - 0.25;
+		posicion.y = posicion.y - 10.0;
 	}
 	if (c == 'l')
 	{
-		posicion.y = posicion.y + 0.25;
+		posicion.y = posicion.y + 10.0;
 	}
 }

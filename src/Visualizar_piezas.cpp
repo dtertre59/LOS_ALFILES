@@ -13,7 +13,7 @@ Visualizar_piezas::Visualizar_piezas()
 {
 	peon = new Peon;
 	torre = new Torre;
-	//caballo = new Caballo;
+	caballo = new Caballo;
 	alfil = new Alfil;
 	dama = new Dama;
 	rey = new Rey;
@@ -32,7 +32,7 @@ void Visualizar_piezas::visualizar(unsigned char pi)
 	}
 	if (pi == 'C')
 	{
-		//caballo->Dibuja();
+		caballo->Dibuja();
 	}
 	if (pi == 'A')
 	{

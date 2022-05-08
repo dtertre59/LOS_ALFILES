@@ -62,11 +62,13 @@ void Coordinador_ajedrez::Dibuja()
 		*/
 		ETSIDI::setTextColor(1, 1, 1);
 		ETSIDI::setFont("fuentes/Bitwise.ttf", 18);
-		ETSIDI::printxy("Pulsa -ESC- para volver al inicio", -10, 14);
-		ETSIDI::printxy("Pulsa -P- para ver peon", -10, 12);
-		ETSIDI::printxy("Pulsa -T- para ver torre", -10, 11);
-		ETSIDI::printxy("Pulsa -C- para ver caballo", -10, 10);
-		ETSIDI::printxy("Pulsa -A- para ver alfil", -10, 9);
+		ETSIDI::printxy("Pulsa -ESC- para volver al inicio", -12, 14);
+		ETSIDI::printxy("Pulsa -P- para ver peon", -12, 12);
+		ETSIDI::printxy("Pulsa -T- para ver torre", -12, 11);
+		ETSIDI::printxy("Pulsa -C- para ver caballo", -12, 10);
+		ETSIDI::printxy("Pulsa -A- para ver alfil", -12, 9);
+		ETSIDI::printxy("Pulsa -D- para ver dama", -12, 8);
+		ETSIDI::printxy("Pulsa -R- para ver rey", -12, 7);
 
 
 		

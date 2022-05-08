@@ -3,8 +3,15 @@
 
 Torre::Torre()
 {
-	posicion.Set_vector(0, 0, 0);
+	posicion.Set_vector(-1, 3, 0);
 	color.Set_color('b');
+	escala = 1;
+}
+
+void Torre::Inicializa(unsigned char c, float x, float y, float z)
+{
+	posicion.Set_vector(x, y, z);
+	color.Set_color(c);
 	escala = 1;
 }
 void Torre::Inicializa(unsigned char c)
@@ -28,60 +35,25 @@ void Torre::Dibuja()
 	glutSolidTorus((escala * 1), (escala * 3), 40, 40);   //  innerRadius, outerRadius, sides, rings
 	glTranslatef(-posicion.x, -posicion.y, -(posicion.z + (escala * 1)));
 
-	glTranslatef(posicion.x, posicion.y, posicion.z + (escala * 1)+0.55);
-	glutSolidTorus((escala * 1.5-0.35), (escala * 3-0.85), 40, 40);   //  innerRadius, outerRadius, sides, rings
-	glTranslatef(-posicion.x, -posicion.y, -(posicion.z + (escala * 1)));
+	glTranslatef(posicion.x, posicion.y, posicion.z + (escala * 1.55));
+	glutSolidTorus((escala * 1.5 - 0.35), (escala * 3 - 0.85), 40, 40);   //  innerRadius, outerRadius, sides, rings
+	glTranslatef(-posicion.x, -posicion.y, -(posicion.z + (escala * 1.55)));
 
-	glTranslatef(posicion.x, posicion.y, posicion.z + (escala * 1));
+	glTranslatef(posicion.x, posicion.y, posicion.z + (escala * 2));
 	glutSolidCone((escala * 3), (escala * 6), 100, 100); //   radio base, height, slices, stacks
 	glTranslatef(-posicion.x, -posicion.y, -(posicion.z + (escala * 2)));
 
-	glTranslatef(posicion.x, posicion.y, posicion.z + (escala * 1)+3.75);
+	glTranslatef(posicion.x, posicion.y, posicion.z + (escala * 4.75));
 	glutSolidCube(3.5);
-	glTranslatef(-posicion.x, -posicion.y, -(posicion.z + (escala * 1)));
-	glTranslatef(posicion.x, posicion.y, posicion.z + (escala * 1) + 2.5);
+	glTranslatef(-posicion.x, -posicion.y, -(posicion.z + (escala * 4.75)));
+
+	glTranslatef(posicion.x, posicion.y, posicion.z + (escala * 6.5));
 	glutSolidCube(3.5);
-	glTranslatef(-posicion.x, -posicion.y, -(posicion.z ));
-	glTranslatef(posicion.x, posicion.y, posicion.z + (escala * 1));
+	glTranslatef(-posicion.x, -posicion.y, -(posicion.z + (escala * 6.5)));
+
+	glTranslatef(posicion.x, posicion.y, posicion.z + (escala * 6.5));
 	glutSolidCone((escala * 1.5), (escala * 4), 100, 100); //   radio base, height, slices, stacks
-	glTranslatef(-posicion.x, -posicion.y, -(posicion.z + (escala * 2)));
-	///////almenas
-	glTranslatef(posicion.x, posicion.y+2, posicion.z + (escala * 1)+2);
-	glutSolidCube(1);
-	glTranslatef(-posicion.x, -posicion.y, -(posicion.z + (escala * 1)-1));
-
-	glTranslatef(posicion.x, posicion.y , posicion.z+1);
-	glutSolidCube(1);
-	glTranslatef(-posicion.x, -posicion.y, -(posicion.z + (escala * 1)));
-	
-	glTranslatef(posicion.x+2, posicion.y , posicion.z + (escala * 1)-1);
-	glutSolidCube(1);
-	glTranslatef(-posicion.x, -posicion.y, -(posicion.z + (escala * 1)));
-
-	
-	glTranslatef(posicion.x -4, posicion.y, posicion.z + (escala * 1));
-	glutSolidCube(1);
-	glTranslatef(-posicion.x, -posicion.y, -(posicion.z + (escala * 1)));
-
-	glTranslatef(posicion.x , posicion.y-2, posicion.z + (escala * 1));
-	glutSolidCube(1);
-	glTranslatef(-posicion.x, -posicion.y, -(posicion.z + (escala * 1)));
-	glTranslatef(posicion.x, posicion.y - 2, posicion.z + (escala * 1));
-	glutSolidCube(1);
-	glTranslatef(-posicion.x, -posicion.y, -(posicion.z + (escala * 1)));
-
-	glTranslatef(posicion.x+2, posicion.y , posicion.z + (escala * 1));
-	glutSolidCube(1);
-	glTranslatef(-posicion.x, -posicion.y, -(posicion.z + (escala * 1)));
-	glTranslatef(posicion.x + 2, posicion.y, posicion.z + (escala * 1));
-	glutSolidCube(1);
-	glTranslatef(-posicion.x, -posicion.y, -(posicion.z + (escala * 1)));
-
-	glTranslatef(posicion.x , posicion.y+2, posicion.z + (escala * 1));
-	glutSolidCube(1);
-	glTranslatef(-posicion.x, -posicion.y, -(posicion.z + (escala * 1)));
-
-
+	glTranslatef(-posicion.x, -posicion.y, -(posicion.z + (escala * 6.5)));
 }
 	
 
