@@ -79,8 +79,8 @@ void OnTimer(int value)
 {
 	//PONER AQUÍ CODIGO DE LA ANIMACIÓN
 	// 
-	//coord.mueve();
-
+	coord.mueve();
+	//coord.RotarVista();
 
 	//no borrar estas lineas
 	glutTimerFunc(25, OnTimer, 0);

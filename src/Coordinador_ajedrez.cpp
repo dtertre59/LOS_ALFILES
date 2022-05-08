@@ -73,6 +73,7 @@ void Coordinador_ajedrez::Dibuja()
 
 		
 		vista.Set_vista(10, 5,10, 0, 0, 2);
+		//vista.Mov_ojo(&vista);
 		vista.Camara();
 		
 	//////////////////////
@@ -206,3 +207,12 @@ void Coordinador_ajedrez::Tecla(unsigned char key)
 }
 
 
+
+void Coordinador_ajedrez::mueve()
+{
+
+	if (estado == Estado::VISTA_PIEZA)
+	{
+		vista.Mov_ojo();
+	}
+}

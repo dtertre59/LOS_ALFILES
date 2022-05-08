@@ -93,3 +93,12 @@ void Vista::Mover(unsigned char key)
 		mira_ojo.z = mira_ojo.z - 0.25;
 	}
 }
+
+void Vista::Mov_ojo()
+{
+	distancia_plana = sqrt(posicion_ojo.x * posicion_ojo.x + posicion_ojo.z * posicion_ojo.z)+0.05;
+	angulo_plano = atan2(posicion_ojo.z, posicion_ojo.x) + 0.01;
+	posicion_ojo.x = distancia_plana * cos(angulo_plano);
+	posicion_ojo.z = distancia_plana * sin(angulo_plano);
+	//posicion_ojo.z = distancia * sin(angulo);
+}

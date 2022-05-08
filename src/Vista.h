@@ -17,5 +17,6 @@ class Vista
 		void Set_vista(float px, float py, float pz, float mx, float my, float mz);
 		void Camara();
 		void Mover(unsigned char key);
+		void Mov_ojo();
 
 };

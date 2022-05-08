@@ -36,6 +36,7 @@ public:
 	void Inicializa();
 	void Dibuja();
 	void Tecla(unsigned char key);
+	void mueve();
 };
 
 
