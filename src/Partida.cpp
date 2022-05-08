@@ -60,15 +60,19 @@ void Partida::Inicializa()
 
 	turno = Turno::BLANCAS;
 	introdatos = IntroDatos::EJE_X;
-	
 
+	vista.Set_vista(140, 35, 40, 35, 35, 5);	
 }
 
 void Partida::Dibuja()
 {
+	if (turno == Turno::BLANCAS)
+		vista.Camara(0);
+	else
+		vista.Camara(1);
+
 	//dibujar tablero
 	tablero->Dibuja();
-
 
 	//dibujar  peones
 	for (int i = 0; i < 16; i++)
@@ -154,4 +158,24 @@ void Partida::Tecla(unsigned char c)
 			}
 		}
 	}
+
+}
+
+
+
+
+//MOVIMIENTOS DE PARTIDFA
+
+void Partida::Mueve()
+{
+	/*
+	if (turno == Turno::CAMBIO)
+	{
+		for (int i = 0; i < 100; i++)
+		{
+		
+		}
+	}
+	*/
+
 }

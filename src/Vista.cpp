@@ -2,7 +2,7 @@
 #include"freeglut.h"
 #include<math.h>
 
-//INICIALIZACIÓN DE LA VISTA
+//CONSTRUCTORES VISTA
 
 Vista::Vista() {
 	
@@ -14,6 +14,31 @@ Vista::Vista() {
 	angulo = atan2(posicion_ojo.z, distancia_plana);
 	angulo_plano = atan2(posicion_ojo.y, posicion_ojo.x);
 
+}
+
+Vista::Vista(int v)
+{
+	if (v == 0)
+	{
+		posicion_ojo.Set_vector(20, 10, 5);
+		mira_ojo.Set_vector(0, 0, 0);
+
+		distancia = sqrt(posicion_ojo.x * posicion_ojo.x + posicion_ojo.y * posicion_ojo.y + posicion_ojo.z * posicion_ojo.z);
+		distancia_plana = sqrt(posicion_ojo.x * posicion_ojo.x + posicion_ojo.y * posicion_ojo.y);
+		angulo = atan2(posicion_ojo.z, distancia_plana);
+		angulo_plano = atan2(posicion_ojo.y, posicion_ojo.x);
+	}
+}
+
+void Vista::Inicializa()
+{
+	posicion_ojo.Set_vector(20, 10, 10);
+	mira_ojo.Set_vector(0, 0, 5);
+
+	distancia = sqrt(posicion_ojo.x * posicion_ojo.x + posicion_ojo.y * posicion_ojo.y + posicion_ojo.z * posicion_ojo.z);
+	distancia_plana = sqrt(posicion_ojo.x * posicion_ojo.x + posicion_ojo.y * posicion_ojo.y);
+	angulo = atan2(posicion_ojo.z, distancia_plana);
+	angulo_plano = atan2(posicion_ojo.y, posicion_ojo.x);
 }
 
 //COLOCAR CAMARA
@@ -35,6 +60,23 @@ void Vista::Camara()
 		mira_ojo.x, mira_ojo.y, mira_ojo.z,      // hacia que punto mira  (0,0,0) 
 		0.0, 0.0, 1.0);      // definimos hacia arriba (eje z)
 }
+
+void Vista::Camara(int opt)
+{
+	if (opt == 0)
+	{
+		gluLookAt(130, 35, 60,  
+		35, 35, 5.0,      
+		0.0, 0.0, 1.0);      
+	}
+	if (opt == 1)
+	{
+		gluLookAt(-60, 35, 60,
+			35, 35, 5.0,
+			0.0, 0.0, 1.0);
+	}	
+}
+
 
 //MOVIMIENTO DE CAMARA Y ZOOM
 
@@ -92,13 +134,4 @@ void Vista::Mover(unsigned char key)
 	{
 		mira_ojo.z = mira_ojo.z - 0.25;
 	}
-}
-
-void Vista::Mov_ojo()
-{
-	distancia_plana = sqrt(posicion_ojo.x * posicion_ojo.x + posicion_ojo.z * posicion_ojo.z)+0.05;
-	angulo_plano = atan2(posicion_ojo.z, posicion_ojo.x) + 0.01;
-	posicion_ojo.x = distancia_plana * cos(angulo_plano);
-	posicion_ojo.z = distancia_plana * sin(angulo_plano);
-	//posicion_ojo.z = distancia * sin(angulo);
 }

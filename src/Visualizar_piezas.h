@@ -9,6 +9,9 @@
 #include"Dama.h"
 #include"Rey.h"
 
+//VISTA
+
+#include"Vista.h"
 
 
 
@@ -20,8 +23,12 @@ class Visualizar_piezas
 	Alfil* alfil;
 	Dama* dama;
 	Rey* rey;
+
+	Vista vista;
 	
 public:
 	Visualizar_piezas();
+	void Inicializa();
 	void visualizar(unsigned char c);
+	void Mover_vista();
 };

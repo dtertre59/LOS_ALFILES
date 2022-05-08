@@ -14,9 +14,10 @@ class Vista
 
 	public:
 		Vista();
+		Vista(int v);
+		void Inicializa();
 		void Set_vista(float px, float py, float pz, float mx, float my, float mz);
 		void Camara();
+		void Camara(int opt);
 		void Mover(unsigned char key);
-		void Mov_ojo();
-
 };

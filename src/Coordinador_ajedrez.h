@@ -27,6 +27,7 @@ protected:
 
 
 	Partida *partida;
+	Visualizar_piezas* visualizarp;
 	Vista vista;
 
 

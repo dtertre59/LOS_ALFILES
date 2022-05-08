@@ -7,6 +7,8 @@ Coordinador_ajedrez::Coordinador_ajedrez()
 {
 	estado = Estado::INICIO;
 	partida = new Partida;
+	visualizarp = new Visualizar_piezas;
+
 
 	pi = 'P';
 }
@@ -16,6 +18,8 @@ Coordinador_ajedrez::Coordinador_ajedrez()
 void Coordinador_ajedrez::Inicializa()
 {
 	partida->Inicializa();
+	visualizarp->Inicializa();
+
 }
 
 //DIBUJAR
@@ -27,10 +31,7 @@ void Coordinador_ajedrez::Dibuja()
 		gluLookAt(0, 7.5, 30, // posicion del ojo
 			0.0, 7.5, 0.0, // hacia que punto mira (0,7.5,0)
 			0.0, 1.0, 0.0); // definimos hacia arriba (eje Y)
-		/*
-		vista.Set_vista(0, 7.5, 30, 0, 7.5, 0);
-		vista.Camara();
-		*/
+		
 		ETSIDI::setTextColor(1, 1, 0);
 		ETSIDI::setFont("fuentes/fast99.ttf", 20);
 		ETSIDI::printxy("AJEDREZ", -4, 13);
@@ -45,21 +46,17 @@ void Coordinador_ajedrez::Dibuja()
 	}
 
 	else if (estado == Estado::PARTIDA_M)
-	{
-		vista.Set_vista(140, 35, 40, 35, 35, 5);
-		vista.Camara();
+	{	
 		partida->Dibuja();
 	}
 
 	else if (estado == Estado::VISTA_PIEZA)
 	{
+		
 		gluLookAt(0, 7.5, 30, // posicion del ojo
 			0.0, 7.5, 0.0, // hacia que punto mira (0,7.5,0)
 			0.0, 1.0, 0.0); // definimos hacia arriba (eje Y)
-		/*
-		vista.Set_vista(0, 7.5, 30, 0, 7.5, 0);
-		vista.Camara();
-		*/
+		
 		ETSIDI::setTextColor(1, 1, 1);
 		ETSIDI::setFont("fuentes/Bitwise.ttf", 18);
 		ETSIDI::printxy("Pulsa -ESC- para volver al inicio", -12, 14);
@@ -70,16 +67,10 @@ void Coordinador_ajedrez::Dibuja()
 		ETSIDI::printxy("Pulsa -D- para ver dama", -12, 8);
 		ETSIDI::printxy("Pulsa -R- para ver rey", -12, 7);
 
-
 		
-		vista.Set_vista(10, 5,10, 0, 0, 2);
-		//vista.Mov_ojo(&vista);
-		vista.Camara();
+		// ver piezas 
 		
-	//////////////////////
-
-		Visualizar_piezas vi;
-		vi.visualizar(pi);
+		visualizarp->visualizar(pi);
 
 	}
 
@@ -210,9 +201,14 @@ void Coordinador_ajedrez::Tecla(unsigned char key)
 
 void Coordinador_ajedrez::mueve()
 {
-
+	
 	if (estado == Estado::VISTA_PIEZA)
 	{
-		vista.Mov_ojo();
+		visualizarp->Mover_vista();
 	}
+	if (estado == Estado::PARTIDA_M)
+	{
+		partida->Mueve();
+	}
+	
 }

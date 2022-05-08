@@ -1,4 +1,5 @@
 #include"Visualizar_piezas.h"
+#include"freeglut.h"
 
 //////////////////////
 //FUNCION IDEPENDIENTE
@@ -22,6 +23,10 @@ Visualizar_piezas::Visualizar_piezas()
 
 void Visualizar_piezas::visualizar(unsigned char pi)
 {
+	vista.Camara();
+
+	//vista.Camara();
+	
 	if (pi == 'P')
 	{
 		peon->Dibuja();
@@ -46,5 +51,17 @@ void Visualizar_piezas::visualizar(unsigned char pi)
 	{
 		rey->Dibuja();
 	}
+
+}
+
+void Visualizar_piezas::Mover_vista()
+{
+	vista.Mover('d');
+}
+
+
+void Visualizar_piezas::Inicializa()
+{
+	vista.Inicializa();
 
 }
