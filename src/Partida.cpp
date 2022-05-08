@@ -10,7 +10,6 @@ Partida::Partida()
 	dama = new Dama[2];
 	rey = new Rey[2];
 
-
 }
 
 void Partida::Inicializa()
@@ -58,9 +57,10 @@ void Partida::Inicializa()
 		}
 		
 	}
-	
 
-	//inicializar piezas vacias (futuros reyes)
+	turno = Turno::BLANCAS;
+	introdatos = IntroDatos::EJE_X;
+	
 
 }
 
@@ -91,5 +91,67 @@ void Partida::Dibuja()
 		alfil[i].Dibuja();
 		torre[i].Dibuja();
 		//los dibuja de torres, caballos y alfiles
+	}
+}
+
+void Partida::Tecla(unsigned char c)
+{
+	if (turno == Turno::BLANCAS)
+	{
+		if (introdatos == IntroDatos::EJE_X)
+		{
+			if (c == '3')
+			{
+				peon[0].Mover(1);
+
+				introdatos = IntroDatos::EJE_Y;
+			}
+					
+
+		}
+
+
+		if (introdatos == IntroDatos::EJE_Y)
+		{
+			if (c == '4')
+			{
+				peon[1].Mover(1);
+
+
+				introdatos = IntroDatos::EJE_X;
+				turno = Turno::NEGRAS;
+			}
+			
+
+		}
+
+	}
+
+
+	if (turno == Turno::NEGRAS)
+	{
+		if (introdatos == IntroDatos::EJE_X)
+		{
+			if (c == '5')
+			{
+				peon[9].Mover(-1);
+
+
+				introdatos = IntroDatos::EJE_Y;
+			}
+		}
+
+
+		if (introdatos == IntroDatos::EJE_Y)
+		{
+			if (c == '6')
+			{
+				peon[10].Mover(-1);
+
+
+				introdatos = IntroDatos::EJE_X;
+				turno = Turno::BLANCAS;
+			}
+		}
 	}
 }

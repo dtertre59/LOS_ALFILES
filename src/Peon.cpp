@@ -61,22 +61,7 @@ void Peon::Escala(unsigned char c)
 
 //MOVER FIGURA CON TECLADO
 
-void Peon::Mover(unsigned char c)
+void Peon::Mover(int x)
 {
-	if (c == 'i')
-	{
-		posicion.x = posicion.x - 10;
-	}
-	if (c == 'k')
-	{
-		posicion.x = posicion.x + 10;
-	}
-	if (c == 'j')
-	{
-		posicion.y = posicion.y - 10;
-	}
-	if (c == 'l')
-	{
-		posicion.y = posicion.y + 10;
-	}
+	posicion.MoverVect(-10*x, 0, 0);
 }

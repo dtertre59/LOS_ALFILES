@@ -20,8 +20,8 @@ public:
 	Rey* rey;
 	Dama* dama;
 
-	enum class Turno{ BLANCAS, NEGRAS, };
-	enum class IntroDatos{ EJE_X, EJE_Y};
+	enum class Turno { BLANCAS, NEGRAS, };
+	enum class IntroDatos { EJE_X, EJE_Y };
 
 	Turno turno;
 	IntroDatos introdatos;
@@ -30,4 +30,5 @@ public:
 	Partida();
 	void Inicializa();
 	void Dibuja();
+	void Tecla(unsigned char c);
 };

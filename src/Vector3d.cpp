@@ -19,5 +19,12 @@ void Vector3d::Set_vector(Vector3d v)
 	z = v.z;
 }
 
+void Vector3d::MoverVect(float xx, float yy, float zz)
+{
+	x += xx;
+	y += yy;
+	z += zz;
+}
+
 
 

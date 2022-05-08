@@ -152,6 +152,8 @@ void Coordinador_ajedrez::Tecla(unsigned char key)
 
 	if (estado == Estado::PARTIDA_M)
 	{
+		partida->Tecla(key);
+
 		if (key == 27)
 		{
 			estado = Estado::PAUSA;
