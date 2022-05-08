@@ -63,6 +63,12 @@
     <ClCompile Include="src\Caballo.cpp">
       <Filter>Archivos de origen\piezas</Filter>
     </ClCompile>
+    <ClCompile Include="src\Dama.cpp">
+      <Filter>Archivos de origen\piezas</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Rey.cpp">
+      <Filter>Archivos de origen\piezas</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Vector3d.h">
@@ -102,6 +108,12 @@
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
     <ClInclude Include="src\Caballo.h">
+      <Filter>Archivos de encabezado\piezas</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Dama.h">
+      <Filter>Archivos de encabezado\piezas</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Rey.h">
       <Filter>Archivos de encabezado\piezas</Filter>
     </ClInclude>
   </ItemGroup>

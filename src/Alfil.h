@@ -1,13 +1,10 @@
 #pragma once
-#include"Vector3d.h"
-#include"Color_RGB.h"
 
-class Alfil {
+#include"Pieza.h"
+
+class Alfil: public Pieza{
 public:
-	Vector3d posicion;
-	Color_RGB color;
-	float escala;
-
+	Alfil();
 	void Inicializa(unsigned char c);
 	void Dibuja();
 	void Escala(unsigned char c);

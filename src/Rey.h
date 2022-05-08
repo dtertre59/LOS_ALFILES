@@ -2,14 +2,14 @@
 
 #include"Pieza.h"
 
-class Peon :public Pieza
+class Rey : public Pieza
 {
 public:
 
-	Peon();
-	void Inicializa(unsigned char c, float x, float y, float z);
+	Rey();
 	void Inicializa(unsigned char c);
 	void Dibuja();
 	void Escala(unsigned char c);
 	void Mover(unsigned char c);
 };
+

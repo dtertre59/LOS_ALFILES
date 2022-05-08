@@ -28,6 +28,8 @@
     <ClCompile Include="src\Partida.cpp" />
     <ClCompile Include="src\Peon.cpp" />
     <ClCompile Include="src\Pieza.cpp" />
+    <ClCompile Include="src\Dama.cpp" />
+    <ClCompile Include="src\Rey.cpp" />
     <ClCompile Include="src\Tablero.cpp" />
     <ClCompile Include="src\Torre.cpp" />
     <ClCompile Include="src\Vector3d.cpp" />
@@ -43,6 +45,8 @@
     <ClInclude Include="src\Partida.h" />
     <ClInclude Include="src\Peon.h" />
     <ClInclude Include="src\Pieza.h" />
+    <ClInclude Include="src\Dama.h" />
+    <ClInclude Include="src\Rey.h" />
     <ClInclude Include="src\Tablero.h" />
     <ClInclude Include="src\Torre.h" />
     <ClInclude Include="src\Vector3d.h" />

@@ -1,15 +1,13 @@
 #pragma once
-#pragma once
-#include"Vector3d.h"
-#include"Color_RGB.h"
-class Torre {
-public:
-	Vector3d posicion;
-	Color_RGB color;
-	float escala;
 
+#include"Pieza.h"
+
+class Torre: public Pieza
+{
+public:
+	Torre();
 	void Inicializa(unsigned char c);
 	void Dibuja();
 	void Escala(unsigned char c);
-	void Mover(unsigned char c);
+	void Mover(unsigned char c); 
 };

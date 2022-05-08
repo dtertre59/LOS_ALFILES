@@ -15,6 +15,8 @@ Visualizar_piezas::Visualizar_piezas()
 	torre = new Torre;
 	//caballo = new Caballo;
 	alfil = new Alfil;
+	dama = new Dama;
+	rey = new Rey;
 	
 }
 
@@ -38,11 +40,11 @@ void Visualizar_piezas::visualizar(unsigned char pi)
 	}
 	if (pi == 'D')
 	{
-
+		dama->Dibuja();
 	}
 	if (pi == 'R')
 	{
-
+		rey->Dibuja();
 	}
 
 }

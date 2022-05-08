@@ -1,13 +1,11 @@
 #pragma once
-
 #include"Pieza.h"
 
-class Peon :public Pieza
+class Dama : public Pieza
 {
 public:
-
-	Peon();
-	void Inicializa(unsigned char c, float x, float y, float z);
+	
+	Dama();
 	void Inicializa(unsigned char c);
 	void Dibuja();
 	void Escala(unsigned char c);

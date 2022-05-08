@@ -1,6 +1,14 @@
 #include"Alfil.h"
 #include"freeglut.h"
 
+Alfil::Alfil()
+{
+	posicion.Set_vector(0, 0, 0);
+	color.Set_color('b');
+	escala = 1;
+}
+
+
 void Alfil::Inicializa(unsigned char c)
 {
 	posicion.Set_vector(0,0,0);

@@ -1,6 +1,12 @@
 #include"Torre.h"
 #include"freeglut.h"
 
+Torre::Torre()
+{
+	posicion.Set_vector(0, 0, 0);
+	color.Set_color('b');
+	escala = 1;
+}
 void Torre::Inicializa(unsigned char c)
 {
 	posicion.Set_vector(0, 0, 0);
