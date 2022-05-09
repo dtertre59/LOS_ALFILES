@@ -59,7 +59,7 @@ void Coordinador_ajedrez::Dibuja()
 		
 		ETSIDI::setTextColor(1, 1, 1);
 		ETSIDI::setFont("fuentes/Bitwise.ttf", 18);
-		ETSIDI::printxy("Pulsa -ESC- para volver al inicio", -13, 16);
+		ETSIDI::printxy("Pulsa -ESC- para volver al inicio", -14, 16);
 		ETSIDI::printxy("Pulsa -P- para ver peon", -13, 14);
 		ETSIDI::printxy("Pulsa -T- para ver torre", -13, 13);
 		ETSIDI::printxy("Pulsa -C- para ver caballo", -13, 12);
