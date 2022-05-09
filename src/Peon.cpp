@@ -63,5 +63,7 @@ void Peon::Escala(unsigned char c)
 
 void Peon::Mover(int x)
 {
-	posicion.MoverVect(-10*x, 0, 0);
+	if(posicion.x>00&&posicion.x<80)
+		if (posicion.y >= 00 && posicion.y < 70)
+			posicion.MoverVect(-10*x, 0, 0);
 }

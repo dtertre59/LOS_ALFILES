@@ -97,22 +97,99 @@ void Rey::Escala(unsigned char c)
 
 //MOVER FIGURA CON TECLADO
 
-void Rey::Mover(unsigned char c)
+bool Rey::pos_Movimiento(int i2, int j2)
 {
-	if (c == 'i')
+	int i, j;
+	i = posicion.x / 10;
+	j = posicion.y / 10;
+	int t = 0;
+	bool mov = false;
+
+	if ((i2 + i0 > 0 && i2 + i0 <= 7) && (j2 +j0 >= 0 && j2 +j0 <= 7))
 	{
-		posicion.x = posicion.x - 0.25;
+
+		i2 = i0 + i2;
+		j2 = j0 + j2;
+		mov = true;
 	}
-	if (c == 'k')
+	/**
+	//movimientos posibles	
+	if ((i2 + 1 > 0 && i2 +1 <= 7) && (j2  >= 0 && j2  <= 7))
 	{
-		posicion.x = posicion.x + 0.25;
+		
+		i2 = i0 +1;
+		j2 = j0 ;
+		mov = true;
 	}
-	if (c == 'j')
+	if ((i2 +1 > 0 && i2 -1<= 7) && (j2 -1 >= 0 && j2 - 1 <= 7))
 	{
-		posicion.y = posicion.y - 0.25;
+		
+		i2 = i0 + 1;
+		j2 = j0 - 1;
+		mov = true;
 	}
-	if (c == 'l')
+	if ((i2 > 0 && i2 <= 7) && (j2 - 1 >= 0 && j2 - 1 <= 7))
 	{
-		posicion.y = posicion.y + 0.25;
+		
+		i2 = i0;
+		j2 = j0 - 1;
+		mov = true;
 	}
+	if ((i2 - 1 > 0 && i2 - 1 <= 7) && (j2 + 1 >= 0 && j2 + 1 <= 7))
+	{
+		
+		i2 = i0 - 1;
+		j2 = j0 + 1;
+		mov = true;
+	}
+	
+	if ((i2 - 1 > 0 && i2 - 1 <= 7) && (j2  >= 0 && j2  <= 7))
+	{
+		
+		i2 = i0 - 1;
+		j2 = j0 ;
+		mov = true;
+	}
+	if ((i2 - 1 > 0 && i2 - 1 <= 7) && (j2+ 1 >= 0 && j2 + 1 <= 7))
+	{
+		
+		i2 = i0 - 1;
+		j2 = j0 + 1;
+		mov = true;
+	}
+	if ((i2  > 0 && i2  <= 7) && (j2 + 1 >= 0 && j2 + 1 <= 7))
+	{
+		
+		i2 = i0 ;
+		j2 = j0 + 1;
+		mov = true;
+	}
+	if ((i2 + 1 > 0 && i2 + 1 <= 7) && (j2 + 1 >= 0 && j2 + 1 <= 7))
+	{
+		
+		i2 = i0 + 1;
+		j2 = j0 + 1;
+		mov = true;
+	}
+	*/
+	/*
+	else
+		movimiento = false;
+		*/
+	///i0 = i2;
+	//j0 = j2;
+	return mov;
+
+}
+
+void Rey::Mover(int x,int y)
+{
+	bool mov;
+	if (posicion.x > 00 && posicion.x < 80)
+		if (posicion.y > 00 && posicion.y < 70)
+		{
+			mov = pos_Movimiento(x, y);
+			if(mov==true)
+				posicion.MoverVect(-10 * x, 10 * y, 0);
+		}
 }

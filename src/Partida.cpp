@@ -75,25 +75,34 @@ void Partida::Dibuja()
 	tablero->Dibuja();
 
 	//dibujar  peones
-	for (int i = 0; i < 16; i++)
+	for (int i = 0; i < 16; i++) //poner 16 en el for
 	{
-		peon[i].Dibuja();
+		
+		if(i == 3)
+			peon[i].Dibuja();
+		if (i == 5)
+			peon[i].Dibuja();
+		if (i == 11)
+			peon[i].Dibuja();
+		if (i == 13)
+			peon[i].Dibuja();
+			
 	}
 
 	//dibujar damas y reyes
 	for (int i = 0; i < 2; i++)
 	{
 		//ALGO.dIBUJA
-		dama[i].Dibuja();
+		//dama[i].Dibuja();
 		rey[i].Dibuja();
 	}
 
 	//dibujar torres, caballos y alfiles
 	for (int i = 0; i < 4; i++)
 	{
-		caballo[i].Dibuja();
-		alfil[i].Dibuja();
-		torre[i].Dibuja();
+		//caballo[i].Dibuja();
+		//alfil[i].Dibuja();
+		//torre[i].Dibuja();
 		//los dibuja de torres, caballos y alfiles
 	}
 }
@@ -106,7 +115,7 @@ void Partida::Tecla(unsigned char c)
 		{
 			if (c == '3')
 			{
-				peon[0].Mover(1);
+				peon[3].Mover(1);
 
 				introdatos = IntroDatos::EJE_Y;
 			}
@@ -114,20 +123,21 @@ void Partida::Tecla(unsigned char c)
 
 		}
 
-
+		
 		if (introdatos == IntroDatos::EJE_Y)
 		{
 			if (c == '4')
 			{
-				peon[1].Mover(1);
-
+				//peon[1].Mover(1);
+				rey[0].Mover(1,1);
 
 				introdatos = IntroDatos::EJE_X;
 				turno = Turno::NEGRAS;
 			}
 			
-
+			
 		}
+		
 
 	}
 
@@ -138,25 +148,27 @@ void Partida::Tecla(unsigned char c)
 		{
 			if (c == '5')
 			{
-				peon[9].Mover(-1);
+				peon[11].Mover(-1);
 
 
 				introdatos = IntroDatos::EJE_Y;
 			}
 		}
-
+		
 
 		if (introdatos == IntroDatos::EJE_Y)
 		{
 			if (c == '6')
 			{
-				peon[10].Mover(-1);
+				peon[13].Mover(-1);
+				//cab
 
 
 				introdatos = IntroDatos::EJE_X;
 				turno = Turno::BLANCAS;
 			}
 		}
+		
 	}
 
 }
