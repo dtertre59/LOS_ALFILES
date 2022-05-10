@@ -115,7 +115,7 @@ void Partida::Tecla(unsigned char c)
 		{
 			if (c == '3')
 			{
-				peon[3].Mover(1);
+				peon[3].Mover(1,0);
 
 				introdatos = IntroDatos::EJE_Y;
 			}
@@ -128,8 +128,8 @@ void Partida::Tecla(unsigned char c)
 		{
 			if (c == '4')
 			{
-				//peon[1].Mover(1);
-				rey[0].Mover(1,1);
+				peon[1].Mover(0,1);
+				//rey[0].Mover(1,0);
 
 				introdatos = IntroDatos::EJE_X;
 				turno = Turno::NEGRAS;
@@ -148,7 +148,7 @@ void Partida::Tecla(unsigned char c)
 		{
 			if (c == '5')
 			{
-				peon[11].Mover(-1);
+				peon[11].Mover(1,0);
 
 
 				introdatos = IntroDatos::EJE_Y;
@@ -160,7 +160,7 @@ void Partida::Tecla(unsigned char c)
 		{
 			if (c == '6')
 			{
-				peon[13].Mover(-1);
+				peon[13].Mover(1,0);
 				//cab
 
 
