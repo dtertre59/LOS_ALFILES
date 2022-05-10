@@ -41,5 +41,5 @@ public:
 	void Inicializa();
 	void Dibuja();
 	void Tecla(unsigned char c);
-	void Mueve();
+	//void Mueve();
 };

@@ -11,5 +11,6 @@ public:
 	Color_RGB();	
 	void Set_color(unsigned char c);
 	unsigned char Get_color();
+
 };
 

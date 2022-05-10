@@ -118,15 +118,18 @@ void Partida::Tecla(unsigned char c)
 	{
 		if (introdatos == IntroDatos::EJE_X)
 		{
-			for (int i = 0,j=8; i < 8; i++,j--)
+			for (int i = 0, j = 7; i < 8; i++, j--)
 			{
-				peon[3].Mover(1,0);
+				if (c == 49 + i)
+				{
+					diosita->SetPosX(j * 10);
+					//peon[3].Mover(1);
 
 					introdatos = IntroDatos::EJE_Y;
 				}
 			}
 		}
-	
+
 		if (introdatos == IntroDatos::EJE_Y)
 		{
 			for (int i = 0; i < 8; i++)
@@ -139,14 +142,14 @@ void Partida::Tecla(unsigned char c)
 					introdatos = IntroDatos::ESPERA;
 					movdatos = MovDatos::M_EJE_X;
 				}
-			}			
+			}
 		}
 
 		if (movdatos == MovDatos::M_EJE_X)
 		{
-			for (int i = 0,j=8; i < 8; i++,j--)
+			for (int i = 0, j = 7; i < 8; i++, j--)
 			{
-				if (c == 48 + i)
+				if (c == 49 + i)
 				{
 					diosita->SetPosX(j * 10);
 					//peon[3].Mover(1);
@@ -164,17 +167,13 @@ void Partida::Tecla(unsigned char c)
 				{
 					diosita->SetPosY(i * 10);
 					//peon[3].Mover(1);
-			if (c == '4')
-			{
-				peon[1].Mover(0,1);
-				//rey[0].Mover(1,0);
 
 					movdatos = MovDatos::M_ESPERA;
 					introdatos = IntroDatos::EJE_X;
 					turno = Turno::NEGRAS;
 				}
 			}
-		}		
+		}
 	}
 
 
@@ -182,16 +181,12 @@ void Partida::Tecla(unsigned char c)
 	{
 		if (introdatos == IntroDatos::EJE_X)
 		{
-			for (int i = 0, j=8; i < 8; i++,j--)
+			for (int i = 0, j = 8; i < 8; i++, j--)
 			{
 				if (c == 48 + i)
 				{
 					diosita->SetPosX(j * 10);
 					//peon[3].Mover(1);
-			if (c == '5')
-			{
-				peon[11].Mover(1,0);
-
 
 					introdatos = IntroDatos::EJE_Y;
 				}
@@ -205,7 +200,7 @@ void Partida::Tecla(unsigned char c)
 				if (c == 97 + i)
 				{
 					diosita->SetPosY(i * 10);
-					
+
 					introdatos = IntroDatos::ESPERA;
 					movdatos = MovDatos::M_EJE_X;
 				}
@@ -214,7 +209,7 @@ void Partida::Tecla(unsigned char c)
 
 		if (movdatos == MovDatos::M_EJE_X)
 		{
-			for (int i = 0,j=8; i < 8; i++,j--)
+			for (int i = 0, j = 8; i < 8; i++, j--)
 			{
 				if (c == 48 + i)
 				{
@@ -225,8 +220,6 @@ void Partida::Tecla(unsigned char c)
 				}
 			}
 		}
-				peon[13].Mover(1,0);
-				//cab
 
 		if (movdatos == MovDatos::M_EJE_Y)
 		{
@@ -243,7 +236,7 @@ void Partida::Tecla(unsigned char c)
 				}
 			}
 		}
-		
+
 	}
 
 }
@@ -252,17 +245,10 @@ void Partida::Tecla(unsigned char c)
 
 
 //MOVIMIENTOS DE PARTIDFA
-
+/*
 void Partida::Mueve()
 {
-	/*
-	if (turno == Turno::CAMBIO)
-	{
-		for (int i = 0; i < 100; i++)
-		{
-		
-		}
-	}
-	*/
+
 
 }
+*/
