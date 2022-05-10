@@ -69,22 +69,71 @@ void Torre::Escala(unsigned char c)
 
 //MOVER FIGURA CON TECLADO
 
-void Torre::Mover(unsigned char c)
+void Torre::Mover(int x,int y)
 {
-	if (c == 'i')
+	int npx, npy;
+	npx = posicion.x + 10 * x;
+	npy = posicion.y + 10 * y;
+
+	if (color.bn = 1)
 	{
-		posicion.x = posicion.x - 0.25;
+		if (x == 0 && y != 0)
+		{
+			for (int i = 1; i < 8; i++)
+			{
+				if (i == y)
+					if (npx > 00 && npx < 80)
+						if (npy >= 00 && npy < 70)
+						{
+							posicion.MoverVect(0, 10 * y, 0);
+						}
+							
+			}
+		}
+		if (x != 0 && y == 0)
+		{
+			for (int i = 1; i < 8; i++)
+			{
+				if (i == x)
+					if (npx > 00 && npx < 80)
+						if (npy >= 00 && npy < 70)
+						{
+							x = x * (-1);
+							posicion.MoverVect(10 * x, 0, 0);
+						}						
+			}
+		}
 	}
-	if (c == 'k')
+
+	if (color.bn = 2)
 	{
-		posicion.x = posicion.x + 0.25;
+		if (x == 0 && y != 0)
+		{
+			for (int i = 1; i < 8; i++)
+			{
+				if (i == y)
+					if (npx > 00 && npx < 80)
+						if (npy >= 00 && npy < 70)
+						{
+							y = y * (-1);
+							posicion.MoverVect(0, 10 * y, 0);
+						}
+
+			}
+		}
+		if (x != 0 && y == 0)
+		{
+			for (int i = 1; i < 8; i++)
+			{
+				if (i == x)
+					if (npx > 00 && npx < 80)
+						if (npy >= 00 && npy < 70)
+						{
+							posicion.MoverVect(10 * x, 0, 0);
+						}
+			}
+		}
 	}
-	if (c == 'j')
-	{
-		posicion.y = posicion.y - 0.25;
-	}
-	if (c == 'l')
-	{
-		posicion.y = posicion.y + 0.25;
-	}
+	
+	
 }

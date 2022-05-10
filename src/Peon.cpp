@@ -69,7 +69,7 @@ void Peon::Mover(int x,int y)
 	int dify = 10 * y;
 	int npx, npy;
 	
-	if (x >= 0 && y >= 0)
+	if (x >= 0)
 	{
 		if (color.bn = 1)
 		{
@@ -100,9 +100,8 @@ void Peon::Mover(int x,int y)
 						posicion.MoverVect(-10 * x, -10 * y, 0);
 		}
 
-		else if (color.bn = 0)
+		else if (color.bn = 2)
 		{
-			x = x*-1;
 			y = y*-1;
 			npx = posicion.x - difx; //nueva posicion
 			npy = posicion.y + dify; //nueva posicion
@@ -113,22 +112,29 @@ void Peon::Mover(int x,int y)
 			if (difx == 10 && dify == 0)
 				if (npx > 00 && npx < 80)
 					if (npy >= 00 && npy < 70)
-						posicion.MoverVect(-10 * x, 0, 0);
+						posicion.MoverVect(10 * x, 0, 0);
 
 
 			//movimiento de inciio 2 casillas
 			else if (difx == 20 && dify == 0)
-				if (npx > 00 && npx < 80)
-					if (npy >= 00 && npy < 70)
-						posicion.MoverVect(-20 * x, 0, 0);
-
-
+			{
+				if (posicion.x == 10)
+					if (npx > 00 && npx < 80)
+						if (npy >= 00 && npy < 70)
+						{
+							posicion.MoverVect(20 * x, 0, 0);
+						}
+			}
+						
 
 			//movimiento para comer
 			else if (difx == 10 && dify == 10)
+			{
 				if (npx > 00 && npx < 80)
 					if (npy >= 00 && npy < 70)
-						posicion.MoverVect(-10 * x, 10 * y, 0);
+						posicion.MoverVect(10 * x, -10 * y, 0);
+			}
+									
 		}
 	}
 	

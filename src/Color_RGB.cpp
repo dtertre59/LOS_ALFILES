@@ -5,7 +5,7 @@ Color_RGB::Color_RGB()
 	rojo = 255;
 	verde = 255;
 	azul = 255;
-	bn = 'a';
+	bn = 1;
 }
 void Color_RGB::Set_color(unsigned char  c)
 {
@@ -21,7 +21,7 @@ void Color_RGB::Set_color(unsigned char  c)
 		rojo = 55;
 		verde = 34;
 		azul = 8;
-		bn = 0;
+		bn = 2;
 	}
 	else if(c=='v')
 	{
