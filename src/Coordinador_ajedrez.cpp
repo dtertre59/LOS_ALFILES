@@ -208,7 +208,7 @@ void Coordinador_ajedrez::mueve()
 	}
 	if (estado == Estado::PARTIDA_M)
 	{
-		//partida->Mueve();
+		partida->Mueve();
 	}
 	
 }

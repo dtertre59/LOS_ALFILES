@@ -62,7 +62,7 @@ void Alfil::Escala(unsigned char c)
 }
 
 //MOVER FIGURA CON TECLADO
-
+/*
 void Alfil::Mover(int x,int y)
 {
 	int npx, npy, j;
@@ -109,3 +109,4 @@ void Alfil::Mover(int x,int y)
 		}
 	}
 }
+*/

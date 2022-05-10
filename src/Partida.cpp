@@ -64,6 +64,8 @@ void Partida::Inicializa()
 	movdatos = MovDatos::M_ESPERA;
 
 	vista.Set_vista(140, 35, 40, 35, 35, 5);	
+
+	//interaccion.Inicializa();
 }
 
 void Partida::Dibuja()
@@ -118,13 +120,11 @@ void Partida::Tecla(unsigned char c)
 	{
 		if (introdatos == IntroDatos::EJE_X)
 		{
-			for (int i = 0, j = 7; i < 1; i++, j--)
+			for (int i = 0, j = 7; i < 8; i++, j--)
 			{
 				if (c == 49 + i)
 				{
 					diosita->SetPosX(j * 10);
-					//peon[3].Mover(1);
-
 					introdatos = IntroDatos::EJE_Y;
 				}
 			}
@@ -132,12 +132,12 @@ void Partida::Tecla(unsigned char c)
 
 		if (introdatos == IntroDatos::EJE_Y)
 		{
-			for (int i = 0; i < 1; i++)
+			for (int i = 0; i < 8; i++)
 			{
 				if (c == 97 + i)
 				{
-					//diosita->SetPosY(i * 10);
-					peon[3].Mover(1,-1);
+					diosita->SetPosY(i * 10);
+					//peon[3].Mover(1,-1);
 
 					introdatos = IntroDatos::ESPERA;
 					movdatos = MovDatos::M_EJE_X;
@@ -147,12 +147,12 @@ void Partida::Tecla(unsigned char c)
 
 		if (movdatos == MovDatos::M_EJE_X)
 		{
-			for (int i = 0, j = 7; i < 1; i++, j--)
+			for (int i = 0, j = 7; i < 8; i++, j--)
 			{
 				if (c == 49 + i)
 				{
-					//diosita->SetPosX(j * 10);
-					peon[5].Mover(1,0);
+					diosita->SetPosX(j * 10);
+					//peon[5].Mover(1,0);
 
 					movdatos = MovDatos::M_EJE_Y;
 				}
@@ -161,12 +161,12 @@ void Partida::Tecla(unsigned char c)
 
 		if (movdatos == MovDatos::M_EJE_Y)
 		{
-			for (int i = 0; i < 1; i++)
+			for (int i = 0; i < 8; i++)
 			{
 				if (c == 97 + i)
 				{
 					diosita->SetPosY(i * 10);
-					peon[5].Mover(0,0);
+					//peon[5].Mover(0,0);
 
 					movdatos = MovDatos::M_ESPERA;
 					introdatos = IntroDatos::EJE_X;
@@ -181,12 +181,12 @@ void Partida::Tecla(unsigned char c)
 	{
 		if (introdatos == IntroDatos::EJE_X)
 		{
-			for (int i = 0, j = 8; i < 1; i++, j--)
+			for (int i = 0, j = 7; i < 8; i++, j--)
 			{
-				if (c == 48 + i)
+				if (c == 49 + i)
 				{
-					//diosita->SetPosX(j * 10);
-					peon[13].Mover(2,0);
+					diosita->SetPosX(j * 10);
+					//peon[13].Mover(2,0);
 
 					introdatos = IntroDatos::EJE_Y;
 				}
@@ -195,12 +195,13 @@ void Partida::Tecla(unsigned char c)
 
 		if (introdatos == IntroDatos::EJE_Y)
 		{
-			for (int i = 0; i < 1; i++)
+			for (int i = 0; i < 8; i++)
 			{
 				if (c == 97 + i)
 				{
 					diosita->SetPosY(i * 10);
-					peon[11].Mover(1, 0);
+					//peon[11].Mover(1, 0);
+
 					introdatos = IntroDatos::ESPERA;
 					movdatos = MovDatos::M_EJE_X;
 				}
@@ -209,9 +210,9 @@ void Partida::Tecla(unsigned char c)
 
 		if (movdatos == MovDatos::M_EJE_X)
 		{
-			for (int i = 0, j = 8; i < 1; i++, j--)
+			for (int i = 0, j = 7; i < 8; i++, j--)
 			{
-				if (c == 48 + i)
+				if (c == 49 + i)
 				{
 					diosita->SetPosX(j * 10);
 					//peon[3].Mover(1);
@@ -223,7 +224,7 @@ void Partida::Tecla(unsigned char c)
 
 		if (movdatos == MovDatos::M_EJE_Y)
 		{
-			for (int i = 0; i < 1; i++)
+			for (int i = 0; i < 8; i++)
 			{
 				if (c == 97 + i)
 				{
@@ -236,19 +237,16 @@ void Partida::Tecla(unsigned char c)
 				}
 			}
 		}
-
 	}
-
 }
 
 
 
 
 //MOVIMIENTOS DE PARTIDFA
-/*
+
 void Partida::Mueve()
 {
-
+	//interaccion.Desplazar(diosita, peon);
 
 }
-*/

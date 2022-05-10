@@ -2,6 +2,8 @@
 
 #include"Pieza.h"
 
+#include"Interaccion.h"
+
 class Peon :public Pieza
 {
 public:
@@ -14,4 +16,6 @@ public:
 
 
 	void Mover(int x,int y);
+
+	friend class Interaccion;
 };

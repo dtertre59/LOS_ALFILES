@@ -76,7 +76,7 @@ void Dama::Escala(unsigned char c)
 }
 
 //MOVER FIGURA CON TECLADO
-
+/*
 void Dama::Mover(int x,int y)
 {
 	int npx, npy;
@@ -184,3 +184,4 @@ void Dama::Mover(int x,int y)
 		}
 	}
 }
+*/

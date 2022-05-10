@@ -14,6 +14,8 @@
 
 #include"Vista.h"
 
+#include"Interaccion.h"
+
 class Partida {
 public:
 	Tablero* tablero;
@@ -36,10 +38,12 @@ public:
 
 	Vista vista;
 
+	//Interaccion interaccion;
+
 
 	Partida();
 	void Inicializa();
 	void Dibuja();
 	void Tecla(unsigned char c);
-	//void Mueve();
+	void Mueve();
 };

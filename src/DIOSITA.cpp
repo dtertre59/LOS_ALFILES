@@ -34,4 +34,3 @@ void DIOSITA::SetPosY(float y)
 	posicion.y = y;
 }
 
-
