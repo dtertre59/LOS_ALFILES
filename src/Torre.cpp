@@ -71,7 +71,7 @@ void Torre::Escala(unsigned char c)
 
 void Torre::Mover(int x,int y)
 {
-	int npx, npy;
+	int npx, npy,j;
 	npx = posicion.x + 10 * x;
 	npy = posicion.y + 10 * y;
 
