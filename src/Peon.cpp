@@ -1,5 +1,7 @@
 #include"Peon.h"
 #include"freeglut.h"
+#include <math.h>
+#include <stdlib.h>
 
 
 Peon::Peon()
@@ -61,9 +63,81 @@ void Peon::Escala(unsigned char c)
 
 //MOVER FIGURA CON TECLADO
 
-void Peon::Mover(int x)
+void Peon::Mover(int x,int y)
 {
-	if(posicion.x>00&&posicion.x<80)
-		if (posicion.y >= 00 && posicion.y < 70)
-			posicion.MoverVect(-10*x, 0, 0);
+	int difx = -10 * x;
+	int dify = 10 * y;
+	int npx, npy;
+	
+	if (x >= 0 && y >= 0)
+	{
+		if (color.bn = 1)
+		{
+			npx = posicion.x + difx; //nueva posicion
+			npy = posicion.y + dify; //nueva posicion
+			difx = abs(difx);
+			dify = abs(dify);
+
+			//movimiento normal
+			if (difx == 10 && dify == 0)
+				if (npx > 00 && npx < 80)
+					if (npy >= 00 && npy < 70)
+						posicion.MoverVect(-10 * x, 0, 0);
+
+
+			//movimiento de inciio 2 casillas
+			else if (difx == 20 && dify == 0)
+				if (npx > 00 && npx < 80)
+					if (npy >= 00 && npy < 70)
+						posicion.MoverVect(-20 * x, 0, 0);
+
+
+
+			//movimiento para comer
+			else if (difx == 10 && dify == 10)
+				if (npx > 00 && npx < 80)
+					if (npy >= 00 && npy < 70)
+						posicion.MoverVect(-10 * x, -10 * y, 0);
+		}
+
+		else if (color.bn = 0)
+		{
+			x = x*-1;
+			y = y*-1;
+			npx = posicion.x - difx; //nueva posicion
+			npy = posicion.y + dify; //nueva posicion
+			difx = abs(difx);
+			dify = abs(dify);
+
+			//movimiento normal
+			if (difx == 10 && dify == 0)
+				if (npx > 00 && npx < 80)
+					if (npy >= 00 && npy < 70)
+						posicion.MoverVect(-10 * x, 0, 0);
+
+
+			//movimiento de inciio 2 casillas
+			else if (difx == 20 && dify == 0)
+				if (npx > 00 && npx < 80)
+					if (npy >= 00 && npy < 70)
+						posicion.MoverVect(-20 * x, 0, 0);
+
+
+
+			//movimiento para comer
+			else if (difx == 10 && dify == 10)
+				if (npx > 00 && npx < 80)
+					if (npy >= 00 && npy < 70)
+						posicion.MoverVect(-10 * x, 10 * y, 0);
+		}
+	}
+	
+	
+
+
+	//falta distinguir peon blanco de negro para que solo se puedan mover hacia alante
+	
+	
+	
+
 }

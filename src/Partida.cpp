@@ -120,10 +120,14 @@ void Partida::Tecla(unsigned char c)
 		{
 			for (int i = 0,j=8; i < 8; i++,j--)
 			{
+<<<<<<< HEAD
 				if (c == 48+i)
 				{
 					diosita->SetPosX(j * 10);
 					//peon[3].Mover(1);
+=======
+				peon[3].Mover(1,0);
+>>>>>>> 650e197840c094e43703eaa57d827973be7fdd36
 
 					introdatos = IntroDatos::EJE_Y;
 				}
@@ -149,10 +153,15 @@ void Partida::Tecla(unsigned char c)
 		{
 			for (int i = 0,j=8; i < 8; i++,j--)
 			{
+<<<<<<< HEAD
 				if (c == 48 + i)
 				{
 					diosita->SetPosX(j * 10);
 					//peon[3].Mover(1);
+=======
+				peon[1].Mover(0,1);
+				//rey[0].Mover(1,0);
+>>>>>>> 650e197840c094e43703eaa57d827973be7fdd36
 
 					movdatos = MovDatos::M_EJE_Y;
 				}
@@ -183,10 +192,14 @@ void Partida::Tecla(unsigned char c)
 		{
 			for (int i = 0, j=8; i < 8; i++,j--)
 			{
+<<<<<<< HEAD
 				if (c == 48 + i)
 				{
 					diosita->SetPosX(j * 10);
 					//peon[3].Mover(1);
+=======
+				peon[11].Mover(1,0);
+>>>>>>> 650e197840c094e43703eaa57d827973be7fdd36
 
 					introdatos = IntroDatos::EJE_Y;
 				}
@@ -211,10 +224,15 @@ void Partida::Tecla(unsigned char c)
 		{
 			for (int i = 0,j=8; i < 8; i++,j--)
 			{
+<<<<<<< HEAD
 				if (c == 48 + i)
 				{
 					diosita->SetPosX(j * 10);
 					//peon[3].Mover(1);
+=======
+				peon[13].Mover(1,0);
+				//cab
+>>>>>>> 650e197840c094e43703eaa57d827973be7fdd36
 
 					movdatos = MovDatos::M_EJE_Y;
 				}

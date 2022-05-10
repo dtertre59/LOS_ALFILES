@@ -13,5 +13,5 @@ public:
 	void Escala(unsigned char c);
 
 
-	void Mover(int x);
+	void Mover(int x,int y);
 };
