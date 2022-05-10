@@ -72,6 +72,9 @@
     <ClCompile Include="src\DIOSITA.cpp">
       <Filter>Archivos de origen\piezas</Filter>
     </ClCompile>
+    <ClCompile Include="src\Interaccion.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Vector3d.h">
@@ -121,6 +124,9 @@
     </ClInclude>
     <ClInclude Include="src\DIOSITA.h">
       <Filter>Archivos de encabezado\piezas</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Interaccion.h">
+      <Filter>Archivos de encabezado</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
