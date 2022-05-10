@@ -72,14 +72,15 @@ void Torre::Escala(unsigned char c)
 void Torre::Mover(int x,int y)
 {
 	int npx, npy,j;
-	npx = posicion.x + 10 * x;
-	npy = posicion.y + 10 * y;
+	
 
-	if (color.bn = 1)
+	if (color.bn == 1)
 	{
+		npx = posicion.x - 10 * x;
+		npy = posicion.y + 10 * y;
 		if (x == 0 && y != 0)
 		{
-			for (int i = 1; i < 8; i++)
+			for (int i = -7; i < 8; i++)
 			{
 				if (i == y)
 					if (npx > 00 && npx < 80)
@@ -92,7 +93,7 @@ void Torre::Mover(int x,int y)
 		}
 		if (x != 0 && y == 0)
 		{
-			for (int i = 1; i < 8; i++)
+			for (int i = -7; i < 8; i++)
 			{
 				if (i == x)
 					if (npx > 00 && npx < 80)
@@ -105,8 +106,11 @@ void Torre::Mover(int x,int y)
 		}
 	}
 
-	if (color.bn = 2)
+	if (color.bn == 2)
 	{
+		npx = posicion.x + 10 * x;
+		npy = posicion.y - 10 * y;
+
 		if (x == 0 && y != 0)
 		{
 			for (int i = 1; i < 8; i++)

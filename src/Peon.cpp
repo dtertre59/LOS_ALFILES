@@ -71,7 +71,7 @@ void Peon::Mover(int x,int y)
 	
 	if (x >= 0)
 	{
-		if (color.bn = 1)
+		if (color.bn ==1)
 		{
 			npx = posicion.x + difx; //nueva posicion
 			npy = posicion.y + dify; //nueva posicion
@@ -100,7 +100,7 @@ void Peon::Mover(int x,int y)
 						posicion.MoverVect(-10 * x, -10 * y, 0);
 		}
 
-		else if (color.bn = 2)
+		else if (color.bn == 2)
 		{
 			y = y*-1;
 			npx = posicion.x - difx; //nueva posicion

@@ -63,22 +63,49 @@ void Alfil::Escala(unsigned char c)
 
 //MOVER FIGURA CON TECLADO
 
-void Alfil::Mover(unsigned char c)
+void Alfil::Mover(int x,int y)
 {
-	if (c == 'i')
+	int npx, npy, j;
+
+	//pieza blanca
+	if (color.bn == 1)
 	{
-		posicion.x = posicion.x - 10.0;
+		npx = posicion.x - 10 * x;
+		npy = posicion.y + 10 * y;
+
+		if (x == y)
+		{
+			for (int i = -7, int j = -7; i < 8, j < 8; i++, j++)
+			{
+				if (x == y == i == j)
+					if (npx > 00 && npx < 80)
+						if (npy >= 00 && npy < 70)
+						{
+							x = x * (-1);
+							posicion.MoverVect(10 * x, 10 * y, 0);
+						}
+			}
+		}
 	}
-	if (c == 'k')
+
+	// pieza negra
+	if (color.bn == 2)
 	{
-		posicion.x = posicion.x + 10.0;
-	}
-	if (c == 'j')
-	{
-		posicion.y = posicion.y - 10.0;
-	}
-	if (c == 'l')
-	{
-		posicion.y = posicion.y + 10.0;
+		npx = posicion.x + 10 * x;
+		npy = posicion.y - 10 * y;
+
+		if (x == y)
+		{
+			for (int i = -7, int j = -7; i < 8, j < 8; i++, j++)
+			{
+				if (x == y == i == j)
+					if (npx > 00 && npx < 80)
+						if (npy >= 00 && npy < 70)
+						{
+							y = y * (-1);
+							posicion.MoverVect(10 * x, 10 * y, 0);
+						}
+			}
+		}
 	}
 }
