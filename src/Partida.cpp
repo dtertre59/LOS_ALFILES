@@ -10,6 +10,7 @@ Partida::Partida()
 	dama = new Dama[2];
 	rey = new Rey[2];
 
+	diosita = new DIOSITA;
 }
 
 void Partida::Inicializa()
@@ -60,6 +61,7 @@ void Partida::Inicializa()
 
 	turno = Turno::BLANCAS;
 	introdatos = IntroDatos::EJE_X;
+	movdatos = MovDatos::M_ESPERA;
 
 	vista.Set_vista(140, 35, 40, 35, 35, 5);	
 }
@@ -69,10 +71,13 @@ void Partida::Dibuja()
 	if (turno == Turno::BLANCAS)
 		vista.Camara(0);
 	else
-		vista.Camara(1);
+		vista.Camara(0);//vista.Camara(1);
 
 	//dibujar tablero
 	tablero->Dibuja();
+
+	//dibujar DIOSITA
+	diosita->Dibuja();
 
 	//dibujar  peones
 	for (int i = 0; i < 16; i++) //poner 16 en el for
@@ -113,32 +118,62 @@ void Partida::Tecla(unsigned char c)
 	{
 		if (introdatos == IntroDatos::EJE_X)
 		{
-			if (c == '3')
+			for (int i = 0,j=8; i < 8; i++,j--)
 			{
-				peon[3].Mover(1);
+				if (c == 48+i)
+				{
+					diosita->SetPosX(j * 10);
+					//peon[3].Mover(1);
 
-				introdatos = IntroDatos::EJE_Y;
+					introdatos = IntroDatos::EJE_Y;
+				}
 			}
-					
-
 		}
-
-		
+	
 		if (introdatos == IntroDatos::EJE_Y)
 		{
-			if (c == '4')
+			for (int i = 0; i < 8; i++)
 			{
-				//peon[1].Mover(1);
-				rey[0].Mover(1,1);
+				if (c == 97 + i)
+				{
+					diosita->SetPosY(i * 10);
+					//peon[3].Mover(1);
 
-				introdatos = IntroDatos::EJE_X;
-				turno = Turno::NEGRAS;
-			}
-			
-			
+					introdatos = IntroDatos::ESPERA;
+					movdatos = MovDatos::M_EJE_X;
+				}
+			}			
 		}
-		
 
+		if (movdatos == MovDatos::M_EJE_X)
+		{
+			for (int i = 0,j=8; i < 8; i++,j--)
+			{
+				if (c == 48 + i)
+				{
+					diosita->SetPosX(j * 10);
+					//peon[3].Mover(1);
+
+					movdatos = MovDatos::M_EJE_Y;
+				}
+			}
+		}
+
+		if (movdatos == MovDatos::M_EJE_Y)
+		{
+			for (int i = 0; i < 8; i++)
+			{
+				if (c == 97 + i)
+				{
+					diosita->SetPosY(i * 10);
+					//peon[3].Mover(1);
+
+					movdatos = MovDatos::M_ESPERA;
+					introdatos = IntroDatos::EJE_X;
+					turno = Turno::NEGRAS;
+				}
+			}
+		}		
 	}
 
 
@@ -146,26 +181,59 @@ void Partida::Tecla(unsigned char c)
 	{
 		if (introdatos == IntroDatos::EJE_X)
 		{
-			if (c == '5')
+			for (int i = 0, j=8; i < 8; i++,j--)
 			{
-				peon[11].Mover(-1);
+				if (c == 48 + i)
+				{
+					diosita->SetPosX(j * 10);
+					//peon[3].Mover(1);
 
-
-				introdatos = IntroDatos::EJE_Y;
+					introdatos = IntroDatos::EJE_Y;
+				}
 			}
 		}
-		
 
 		if (introdatos == IntroDatos::EJE_Y)
 		{
-			if (c == '6')
+			for (int i = 0; i < 8; i++)
 			{
-				peon[13].Mover(-1);
-				//cab
+				if (c == 97 + i)
+				{
+					diosita->SetPosY(i * 10);
+					
+					introdatos = IntroDatos::ESPERA;
+					movdatos = MovDatos::M_EJE_X;
+				}
+			}
+		}
 
+		if (movdatos == MovDatos::M_EJE_X)
+		{
+			for (int i = 0,j=8; i < 8; i++,j--)
+			{
+				if (c == 48 + i)
+				{
+					diosita->SetPosX(j * 10);
+					//peon[3].Mover(1);
 
-				introdatos = IntroDatos::EJE_X;
-				turno = Turno::BLANCAS;
+					movdatos = MovDatos::M_EJE_Y;
+				}
+			}
+		}
+
+		if (movdatos == MovDatos::M_EJE_Y)
+		{
+			for (int i = 0; i < 8; i++)
+			{
+				if (c == 97 + i)
+				{
+					diosita->SetPosY(i * 10);
+					//peon[3].Mover(1);
+
+					movdatos = MovDatos::M_ESPERA;
+					introdatos = IntroDatos::EJE_X;
+					turno = Turno::BLANCAS;
+				}
 			}
 		}
 		

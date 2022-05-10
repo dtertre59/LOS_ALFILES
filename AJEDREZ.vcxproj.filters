@@ -69,6 +69,9 @@
     <ClCompile Include="src\Rey.cpp">
       <Filter>Archivos de origen\piezas</Filter>
     </ClCompile>
+    <ClCompile Include="src\DIOSITA.cpp">
+      <Filter>Archivos de origen\piezas</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Vector3d.h">
@@ -114,6 +117,9 @@
       <Filter>Archivos de encabezado\piezas</Filter>
     </ClInclude>
     <ClInclude Include="src\Rey.h">
+      <Filter>Archivos de encabezado\piezas</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DIOSITA.h">
       <Filter>Archivos de encabezado\piezas</Filter>
     </ClInclude>
   </ItemGroup>

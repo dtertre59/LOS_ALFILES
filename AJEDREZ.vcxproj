@@ -25,6 +25,7 @@
     <ClCompile Include="src\Casilla.cpp" />
     <ClCompile Include="src\Color_RGB.cpp" />
     <ClCompile Include="src\Coordinador_ajedrez.cpp" />
+    <ClCompile Include="src\DIOSITA.cpp" />
     <ClCompile Include="src\Partida.cpp" />
     <ClCompile Include="src\Peon.cpp" />
     <ClCompile Include="src\Pieza.cpp" />
@@ -42,6 +43,7 @@
     <ClInclude Include="src\Casilla.h" />
     <ClInclude Include="src\Color_RGB.h" />
     <ClInclude Include="src\Coordinador_ajedrez.h" />
+    <ClInclude Include="src\DIOSITA.h" />
     <ClInclude Include="src\Partida.h" />
     <ClInclude Include="src\Peon.h" />
     <ClInclude Include="src\Pieza.h" />
