@@ -42,6 +42,7 @@
     <ClInclude Include="src\Alfil.h" />
     <ClInclude Include="src\Caballo.h" />
     <ClInclude Include="src\Casilla.h" />
+    <ClInclude Include="src\Clase_Prueba.h" />
     <ClInclude Include="src\Color_RGB.h" />
     <ClInclude Include="src\Coordinador_ajedrez.h" />
     <ClInclude Include="src\DIOSITA.h" />

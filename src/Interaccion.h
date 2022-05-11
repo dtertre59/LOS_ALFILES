@@ -10,6 +10,8 @@
 #include"Peon.h"
 #include"Rey.h"
 
+#include"Clase_Prueba.h"
+
 class Interaccion
 {
 	
@@ -22,4 +24,9 @@ public:
 	//void Inicializa();
 	//static void Seleccionar(DIOSITA& dio);
 	//static void Desplazar(DIOSITA& diosita, Peon& p);
+	
+	//static void Seleccionar(Clase_Prueba& prueba);
+	//static void Seleccionar(Pieza& prueba);
+
+
 };
