@@ -36,3 +36,19 @@ void Tablero::Dibuja()
 		}
 	}
 }
+void Tablero::InicializaT()
+{
+	tablerito= new float * [8];
+	for (int i = 0; i < 8; i++)
+		{
+			tablerito[i] = new float[8];
+		
+		}
+	for (int i = 0; i < 8; i++)
+	{
+		for (int j = 0; j < 8; j++)
+		{
+			tablerito[i][j]=0.0;
+		}
+	}
+}

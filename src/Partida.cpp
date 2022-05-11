@@ -122,67 +122,71 @@ void Partida::Tecla(unsigned char c)
 {
 	if (turno == Turno::BLANCAS)
 	{
-		if (introdatos == IntroDatos::EJE_X)
-		{
-			for (int i = 0, j = 7; i < 8; i++, j--)
+		
+			if (introdatos == IntroDatos::EJE_X)
 			{
-				if (c == 49 + i)
+				for (int i = 0, j = 7; i < 8; i++, j--)
 				{
-					diosita->SetPosX(j * 10);
-					introdatos = IntroDatos::EJE_Y;
+					if (c == 49 + i)
+					{
+						diosita->SetPosX(j * 10);
+						introdatos = IntroDatos::EJE_Y;
+					}
 				}
 			}
-		}
 
-		if (introdatos == IntroDatos::EJE_Y)
-		{
-			for (int i = 0; i < 8; i++)
+			if (introdatos == IntroDatos::EJE_Y)
 			{
-				if (c == 97 + i)
+				for (int i = 0; i < 8; i++)
 				{
-					diosita->SetPosY(i * 10);
-					//peon[3].Mover(1,-1);
+					if (c == 97 + i)
+					{
+						diosita->SetPosY(i * 10);
+						//peon[3].Mover(1,-1);
 
-					introdatos = IntroDatos::ESPERA;
-					movdatos = MovDatos::M_EJE_X;
+						introdatos = IntroDatos::ESPERA;
+						movdatos = MovDatos::M_EJE_X;
+					}
 				}
 			}
-		}
 
-		if (movdatos == MovDatos::M_EJE_X)
-		{
-			for (int i = 0, j = 7; i < 8; i++, j--)
+			if (movdatos == MovDatos::M_EJE_X)
 			{
-				if (c == 49 + i)
+				for (int i = 0, j = 7; i < 8; i++, j--)
 				{
-					diosita->SetPosX(j * 10);
-					//peon[5].Mover(1,0);
+					if (c == 49 + i)
+					{
+						diosita->SetPosX(j * 10);
+						//peon[5].Mover(1,0);
 
-					movdatos = MovDatos::M_EJE_Y;
+						movdatos = MovDatos::M_EJE_Y;
+					}
 				}
 			}
-		}
 
-		if (movdatos == MovDatos::M_EJE_Y)
-		{
-			for (int i = 0; i < 8; i++)
+			if (movdatos == MovDatos::M_EJE_Y)
 			{
-				if (c == 97 + i)
+				for (int i = 0; i < 8; i++)
 				{
-					diosita->SetPosY(i * 10);
-					//peon[5].Mover(0,0);
+					if (c == 97 + i)
+					{
+						diosita->SetPosY(i * 10);
+						//peon[5].Mover(0,0);
 
-					movdatos = MovDatos::M_ESPERA;
-					introdatos = IntroDatos::EJE_X;
-					turno = Turno::NEGRAS;
+						movdatos = MovDatos::M_ESPERA;
+						introdatos = IntroDatos::EJE_X;
+						turno = Turno::NEGRAS;
+					}
 				}
 			}
-		}
+		
 	}
 
 
 	if (turno == Turno::NEGRAS)
 	{
+	
+
 		if (introdatos == IntroDatos::EJE_X)
 		{
 			for (int i = 0, j = 7; i < 8; i++, j--)
@@ -199,6 +203,7 @@ void Partida::Tecla(unsigned char c)
 
 		if (introdatos == IntroDatos::EJE_Y)
 		{
+			
 			for (int i = 0; i < 8; i++)
 			{
 				if (c == 97 + i)
@@ -241,6 +246,7 @@ void Partida::Tecla(unsigned char c)
 				}
 			}
 		}
+		
 	}
 }
 
@@ -253,15 +259,17 @@ void Partida::Mueve()
 {
 	if (turno == Turno::BLANCAS && introdatos == IntroDatos::ESPERA)
 	{
-		if (flag == 'w')
-		{
-			Interaccion::Seleccionar(*diosita, p);
-			flag = 's';
-		}
-		if (flag == 's')
-		{
-			Interaccion::Desplazar(*diosita, p);
-			flag = 'w';
-		}
+
+			if (flag == 'w')
+			{
+				Interaccion::Seleccionar(*diosita, p);
+				flag = 's';
+			}
+			if (flag == 's')
+			{
+				Interaccion::Desplazar(*diosita, p);
+				flag = 'w';
+			}
+		
 	}
 }

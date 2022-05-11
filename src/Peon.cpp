@@ -25,6 +25,12 @@ void Peon::Inicializa(unsigned char c)
 	color.Set_color(c);
 	escala = 1;
 }
+void Peon::ColPieza()
+{
+	int i=posicion.RPosx();
+	int j = posicion.RPosy();
+	tablerito[i][j] = 1.0;
+}
 
 
 //PINTAR FIGURA
