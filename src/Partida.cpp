@@ -11,6 +11,8 @@ Partida::Partida()
 	rey = new Rey[2];
 
 	diosita = new DIOSITA;
+
+	flag = 'w';
 }
 
 void Partida::Inicializa()
@@ -65,7 +67,9 @@ void Partida::Inicializa()
 
 	vista.Set_vista(140, 35, 40, 35, 35, 5);	
 
-	//interaccion.Inicializa();
+	p.Inicializa('b');
+	
+	flag = 'w';
 }
 
 void Partida::Dibuja()
@@ -80,7 +84,7 @@ void Partida::Dibuja()
 
 	//dibujar DIOSITA
 	diosita->Dibuja();
-
+	p.Dibuja();
 	//dibujar  peones
 	for (int i = 0; i < 16; i++) //poner 16 en el for
 	{
@@ -247,6 +251,17 @@ void Partida::Tecla(unsigned char c)
 
 void Partida::Mueve()
 {
-	//interaccion.Desplazar(diosita, peon);
-
+	if (turno == Turno::BLANCAS && introdatos == IntroDatos::ESPERA)
+	{
+		if (flag == 'w')
+		{
+			Interaccion::Seleccionar(*diosita, p);
+			flag = 's';
+		}
+		if (flag == 's')
+		{
+			Interaccion::Desplazar(*diosita, p);
+			flag = 'w';
+		}
+	}
 }

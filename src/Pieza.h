@@ -23,7 +23,7 @@ public:
 	virtual void Dibuja()=0;
 	//friend void Gestor_dibuja(Pieza&);
 
-	//friend class Interaccion;
+	friend class Interaccion;
 };
 
 

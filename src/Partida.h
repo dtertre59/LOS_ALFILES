@@ -28,6 +28,8 @@ public:
 
 	DIOSITA* diosita;
 
+	Peon p;
+
 	enum class Turno { BLANCAS, NEGRAS, CAMBIO};
 	enum class IntroDatos { EJE_X, EJE_Y, ESPERA };
 	enum class MovDatos { M_EJE_X, M_EJE_Y, M_ESPERA };
@@ -38,7 +40,7 @@ public:
 
 	Vista vista;
 
-	//Interaccion interaccion;
+	unsigned char flag;
 
 
 	Partida();

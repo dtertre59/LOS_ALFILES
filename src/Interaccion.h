@@ -26,7 +26,7 @@ public:
 	//static void Desplazar(DIOSITA& diosita, Peon& p);
 	
 	//static void Seleccionar(Clase_Prueba& prueba);
-	//static void Seleccionar(Pieza& prueba);
-
+	static void Seleccionar(Pieza& diosita, Pieza& pieza);
+	static void Desplazar(Pieza& diosita, Pieza& pieza);
 
 };

@@ -1,4 +1,17 @@
 #include "Interaccion.h"
+
+void Interaccion::Seleccionar(Pieza& diosita, Pieza& pieza)
+{
+	pieza.posicion = diosita.posicion;
+
+}
+void Interaccion::Desplazar(Pieza& diosita, Pieza& pieza)
+{
+	pieza.posicion = diosita.posicion;
+
+}
+
+
 /*
 #include"Interaccion.h"
 
