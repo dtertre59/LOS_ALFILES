@@ -3,6 +3,8 @@
 #include"Vector3d.h"
 #include"Color_RGB.h"
 
+//#include"Interaccion.h"
+
 
 class Pieza 
 {
@@ -20,6 +22,8 @@ public:
 
 	virtual void Dibuja()=0;
 	//friend void Gestor_dibuja(Pieza&);
+
+	//friend class Interaccion;
 };
 
 

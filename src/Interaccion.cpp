@@ -1,3 +1,4 @@
+#include "Interaccion.h"
 /*
 #include"Interaccion.h"
 
@@ -30,6 +31,12 @@ void Interaccion::Desplazar(DIOSITA& diosita, Peon& p)
 		p.posicion = diosita.posicion;
 		}
 
+
+}
+*/
+/*
+void Interaccion::Seleccionar(DIOSITA& dio)
+{
 
 }
 */

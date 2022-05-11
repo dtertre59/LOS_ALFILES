@@ -16,5 +16,5 @@ public:
 
 
 	//clases amigas
-	friend class Interaccion;
+	//friend class Interaccion;
 };
