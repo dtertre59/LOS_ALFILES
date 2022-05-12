@@ -23,13 +23,28 @@ void Peon::Inicializa(unsigned char c)
 {
 	posicion.Set_vector(0,0,0);
 	color.Set_color(c);
+	ColPieza();
 	escala = 1;
 }
 void Peon::ColPieza()
 {
-	int i=posicion.RPosx();
-	int j = posicion.RPosy();
-	tablerito[i][j] = 1.0;
+	int i = 0;
+	int j = 0;
+	if (posicion.x||posicion.y == 0.0)
+	{
+		if (posicion.x == 0.0)
+		{
+			j = (posicion.y / 10);
+			i = (posicion.x);
+		}
+		else { i = (posicion.x / 10); j = (posicion.y);
+		}
+	}
+	else {
+		 i = (posicion.x / 10);
+		j = (posicion.y / 10);
+	}
+	tablerito[i][j] = 'P';
 }
 
 

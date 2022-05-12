@@ -9,7 +9,7 @@
 #include"Caballo.h"
 #include "Dama.h"
 #include "Rey.h"
-
+#include "Pieza.h"
 #include"DIOSITA.h"
 
 #include"Vista.h"

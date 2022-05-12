@@ -15,7 +15,7 @@ protected:
 	Color_RGB color;
 	float escala;
 public:
-
+	
 	//METODOS
 	Pieza() : posicion(), color(), escala(1) {};
 

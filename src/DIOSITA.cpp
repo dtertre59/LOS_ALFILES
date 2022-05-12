@@ -33,4 +33,29 @@ void DIOSITA::SetPosY(float y)
 {
 	posicion.y = y;
 }
+void DIOSITA:: ColPieza() {
+	int i = 0;
+	int j = 0;
+	if (posicion.x || posicion.y == 0.0)
+	{
+		if (posicion.x == 0.0)
+		{
+			j = (posicion.y / 10);
+			i = (posicion.x);
+		}
+		else {
+			i = (posicion.x / 10); j = (posicion.y);
+		}
+	}
+	else {
+		i = (posicion.x / 10);
+		j = (posicion.y / 10);
+	}
+	if (tablerito[i][j] !='0')
+	{
+		flagA = 1;
+	}
+	else(flagA = 0);
+	tablerito[i][j] = 'D';
+}
 
