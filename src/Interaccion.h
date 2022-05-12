@@ -3,7 +3,7 @@
 #include"Vector3d.h"
 
 #include"DIOSITA.h"
-
+#include"Tablero.h"
 
 //#include"Pieza.h"
 //PIEZAS
@@ -26,7 +26,7 @@ public:
 	//static void Desplazar(DIOSITA& diosita, Peon& p);
 	
 	//static void Seleccionar(Clase_Prueba& prueba);
-	static void Seleccionar(Pieza& diosita, Pieza& pieza);
+	static char Seleccionar(Pieza& diosita, Tablero& tab);
 	static void Desplazar(Pieza& diosita, Pieza& pieza);
 
 };

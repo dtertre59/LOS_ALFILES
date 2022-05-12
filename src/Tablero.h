@@ -5,12 +5,13 @@ class Tablero
 {
 protected:
 	Casilla** pcasilla;
-	float **tablerito;
+	char **tablerito;
 public:	
 
+	Tablero();
 	void Inicializa();
 	void Dibuja();
-	void InicializaT();
-	
+	//void InicializaT();
+	friend class Interaccion;
 };
 

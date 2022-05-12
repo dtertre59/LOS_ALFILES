@@ -12,7 +12,7 @@ Partida::Partida()
 
 	diosita = new DIOSITA;
 
-	flag = 'w';
+	pieza_seleccionada = 'w'; //w es wait espera a que sle ponfa el primer valor
 }
 
 void Partida::Inicializa()
@@ -69,7 +69,7 @@ void Partida::Inicializa()
 
 	p.Inicializa('b');
 	
-	flag = 'w';
+	pieza_seleccionada = 'w';
 }
 
 void Partida::Dibuja()
@@ -257,19 +257,26 @@ void Partida::Tecla(unsigned char c)
 
 void Partida::Mueve()
 {
-	if (turno == Turno::BLANCAS && introdatos == IntroDatos::ESPERA)
+	if (turno == Turno::BLANCAS && introdatos == IntroDatos::ESPERA && movdatos == MovDatos::M_EJE_X)
 	{
 
-			if (flag == 'w')
+			if (pieza_seleccionada == 'w'|| pieza_seleccionada == '0')
 			{
-				Interaccion::Seleccionar(*diosita, p);
-				flag = 's';
+				pieza_seleccionada = Interaccion::Seleccionar(*diosita, *tablero);
 			}
-			if (flag == 's')
-			{
+			else {
 				Interaccion::Desplazar(*diosita, p);
-				flag = 'w';
 			}
-		
+	}
+
+	if (turno == Turno::BLANCAS && movdatos == MovDatos::M_ESPERA)
+	{
+
+		if (pieza_seleccionada == 'p')
+		{
+			Interaccion::Desplazar(*diosita, p);
+			pieza_seleccionada = '0';
+		}
+
 	}
 }

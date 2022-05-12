@@ -40,7 +40,7 @@ public:
 
 	Vista vista;
 
-	unsigned char flag;
+	unsigned char pieza_seleccionada;
 
 
 	Partida();
