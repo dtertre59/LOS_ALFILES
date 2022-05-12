@@ -71,7 +71,7 @@ void Torre::Escala(unsigned char c)
 
 void Torre::Mover(int x,int y)
 {
-	int npx, npy,j;
+	int npx, npy;
 	
 
 	if (color.bn == 1)

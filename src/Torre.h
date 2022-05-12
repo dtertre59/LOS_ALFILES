@@ -2,8 +2,7 @@
 
 #include"Pieza.h"
 
-class Torre: public Pieza
-{
+class Torre: public Pieza{
 public:
 	Torre();
 	void Inicializa(unsigned char c, float x, float y, float z);

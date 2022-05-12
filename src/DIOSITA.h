@@ -1,11 +1,10 @@
 #pragma once
 
 #include"Pieza.h"
-
+#include "Tablero.h"
 #include"Interaccion.h"
 
-class DIOSITA :public Pieza, public Tablero
-{
+class DIOSITA :public Pieza, public Tablero{
 public:
 	int flagA;
 	DIOSITA();

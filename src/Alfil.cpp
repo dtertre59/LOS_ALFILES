@@ -86,6 +86,19 @@ void Alfil::Mover(int x,int y)
 						}
 			}
 		}
+		if (x == -y)
+		{
+			for (int i = -7, int j = 7; i < 8, j < 8; i++, j--)
+			{
+				if (x == y == i == j)
+					if (npx > 00 && npx < 80)
+						if (npy >= 00 && npy < 70)
+						{
+							x = x * (-1);
+							posicion.MoverVect(10 * x, 10 * y, 0);
+						}
+			}
+		}
 	}
 
 	// pieza negra
@@ -99,6 +112,19 @@ void Alfil::Mover(int x,int y)
 			for (int i = -7, int j = -7; i < 8, j < 8; i++, j++)
 			{
 				if (x == y == i == j)
+					if (npx > 00 && npx < 80)
+						if (npy >= 00 && npy < 70)
+						{
+							y = y * (-1);
+							posicion.MoverVect(10 * x, 10 * y, 0);
+						}
+			}
+		}
+		if (x == -y)
+		{
+			for (int i = -7, int j = 7; i < 8, j < 8; i++, j--)
+			{
+				if (x == -y == i == -j)
 					if (npx > 00 && npx < 80)
 						if (npy >= 00 && npy < 70)
 						{

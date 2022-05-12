@@ -1,8 +1,7 @@
 #pragma once
 #include"Pieza.h"
 
-class Dama : public Pieza
-{
+class Dama : public Pieza{
 public:
 	
 	Dama();
