@@ -13,8 +13,6 @@ public:
 	void ColPieza();
 	void SetPosX(float x);
 	void SetPosY(float y);
-	float devPosx() { return posicion.x; }
-	float devPosy() { return posicion.y; }
 	//clases amigas
 	//friend class Interaccion;
 };

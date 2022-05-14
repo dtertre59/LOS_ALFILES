@@ -65,11 +65,13 @@ void Partida::Inicializa()
 	introdatos = IntroDatos::EJE_X;
 	movdatos = MovDatos::M_ESPERA;
 
-	vista.Set_vista(140, 35, 40, 35, 35, 5);	
+	vista.Set_vista(140, 35, 40, 35, 35, 5);
 
-	p.Inicializa('b');
+	//diosita->Inicializa();
+
 	
 	pieza_seleccionada = 'w';
+	aux.Set_vector(0, 0, 0);
 }
 
 void Partida::Dibuja()
@@ -84,7 +86,7 @@ void Partida::Dibuja()
 
 	//dibujar DIOSITA
 	diosita->Dibuja();
-	p.Dibuja();
+
 	//dibujar  peones
 	for (int i = 0; i < 16; i++) //poner 16 en el for
 	{
@@ -122,7 +124,8 @@ void Partida::Tecla(unsigned char c)
 {
 	if (turno == Turno::BLANCAS)
 	{
-		do {
+		
+	//	do {
 			if (introdatos == IntroDatos::EJE_X)
 			{
 				for (int i = 0, j = 7; i < 8; i++, j--)
@@ -130,7 +133,7 @@ void Partida::Tecla(unsigned char c)
 					if (c == 49 + i)
 					{
 						diosita->SetPosX(j * 10);
-						diosita->ColPieza();
+						
 						introdatos = IntroDatos::EJE_Y;
 					}
 				}
@@ -143,14 +146,13 @@ void Partida::Tecla(unsigned char c)
 					if (c == 97 + i)
 					{
 						diosita->SetPosY(i * 10);
-						//peon[3].Mover(1,-1);
-						diosita->ColPieza();
+						
 						introdatos = IntroDatos::ESPERA;
 						movdatos = MovDatos::M_EJE_X;
 					}
 				}
 			}
-		} while (diosita->flagA == 0);
+		//} while (diosita->flagA == 0);
 
 			if (movdatos == MovDatos::M_EJE_X)
 			{
@@ -160,7 +162,7 @@ void Partida::Tecla(unsigned char c)
 					{
 						diosita->SetPosX(j * 10);
 						diosita->ColPieza();
-						peon[5].Mover(1,0);
+						
 						movdatos = MovDatos::M_ESPERA;
 						movdatos = MovDatos::M_EJE_Y;
 					}
@@ -175,21 +177,36 @@ void Partida::Tecla(unsigned char c)
 					{
 						diosita->SetPosY(i * 10);
 						diosita->ColPieza();
-						peon[5].Mover(0,0);
+					
 
 						movdatos = MovDatos::M_ESPERA;
 						introdatos = IntroDatos::EJE_X;
-						turno = Turno::NEGRAS;
+						turno = Turno::CAMBIO;
 					}
 				}
 			}
 		
 	}
+	if (turno == Turno::CAMBIO)
+	{
+		if (c == 32)
+		{
+			turno = Turno::NEGRAS;
+			diosita->Set_color('r');
+		}
+	}
+	if (turno == Turno::CAMBIO2)
+	{
+		if (c == 32)
+		{
+			turno = Turno::BLANCAS;
+			diosita->Set_color('v');
+		}
+	}
 
 
 	if (turno == Turno::NEGRAS)
 	{
-	
 
 		if (introdatos == IntroDatos::EJE_X)
 		{
@@ -198,7 +215,7 @@ void Partida::Tecla(unsigned char c)
 				if (c == 49 + i)
 				{
 					diosita->SetPosX(j * 10);
-					//peon[13].Mover(2,0);
+					
 
 					introdatos = IntroDatos::EJE_Y;
 				}
@@ -213,7 +230,7 @@ void Partida::Tecla(unsigned char c)
 				if (c == 97 + i)
 				{
 					diosita->SetPosY(i * 10);
-					//peon[11].Mover(1, 0);
+					
 
 					introdatos = IntroDatos::ESPERA;
 					movdatos = MovDatos::M_EJE_X;
@@ -228,7 +245,7 @@ void Partida::Tecla(unsigned char c)
 				if (c == 49 + i)
 				{
 					diosita->SetPosX(j * 10);
-					//peon[3].Mover(1);
+					
 
 					movdatos = MovDatos::M_EJE_Y;
 				}
@@ -242,11 +259,11 @@ void Partida::Tecla(unsigned char c)
 				if (c == 97 + i)
 				{
 					diosita->SetPosY(i * 10);
-					//peon[3].Mover(1);
+					
 
 					movdatos = MovDatos::M_ESPERA;
 					introdatos = IntroDatos::EJE_X;
-					turno = Turno::BLANCAS;
+					turno = Turno::CAMBIO2;
 				}
 			}
 		}
@@ -263,7 +280,9 @@ void Partida::Mueve()
 {
 	if (turno == Turno::BLANCAS && introdatos == IntroDatos::ESPERA && movdatos == MovDatos::M_EJE_X)
 	{
+		aux = Interaccion::Seleccionar(*diosita);
 
+		/*
 			if (pieza_seleccionada == 'w'|| pieza_seleccionada == '0')
 			{
 				pieza_seleccionada = Interaccion::Seleccionar(*diosita, *tablero);
@@ -271,16 +290,20 @@ void Partida::Mueve()
 			else {
 				Interaccion::Desplazar(*diosita, p);
 			}
+			*/
 	}
 
-	if (turno == Turno::BLANCAS && movdatos == MovDatos::M_ESPERA)
+	if (turno==Turno::CAMBIO)
 	{
+		if (aux.x==rey[0].devPosx() && aux.y == rey[0].devPosy())
+			Interaccion::Desplazar(*diosita, rey[0]);
 
-		if (pieza_seleccionada == 'p')
-		{
-			Interaccion::Desplazar(*diosita, p);
-			pieza_seleccionada = '0';
-		}
+		if (aux.x == peon[3].devPosx() && aux.y == peon[3].devPosy())
+			Interaccion::Desplazar(*diosita, peon[3]);
 
+
+
+		
+		//rey[0].Inicializa('b', 70, 40, 0);
 	}
 }

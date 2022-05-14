@@ -10,7 +10,7 @@ DIOSITA::DIOSITA()
 
 void DIOSITA::Inicializa()
 {
-
+	color.Set_color('r');
 }
 
 void DIOSITA::Dibuja()

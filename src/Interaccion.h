@@ -26,7 +26,11 @@ public:
 	//static void Desplazar(DIOSITA& diosita, Peon& p);
 	
 	//static void Seleccionar(Clase_Prueba& prueba);
-	static char Seleccionar(Pieza& diosita, Tablero& tab);
+
+
+
+	//static char Seleccionar(Pieza& diosita, Tablero& tab);
+	static Vector3d Seleccionar(Pieza& diosita);
 	static void Desplazar(Pieza& diosita, Pieza& pieza);
 
 };
