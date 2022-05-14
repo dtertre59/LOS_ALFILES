@@ -278,6 +278,8 @@ void Partida::Tecla(unsigned char c)
 
 void Partida::Mueve()
 {
+	//PARA CONOCER LA POSICION DE LA PIEZA QUE QUEREMOS MOVER
+
 	if (turno == Turno::BLANCAS && introdatos == IntroDatos::ESPERA && movdatos == MovDatos::M_EJE_X)
 	{
 		aux = Interaccion::Seleccionar(*diosita);
@@ -293,17 +295,79 @@ void Partida::Mueve()
 			*/
 	}
 
+	if (turno == Turno::NEGRAS && introdatos == IntroDatos::ESPERA && movdatos == MovDatos::M_EJE_X)
+	{
+		aux = Interaccion::Seleccionar(*diosita);
+	}
+
+
+	//PARA MOVER LA PIEZA QUE ESTABA EN LA POSICION DE ANTES DONDE HAYAMOS MOVIDO A DIOSITA
+
 	if (turno==Turno::CAMBIO)
 	{
-		if (aux.x==rey[0].devPosx() && aux.y == rey[0].devPosy())
+		//mover BLANCAS
+
+		//mover rey
+		if (aux.x == rey[0].devPosx() && aux.y == rey[0].devPosy())
 			Interaccion::Desplazar(*diosita, rey[0]);
+		//mover dama
+		if (aux.x == dama[0].devPosx() && aux.y == dama[0].devPosy())
+			Interaccion::Desplazar(*diosita, dama[0]);
 
-		if (aux.x == peon[3].devPosx() && aux.y == peon[3].devPosy())
-			Interaccion::Desplazar(*diosita, peon[3]);
+		for (int i = 0; i < 8; i++)
+		{
+			//mover peon
+			if (aux.x == peon[i].devPosx() && aux.y == peon[i].devPosy())
+				Interaccion::Desplazar(*diosita, peon[i]);
 
+			//mover caballo,torre,alfil
+			if (i < 4)
+			{
+				if (aux.x == torre[i].devPosx() && aux.y == torre[i].devPosy())
+					Interaccion::Desplazar(*diosita, torre[i]);
 
+			//	if (aux.x == caballo[i].devPosx() && aux.y == caballo[i].devPosy())
+			//		Interaccion::Desplazar(*diosita, caballo[i]);
 
-		
-		//rey[0].Inicializa('b', 70, 40, 0);
+				if (aux.x == alfil[i].devPosx() && aux.y == alfil[i].devPosy())
+					Interaccion::Desplazar(*diosita, alfil[i]);
+			}
+		}
+
 	}
+	if (turno == Turno::CAMBIO2)
+	{
+		//mover negras
+		
+		//mover rey
+		if (aux.x == rey[1].devPosx() && aux.y == rey[1].devPosy())
+			Interaccion::Desplazar(*diosita, rey[1]);
+		//mover dama
+		if (aux.x == dama[1].devPosx() && aux.y == dama[1].devPosy())
+			Interaccion::Desplazar(*diosita, dama[1]);
+
+		for (int i = 0; i < 8; i++)
+		{
+			//mover peon
+			int j = i + 7;
+			if (aux.x == peon[j].devPosx() && aux.y == peon[j].devPosy())
+				Interaccion::Desplazar(*diosita, peon[j]);
+
+			//mover caballo,torre,alfil
+			if (i >= 4)
+			{
+				if (aux.x == torre[i].devPosx() && aux.y == torre[i].devPosy())
+					Interaccion::Desplazar(*diosita, torre[i]);
+
+				//	if (aux.x == caballo[i].devPosx() && aux.y == caballo[i].devPosy())
+				//		Interaccion::Desplazar(*diosita, caballo[i]);
+
+				if (aux.x == alfil[i].devPosx() && aux.y == alfil[i].devPosy())
+					Interaccion::Desplazar(*diosita, alfil[i]);
+			}
+		}
+	}
+
+
+
 }

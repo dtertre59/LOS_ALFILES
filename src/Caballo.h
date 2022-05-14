@@ -1,13 +1,11 @@
 #pragma once
-#include "Color_RGB.h"
-#include "Vector3d.h"
 
-class Caballo
+#include"Pieza.h"
+
+
+class Caballo:public Pieza
 {
 public:
-	Vector3d posicion;
-	Color_RGB color;
-	float escala;
 	int i0, j0;
 	bool movimiento = false;
 

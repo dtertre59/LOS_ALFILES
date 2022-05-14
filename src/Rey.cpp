@@ -33,6 +33,11 @@ void Rey::Dibuja()
 
 	//formas geométricas
 
+		//color de la figura
+	glColor3ub(color.rojo, color.verde, color.azul);
+
+	//formas geométricas
+
 	glTranslatef(posicion.x, posicion.y, posicion.z + (escala * 1));
 	glutSolidTorus((escala * 0.5), (escala * 4), 40, 40);   //  innerRadius, outerRadius, sides, rings
 	glTranslatef(-posicion.x, -posicion.y, -(posicion.z + (escala * 1)));
@@ -47,7 +52,8 @@ void Rey::Dibuja()
 	glTranslatef(-posicion.x, -posicion.y, -(posicion.z + (escala * 5)));
 
 	glTranslatef(posicion.x, posicion.y, posicion.z + (escala * 5));
-	glutSolidCone((escala * 2), (escala * 10), 40, 40); //   radio base, height, slices, stacks
+	//glutSolidCone((escala * 2), (escala * 10), 40, 40); //   radio base, height, slices, stacks
+	gluCylinder(gluNewQuadric(), escala * 2, escala * 1, escala * 5, 40, 40);
 	glTranslatef(-posicion.x, -posicion.y, -(posicion.z + (escala * 5)));
 
 	glTranslatef(posicion.x, posicion.y, posicion.z + (escala * 10));
@@ -60,31 +66,32 @@ void Rey::Dibuja()
 
 	glTranslatef(posicion.x, posicion.y, posicion.z + (escala * 12.5));
 	glutSolidCone((escala * -2), (escala * -4.5), 40, 40); //   radio base, height, slices, stacks
+	//gluCylinder(gluNewQuadric(), escala * 1, escala * 2, escala * 2.4, 40, 40);
+	glTranslatef(-posicion.x, -posicion.y, -(posicion.z + (escala * 12.5)));
+	//Cruz
+	glTranslatef(posicion.x, posicion.y, posicion.z + (escala * 12.5));
+	glutSolidCube(escala * 0.4);
 	glTranslatef(-posicion.x, -posicion.y, -(posicion.z + (escala * 12.5)));
 
 	glTranslatef(posicion.x, posicion.y, posicion.z + (escala * 12.9));
-	glutSolidCube(escala * 0.7);
+	glutSolidCube(escala * 0.4);
 	glTranslatef(-posicion.x, -posicion.y, -(posicion.z + (escala * 12.9)));
 
-	glTranslatef(posicion.x, posicion.y, posicion.z + (escala * 13.6));
-	glutSolidCube(escala * 0.7);
-	glTranslatef(-posicion.x, -posicion.y, -(posicion.z + (escala * 13.6)));
+	glTranslatef(posicion.x, posicion.y, posicion.z + (escala * 13.3));
+	glutSolidCube(escala * 0.4);
+	glTranslatef(-posicion.x, -posicion.y, -(posicion.z + (escala * 13.3)));
 
-	glTranslatef(posicion.x, posicion.y, posicion.z + (escala * 14.3));
-	glutSolidCube(escala * 0.7);
-	glTranslatef(-posicion.x, -posicion.y, -(posicion.z + (escala * 14.3)));
+	glTranslatef(posicion.x + (escala * 0.4), posicion.y, posicion.z + (escala * 13.3));
+	glutSolidCube(escala * 0.4);
+	glTranslatef(-(posicion.x + (escala * 0.4)), -posicion.y, -(posicion.z + (escala * 13.3)));
 
-	glTranslatef(posicion.x , posicion.y + (escala * 0.7), posicion.z + (escala * 14.3));
-	glutSolidCube(escala * 0.7);
-	glTranslatef(-(posicion.x ), -(posicion.y + (escala * 0.7)), -(posicion.z + (escala * 14.3)));
+	glTranslatef(posicion.x + (escala * -0.4), posicion.y, posicion.z + (escala * 13.3));
+	glutSolidCube(escala * 0.4);
+	glTranslatef(-(posicion.x + (escala * -0.4)), -posicion.y, -(posicion.z + (escala * 13.3)));
 
-	glTranslatef(posicion.x , posicion.y+(escala * -0.7), posicion.z + (escala * 14.3));
-	glutSolidCube(escala * 0.7);
-	glTranslatef(-posicion.x , -(posicion.y + (escala * -0.7)), -(posicion.z + (escala * 14.3)));
-
-	glTranslatef(posicion.x, posicion.y, posicion.z + (escala * 15));
-	glutSolidCube(escala * 0.7);
-	glTranslatef(-posicion.x, -posicion.y, -(posicion.z + (escala * 15)));
+	glTranslatef(posicion.x, posicion.y, posicion.z + (escala * 13.7));
+	glutSolidCube(escala * 0.4);
+	glTranslatef(-posicion.x, -posicion.y, -(posicion.z + (escala * 13.7)));
 }
 
 void Rey::Escala(unsigned char c)

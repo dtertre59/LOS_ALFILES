@@ -46,7 +46,8 @@ void Dama::Dibuja()
 	glTranslatef(-posicion.x, -posicion.y, -(posicion.z + (escala * 5)));
 
 	glTranslatef(posicion.x, posicion.y, posicion.z + (escala * 5));
-	glutSolidCone((escala * 2), (escala * 10), 40, 40); //   radio base, height, slices, stacks
+	//glutSolidCone((escala * 2), (escala * 10), 40, 40); //   radio base, height, slices, stacks
+	gluCylinder(gluNewQuadric(), escala * 2, escala * 1, escala * 5, 40, 40);
 	glTranslatef(-posicion.x, -posicion.y, -(posicion.z + (escala * 5)));
 
 	glTranslatef(posicion.x, posicion.y, posicion.z + (escala * 10));
@@ -57,13 +58,21 @@ void Dama::Dibuja()
 	glutSolidTorus((escala * 0.2), (escala * 1), 40, 40);   //  innerRadius, outerRadius, sides, rings
 	glTranslatef(-posicion.x, -posicion.y, -(posicion.z + (escala * 10.5)));
 
-	glTranslatef(posicion.x, posicion.y, posicion.z + (escala * 12.5));
-	glutSolidCone((escala * -2), (escala * -4.5), 40, 40); //   radio base, height, slices, stacks
-	glTranslatef(-posicion.x, -posicion.y, -(posicion.z + (escala * 12.5)));
+	glTranslatef(posicion.x, posicion.y, posicion.z + (escala * 10.5));
+	gluCylinder(gluNewQuadric(), escala * 1, escala * 1.75, escala * 2.25, 40, 40);
+	glTranslatef(-posicion.x, -posicion.y, -(posicion.z + (escala * 10.5)));
 
-	glTranslatef(posicion.x, posicion.y, posicion.z + (escala * 12.5));
-	glutSolidSphere((escala * 1), 40, 40); //   radio, slices, stacks
-	glTranslatef(-posicion.x, -posicion.y, -(posicion.z + (escala * 12.5)));
+	glTranslatef(posicion.x, posicion.y, posicion.z + (escala * 12));
+	glutSolidCone((escala * -1.9), (escala * -4.5), 40, 40); //   radio base, height, slices, stacks
+	glTranslatef(-posicion.x, -posicion.y, -(posicion.z + (escala * 12)));
+
+	glTranslatef(posicion.x, posicion.y, posicion.z + (escala * 12));
+	glutSolidSphere((escala * 1.5), 40, 40); //   radio, slices, stacks
+	glTranslatef(-posicion.x, -posicion.y, -(posicion.z + (escala * 12)));
+
+	glTranslatef(posicion.x, posicion.y, posicion.z + (escala * 13.5));
+	glutSolidSphere((escala * 0.5), 40, 40); //   radio, slices, stacks
+	glTranslatef(-posicion.x, -posicion.y, -(posicion.z + (escala * 13.5)));
 
 }
 
