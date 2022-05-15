@@ -41,6 +41,8 @@ public:
 
 	unsigned char pieza_seleccionada;
 
+
+	int control_selccion_pieza; //para saber si ya se ha seleccionadado la ficha
 	Vector3d posicion_pieza_seleccionada;
 
 

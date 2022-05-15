@@ -23,10 +23,11 @@ void Color_RGB::Set_color(unsigned char  c)
 		azul = 8;
 		bn = 2;
 	}
-	else if (c == 'r')
+	//colores BASICOS
+	else if (c == 'a')
 	{
 		rojo = 255;
-		verde = 0;
+		verde = 255;
 		azul = 0;
 	}
 	else if(c=='v')
@@ -35,7 +36,13 @@ void Color_RGB::Set_color(unsigned char  c)
 		verde = 255;
 		azul = 0;
 	}
-	else if (c == 'a')
+	else if (c == 'c')
+	{
+		rojo = 0;
+		verde = 255;
+		azul = 255;
+	}
+	else if (c == 'A')
 	{
 		rojo = 0;
 		verde = 0;
@@ -46,6 +53,12 @@ void Color_RGB::Set_color(unsigned char  c)
 		rojo = 200;
 		verde = 0;
 		azul = 200;
+	}
+	else if (c == 'r')
+	{
+		rojo = 255;
+		verde = 0;
+		azul = 0;
 	}
 
 	else
