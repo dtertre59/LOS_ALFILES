@@ -69,48 +69,53 @@ void Torre::Escala(unsigned char c)
 
 //MOVER FIGURA CON TECLADO
 
-void Torre::Mover(int x,int y)
+bool Torre::Movimiento(const Vector3d& muevo_a)
 {
 	int npx, npy;
-	
+	int flag = 0;
 
-	if (color.bn == 1)
-	{
-		npx = posicion.x - 10 * x;
-		npy = posicion.y + 10 * y;
+	//if (color.bn == 1)
+	
+		npx = muevo_a.x;
+		npy = muevo_a.y;
+		int x = muevo_a.x - posicion.x;
+		int y = muevo_a.y - posicion.y;
 		if (x == 0 && y != 0)
 		{
-			for (int i = -7; i < 8; i++)
-			{
-				if (i == y)
+			//for (int i = -7; i < 8; i++)
+			//{
+				//if (i == y)
 					if (npx > 00 && npx < 80)
 						if (npy >= 00 && npy < 70)
 						{
-							posicion.MoverVect(0, 10 * y, 0);
+							return 1;
 						}
 							
-			}
+			//}
 		}
+	
 		if (x != 0 && y == 0)
 		{
-			for (int i = -7; i < 8; i++)
-			{
-				if (i == x)
-					if (npx > 00 && npx < 80)
-						if (npy >= 00 && npy < 70)
-						{
-							x = x * (-1);
-							posicion.MoverVect(10 * x, 0, 0);
-						}						
-			}
+			//for (int i = -7; i < 8; i++)
+			//{
+			//	if (i == x)
+			if (npx > 00 && npx < 80)
+				if (npy >= 00 && npy < 70)
+				{
+					return 1;
+				}
+			//}
 		}
-	}
+		else
+			return 0;
+	
 
-	if (color.bn == 2)
+/*	if (color.bn == 2)
 	{
-		npx = posicion.x + 10 * x;
-		npy = posicion.y - 10 * y;
-
+		npx = muevo_a.x;
+		npy = muevo_a.y;
+		int x = muevo_a.x - posicion.x;
+		int y = muevo_a.y - posicion.y;
 		if (x == 0 && y != 0)
 		{
 			for (int i = 1; i < 8; i++)
@@ -119,8 +124,7 @@ void Torre::Mover(int x,int y)
 					if (npx > 00 && npx < 80)
 						if (npy >= 00 && npy < 70)
 						{
-							y = y * (-1);
-							posicion.MoverVect(0, 10 * y, 0);
+							flag = 1;
 						}
 
 			}
@@ -133,11 +137,12 @@ void Torre::Mover(int x,int y)
 					if (npx > 00 && npx < 80)
 						if (npy >= 00 && npy < 70)
 						{
-							posicion.MoverVect(10 * x, 0, 0);
+							flag = 1;
 						}
 			}
 		}
-	}
+	}*/
+	
 	
 	
 }

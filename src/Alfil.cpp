@@ -63,76 +63,58 @@ void Alfil::Escala(unsigned char c)
 
 //MOVER FIGURA CON TECLADO
 /*
-void Alfil::Mover(int x,int y)
+bool Alfil::Movimiento(const Vector3d& muevo_a)
 {
-	int npx, npy, j;
+	int npx, npy;
+	int flag = 0;
 
-	//pieza blanca
-	if (color.bn == 1)
+	npx = muevo_a.x;
+	npy = muevo_a.y;
+	int x = muevo_a.x - posicion.x;
+	int y = muevo_a.y - posicion.y;
+	
+	if (x == y)
 	{
-		npx = posicion.x - 10 * x;
-		npy = posicion.y + 10 * y;
-
-		if (x == y)
+		if (npx > 00 && npx < 80)
 		{
-			for (int i = -7, int j = -7; i < 8, j < 8; i++, j++)
+			if (npy >= 00 && npy < 70)
 			{
-				if (x == y == i == j)
-					if (npx > 00 && npx < 80)
-						if (npy >= 00 && npy < 70)
-						{
-							x = x * (-1);
-							posicion.MoverVect(10 * x, 10 * y, 0);
-						}
+				flag = 1;
 			}
-		}
-		if (x == -y)
-		{
-			for (int i = -7, int j = 7; i < 8, j < 8; i++, j--)
-			{
-				if (x == y == i == j)
-					if (npx > 00 && npx < 80)
-						if (npy >= 00 && npy < 70)
-						{
-							x = x * (-1);
-							posicion.MoverVect(10 * x, 10 * y, 0);
-						}
-			}
+			
 		}
 	}
-
-	// pieza negra
-	if (color.bn == 2)
+	if (x == -y)
 	{
-		npx = posicion.x + 10 * x;
-		npy = posicion.y - 10 * y;
-
-		if (x == y)
-		{
-			for (int i = -7, int j = -7; i < 8, j < 8; i++, j++)
+		if (npx > 00 && npx < 80)
 			{
-				if (x == y == i == j)
-					if (npx > 00 && npx < 80)
-						if (npy >= 00 && npy < 70)
-						{
-							y = y * (-1);
-							posicion.MoverVect(10 * x, 10 * y, 0);
-						}
-			}
-		}
-		if (x == -y)
-		{
-			for (int i = -7, int j = 7; i < 8, j < 8; i++, j--)
+			if (npy >= 00 && npy < 70)
 			{
-				if (x == -y == i == -j)
-					if (npx > 00 && npx < 80)
-						if (npy >= 00 && npy < 70)
-						{
-							y = y * (-1);
-							posicion.MoverVect(10 * x, 10 * y, 0);
-						}
+				flag = 1;
 			}
-		}
+			
+			}
 	}
+		
+	
+	if (flag == 1)
+	{
+		return 1;
+	}
+	else
+	{
+		return 0;
+	}
+
+	
+}*/
+
+bool Alfil::Movimiento(const Vector3d& muevo_a)
+{
+	if ((muevo_a.x-posicion.x)==(muevo_a.y-posicion.y)|| (muevo_a.x - posicion.x) == -(muevo_a.y - posicion.y))
+	{
+		return 1;
+	}
+	else
+		return 0;
 }
-*/

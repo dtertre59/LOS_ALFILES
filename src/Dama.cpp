@@ -220,3 +220,79 @@ void Dama::Mover(int x,int y)
 	}
 }
 */
+bool Dama::Movimiento(const Vector3d& muevo_a)
+{
+	int flag = 0;
+	int npx = muevo_a.x;
+	int npy = muevo_a.y;
+	int x = muevo_a.x - posicion.x;
+	int y = muevo_a.y - posicion.y;
+
+	if (x == y)
+	{
+		for (int i = -7; i < 8; i++)
+		{
+			for (int j = -7; j < 8; j++)
+			{
+				if (i == j)
+					if (npx > 00 && npx < 80)
+					{
+						if (npy >= 00 && npy < 70)
+						{
+							flag = 1;
+						}
+					}
+			}
+		}
+	}
+	if (x == -y)
+	{
+		for (int i = -7; i < 8; i++)
+		{
+			for (int j = -7; j < 8; j++)
+			{
+				if (i == -j)
+					if (npx > 00 && npx < 80)
+					{
+						if (npy >= 00 && npy < 70)
+						{
+							flag = 1;
+						}
+					}
+			}
+		}
+	}
+	if (x == 0 && y != 0)
+	{
+		//for (int i = -7; i < 8; i++)
+		//{
+			//if (i == y)
+		if (npx > 00 && npx < 80)
+			if (npy >= 00 && npy < 70)
+			{
+				flag = 1;
+			}
+
+		//}
+	}
+	if (x != 0 && y == 0)
+	{
+		//for (int i = -7; i < 8; i++)
+		//{
+		//	if (i == x)
+		if (npx > 00 && npx < 80)
+			if (npy >= 00 && npy < 70)
+			{
+				flag = 1;
+			}
+		//}
+	}
+	if (flag == 1)
+	{
+		return 1;
+	}
+	else
+		return 0;
+
+
+}

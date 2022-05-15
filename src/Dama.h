@@ -10,4 +10,5 @@ public:
 	void Dibuja();
 	void Escala(unsigned char c);
 	void Mover(int x,int y);
+	bool Movimiento(const Vector3d& muevo_a);
 };

@@ -103,7 +103,7 @@ void Rey::Escala(unsigned char c)
 }
 
 
-//MOVIMIENTO DTERTRE59
+//MOVIMIENTO DTERTRE59 ESTA MAL:FALTAN 4 OPCIONES APRENDE A JUGAR AL AJEDREZ SALUDOS
 
 bool Rey::Movimiento(const Vector3d& muevo_a)
 {
