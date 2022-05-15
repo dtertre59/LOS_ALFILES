@@ -102,6 +102,34 @@ void Rey::Escala(unsigned char c)
 		escala = escala / 1.2;
 }
 
+
+//MOVIMIENTO DTERTRE59
+
+bool Rey::Movimiento(const Vector3d& muevo_a)
+{
+	if (muevo_a.x == posicion.x - 10 && muevo_a.y == posicion.y ||
+		muevo_a.x == posicion.x + 10 && muevo_a.y == posicion.y ||
+		muevo_a.x == posicion.x && muevo_a.y == posicion.y -10 ||
+		muevo_a.x == posicion.x && muevo_a.y == posicion.y +10)
+	{
+		return 1;
+	}
+	else
+		return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 //MOVER FIGURA CON TECLADO
 
 bool Rey::pos_Movimiento(int i2, int j2)

@@ -172,7 +172,6 @@ void Partida::Tecla(unsigned char c)
 							introdatos = IntroDatos::ESPERA;
 							movdatos = MovDatos::M_EJE_X;
 						}
-						/*
 						else if (diosita->Get_pos() == peon[5].Get_pos())
 						{
 							peon[5].Set_color('v');
@@ -180,7 +179,7 @@ void Partida::Tecla(unsigned char c)
 							introdatos = IntroDatos::ESPERA;
 							movdatos = MovDatos::M_EJE_X;
 						}
-						*/
+						
 						else if (diosita->Get_pos() == rey[0].Get_pos())
 						{
 							rey[0].Set_color('v');
@@ -188,6 +187,7 @@ void Partida::Tecla(unsigned char c)
 							introdatos = IntroDatos::ESPERA;
 							movdatos = MovDatos::M_EJE_X;
 						}
+						
 
 						else //si no has seleccionado ninguna tienes que repietir. meter eje x y luego y
 						{
@@ -239,8 +239,7 @@ void Partida::Tecla(unsigned char c)
 							movdatos = MovDatos::M_ESPERA;
 							turno = Turno::CAMBIO;
 						}
-						/*
-						if (Interaccion::Comprobar_movimiento(*diosita, peon[5]))//si se cumple la condicion 
+						else if (Interaccion::Comprobar_movimiento(*diosita, peon[5]))//si se cumple la condicion 
 						{
 							diosita->Set_color('p');
 							peon[5].Set_color('b');
@@ -248,7 +247,17 @@ void Partida::Tecla(unsigned char c)
 							movdatos = MovDatos::M_ESPERA;
 							turno = Turno::CAMBIO;
 						}
-						*/
+						
+						else if (Interaccion::Comprobar_movimiento(*diosita, rey[0]))//si se cumple la condicion 
+						{
+							diosita->Set_color('p');
+							rey[0].Set_color('b');
+							introdatos = IntroDatos::EJE_X;
+							movdatos = MovDatos::M_ESPERA;
+							turno = Turno::CAMBIO;
+						}
+						
+						
 						//si no se ha puesto una posicion alcanzable
 						else //retrocedemos para volver a poner el sitio donde decimos a donde queremos mover la pieza
 						{
@@ -360,16 +369,6 @@ void Partida::Mueve()
 	{
 		posicion_pieza_seleccionada = Interaccion::Seleccionar(*diosita);
 		control_selccion_pieza = 1;
-
-		/*
-			if (pieza_seleccionada == 'w'|| pieza_seleccionada == '0')
-			{
-				pieza_seleccionada = Interaccion::Seleccionar(*diosita, *tablero);
-			}
-			else {
-				Interaccion::Desplazar(*diosita, p);
-			}
-			*/
 	}
 
 	if (turno == Turno::NEGRAS && introdatos == IntroDatos::ESPERA && movdatos == MovDatos::M_EJE_X)
@@ -384,17 +383,16 @@ void Partida::Mueve()
 	{
 		control_selccion_pieza = 0;
 		
+		//se puede hacer con un for
+
 		if (posicion_pieza_seleccionada == peon[3].Get_pos())// && Interaccion::Comprobar_movimiento(rey[0]) //con sobrecarga del operador == para comparar Vector3d
 			Interaccion::Desplazar(*diosita, peon[3]);
 
-		/*
+		
 		if (posicion_pieza_seleccionada == peon[5].Get_pos())// && Interaccion::Comprobar_movimiento(rey[0]) //con sobrecarga del operador == para comparar Vector3d
 			Interaccion::Desplazar(*diosita, peon[5]);
-		*/
+		
 
-
-
-		/*
 		if (posicion_pieza_seleccionada==rey[0].Get_pos())// && Interaccion::Comprobar_movimiento(rey[0]) //con sobrecarga del operador == para comparar Vector3d
 			Interaccion::Desplazar(*diosita, rey[0]);
 
@@ -407,6 +405,8 @@ void Partida::Mueve()
 		//if (posicion_pieza_seleccionada.x == rey[0].devPosx() && posicion_pieza_seleccionada.y == rey[0].devPosy())
 			//Interaccion::Desplazar(*diosita, rey[0]);
 		//mover dama
+
+		/*
 		if (posicion_pieza_seleccionada.x == dama[0].devPosx() && posicion_pieza_seleccionada.y == dama[0].devPosy())
 			Interaccion::Desplazar(*diosita, dama[0]);
 
