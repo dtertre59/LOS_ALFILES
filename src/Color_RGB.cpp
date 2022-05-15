@@ -23,18 +23,31 @@ void Color_RGB::Set_color(unsigned char  c)
 		azul = 8;
 		bn = 2;
 	}
-	else if(c=='v')
-	{
-		rojo = 0;
-		verde = 255;
-		azul = 0;
-	}
 	else if (c == 'r')
 	{
 		rojo = 255;
 		verde = 0;
 		azul = 0;
 	}
+	else if(c=='v')
+	{
+		rojo = 0;
+		verde = 255;
+		azul = 0;
+	}
+	else if (c == 'a')
+	{
+		rojo = 0;
+		verde = 0;
+		azul = 255;
+	}
+	else if (c == 'm')
+	{
+		rojo = 200;
+		verde = 0;
+		azul = 200;
+	}
+
 	else
 	{
 		rojo = 255;

@@ -14,9 +14,12 @@ public:
 	void Dibuja();
 	void Escala(unsigned char c);
 	void ColPieza();
+
+
+	bool Movimiento(const Vector3d& muevo_a); //dtertre59 prueba movimiento correcto
 	
 
-	void Mover(int x,int y);
+	void Mover(int x,int y); //funcion mover de lobo
 
 	friend class Interaccion;
 };

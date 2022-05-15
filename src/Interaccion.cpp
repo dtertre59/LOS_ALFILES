@@ -1,10 +1,10 @@
 #include "Interaccion.h"
 
-
+//te devuelve la posicion seleccionada. falta comprobar si la posiccion seleccionada tiene alguna pieza
 Vector3d Interaccion::Seleccionar(Pieza& diosita)
 {
-	Vector3d ini;
-	ini.Set_vector(35, 35, 5);
+	//Vector3d ini;
+	//ini.Set_vector(35, 35, 5);
 
 
 	for (int i = 0; i < 8; i++)
@@ -18,6 +18,28 @@ Vector3d Interaccion::Seleccionar(Pieza& diosita)
 		}
 	}
 }
+
+
+//solo puede ocurrir cuando el punto a donde lo desplazas es valido
+void Interaccion::Desplazar(Pieza& diosita, Pieza& pieza)
+{
+	pieza.posicion = diosita.posicion;
+}
+
+
+//devuelve un 1 si el movimiento esta permitido y un 0 si no esta permitido
+
+bool Interaccion::Comprobar_movimiento(Pieza& diosita, Pieza& pieza)
+{
+	bool verificacion;
+	
+	verificacion = pieza.Movimiento(diosita.Get_pos()); //si la pieza se puede mover donde diosita devuelve un 1
+	return verificacion;
+}
+
+
+
+
 
 /*
 char Interaccion::Seleccionar(Pieza& diosita, Tablero& tab)
@@ -38,8 +60,4 @@ char Interaccion::Seleccionar(Pieza& diosita, Tablero& tab)
 */
 
 
-void Interaccion::Desplazar(Pieza& diosita, Pieza& pieza)
-{
-	pieza.posicion = diosita.posicion;
-}
 

@@ -41,7 +41,7 @@ public:
 
 	unsigned char pieza_seleccionada;
 
-	Vector3d aux;
+	Vector3d posicion_pieza_seleccionada;
 
 
 	Partida();

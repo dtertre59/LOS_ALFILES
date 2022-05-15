@@ -28,7 +28,7 @@ public:
 
 
 
-
+	virtual bool Movimiento(const Vector3d&) { return 0; }
 	virtual void Dibuja()=0;
 	virtual void ColPieza() {
 		int i = 0;

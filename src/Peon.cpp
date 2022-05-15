@@ -82,6 +82,46 @@ void Peon::Escala(unsigned char c)
 		escala = escala / 1.2;
 }
 
+
+
+//MOVIMIENTO
+
+bool Peon::Movimiento(const Vector3d& muevo_a)
+{
+	if (muevo_a.x == posicion.x + 10 && muevo_a.y == posicion.y)
+	{
+		return 1;
+	}
+	else
+		return 0;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //MOVER FIGURA CON TECLADO
 
 void Peon::Mover(int x,int y)

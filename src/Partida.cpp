@@ -13,6 +13,10 @@ Partida::Partida()
 	diosita = new DIOSITA;
 
 	pieza_seleccionada = 'w'; //w es wait espera a que sle ponfa el primer valor
+
+	turno = Turno::BLANCAS;
+	introdatos = IntroDatos::EJE_X;
+	movdatos = MovDatos::M_ESPERA;
 }
 
 void Partida::Inicializa()
@@ -71,7 +75,7 @@ void Partida::Inicializa()
 
 	
 	pieza_seleccionada = 'w';
-	aux.Set_vector(0, 0, 0);
+	posicion_pieza_seleccionada.Set_vector(0, 0, 0);
 }
 
 void Partida::Dibuja()
@@ -124,8 +128,6 @@ void Partida::Tecla(unsigned char c)
 {
 	if (turno == Turno::BLANCAS)
 	{
-		
-	//	do {
 			if (introdatos == IntroDatos::EJE_X)
 			{
 				for (int i = 0, j = 7; i < 8; i++, j--)
@@ -146,13 +148,36 @@ void Partida::Tecla(unsigned char c)
 					if (c == 97 + i)
 					{
 						diosita->SetPosY(i * 10);
-						
-						introdatos = IntroDatos::ESPERA;
-						movdatos = MovDatos::M_EJE_X;
+
+
+						//PIEZAS BLANCAS EN EL TABLERO---->COMPARARLAS CON DIOSITA PARA SABER CUAL ES LA SELECCIONADA
+
+						if (diosita->Get_pos() == peon[3].Get_pos())
+						{
+							peon[3].Set_color('v'); //para ambiarle el color al peon si es el sdeleccionado. luego faltaria quitarselo cuando terminas de mover
+
+							introdatos = IntroDatos::ESPERA;
+							movdatos = MovDatos::M_EJE_X;
+						}
+						else if (diosita->Get_pos() == peon[5].Get_pos())
+						{
+							introdatos = IntroDatos::ESPERA;
+							movdatos = MovDatos::M_EJE_X;
+						}
+						else if (diosita->Get_pos() == rey[0].Get_pos())
+						{
+							introdatos = IntroDatos::ESPERA;
+							movdatos = MovDatos::M_EJE_X;
+						}
+	
+						else //si no has seleccionado ninguna tienes que repietir. meter eje x y luego y
+						{
+							introdatos = IntroDatos::EJE_X;
+							diosita->Set_color('a'); //diosita se pone de color azul si no seleccionas ninguna casilla con pieza
+						}
 					}
 				}
 			}
-		//} while (diosita->flagA == 0);
 
 			if (movdatos == MovDatos::M_EJE_X)
 			{
@@ -161,9 +186,9 @@ void Partida::Tecla(unsigned char c)
 					if (c == 49 + i)
 					{
 						diosita->SetPosX(j * 10);
-						diosita->ColPieza();
+						//diosita->ColPieza();
 						
-						movdatos = MovDatos::M_ESPERA;
+						//movdatos = MovDatos::M_ESPERA;
 						movdatos = MovDatos::M_EJE_Y;
 					}
 				}
@@ -176,12 +201,19 @@ void Partida::Tecla(unsigned char c)
 					if (c == 97 + i)
 					{
 						diosita->SetPosY(i * 10);
-						diosita->ColPieza();
-					
-
-						movdatos = MovDatos::M_ESPERA;
-						introdatos = IntroDatos::EJE_X;
-						turno = Turno::CAMBIO;
+						//diosita->ColPieza();
+						
+						if (Interaccion::Comprobar_movimiento(*diosita, peon[3]))//si se cumple la condicion 
+						{
+							introdatos = IntroDatos::EJE_X;
+							movdatos = MovDatos::M_ESPERA;
+							turno = Turno::CAMBIO;
+						}
+						else //retrocedemos para volver a poner el sitio donde decimos a donde queremos mover la pieza
+						{
+							diosita->Set_color('m');
+							movdatos = MovDatos::M_EJE_X;
+						}
 					}
 				}
 			}
@@ -282,7 +314,7 @@ void Partida::Mueve()
 
 	if (turno == Turno::BLANCAS && introdatos == IntroDatos::ESPERA && movdatos == MovDatos::M_EJE_X)
 	{
-		aux = Interaccion::Seleccionar(*diosita);
+		posicion_pieza_seleccionada = Interaccion::Seleccionar(*diosita);
 
 		/*
 			if (pieza_seleccionada == 'w'|| pieza_seleccionada == '0')
@@ -297,7 +329,7 @@ void Partida::Mueve()
 
 	if (turno == Turno::NEGRAS && introdatos == IntroDatos::ESPERA && movdatos == MovDatos::M_EJE_X)
 	{
-		aux = Interaccion::Seleccionar(*diosita);
+		posicion_pieza_seleccionada = Interaccion::Seleccionar(*diosita);
 	}
 
 
@@ -305,31 +337,37 @@ void Partida::Mueve()
 
 	if (turno==Turno::CAMBIO)
 	{
+		if (posicion_pieza_seleccionada==rey[0].Get_pos())// && Interaccion::Comprobar_movimiento(rey[0]) //con sobrecarga del operador == para comparar Vector3d
+			Interaccion::Desplazar(*diosita, rey[0]);
+
+
+
 		//mover BLANCAS
 
+
 		//mover rey
-		if (aux.x == rey[0].devPosx() && aux.y == rey[0].devPosy())
-			Interaccion::Desplazar(*diosita, rey[0]);
+		//if (posicion_pieza_seleccionada.x == rey[0].devPosx() && posicion_pieza_seleccionada.y == rey[0].devPosy())
+			//Interaccion::Desplazar(*diosita, rey[0]);
 		//mover dama
-		if (aux.x == dama[0].devPosx() && aux.y == dama[0].devPosy())
+		if (posicion_pieza_seleccionada.x == dama[0].devPosx() && posicion_pieza_seleccionada.y == dama[0].devPosy())
 			Interaccion::Desplazar(*diosita, dama[0]);
 
 		for (int i = 0; i < 8; i++)
 		{
 			//mover peon
-			if (aux.x == peon[i].devPosx() && aux.y == peon[i].devPosy())
+			if (posicion_pieza_seleccionada.x == peon[i].devPosx() && posicion_pieza_seleccionada.y == peon[i].devPosy())
 				Interaccion::Desplazar(*diosita, peon[i]);
 
 			//mover caballo,torre,alfil
 			if (i < 4)
 			{
-				if (aux.x == torre[i].devPosx() && aux.y == torre[i].devPosy())
+				if (posicion_pieza_seleccionada.x == torre[i].devPosx() && posicion_pieza_seleccionada.y == torre[i].devPosy())
 					Interaccion::Desplazar(*diosita, torre[i]);
 
 			//	if (aux.x == caballo[i].devPosx() && aux.y == caballo[i].devPosy())
 			//		Interaccion::Desplazar(*diosita, caballo[i]);
 
-				if (aux.x == alfil[i].devPosx() && aux.y == alfil[i].devPosy())
+				if (posicion_pieza_seleccionada.x == alfil[i].devPosx() && posicion_pieza_seleccionada.y == alfil[i].devPosy())
 					Interaccion::Desplazar(*diosita, alfil[i]);
 			}
 		}
@@ -340,29 +378,29 @@ void Partida::Mueve()
 		//mover negras
 		
 		//mover rey
-		if (aux.x == rey[1].devPosx() && aux.y == rey[1].devPosy())
+		if (posicion_pieza_seleccionada.x == rey[1].devPosx() && posicion_pieza_seleccionada.y == rey[1].devPosy())
 			Interaccion::Desplazar(*diosita, rey[1]);
 		//mover dama
-		if (aux.x == dama[1].devPosx() && aux.y == dama[1].devPosy())
+		if (posicion_pieza_seleccionada.x == dama[1].devPosx() && posicion_pieza_seleccionada.y == dama[1].devPosy())
 			Interaccion::Desplazar(*diosita, dama[1]);
 
 		for (int i = 0; i < 8; i++)
 		{
 			//mover peon
 			int j = i + 7;
-			if (aux.x == peon[j].devPosx() && aux.y == peon[j].devPosy())
+			if (posicion_pieza_seleccionada.x == peon[j].devPosx() && posicion_pieza_seleccionada.y == peon[j].devPosy())
 				Interaccion::Desplazar(*diosita, peon[j]);
 
 			//mover caballo,torre,alfil
 			if (i >= 4)
 			{
-				if (aux.x == torre[i].devPosx() && aux.y == torre[i].devPosy())
+				if (posicion_pieza_seleccionada.x == torre[i].devPosx() && posicion_pieza_seleccionada.y == torre[i].devPosy())
 					Interaccion::Desplazar(*diosita, torre[i]);
 
 				//	if (aux.x == caballo[i].devPosx() && aux.y == caballo[i].devPosy())
 				//		Interaccion::Desplazar(*diosita, caballo[i]);
 
-				if (aux.x == alfil[i].devPosx() && aux.y == alfil[i].devPosy())
+				if (posicion_pieza_seleccionada.x == alfil[i].devPosx() && posicion_pieza_seleccionada.y == alfil[i].devPosy())
 					Interaccion::Desplazar(*diosita, alfil[i]);
 			}
 		}

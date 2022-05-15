@@ -27,4 +27,13 @@ void Vector3d::MoverVect(float xx, float yy, float zz)
 }
 
 
+//FINCION INDEPENDIENTE SOBRECARGA DEL OPERADOR ==
+
+bool operator==(const Vector3d& v1, const Vector3d& v2)
+{
+	if (v1.x == v2.x && v1.y == v2.y && v1.z == v2.z)
+		return 1;
+	else
+		return 0;
+}
 
