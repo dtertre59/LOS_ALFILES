@@ -159,14 +159,14 @@ void Partida::Tecla(unsigned char c)
 						//PIEZAS BLANCAS EN EL TABLERO---->COMPARARLAS CON DIOSITA PARA SABER CUAL ES LA SELECCIONADA
 						if (diosita->Get_pos() == peon[0].Get_pos())
 						{
-						peon[3].Set_color('v'); //para ambiarle el color al peon si es el sdeleccionado. luego faltaria quitarselo cuando terminas de mover
-						pieza = "p0";
-						introdatos = IntroDatos::ESPERA;
-						movdatos = MovDatos::M_EJE_X;
+							peon[0].Set_color('v'); //para ambiarle el color al peon si es el sdeleccionado. luego faltaria quitarselo cuando terminas de mover
+							pieza = "p0";
+						    introdatos = IntroDatos::ESPERA;
+						    movdatos = MovDatos::M_EJE_X;
 						}
 						else if (diosita->Get_pos() == peon[1].Get_pos())
 						{
-							peon[3].Set_color('v'); //para ambiarle el color al peon si es el sdeleccionado. luego faltaria quitarselo cuando terminas de mover
+							peon[1].Set_color('v'); //para ambiarle el color al peon si es el sdeleccionado. luego faltaria quitarselo cuando terminas de mover
 							pieza = "p1";
 							introdatos = IntroDatos::ESPERA;
 							movdatos = MovDatos::M_EJE_X;
@@ -174,7 +174,7 @@ void Partida::Tecla(unsigned char c)
 						else if (diosita->Get_pos() == peon[2].Get_pos())
 						{
 							peon[2].Set_color('v'); //para ambiarle el color al peon si es el sdeleccionado. luego faltaria quitarselo cuando terminas de mover
-							pieza = "p3";
+							pieza = "p2";
 							introdatos = IntroDatos::ESPERA;
 							movdatos = MovDatos::M_EJE_X;
 						}
@@ -187,7 +187,7 @@ void Partida::Tecla(unsigned char c)
 						}
 						else if (diosita->Get_pos() == peon[4].Get_pos())
 						{
-							peon[3].Set_color('v'); //para ambiarle el color al peon si es el sdeleccionado. luego faltaria quitarselo cuando terminas de mover
+							peon[4].Set_color('v'); //para ambiarle el color al peon si es el sdeleccionado. luego faltaria quitarselo cuando terminas de mover
 							pieza = "p4";
 							introdatos = IntroDatos::ESPERA;
 							movdatos = MovDatos::M_EJE_X;
@@ -196,23 +196,20 @@ void Partida::Tecla(unsigned char c)
 						{
 								peon[5].Set_color('v');
 								pieza = "p5";
-
 								introdatos = IntroDatos::ESPERA;
 								movdatos = MovDatos::M_EJE_X;
 						}
 						else if (diosita->Get_pos() == peon[6].Get_pos())
 						{
-								peon[5].Set_color('v');
+								peon[6].Set_color('v');
 								pieza = "p6";
-
 								introdatos = IntroDatos::ESPERA;
 								movdatos = MovDatos::M_EJE_X;						
 						}
 						else if (diosita->Get_pos() == peon[7].Get_pos())
 						{
-							peon[5].Set_color('v');
+							peon[7].Set_color('v');
 							pieza = "p7";
-
 							introdatos = IntroDatos::ESPERA;
 							movdatos = MovDatos::M_EJE_X;
 						}
@@ -762,7 +759,7 @@ void Partida::Mueve()
 		}
 		if (posicion_pieza_seleccionada == peon[4].Get_pos()) //con sobrecarga del operador == para comparar Vector3d
 		{
-			Interaccion::Desplazar(*diosita, peon[3]);
+			Interaccion::Desplazar(*diosita, peon[4]);
 		}
 		if (posicion_pieza_seleccionada == peon[5].Get_pos())// && Interaccion::Comprobar_movimiento(rey[0]) //con sobrecarga del operador == para comparar Vector3d
 		{
