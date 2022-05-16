@@ -81,13 +81,13 @@ void Rey::Dibuja()
 	glutSolidCube(escala * 0.4);
 	glTranslatef(-posicion.x, -posicion.y, -(posicion.z + (escala * 13.3)));
 
-	glTranslatef(posicion.x + (escala * 0.4), posicion.y, posicion.z + (escala * 13.3));
+	glTranslatef(posicion.x , posicion.y + (escala * 0.4), posicion.z + (escala * 13.3));
 	glutSolidCube(escala * 0.4);
-	glTranslatef(-(posicion.x + (escala * 0.4)), -posicion.y, -(posicion.z + (escala * 13.3)));
+	glTranslatef(-(posicion.x ), -(posicion.y + (escala * 0.4)), -(posicion.z + (escala * 13.3)));
 
-	glTranslatef(posicion.x + (escala * -0.4), posicion.y, posicion.z + (escala * 13.3));
+	glTranslatef(posicion.x, posicion.y + (escala * -0.4), posicion.z + (escala * 13.3));
 	glutSolidCube(escala * 0.4);
-	glTranslatef(-(posicion.x + (escala * -0.4)), -posicion.y, -(posicion.z + (escala * 13.3)));
+	glTranslatef(-(posicion.x ), -(posicion.y + (escala * -0.4)), -(posicion.z + (escala * 13.3)));
 
 	glTranslatef(posicion.x, posicion.y, posicion.z + (escala * 13.7));
 	glutSolidCube(escala * 0.4);
