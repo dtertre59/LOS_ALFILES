@@ -54,6 +54,195 @@ void Torre::Dibuja()
 	glTranslatef(posicion.x, posicion.y, posicion.z + (escala * 6.5));
 	glutSolidCone((escala * 1.5), (escala * 4), 100, 100); //   radio base, height, slices, stacks
 	glTranslatef(-posicion.x, -posicion.y, -(posicion.z + (escala * 6.5)));
+
+	glTranslatef(posicion.x, posicion.y, posicion.z + (escala * 6.5)+3);
+	glutSolidCube(3.5);
+	glTranslatef(-posicion.x, -posicion.y, -(posicion.z + (escala * 6.5)+3));
+	/// 
+	glTranslatef(posicion.x, posicion.y+2, posicion.z + (escala * 6.5)+5);
+	glutSolidCube(1);
+	glTranslatef(-posicion.x, -(posicion.y+2), -(posicion.z + (escala * 6.5)+5));
+
+	glTranslatef(posicion.x, posicion.y + 2, posicion.z + (escala * 6.5) + 4);
+	glutSolidCube(1);
+	glTranslatef(-posicion.x, -(posicion.y + 2), -(posicion.z + (escala * 6.5) + 4));
+
+	glTranslatef(posicion.x+2, posicion.y + 2, posicion.z + (escala * 6.5) + 5);
+	glutSolidCube(1);
+	glTranslatef(-(posicion.x+2), -(posicion.y + 2), -(posicion.z + (escala * 6.5) + 5));
+
+	glTranslatef(posicion.x+2, posicion.y + 2, posicion.z + (escala * 6.5) + 4);
+	glutSolidCube(1);
+	glTranslatef(-(posicion.x+2), -(posicion.y + 2), -(posicion.z + (escala * 6.5) + 4));
+
+	glTranslatef(posicion.x + 2, posicion.y + 2, posicion.z + (escala * 6.5) + 3);
+	glutSolidCube(1);
+	glTranslatef(-(posicion.x + 2), -(posicion.y + 2), -(posicion.z + (escala * 6.5) + 3));
+
+	glTranslatef(posicion.x + 2, posicion.y + 2, posicion.z + (escala * 6.5) + 2);
+	glutSolidCube(1);
+	glTranslatef(-(posicion.x + 2), -(posicion.y + 2), -(posicion.z + (escala * 6.5) + 2));
+
+	glTranslatef(posicion.x + 2, posicion.y + 2, posicion.z + (escala * 6.5) + 1);
+	glutSolidCube(1);
+	glTranslatef(-(posicion.x + 2), -(posicion.y + 2), -(posicion.z + (escala * 6.5) + 1));
+
+	glTranslatef(posicion.x + 2, posicion.y + 2, posicion.z + (escala * 6.5) );
+	glutSolidCube(1);
+	glTranslatef(-(posicion.x + 2), -(posicion.y + 2), -(posicion.z + (escala * 6.5) ));
+
+	glTranslatef(posicion.x + 2, posicion.y + 2, posicion.z + (escala * 6.5) -1);
+	glutSolidCube(1);
+	glTranslatef(-(posicion.x + 2), -(posicion.y + 2), -(posicion.z + (escala * 6.5) - 1));
+
+	glTranslatef(posicion.x + 2, posicion.y + 2, posicion.z + (escala * 6.5) - 2);
+	glutSolidCube(1);
+	glTranslatef(-(posicion.x + 2), -(posicion.y + 2), -(posicion.z + (escala * 6.5) - 2));
+
+	glTranslatef(posicion.x + 2, posicion.y + 2, posicion.z + (escala * 6.5) - 3);
+	glutSolidCube(1);
+	glTranslatef(-(posicion.x + 2), -(posicion.y + 2), -(posicion.z + (escala * 6.5) - 3));
+
+	glTranslatef(posicion.x + 2, posicion.y + 2, posicion.z + (escala * 6.5) - 4);
+	glutSolidCube(1);
+	glTranslatef(-(posicion.x + 2), -(posicion.y + 2), -(posicion.z + (escala * 6.5) -4));
+	/// 
+
+	glTranslatef(posicion.x - 2, posicion.y + 2, posicion.z + (escala * 6.5) + 5);
+	glutSolidCube(1);
+	glTranslatef(-(posicion.x - 2), -(posicion.y + 2), -(posicion.z + (escala * 6.5) + 5));
+
+	glTranslatef(posicion.x - 2, posicion.y + 2, posicion.z + (escala * 6.5) + 4);
+	glutSolidCube(1);
+	glTranslatef(-(posicion.x - 2), -(posicion.y + 2), -(posicion.z + (escala * 6.5) + 4));
+
+	glTranslatef(posicion.x - 2, posicion.y + 2, posicion.z + (escala * 6.5) + 3);
+	glutSolidCube(1);
+	glTranslatef(-(posicion.x - 2), -(posicion.y + 2), -(posicion.z + (escala * 6.5) + 3));
+
+	glTranslatef(posicion.x - 2, posicion.y + 2, posicion.z + (escala * 6.5) + 2);
+	glutSolidCube(1);
+	glTranslatef(-(posicion.x - 2), -(posicion.y + 2), -(posicion.z + (escala * 6.5) + 2));
+
+	glTranslatef(posicion.x - 2, posicion.y + 2, posicion.z + (escala * 6.5) + 1);
+	glutSolidCube(1);
+	glTranslatef(-(posicion.x - 2), -(posicion.y + 2), -(posicion.z + (escala * 6.5) + 1));
+
+	glTranslatef(posicion.x - 2, posicion.y + 2, posicion.z + (escala * 6.5) );
+	glutSolidCube(1);
+	glTranslatef(-(posicion.x - 2), -(posicion.y + 2), -(posicion.z + (escala * 6.5) ));
+
+	glTranslatef(posicion.x - 2, posicion.y + 2, posicion.z + (escala * 6.5) - 1);
+	glutSolidCube(1);
+	glTranslatef(-(posicion.x - 2), -(posicion.y + 2), -(posicion.z + (escala * 6.5) - 1));
+
+	glTranslatef(posicion.x - 2, posicion.y + 2, posicion.z + (escala * 6.5) -2);
+	glutSolidCube(1);
+	glTranslatef(-(posicion.x - 2), -(posicion.y + 2), -(posicion.z + (escala * 6.5) -2));
+
+	glTranslatef(posicion.x - 2, posicion.y + 2, posicion.z + (escala * 6.5) -3);
+	glutSolidCube(1);
+	glTranslatef(-(posicion.x - 2), -(posicion.y + 2), -(posicion.z + (escala * 6.5) -3)); 
+	
+	glTranslatef(posicion.x - 2, posicion.y + 2, posicion.z + (escala * 6.5) -4);
+	glutSolidCube(1);
+	glTranslatef(-(posicion.x - 2), -(posicion.y + 2), -(posicion.z + (escala * 6.5) -4));
+	///
+	glTranslatef(posicion.x, posicion.y - 2, posicion.z + (escala * 6.5) + 5);
+	glutSolidCube(1);
+	glTranslatef(-posicion.x, -(posicion.y - 2), -(posicion.z + (escala * 6.5) + 5));
+
+	glTranslatef(posicion.x, posicion.y - 2, posicion.z + (escala * 6.5) + 4);
+	glutSolidCube(1);
+	glTranslatef(-posicion.x, -(posicion.y - 2), -(posicion.z + (escala * 6.5) + 4));
+
+	glTranslatef(posicion.x + 2, posicion.y - 2, posicion.z + (escala * 6.5) + 5);
+	glutSolidCube(1);
+	glTranslatef(-(posicion.x + 2), -(posicion.y - 2), -(posicion.z + (escala * 6.5) + 5));
+
+	glTranslatef(posicion.x + 2, posicion.y - 2, posicion.z + (escala * 6.5) + 4);
+	glutSolidCube(1);
+	glTranslatef(-(posicion.x + 2), -(posicion.y - 2), -(posicion.z + (escala * 6.5) + 4));
+
+	glTranslatef(posicion.x + 2, posicion.y - 2, posicion.z + (escala * 6.5) + 3);
+	glutSolidCube(1);
+	glTranslatef(-(posicion.x + 2), -(posicion.y - 2), -(posicion.z + (escala * 6.5) + 3));
+	glTranslatef(posicion.x + 2, posicion.y - 2, posicion.z + (escala * 6.5) + 2);
+	glutSolidCube(1);
+	glTranslatef(-(posicion.x + 2), -(posicion.y - 2), -(posicion.z + (escala * 6.5) + 2));
+	glTranslatef(posicion.x + 2, posicion.y - 2, posicion.z + (escala * 6.5) + 1);
+	glutSolidCube(1);
+	glTranslatef(-(posicion.x + 2), -(posicion.y - 2), -(posicion.z + (escala * 6.5) + 1));
+
+	glTranslatef(posicion.x + 2, posicion.y - 2, posicion.z + (escala * 6.5) );
+	glutSolidCube(1);
+	glTranslatef(-(posicion.x + 2), -(posicion.y - 2), -(posicion.z + (escala * 6.5) ));
+
+	glTranslatef(posicion.x + 2, posicion.y - 2, posicion.z + (escala * 6.5) - 1);
+	glutSolidCube(1);
+	glTranslatef(-(posicion.x + 2), -(posicion.y - 2), -(posicion.z + (escala * 6.5) - 1));
+
+	glTranslatef(posicion.x + 2, posicion.y - 2, posicion.z + (escala * 6.5) -2);
+	glutSolidCube(1);
+	glTranslatef(-(posicion.x + 2), -(posicion.y - 2), -(posicion.z + (escala * 6.5)-2));
+
+	glTranslatef(posicion.x + 2, posicion.y - 2, posicion.z + (escala * 6.5) -3);
+	glutSolidCube(1);
+	glTranslatef(-(posicion.x + 2), -(posicion.y - 2), -(posicion.z + (escala * 6.5) -3));
+
+	glTranslatef(posicion.x + 2, posicion.y - 2, posicion.z + (escala * 6.5) -4);
+	glutSolidCube(1);
+	glTranslatef(-(posicion.x + 2), -(posicion.y - 2), -(posicion.z + (escala * 6.5) -4));
+	/// 
+
+	glTranslatef(posicion.x - 2, posicion.y - 2, posicion.z + (escala * 6.5) + 5);
+	glutSolidCube(1);
+	glTranslatef(-(posicion.x - 2), -(posicion.y - 2), -(posicion.z + (escala * 6.5) + 5));
+
+	glTranslatef(posicion.x - 2, posicion.y - 2, posicion.z + (escala * 6.5) + 4);
+	glutSolidCube(1);
+	glTranslatef(-(posicion.x - 2), -(posicion.y - 2), -(posicion.z + (escala * 6.5) + 4));
+
+	glTranslatef(posicion.x - 2, posicion.y - 2, posicion.z + (escala * 6.5) + 3);
+	glutSolidCube(1);
+	glTranslatef(-(posicion.x - 2), -(posicion.y - 2), -(posicion.z + (escala * 6.5) + 3));
+	glTranslatef(posicion.x - 2, posicion.y - 2, posicion.z + (escala * 6.5) + 2);
+	glutSolidCube(1);
+	glTranslatef(-(posicion.x - 2), -(posicion.y - 2), -(posicion.z + (escala * 6.5) + 2));
+	glTranslatef(posicion.x - 2, posicion.y - 2, posicion.z + (escala * 6.5) + 1);
+	glutSolidCube(1);
+	glTranslatef(-(posicion.x - 2), -(posicion.y - 2), -(posicion.z + (escala * 6.5) + 1));
+	glTranslatef(posicion.x - 2, posicion.y - 2, posicion.z + (escala * 6.5) );
+	glutSolidCube(1);
+	glTranslatef(-(posicion.x - 2), -(posicion.y - 2), -(posicion.z + (escala * 6.5)));
+	glTranslatef(posicion.x - 2, posicion.y - 2, posicion.z + (escala * 6.5)-1);
+	glutSolidCube(1);
+	glTranslatef(-(posicion.x - 2), -(posicion.y - 2), -(posicion.z + (escala * 6.5)-1));
+	glTranslatef(posicion.x - 2, posicion.y - 2, posicion.z + (escala * 6.5) - 2);
+	glutSolidCube(1);
+	glTranslatef(-(posicion.x - 2), -(posicion.y - 2), -(posicion.z + (escala * 6.5) - 2));
+	glTranslatef(posicion.x - 2, posicion.y - 2, posicion.z + (escala * 6.5) - 3);
+	glutSolidCube(1);
+	glTranslatef(-(posicion.x - 2), -(posicion.y - 2), -(posicion.z + (escala * 6.5) - 3));
+	glTranslatef(posicion.x - 2, posicion.y - 2, posicion.z + (escala * 6.5) - 4);
+	glutSolidCube(1);
+	glTranslatef(-(posicion.x - 2), -(posicion.y - 2), -(posicion.z + (escala * 6.5) - 4));
+	///
+	glTranslatef(posicion.x - 2, posicion.y , posicion.z + (escala * 6.5) + 5);
+	glutSolidCube(1);
+	glTranslatef(-(posicion.x - 2), -(posicion.y ), -(posicion.z + (escala * 6.5) + 5));
+
+	glTranslatef(posicion.x - 2, posicion.y , posicion.z + (escala * 6.5) + 4);
+	glutSolidCube(1);
+	glTranslatef(-(posicion.x - 2), -(posicion.y ), -(posicion.z + (escala * 6.5) + 4));
+
+	glTranslatef(posicion.x + 2, posicion.y, posicion.z + (escala * 6.5) + 5);
+	glutSolidCube(1);
+	glTranslatef(-(posicion.x + 2), -(posicion.y), -(posicion.z + (escala * 6.5) + 5));
+
+	glTranslatef(posicion.x + 2, posicion.y, posicion.z + (escala * 6.5) + 4);
+	glutSolidCube(1);
+	glTranslatef(-(posicion.x + 2), -(posicion.y), -(posicion.z + (escala * 6.5) + 4));
 }
 	
 
