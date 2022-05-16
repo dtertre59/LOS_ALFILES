@@ -90,7 +90,7 @@ void Partida::Dibuja()
 	if (turno == Turno::BLANCAS)
 		vista.Camara(0);
 	else
-		vista.Camara(0);//vista.Camara(1);
+		vista.Camara(1);//vista.Camara(1);
 
 	//dibujar tablero
 	tablero->Dibuja();
@@ -116,8 +116,7 @@ void Partida::Dibuja()
 	{
 		caballo[i].Dibuja();
 		alfil[i].Dibuja();
-		torre[i].Dibuja();
-		
+		torre[i].Dibuja();	
 	}
 }
 
@@ -194,17 +193,17 @@ void Partida::Tecla(unsigned char c)
 						}
 						else if (diosita->Get_pos() == peon[5].Get_pos())
 						{
-								peon[5].Set_color('v');
-								pieza = "p5";
-								introdatos = IntroDatos::ESPERA;
-								movdatos = MovDatos::M_EJE_X;
+							peon[5].Set_color('v');
+							pieza = "p5";
+							introdatos = IntroDatos::ESPERA;
+							movdatos = MovDatos::M_EJE_X;
 						}
 						else if (diosita->Get_pos() == peon[6].Get_pos())
 						{
-								peon[6].Set_color('v');
-								pieza = "p6";
-								introdatos = IntroDatos::ESPERA;
-								movdatos = MovDatos::M_EJE_X;						
+							peon[6].Set_color('v');
+							pieza = "p6";
+							introdatos = IntroDatos::ESPERA;
+							movdatos = MovDatos::M_EJE_X;						
 						}
 						else if (diosita->Get_pos() == peon[7].Get_pos())
 						{
@@ -214,61 +213,61 @@ void Partida::Tecla(unsigned char c)
 							movdatos = MovDatos::M_EJE_X;
 						}
 						 else if (diosita->Get_pos() == rey[0].Get_pos())
-{
+						{
 							rey[0].Set_color('v');
 							pieza = "r0";
 							introdatos = IntroDatos::ESPERA;
 							movdatos = MovDatos::M_EJE_X;
 						}
 						 else if (diosita->Get_pos() == alfil[0].Get_pos())
-							{
+						{
 								alfil[0].Set_color('v');
 								pieza = "a0";
 								introdatos = IntroDatos::ESPERA;
 								movdatos = MovDatos::M_EJE_X;
-							}
+						}
 						 else if (diosita->Get_pos() == alfil[1].Get_pos())
-							{
+						{
 								alfil[1].Set_color('v');
 								pieza = "a1";
 								introdatos = IntroDatos::ESPERA;
 								movdatos = MovDatos::M_EJE_X;
-							}
+						}
 						 else if (diosita->Get_pos() == torre[0].Get_pos())
-							{
+						{
 								torre[0].Set_color('v');
 								pieza = "t0";
 								introdatos = IntroDatos::ESPERA;
 								movdatos = MovDatos::M_EJE_X;
-							}
+						}
 						 else if (diosita->Get_pos() == torre[1].Get_pos())
-							{
+						{
 								torre[1].Set_color('v');
 								pieza = "t1";
 								introdatos = IntroDatos::ESPERA;
 								movdatos = MovDatos::M_EJE_X;
-							}
+						}
 						 else if (diosita->Get_pos() == dama[0].Get_pos())
-							{
+						{
 								dama[0].Set_color('v');
 								pieza = "d0";
 								introdatos = IntroDatos::ESPERA;
 								movdatos = MovDatos::M_EJE_X;
-							}
+						}
 						 else if (diosita->Get_pos() == caballo[0].Get_pos())
-							{
+						{
 								caballo[0].Set_color('v');
 								pieza = "c0";
 								introdatos = IntroDatos::ESPERA;
 								movdatos = MovDatos::M_EJE_X;
-							}
+						}
 						 else if (diosita->Get_pos() == caballo[1].Get_pos())
-							{
+						{
 								caballo[1].Set_color('v');
 								pieza = "c1";
 								introdatos = IntroDatos::ESPERA;
 								movdatos = MovDatos::M_EJE_X;
-							}
+						}
 
 						else //si no has seleccionado ninguna tienes que repietir. meter eje x y luego y
 						{
