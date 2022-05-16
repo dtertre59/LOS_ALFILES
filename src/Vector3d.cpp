@@ -26,6 +26,22 @@ void Vector3d::MoverVect(float xx, float yy, float zz)
 	z += zz;
 }
 
+float Vector3d::GetVect()
+{
+	return x;
+	return y;
+	return z;
+}
+
+Vector3d Vector3d:: operator - (Vector3d v)
+{
+	Vector3d res;
+	res.x = x - v.x;
+	res.y = y - v.y;
+	res.z = z - v.z;
+	return res;
+}
+
 
 //FINCION INDEPENDIENTE SOBRECARGA DEL OPERADOR ==
 
