@@ -62,7 +62,7 @@ void Alfil::Escala(unsigned char c)
 }
 
 //MOVER FIGURA CON TECLADO
-/*
+
 bool Alfil::Movimiento(const Vector3d& muevo_a)
 {
 	int npx, npy;
@@ -102,13 +102,10 @@ bool Alfil::Movimiento(const Vector3d& muevo_a)
 		return 1;
 	}
 	else
-	{
 		return 0;
-	}
-
 	
-}*/
-
+}
+/*
 bool Alfil::Movimiento(const Vector3d& muevo_a)
 {
 	if ((muevo_a.x-posicion.x)==(muevo_a.y-posicion.y)|| (muevo_a.x - posicion.x) == -(muevo_a.y - posicion.y))
@@ -117,4 +114,4 @@ bool Alfil::Movimiento(const Vector3d& muevo_a)
 	}
 	else
 		return 0;
-}
+}*/

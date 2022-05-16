@@ -88,7 +88,7 @@ bool Torre::Movimiento(const Vector3d& muevo_a)
 					if (npx > 00 && npx < 80)
 						if (npy >= 00 && npy < 70)
 						{
-							return 1;
+							flag = 1;;
 						}
 							
 			//}
@@ -102,9 +102,13 @@ bool Torre::Movimiento(const Vector3d& muevo_a)
 			if (npx > 00 && npx < 80)
 				if (npy >= 00 && npy < 70)
 				{
-					return 1;
+					flag=1;
 				}
 			//}
+		}
+		if (flag == 1)
+		{
+			return 1;
 		}
 		else
 			return 0;
