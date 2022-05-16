@@ -1,6 +1,5 @@
 #include"Coordinador_ajedrez.h"
 
-
 //CONSTRUCTOR 
 
 Coordinador_ajedrez::Coordinador_ajedrez()
@@ -48,6 +47,26 @@ void Coordinador_ajedrez::Dibuja()
 	else if (estado == Estado::PARTIDA_M)
 	{	
 		partida->Dibuja();
+		ETSIDI::setTextColor(1, 1, 1);
+		ETSIDI::setFont("fuentes/Bitwise.ttf", 18);
+	
+			ETSIDI::printxy("A", 78, 0);
+			ETSIDI::printxy("B", 78, 10);
+			ETSIDI::printxy("C", 78, 20);
+			ETSIDI::printxy("D", 78, 30);
+			ETSIDI::printxy("E", 78, 40);
+			ETSIDI::printxy("F", 78, 50);
+			ETSIDI::printxy("G", 78, 60);
+			ETSIDI::printxy("H", 78, 70);
+		
+		ETSIDI::printxy("1", 70, -10);
+		ETSIDI::printxy("2", 60, -10);
+		ETSIDI::printxy("3", 50, -10);
+		ETSIDI::printxy("4", 40, -10);
+		ETSIDI::printxy("5", 30, -10);
+		ETSIDI::printxy("6", 20, -10);
+		ETSIDI::printxy("7", 10, -10);
+		ETSIDI::printxy("8", 0, -10);
 	}
 
 	else if (estado == Estado::VISTA_PIEZA)
