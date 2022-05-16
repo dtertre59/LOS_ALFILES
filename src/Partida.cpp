@@ -89,8 +89,14 @@ void Partida::Dibuja()
 {
 	if (turno == Turno::BLANCAS)
 		vista.Camara(0);
-	else
+	else if (turno == Turno::NEGRAS)
 		vista.Camara(1);//vista.Camara(1);
+	else if (turno== Turno::CAMBIO)
+		vista.Camara(0);
+	else if (turno == Turno::CAMBIO2)
+		vista.Camara(0);
+	else 
+		vista.Camara(0);
 
 	//dibujar tablero
 	tablero->Dibuja();

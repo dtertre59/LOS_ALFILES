@@ -99,6 +99,13 @@ bool Peon::Movimiento(const Vector3d& muevo_a)
 		{
 			flag = 1;
 		}
+		if (x == -20 && y == 0)
+		{
+			if(posicion.x==60)
+			{
+				flag = 1;
+			}
+		}
 		else
 			flag = 0;
 	}
@@ -107,6 +114,13 @@ bool Peon::Movimiento(const Vector3d& muevo_a)
 		if (x == 10 && y == 0)
 		{
 			flag = 1;
+		}
+		if (x == 20 && y == 0)
+		{
+			if (posicion.x == 10)
+			{
+				flag = 1;
+			}
 		}
 		else
 			flag = 0;
