@@ -1,4 +1,7 @@
 #pragma once
+
+#include<iostream>
+
 #include"Tablero.h"
 
 //PIEZAS
@@ -15,6 +18,9 @@
 #include"Vista.h"
 
 #include"Interaccion.h"
+
+
+using namespace std;
 
 class Partida {
 public:
@@ -42,6 +48,8 @@ public:
 	unsigned char pieza_seleccionada;
 
 
+
+	string pieza;
 	int control_selccion_pieza; //para saber si ya se ha seleccionadado la ficha
 	Vector3d posicion_pieza_seleccionada;
 

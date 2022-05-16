@@ -16,5 +16,6 @@ public:
 	void Escala(unsigned char);
 	void Mover(unsigned char);
 	int pos_Movimiento(int,int);
+	//bool Movimiento(const Vector3d& muevo_a);
 	//int prox_movimiento(int,int);
 };

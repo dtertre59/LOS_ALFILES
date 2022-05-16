@@ -13,6 +13,9 @@ public:
 	void ColPieza();
 	void SetPosX(float x);
 	void SetPosY(float y);
+
+
+
 	//clases amigas
 	//friend class Interaccion;
 };

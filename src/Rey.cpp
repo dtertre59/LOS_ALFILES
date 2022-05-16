@@ -109,8 +109,12 @@ bool Rey::Movimiento(const Vector3d& muevo_a)
 {
 	if (muevo_a.x == posicion.x - 10 && muevo_a.y == posicion.y ||
 		muevo_a.x == posicion.x + 10 && muevo_a.y == posicion.y ||
-		muevo_a.x == posicion.x && muevo_a.y == posicion.y -10 ||
-		muevo_a.x == posicion.x && muevo_a.y == posicion.y +10)
+		muevo_a.x == posicion.x && muevo_a.y == posicion.y - 10 ||
+		muevo_a.x == posicion.x && muevo_a.y == posicion.y + 10 ||
+		muevo_a.x == posicion.x - 10 && muevo_a.y == posicion.y -10 ||
+		muevo_a.x == posicion.x + 10 && muevo_a.y == posicion.y -10 ||
+		muevo_a.x == posicion.x + 10 && muevo_a.y == posicion.y +10 ||
+		muevo_a.x == posicion.x -10 && muevo_a.y == posicion.y + 10)
 	{
 		return 1;
 	}

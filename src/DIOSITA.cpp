@@ -20,7 +20,7 @@ void DIOSITA::Dibuja()
 
 
 	glTranslatef(posicion.x, posicion.y, posicion.z);
-	glutSolidSphere((escala * 2), 100, 100); //   radio base, height, slices, stacks
+	glutSolidSphere((escala * 5), 100, 100); //   radio base, height, slices, stacks
 	glTranslatef(-posicion.x, -posicion.y, -(posicion.z));
 }
 
