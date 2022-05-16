@@ -33,4 +33,5 @@ public:
 	static Vector3d Seleccionar(Pieza& diosita);
 	static void Desplazar(Pieza& diosita, Pieza& pieza);
 	static bool Comprobar_movimiento(Pieza& diosita, Pieza& pieza);
+	static bool Comprobar_choque_piezas(Pieza& diosita, Pieza& pieza);
 };

@@ -241,75 +241,84 @@ void Caballo::Mover(unsigned char c)
 		posicion.y = posicion.y + 10;
 	}
 }
-int Caballo::pos_Movimiento(int i2, int j2)
+bool Caballo::Movimiento(const Vector3d& muevo_a)
 {
-	int posible=0;
-	int i, j;
-	int t = 0;
+	int flag = 0;
+	int npx = muevo_a.x;
+	int npy = muevo_a.y;
+	int x = muevo_a.x - posicion.x;
+	int y = muevo_a.y - posicion.y;
 
-	//movimientos posibles	
-	
-	if ((i0 - 2 > 0 && i0 - 2 <= 7) && (j0 - 1 >= 0 && j0 - 1 <= 7)) 
-	{ 
-		posible++;
-		i2 = i0 - 2;
-		j2 = j0 - 1;
-		movimiento = true;
-	}
-	if ((i0 - 2 > 0 && i0 - 2 <= 7) && (j0 + 1 >= 0 && j0 + 1 <= 7)) 
+	//movimientos posibles -2/-1
+	if (x == -20 && y == -10)
 	{
-		posible++;
-		i2 = i0 - 2;
-		j2 = j0 + 1;
-		movimiento = true;
+		if (npx > 00 && npx < 80)
+			if (npy >= 00 && npy <= 70)
+			{
+				flag = 1;;
+			}
 	}
-	if ((i0 - 1 > 0 && i0 - 1 <= 7) && (j0 - 2 >= 0 && j0 - 2 <= 7))
+	if (x == -20 && y == 10)
 	{
-		posible++;
-		i2 = i0 - 1;
-		j2 = j0 - 2;
-		movimiento = true;
+		if (npx > 00 && npx < 80)
+			if (npy >= 00 && npy <= 70)
+			{
+				flag = 1;;
+			}
 	}
-	if ((i0 - 1 > 0 && i0 - 1 <= 7) && (j0 + 2 >= 0 && j0 + 2 <= 7)) 
+	if (x == -10 && y == -20)
 	{
-		posible++;
-		i2 = i0 - 1;
-		j2 = j0 + 2;
-		movimiento = true;
+		if (npx > 00 && npx < 80)
+			if (npy >= 00 && npy <= 70)
+			{
+				flag = 1;;
+			}
 	}
-	if ((i0 + 1 > 0 && i0 + 1 <= 7) && (j0 - 2 >= 0 && j0 - 2 <= 7))
+	if (x == -10 && y == 20)
 	{
-		posible++;
-		i2 = i0 + 1;
-		j2 = j0 - 2;
-		movimiento = true;
+		if (npx > 00 && npx < 80)
+			if (npy >= 00 && npy <= 70)
+			{
+				flag = 1;;
+			}
 	}
-	if ((i0 + 1 > 0 && i0 + 1 <= 7) && (j0 + 2 >= 0 && j0 + 2 <= 7)) 
+	if (x == 10 && y == -20)
 	{
-		posible++;
-		i2 = i0 + 1;
-		j2 = j0 + 2;
-		movimiento = true;
+		if (npx > 00 && npx < 80)
+			if (npy >= 00 && npy <= 70)
+			{
+				flag = 1;;
+			}
 	}
-	if ((i0 + 2 > 0 && i0 + 2 <= 7) && (j0 - 1 >= 0 && j0 - 1 <= 7))
+	if (x == 10 && y == 20)
 	{
-		posible++;
-		i2 = i0 + 2;
-		j2 = j0 - 1;
-		movimiento = true;
+		if (npx > 00 && npx < 80)
+			if (npy >= 00 && npy <= 70)
+			{
+				flag = 1;;
+			}
 	}
-	if ((i0 + 2 > 0 && i0 + 2 <= 7) && (j0 + 1 >= 0 && j0 + 1 <= 7))
+	if (x == 20 && y == -10)
 	{
-		posible++;
-		i2 = i0 + 2;
-		j2 = j0 + 1;
-		movimiento = true;
+		if (npx > 00 && npx < 80)
+			if (npy >= 00 && npy <= 70)
+			{
+				flag = 1;;
+			}
+	}
+	if (x == 20 && y == -10)
+	{
+		if (npx > 00 && npx < 80)
+			if (npy >= 00 && npy <= 70)
+			{
+				flag = 1;;
+			}
+	}
+	if (flag == 1)
+	{
+		return 1;
 	}
 	else
-		movimiento = false;
-	
-	i0 = i2;
-	j0 = j2;
-	return posible;
+		return 0;
 
 }

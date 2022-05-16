@@ -237,7 +237,7 @@ bool Dama::Movimiento(const Vector3d& muevo_a)
 				if (i == j)
 					if (npx > 00 && npx < 80)
 					{
-						if (npy >= 00 && npy < 70)
+						if (npy >= 00 && npy <= 70)
 						{
 							flag = 1;
 						}
@@ -254,7 +254,7 @@ bool Dama::Movimiento(const Vector3d& muevo_a)
 				if (i == -j)
 					if (npx > 00 && npx < 80)
 					{
-						if (npy >= 00 && npy < 70)
+						if (npy >= 00 && npy <= 70)
 						{
 							flag = 1;
 						}
@@ -268,7 +268,7 @@ bool Dama::Movimiento(const Vector3d& muevo_a)
 		//{
 			//if (i == y)
 		if (npx > 00 && npx < 80)
-			if (npy >= 00 && npy < 70)
+			if (npy >= 00 && npy <= 70)
 			{
 				flag = 1;
 			}
@@ -281,7 +281,7 @@ bool Dama::Movimiento(const Vector3d& muevo_a)
 		//{
 		//	if (i == x)
 		if (npx > 00 && npx < 80)
-			if (npy >= 00 && npy < 70)
+			if (npy >= 00 && npy <= 70)
 			{
 				flag = 1;
 			}

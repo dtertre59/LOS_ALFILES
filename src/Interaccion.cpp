@@ -35,7 +35,19 @@ bool Interaccion::Comprobar_movimiento(Pieza& diosita, Pieza& pieza)
 	
 	verificacion = pieza.Movimiento(diosita.Get_pos()); //si la pieza se puede mover donde diosita devuelve un 1
 	return verificacion;
+	
 }
+bool Interaccion::Comprobar_choque_piezas(Pieza& diosita, Pieza& pieza)
+{
+	
+	if (diosita.Get_pos() == pieza.Get_pos())
+	{
+		return 0;
+	}
+	else 
+		return 1;
+}
+
 
 
 

@@ -124,7 +124,7 @@ void Partida::Dibuja()
 	//dibujar torres, caballos y alfiles
 	for (int i = 0; i < 4; i++)
 	{
-		//caballo[i].Dibuja();
+		caballo[i].Dibuja();
 		alfil[i].Dibuja();
 		torre[i].Dibuja();
 		//los dibuja de torres, caballos y alfiles
@@ -226,6 +226,20 @@ void Partida::Tecla(unsigned char c)
 								introdatos = IntroDatos::ESPERA;
 								movdatos = MovDatos::M_EJE_X;
 							}
+						 else if (diosita->Get_pos() == caballo[0].Get_pos())
+							{
+								caballo[0].Set_color('v');
+								pieza = "c0";
+								introdatos = IntroDatos::ESPERA;
+								movdatos = MovDatos::M_EJE_X;
+							}
+						 else if (diosita->Get_pos() == caballo[1].Get_pos())
+							{
+								caballo[1].Set_color('v');
+								pieza = "c1";
+								introdatos = IntroDatos::ESPERA;
+								movdatos = MovDatos::M_EJE_X;
+							}
 
 						else //si no has seleccionado ninguna tienes que repietir. meter eje x y luego y
 						{
@@ -271,11 +285,21 @@ void Partida::Tecla(unsigned char c)
 
 						if (pieza=="p3"&&Interaccion::Comprobar_movimiento(*diosita, peon[3]))//si se cumple la condicion 
 						{
-							diosita->Set_color('n');
-							peon[3].Set_color('n');
-							introdatos = IntroDatos::EJE_X;
-							movdatos = MovDatos::M_ESPERA;
-							turno = Turno::CAMBIO;
+							if (Interaccion::Comprobar_choque_piezas(*diosita, torre[0])&&Interaccion::Comprobar_choque_piezas(*diosita, torre[1]) && Interaccion::Comprobar_choque_piezas(*diosita, alfil[0]) && Interaccion::Comprobar_choque_piezas(*diosita, alfil[1]) && Interaccion::Comprobar_choque_piezas(*diosita, rey[0]) && Interaccion::Comprobar_choque_piezas(*diosita, dama[0])&& Interaccion::Comprobar_choque_piezas(*diosita, peon[5]))
+							{
+								diosita->Set_color('n');
+								peon[3].Set_color('n');
+								introdatos = IntroDatos::EJE_X;
+								movdatos = MovDatos::M_ESPERA;
+								turno = Turno::CAMBIO;
+							}
+							else
+							{
+								diosita->Set_color('m');
+								introdatos = IntroDatos::ESPERA;
+								movdatos = MovDatos::M_EJE_X;
+								turno = Turno::BLANCAS;
+							}
 						}
 						else if (pieza == "p5"&&Interaccion::Comprobar_movimiento(*diosita, peon[5]))//si se cumple la condicion 
 						{
@@ -317,11 +341,24 @@ void Partida::Tecla(unsigned char c)
 						}
 						else if (pieza == "t0" && Interaccion::Comprobar_movimiento(*diosita, torre[0]))//si se cumple la condicion 
 						{
-							diosita->Set_color('v');
-							torre[0].Set_color('v');
-							introdatos = IntroDatos::EJE_X;
-							movdatos = MovDatos::M_ESPERA;
-							turno = Turno::CAMBIO;
+							if (Interaccion::Comprobar_choque_piezas(*diosita, torre[1])&&Interaccion::Comprobar_choque_piezas(*diosita,alfil[0])&&Interaccion::Comprobar_choque_piezas(*diosita, alfil[1])&& Interaccion::Comprobar_choque_piezas(*diosita, rey[0]) && Interaccion::Comprobar_choque_piezas(*diosita, dama[0])&& Interaccion::Comprobar_choque_piezas(*diosita, peon[3])&& Interaccion::Comprobar_choque_piezas(*diosita, peon[5]))
+							{
+						
+										diosita->Set_color('v');
+										torre[0].Set_color('v');
+										introdatos = IntroDatos::EJE_X;
+										movdatos = MovDatos::M_ESPERA;
+										turno = Turno::CAMBIO;
+								
+							}
+							else
+							{
+								diosita->Set_color('m');
+								introdatos = IntroDatos::ESPERA;
+								movdatos = MovDatos::M_EJE_X;
+								turno = Turno::BLANCAS;
+							}
+							
 						}
 						else if (pieza == "t1" && Interaccion::Comprobar_movimiento(*diosita, torre[1]))//si se cumple la condicion 
 						{
@@ -338,6 +375,22 @@ void Partida::Tecla(unsigned char c)
 							introdatos = IntroDatos::EJE_X;
 							movdatos = MovDatos::M_ESPERA;
 							turno = Turno::CAMBIO;
+						}
+						else if (pieza == "c0" && Interaccion::Comprobar_movimiento(*diosita, caballo[0]))//si se cumple la condicion 
+						{
+							diosita->Set_color('b');
+							caballo[0].Set_color('b');
+							introdatos = IntroDatos::EJE_X;
+							movdatos = MovDatos::M_ESPERA;
+							turno = Turno::CAMBIO;
+						}
+						else if (pieza == "c1" && Interaccion::Comprobar_movimiento(*diosita, caballo[1]))//si se cumple la condicion 
+						{
+						diosita->Set_color('b');
+						caballo[1].Set_color('b');
+						introdatos = IntroDatos::EJE_X;
+						movdatos = MovDatos::M_ESPERA;
+						turno = Turno::CAMBIO;
 						}
 						
 									
@@ -509,6 +562,14 @@ void Partida::Mueve()
 		if (posicion_pieza_seleccionada == dama[0].Get_pos())// && Interaccion::Comprobar_movimiento(rey[0]) //con sobrecarga del operador == para comparar Vector3d
 		{
 			Interaccion::Desplazar(*diosita, dama[0]);
+		}
+		if (posicion_pieza_seleccionada == caballo[0].Get_pos())// && Interaccion::Comprobar_movimiento(rey[0]) //con sobrecarga del operador == para comparar Vector3d
+		{
+			Interaccion::Desplazar(*diosita, caballo[0]);
+		}
+		if (posicion_pieza_seleccionada == caballo[1].Get_pos())// && Interaccion::Comprobar_movimiento(rey[0]) //con sobrecarga del operador == para comparar Vector3d
+		{
+			Interaccion::Desplazar(*diosita, caballo[1]);
 		}
 
 
