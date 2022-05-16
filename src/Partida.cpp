@@ -675,9 +675,15 @@ void Partida::Tecla(unsigned char c)
 				{
 					diosita->SetPosY(i * 10);
 					
-
-					introdatos = IntroDatos::ESPERA;
-					movdatos = MovDatos::M_EJE_X;
+					if (diosita->Get_pos() == peon[8].Get_pos())
+					{
+						peon[8].Set_color('r'); //para ambiarle el color al peon si es el sdeleccionado. luego faltaria quitarselo cuando terminas de mover
+						pieza = "p8";
+						introdatos = IntroDatos::ESPERA;
+						movdatos = MovDatos::M_EJE_X;
+					}
+					//introdatos = IntroDatos::ESPERA;
+					//movdatos = MovDatos::M_EJE_X;
 				}
 			}
 		}
