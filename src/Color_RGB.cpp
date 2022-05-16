@@ -35,6 +35,7 @@ void Color_RGB::Set_color(unsigned char  c)
 		rojo = 0;
 		verde = 255;
 		azul = 0;
+		bn = 1;
 	}
 	else if (c == 'c')
 	{
@@ -59,6 +60,7 @@ void Color_RGB::Set_color(unsigned char  c)
 		rojo = 255;
 		verde = 0;
 		azul = 0;
+		bn = 2;
 	}
 
 	else

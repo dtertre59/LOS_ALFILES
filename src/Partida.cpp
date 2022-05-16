@@ -101,22 +101,12 @@ void Partida::Dibuja()
 	//dibujar  peones
 	for (int i = 0; i < 16; i++) //poner 16 en el for
 	{
-		
-		if(i == 3)
-			peon[i].Dibuja();
-		if (i == 5)
-			peon[i].Dibuja();
-		if (i == 11)
-			peon[i].Dibuja();
-		if (i == 13)
-			peon[i].Dibuja();
-			
+		peon[i].Dibuja();
 	}
 
 	//dibujar damas y reyes
 	for (int i = 0; i < 2; i++)
 	{
-		//ALGO.dIBUJA
 		dama[i].Dibuja();
 		rey[i].Dibuja();
 	}
@@ -127,7 +117,7 @@ void Partida::Dibuja()
 		caballo[i].Dibuja();
 		alfil[i].Dibuja();
 		torre[i].Dibuja();
-		//los dibuja de torres, caballos y alfiles
+		
 	}
 }
 
@@ -167,25 +157,67 @@ void Partida::Tecla(unsigned char c)
 
 
 						//PIEZAS BLANCAS EN EL TABLERO---->COMPARARLAS CON DIOSITA PARA SABER CUAL ES LA SELECCIONADA
-						
-							if (diosita->Get_pos() == peon[3].Get_pos())
-							{
-								peon[3].Set_color('v'); //para ambiarle el color al peon si es el sdeleccionado. luego faltaria quitarselo cuando terminas de mover
-								pieza = "p3";
-								introdatos = IntroDatos::ESPERA;
-								movdatos = MovDatos::M_EJE_X;
-							}
-							else if (diosita->Get_pos() == peon[5].Get_pos())
-							{
+						if (diosita->Get_pos() == peon[0].Get_pos())
+						{
+						peon[3].Set_color('v'); //para ambiarle el color al peon si es el sdeleccionado. luego faltaria quitarselo cuando terminas de mover
+						pieza = "p0";
+						introdatos = IntroDatos::ESPERA;
+						movdatos = MovDatos::M_EJE_X;
+						}
+						else if (diosita->Get_pos() == peon[1].Get_pos())
+						{
+							peon[3].Set_color('v'); //para ambiarle el color al peon si es el sdeleccionado. luego faltaria quitarselo cuando terminas de mover
+							pieza = "p1";
+							introdatos = IntroDatos::ESPERA;
+							movdatos = MovDatos::M_EJE_X;
+						}
+						else if (diosita->Get_pos() == peon[2].Get_pos())
+						{
+							peon[2].Set_color('v'); //para ambiarle el color al peon si es el sdeleccionado. luego faltaria quitarselo cuando terminas de mover
+							pieza = "p3";
+							introdatos = IntroDatos::ESPERA;
+							movdatos = MovDatos::M_EJE_X;
+						}
+						else if (diosita->Get_pos() == peon[3].Get_pos())
+						{
+							peon[3].Set_color('v'); //para ambiarle el color al peon si es el sdeleccionado. luego faltaria quitarselo cuando terminas de mover
+							pieza = "p3";
+							introdatos = IntroDatos::ESPERA;
+							movdatos = MovDatos::M_EJE_X;
+						}
+						else if (diosita->Get_pos() == peon[4].Get_pos())
+						{
+							peon[3].Set_color('v'); //para ambiarle el color al peon si es el sdeleccionado. luego faltaria quitarselo cuando terminas de mover
+							pieza = "p4";
+							introdatos = IntroDatos::ESPERA;
+							movdatos = MovDatos::M_EJE_X;
+						}
+						else if (diosita->Get_pos() == peon[5].Get_pos())
+						{
 								peon[5].Set_color('v');
 								pieza = "p5";
 
 								introdatos = IntroDatos::ESPERA;
 								movdatos = MovDatos::M_EJE_X;
-							}
-						
-						 else if (diosita->Get_pos() == rey[0].Get_pos())
+						}
+						else if (diosita->Get_pos() == peon[6].Get_pos())
 						{
+								peon[5].Set_color('v');
+								pieza = "p6";
+
+								introdatos = IntroDatos::ESPERA;
+								movdatos = MovDatos::M_EJE_X;						
+						}
+						else if (diosita->Get_pos() == peon[7].Get_pos())
+						{
+							peon[5].Set_color('v');
+							pieza = "p7";
+
+							introdatos = IntroDatos::ESPERA;
+							movdatos = MovDatos::M_EJE_X;
+						}
+						 else if (diosita->Get_pos() == rey[0].Get_pos())
+{
 							rey[0].Set_color('v');
 							pieza = "r0";
 							introdatos = IntroDatos::ESPERA;
@@ -283,9 +315,63 @@ void Partida::Tecla(unsigned char c)
 						//con esto ya tendriamos la posicion del movimiento con diosita
 						//ahora tenemos que comprobar si es posible el movimiento con la pieza seleccionada anteriormente
 
-						if (pieza=="p3"&&Interaccion::Comprobar_movimiento(*diosita, peon[3]))//si se cumple la condicion 
+						if (pieza == "p0" && Interaccion::Comprobar_movimiento(*diosita, peon[0]))//si se cumple la condicion 
 						{
-							if (Interaccion::Comprobar_choque_piezas(*diosita, torre[0])&&Interaccion::Comprobar_choque_piezas(*diosita, torre[1]) && Interaccion::Comprobar_choque_piezas(*diosita, alfil[0]) && Interaccion::Comprobar_choque_piezas(*diosita, alfil[1]) && Interaccion::Comprobar_choque_piezas(*diosita, rey[0]) && Interaccion::Comprobar_choque_piezas(*diosita, dama[0])&& Interaccion::Comprobar_choque_piezas(*diosita, peon[5])&&Interaccion::Comprobar_choque_piezas(*diosita, caballo[0]) && Interaccion::Comprobar_choque_piezas(*diosita, caballo[1]))
+							if (Interaccion::Comprobar_choque_piezas(*diosita, torre[0]) && Interaccion::Comprobar_choque_piezas(*diosita, torre[1]) && Interaccion::Comprobar_choque_piezas(*diosita, alfil[0]) && Interaccion::Comprobar_choque_piezas(*diosita, alfil[1]) && Interaccion::Comprobar_choque_piezas(*diosita, rey[0]) && Interaccion::Comprobar_choque_piezas(*diosita, dama[0]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[5]) && Interaccion::Comprobar_choque_piezas(*diosita, caballo[0]) && Interaccion::Comprobar_choque_piezas(*diosita, caballo[1]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[3]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[1]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[2]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[4]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[6]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[7]))
+							{
+								diosita->Set_color('b');
+								peon[0].Set_color('b');
+								introdatos = IntroDatos::EJE_X;
+								movdatos = MovDatos::M_ESPERA;
+								turno = Turno::CAMBIO;
+							}
+							else
+							{
+								diosita->Set_color('m');
+								introdatos = IntroDatos::ESPERA;
+								movdatos = MovDatos::M_EJE_X;
+								turno = Turno::BLANCAS;
+							}
+						}
+						else if (pieza == "p1" && Interaccion::Comprobar_movimiento(*diosita, peon[1]))//si se cumple la condicion 
+						{
+							if (Interaccion::Comprobar_choque_piezas(*diosita, torre[0]) && Interaccion::Comprobar_choque_piezas(*diosita, torre[1]) && Interaccion::Comprobar_choque_piezas(*diosita, alfil[0]) && Interaccion::Comprobar_choque_piezas(*diosita, alfil[1]) && Interaccion::Comprobar_choque_piezas(*diosita, rey[0]) && Interaccion::Comprobar_choque_piezas(*diosita, dama[0]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[5]) && Interaccion::Comprobar_choque_piezas(*diosita, caballo[0]) && Interaccion::Comprobar_choque_piezas(*diosita, caballo[1]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[0]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[3]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[2]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[4]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[6]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[7]))
+							{
+								diosita->Set_color('b');
+								peon[1].Set_color('b');
+								introdatos = IntroDatos::EJE_X;
+								movdatos = MovDatos::M_ESPERA;
+								turno = Turno::CAMBIO;
+							}
+							else
+							{
+								diosita->Set_color('m');
+								introdatos = IntroDatos::ESPERA;
+								movdatos = MovDatos::M_EJE_X;
+								turno = Turno::BLANCAS;
+							}
+						}
+						else if (pieza == "p2" && Interaccion::Comprobar_movimiento(*diosita, peon[2]))//si se cumple la condicion 
+						{
+							if (Interaccion::Comprobar_choque_piezas(*diosita, torre[0]) && Interaccion::Comprobar_choque_piezas(*diosita, torre[1]) && Interaccion::Comprobar_choque_piezas(*diosita, alfil[0]) && Interaccion::Comprobar_choque_piezas(*diosita, alfil[1]) && Interaccion::Comprobar_choque_piezas(*diosita, rey[0]) && Interaccion::Comprobar_choque_piezas(*diosita, dama[0]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[5]) && Interaccion::Comprobar_choque_piezas(*diosita, caballo[0]) && Interaccion::Comprobar_choque_piezas(*diosita, caballo[1]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[0]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[3]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[1]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[4]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[6]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[7]))
+							{
+								diosita->Set_color('b');
+								peon[2].Set_color('b');
+								introdatos = IntroDatos::EJE_X;
+								movdatos = MovDatos::M_ESPERA;
+								turno = Turno::CAMBIO;
+							}
+							else
+							{
+								diosita->Set_color('m');
+								introdatos = IntroDatos::ESPERA;
+								movdatos = MovDatos::M_EJE_X;
+								turno = Turno::BLANCAS;
+							}
+						}
+						else if (pieza=="p3"&&Interaccion::Comprobar_movimiento(*diosita, peon[3]))//si se cumple la condicion 
+						{
+							if (Interaccion::Comprobar_choque_piezas(*diosita, torre[0])&&Interaccion::Comprobar_choque_piezas(*diosita, torre[1]) && Interaccion::Comprobar_choque_piezas(*diosita, alfil[0]) && Interaccion::Comprobar_choque_piezas(*diosita, alfil[1]) && Interaccion::Comprobar_choque_piezas(*diosita, rey[0]) && Interaccion::Comprobar_choque_piezas(*diosita, dama[0])&& Interaccion::Comprobar_choque_piezas(*diosita, peon[5]) && Interaccion::Comprobar_choque_piezas(*diosita, caballo[0]) && Interaccion::Comprobar_choque_piezas(*diosita, caballo[1])&& Interaccion::Comprobar_choque_piezas(*diosita,peon[0])&& Interaccion::Comprobar_choque_piezas(*diosita,peon[1]) && Interaccion::Comprobar_choque_piezas(*diosita,peon[2]) &&Interaccion::Comprobar_choque_piezas(*diosita,peon[4])&&Interaccion::Comprobar_choque_piezas(*diosita,peon[6])&&Interaccion::Comprobar_choque_piezas(*diosita,peon[7]))
 							{
 								diosita->Set_color('b');
 								peon[3].Set_color('b');
@@ -301,9 +387,27 @@ void Partida::Tecla(unsigned char c)
 								turno = Turno::BLANCAS;
 							}
 						}
+						else if (pieza == "p4" && Interaccion::Comprobar_movimiento(*diosita, peon[4]))//si se cumple la condicion 
+						{
+							if (Interaccion::Comprobar_choque_piezas(*diosita, torre[0]) && Interaccion::Comprobar_choque_piezas(*diosita, torre[1]) && Interaccion::Comprobar_choque_piezas(*diosita, alfil[0]) && Interaccion::Comprobar_choque_piezas(*diosita, alfil[1]) && Interaccion::Comprobar_choque_piezas(*diosita, rey[0]) && Interaccion::Comprobar_choque_piezas(*diosita, dama[0]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[3]) && Interaccion::Comprobar_choque_piezas(*diosita, caballo[0]) && Interaccion::Comprobar_choque_piezas(*diosita, caballo[1]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[0]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[1]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[2]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[5]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[6]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[7]))
+							{
+								diosita->Set_color('b');
+								peon[4].Set_color('b');
+								introdatos = IntroDatos::EJE_X;
+								movdatos = MovDatos::M_ESPERA;
+								turno = Turno::CAMBIO;
+							}
+							else
+							{
+								diosita->Set_color('m');
+								introdatos = IntroDatos::ESPERA;
+								movdatos = MovDatos::M_EJE_X;
+								turno = Turno::BLANCAS;
+							}
+						}
 						else if (pieza == "p5"&&Interaccion::Comprobar_movimiento(*diosita, peon[5]))//si se cumple la condicion 
 						{
-							if (Interaccion::Comprobar_choque_piezas(*diosita, torre[0]) && Interaccion::Comprobar_choque_piezas(*diosita, torre[1]) && Interaccion::Comprobar_choque_piezas(*diosita, alfil[0]) && Interaccion::Comprobar_choque_piezas(*diosita, alfil[1]) && Interaccion::Comprobar_choque_piezas(*diosita, rey[0]) && Interaccion::Comprobar_choque_piezas(*diosita, dama[0]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[3]) && Interaccion::Comprobar_choque_piezas(*diosita, caballo[0]) && Interaccion::Comprobar_choque_piezas(*diosita, caballo[1]))
+							if (Interaccion::Comprobar_choque_piezas(*diosita, torre[0]) && Interaccion::Comprobar_choque_piezas(*diosita, torre[1]) && Interaccion::Comprobar_choque_piezas(*diosita, alfil[0]) && Interaccion::Comprobar_choque_piezas(*diosita, alfil[1]) && Interaccion::Comprobar_choque_piezas(*diosita, rey[0]) && Interaccion::Comprobar_choque_piezas(*diosita, dama[0]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[3]) && Interaccion::Comprobar_choque_piezas(*diosita, caballo[0]) && Interaccion::Comprobar_choque_piezas(*diosita, caballo[1]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[0]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[1]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[2]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[4]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[6]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[7]))
 							{
 								diosita->Set_color('b');
 								peon[5].Set_color('b');
@@ -319,10 +423,45 @@ void Partida::Tecla(unsigned char c)
 								turno = Turno::BLANCAS;
 							}
 						}
-						
+						else if (pieza == "p6" && Interaccion::Comprobar_movimiento(*diosita, peon[6]))//si se cumple la condicion 
+						{
+							if (Interaccion::Comprobar_choque_piezas(*diosita, torre[0]) && Interaccion::Comprobar_choque_piezas(*diosita, torre[1]) && Interaccion::Comprobar_choque_piezas(*diosita, alfil[0]) && Interaccion::Comprobar_choque_piezas(*diosita, alfil[1]) && Interaccion::Comprobar_choque_piezas(*diosita, rey[0]) && Interaccion::Comprobar_choque_piezas(*diosita, dama[0]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[3]) && Interaccion::Comprobar_choque_piezas(*diosita, caballo[0]) && Interaccion::Comprobar_choque_piezas(*diosita, caballo[1]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[0]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[1]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[2]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[4]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[5]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[7]))
+							{
+								diosita->Set_color('b');
+								peon[6].Set_color('b');
+								introdatos = IntroDatos::EJE_X;
+								movdatos = MovDatos::M_ESPERA;
+								turno = Turno::CAMBIO;
+							}
+							else
+							{
+								diosita->Set_color('m');
+								introdatos = IntroDatos::ESPERA;
+								movdatos = MovDatos::M_EJE_X;
+								turno = Turno::BLANCAS;
+							}
+						}
+						else if (pieza == "p7" && Interaccion::Comprobar_movimiento(*diosita, peon[7]))//si se cumple la condicion 
+						{
+							if (Interaccion::Comprobar_choque_piezas(*diosita, torre[0]) && Interaccion::Comprobar_choque_piezas(*diosita, torre[1]) && Interaccion::Comprobar_choque_piezas(*diosita, alfil[0]) && Interaccion::Comprobar_choque_piezas(*diosita, alfil[1]) && Interaccion::Comprobar_choque_piezas(*diosita, rey[0]) && Interaccion::Comprobar_choque_piezas(*diosita, dama[0]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[3]) && Interaccion::Comprobar_choque_piezas(*diosita, caballo[0]) && Interaccion::Comprobar_choque_piezas(*diosita, caballo[1]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[0]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[1]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[2]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[4]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[5]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[6]))
+							{
+								diosita->Set_color('b');
+								peon[7].Set_color('b');
+								introdatos = IntroDatos::EJE_X;
+								movdatos = MovDatos::M_ESPERA;
+								turno = Turno::CAMBIO;
+							}
+							else
+							{
+								diosita->Set_color('m');
+								introdatos = IntroDatos::ESPERA;
+								movdatos = MovDatos::M_EJE_X;
+								turno = Turno::BLANCAS;
+							}
+						}
 						else if (pieza == "r0" && Interaccion::Comprobar_movimiento(*diosita, rey[0]))//si se cumple la condicion 
 						{
-							if (Interaccion::Comprobar_choque_piezas(*diosita, torre[0]) && Interaccion::Comprobar_choque_piezas(*diosita, torre[1]) && Interaccion::Comprobar_choque_piezas(*diosita, alfil[0]) && Interaccion::Comprobar_choque_piezas(*diosita, alfil[1]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[5]) && Interaccion::Comprobar_choque_piezas(*diosita, dama[0]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[3]) && Interaccion::Comprobar_choque_piezas(*diosita, caballo[0]) && Interaccion::Comprobar_choque_piezas(*diosita, caballo[1]))
+							if (Interaccion::Comprobar_choque_piezas(*diosita, torre[0]) && Interaccion::Comprobar_choque_piezas(*diosita, torre[1]) && Interaccion::Comprobar_choque_piezas(*diosita, alfil[0]) && Interaccion::Comprobar_choque_piezas(*diosita, alfil[1]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[5]) && Interaccion::Comprobar_choque_piezas(*diosita, dama[0]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[3]) && Interaccion::Comprobar_choque_piezas(*diosita, caballo[0]) && Interaccion::Comprobar_choque_piezas(*diosita, caballo[1]) &&Interaccion::Comprobar_choque_piezas(*diosita,peon[0]) &&Interaccion::Comprobar_choque_piezas(*diosita,peon[1]) &&Interaccion::Comprobar_choque_piezas(*diosita,peon[2]) &&Interaccion::Comprobar_choque_piezas(*diosita,peon[4])&&Interaccion::Comprobar_choque_piezas(*diosita,peon[6])&&Interaccion::Comprobar_choque_piezas(*diosita,peon[7]))
 							{
 								diosita->Set_color('b');
 								rey[0].Set_color('b');
@@ -341,7 +480,8 @@ void Partida::Tecla(unsigned char c)
 						
 						else if (pieza == "a0"&&Interaccion::Comprobar_movimiento(*diosita, alfil[0]))//si se cumple la condicion 
 						{
-							if (Interaccion::Comprobar_choque_piezas(*diosita, torre[0]) && Interaccion::Comprobar_choque_piezas(*diosita, torre[1]) && Interaccion::Comprobar_choque_piezas(*diosita, rey[0]) && Interaccion::Comprobar_choque_piezas(*diosita, alfil[1]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[5]) && Interaccion::Comprobar_choque_piezas(*diosita, dama[0]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[3]) && Interaccion::Comprobar_choque_piezas(*diosita, caballo[0]) && Interaccion::Comprobar_choque_piezas(*diosita, caballo[1]))
+							if (Interaccion::Comprobar_choque_piezas(*diosita, torre[0]) && Interaccion::Comprobar_choque_piezas(*diosita, torre[1]) && Interaccion::Comprobar_choque_piezas(*diosita, rey[0]) && Interaccion::Comprobar_choque_piezas(*diosita, alfil[1]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[5]) && Interaccion::Comprobar_choque_piezas(*diosita, dama[0]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[3]) && Interaccion::Comprobar_choque_piezas(*diosita, caballo[0]) && Interaccion::Comprobar_choque_piezas(*diosita, caballo[1]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[0]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[1]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[2]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[4]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[6]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[7]))
+
 							{
 								diosita->Set_color('b');
 								alfil[0].Set_color('b');
@@ -359,7 +499,8 @@ void Partida::Tecla(unsigned char c)
 						}
 						else if (pieza == "a1" && Interaccion::Comprobar_movimiento(*diosita, alfil[1]))//si se cumple la condicion 
 						{
-							if (Interaccion::Comprobar_choque_piezas(*diosita, torre[0]) && Interaccion::Comprobar_choque_piezas(*diosita, torre[1]) && Interaccion::Comprobar_choque_piezas(*diosita, rey[0]) && Interaccion::Comprobar_choque_piezas(*diosita, alfil[0]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[5]) && Interaccion::Comprobar_choque_piezas(*diosita, dama[0]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[3]) && Interaccion::Comprobar_choque_piezas(*diosita, caballo[0]) && Interaccion::Comprobar_choque_piezas(*diosita, caballo[1]))
+							if (Interaccion::Comprobar_choque_piezas(*diosita, torre[0]) && Interaccion::Comprobar_choque_piezas(*diosita, torre[1]) && Interaccion::Comprobar_choque_piezas(*diosita, rey[0]) && Interaccion::Comprobar_choque_piezas(*diosita, alfil[0]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[5]) && Interaccion::Comprobar_choque_piezas(*diosita, dama[0]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[3]) && Interaccion::Comprobar_choque_piezas(*diosita, caballo[0]) && Interaccion::Comprobar_choque_piezas(*diosita, caballo[1]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[0]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[1]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[2]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[4]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[6]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[7]))
+					
 							{
 								diosita->Set_color('b');
 								alfil[1].Set_color('b');
@@ -377,7 +518,8 @@ void Partida::Tecla(unsigned char c)
 						}
 						else if (pieza == "t0" && Interaccion::Comprobar_movimiento(*diosita, torre[0]))//si se cumple la condicion 
 						{
-							if (Interaccion::Comprobar_choque_piezas(*diosita, torre[1])&&Interaccion::Comprobar_choque_piezas(*diosita,alfil[0])&&Interaccion::Comprobar_choque_piezas(*diosita, alfil[1])&& Interaccion::Comprobar_choque_piezas(*diosita, rey[0]) && Interaccion::Comprobar_choque_piezas(*diosita, dama[0])&& Interaccion::Comprobar_choque_piezas(*diosita, peon[3])&& Interaccion::Comprobar_choque_piezas(*diosita, peon[5])&& Interaccion::Comprobar_choque_piezas(*diosita,caballo[0])&& Interaccion::Comprobar_choque_piezas(*diosita,caballo[1]))
+							if (Interaccion::Comprobar_choque_piezas(*diosita, torre[1])&&Interaccion::Comprobar_choque_piezas(*diosita,alfil[0])&&Interaccion::Comprobar_choque_piezas(*diosita, alfil[1])&& Interaccion::Comprobar_choque_piezas(*diosita, rey[0]) && Interaccion::Comprobar_choque_piezas(*diosita, dama[0])&& Interaccion::Comprobar_choque_piezas(*diosita, peon[3])&& Interaccion::Comprobar_choque_piezas(*diosita, peon[5])&& Interaccion::Comprobar_choque_piezas(*diosita,caballo[0])&& Interaccion::Comprobar_choque_piezas(*diosita,caballo[1]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[0]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[1]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[2]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[4]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[6]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[7]))
+						
 							{
 						
 										diosita->Set_color('b');
@@ -398,7 +540,8 @@ void Partida::Tecla(unsigned char c)
 						}
 						else if (pieza == "t1" && Interaccion::Comprobar_movimiento(*diosita, torre[1]))//si se cumple la condicion 
 						{
-							if (Interaccion::Comprobar_choque_piezas(*diosita, torre[0]) && Interaccion::Comprobar_choque_piezas(*diosita, alfil[1]) && Interaccion::Comprobar_choque_piezas(*diosita, rey[0]) && Interaccion::Comprobar_choque_piezas(*diosita, alfil[0]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[5]) && Interaccion::Comprobar_choque_piezas(*diosita, dama[0]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[3]) && Interaccion::Comprobar_choque_piezas(*diosita, caballo[0]) && Interaccion::Comprobar_choque_piezas(*diosita, caballo[1]))
+							if (Interaccion::Comprobar_choque_piezas(*diosita, torre[0]) && Interaccion::Comprobar_choque_piezas(*diosita, alfil[1]) && Interaccion::Comprobar_choque_piezas(*diosita, rey[0]) && Interaccion::Comprobar_choque_piezas(*diosita, alfil[0]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[5]) && Interaccion::Comprobar_choque_piezas(*diosita, dama[0]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[3]) && Interaccion::Comprobar_choque_piezas(*diosita, caballo[0]) && Interaccion::Comprobar_choque_piezas(*diosita, caballo[1]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[0]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[1]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[2]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[4]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[6]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[7]))
+								
 							{
 								diosita->Set_color('b');
 								torre[1].Set_color('b');
@@ -416,7 +559,8 @@ void Partida::Tecla(unsigned char c)
 						}
 						else if (pieza == "d0" && Interaccion::Comprobar_movimiento(*diosita, dama[0]))//si se cumple la condicion 
 						{
-							if (Interaccion::Comprobar_choque_piezas(*diosita, torre[0]) && Interaccion::Comprobar_choque_piezas(*diosita, alfil[1]) && Interaccion::Comprobar_choque_piezas(*diosita, rey[0]) && Interaccion::Comprobar_choque_piezas(*diosita, alfil[0]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[5]) && Interaccion::Comprobar_choque_piezas(*diosita, torre[1]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[3]) && Interaccion::Comprobar_choque_piezas(*diosita, caballo[0]) && Interaccion::Comprobar_choque_piezas(*diosita, caballo[1]))
+							if (Interaccion::Comprobar_choque_piezas(*diosita, torre[0]) && Interaccion::Comprobar_choque_piezas(*diosita, alfil[1]) && Interaccion::Comprobar_choque_piezas(*diosita, rey[0]) && Interaccion::Comprobar_choque_piezas(*diosita, alfil[0]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[5]) && Interaccion::Comprobar_choque_piezas(*diosita, torre[1]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[3]) && Interaccion::Comprobar_choque_piezas(*diosita, caballo[0]) && Interaccion::Comprobar_choque_piezas(*diosita, caballo[1]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[0]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[1]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[2]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[4]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[6]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[7]))
+								
 							{
 								diosita->Set_color('b');
 								dama[0].Set_color('b');
@@ -434,7 +578,8 @@ void Partida::Tecla(unsigned char c)
 						}
 						else if (pieza == "c0" && Interaccion::Comprobar_movimiento(*diosita, caballo[0]))//si se cumple la condicion 
 						{
-							if (Interaccion::Comprobar_choque_piezas(*diosita, torre[0]) && Interaccion::Comprobar_choque_piezas(*diosita, alfil[1]) && Interaccion::Comprobar_choque_piezas(*diosita, rey[0]) && Interaccion::Comprobar_choque_piezas(*diosita, alfil[0]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[5]) && Interaccion::Comprobar_choque_piezas(*diosita, torre[1]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[3]) && Interaccion::Comprobar_choque_piezas(*diosita, dama[0]) && Interaccion::Comprobar_choque_piezas(*diosita, caballo[1]))
+							if (Interaccion::Comprobar_choque_piezas(*diosita, torre[0]) && Interaccion::Comprobar_choque_piezas(*diosita, alfil[1]) && Interaccion::Comprobar_choque_piezas(*diosita, rey[0]) && Interaccion::Comprobar_choque_piezas(*diosita, alfil[0]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[5]) && Interaccion::Comprobar_choque_piezas(*diosita, torre[1]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[3]) && Interaccion::Comprobar_choque_piezas(*diosita, dama[0]) && Interaccion::Comprobar_choque_piezas(*diosita, caballo[1]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[0]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[1]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[2]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[4]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[6]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[7]))
+								
 							{
 								diosita->Set_color('b');
 								caballo[0].Set_color('b');
@@ -452,7 +597,8 @@ void Partida::Tecla(unsigned char c)
 						}
 						else if (pieza == "c1" && Interaccion::Comprobar_movimiento(*diosita, caballo[1]))//si se cumple la condicion 
 						{
-							if (Interaccion::Comprobar_choque_piezas(*diosita, torre[0]) && Interaccion::Comprobar_choque_piezas(*diosita, alfil[1]) && Interaccion::Comprobar_choque_piezas(*diosita, rey[0]) && Interaccion::Comprobar_choque_piezas(*diosita, alfil[0]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[5]) && Interaccion::Comprobar_choque_piezas(*diosita, torre[1]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[3]) && Interaccion::Comprobar_choque_piezas(*diosita, dama[0]) && Interaccion::Comprobar_choque_piezas(*diosita, caballo[0]))
+							if (Interaccion::Comprobar_choque_piezas(*diosita, torre[0]) && Interaccion::Comprobar_choque_piezas(*diosita, alfil[1]) && Interaccion::Comprobar_choque_piezas(*diosita, rey[0]) && Interaccion::Comprobar_choque_piezas(*diosita, alfil[0]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[5]) && Interaccion::Comprobar_choque_piezas(*diosita, torre[1]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[3]) && Interaccion::Comprobar_choque_piezas(*diosita, dama[0]) && Interaccion::Comprobar_choque_piezas(*diosita, caballo[0]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[0]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[1]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[2]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[4]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[6]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[7]))
+								
 							{
 								diosita->Set_color('b');
 								caballo[1].Set_color('b');
@@ -598,16 +744,37 @@ void Partida::Mueve()
 		control_selccion_pieza = 0;
 
 		//se puede hacer con un for
-
+		if (posicion_pieza_seleccionada == peon[0].Get_pos()) //con sobrecarga del operador == para comparar Vector3d
+		{
+			Interaccion::Desplazar(*diosita, peon[0]);
+		}
+		if (posicion_pieza_seleccionada == peon[1].Get_pos()) //con sobrecarga del operador == para comparar Vector3d
+		{
+			Interaccion::Desplazar(*diosita, peon[1]);
+		}
+		if (posicion_pieza_seleccionada == peon[2].Get_pos()) //con sobrecarga del operador == para comparar Vector3d
+		{
+			Interaccion::Desplazar(*diosita, peon[2]);
+		}
 		if (posicion_pieza_seleccionada == peon[3].Get_pos()) //con sobrecarga del operador == para comparar Vector3d
 		{
 			Interaccion::Desplazar(*diosita, peon[3]);
 		}
-
-
+		if (posicion_pieza_seleccionada == peon[4].Get_pos()) //con sobrecarga del operador == para comparar Vector3d
+		{
+			Interaccion::Desplazar(*diosita, peon[3]);
+		}
 		if (posicion_pieza_seleccionada == peon[5].Get_pos())// && Interaccion::Comprobar_movimiento(rey[0]) //con sobrecarga del operador == para comparar Vector3d
 		{
 			Interaccion::Desplazar(*diosita, peon[5]);
+		}
+		if (posicion_pieza_seleccionada == peon[6].Get_pos()) //con sobrecarga del operador == para comparar Vector3d
+		{
+			Interaccion::Desplazar(*diosita, peon[6]);
+		}
+		if (posicion_pieza_seleccionada == peon[7].Get_pos()) //con sobrecarga del operador == para comparar Vector3d
+		{
+			Interaccion::Desplazar(*diosita, peon[7]);
 		}
 
 		if (posicion_pieza_seleccionada == rey[0].Get_pos())// && Interaccion::Comprobar_movimiento(rey[0]) //con sobrecarga del operador == para comparar Vector3d

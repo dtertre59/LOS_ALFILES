@@ -88,10 +88,31 @@ void Peon::Escala(unsigned char c)
 
 bool Peon::Movimiento(const Vector3d& muevo_a)
 {
-	if (muevo_a.x == posicion.x - 10 && muevo_a.y == posicion.y)
+	int flag = 0;
+	int npx = muevo_a.x;
+	int npy = muevo_a.y;
+	int x = muevo_a.x - posicion.x;
+	int y = muevo_a.y - posicion.y;
+	if (color.bn == 1)
 	{
-		return 1;
+		if (x == -10 && y == 0)
+		{
+			flag = 1;
+		}
+		else
+			flag = 0;
 	}
+	if (color.bn == 2)
+	{
+		if (x == 10 && y == 0)
+		{
+			flag = 1;
+		}
+		else
+			flag = 0;
+	}
+	if (flag == 1)
+		return 1;
 	else
 		return 0;
 }
