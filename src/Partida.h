@@ -50,7 +50,7 @@ public:
 
 
 	string pieza;
-	int control_seleccion_pieza; //para saber si ya se ha seleccionadado la ficha
+	int control_selccion_pieza; //para saber si ya se ha seleccionadado la ficha
 	Vector3d posicion_pieza_seleccionada;
 
 
