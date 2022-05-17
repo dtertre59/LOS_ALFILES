@@ -17,7 +17,7 @@ Partida::Partida()
 	turno = Turno::BLANCAS;
 	introdatos = IntroDatos::EJE_X;
 	movdatos = MovDatos::M_ESPERA;
-	control_seleccion_pieza = 0;
+	control_selccion_pieza = 0;
 	pieza = "00";
 }
 
@@ -79,7 +79,7 @@ void Partida::Inicializa()
 	pieza_seleccionada = 'w';
 
 
-	control_seleccion_pieza = 0;
+	control_selccion_pieza = 0;
 	posicion_pieza_seleccionada.Set_vector(0, 0, 0);
 
 	pieza = "00";
@@ -134,11 +134,11 @@ void Partida::Tecla(unsigned char c)
 	{
 
 		//METER POSICION DE LA PIEZA QUE QUIERES MOVER
-		if (control_seleccion_pieza == 0 &&pieza=="00")
+		if (control_selccion_pieza == 0 &&pieza=="00")
 		{
 			if (introdatos == IntroDatos::EJE_X && movdatos == MovDatos::M_ESPERA)
 			{
-				control_seleccion_pieza = 0;
+				control_selccion_pieza = 0;
 
 				diosita->Set_color('v');
 				for (int i = 0, j = 7; i < 8; i++, j--)
@@ -287,7 +287,7 @@ void Partida::Tecla(unsigned char c)
 
 			//METER POSICION DE DONDE QUIERES MOVER LA PIEZA
 
-		if (control_seleccion_pieza == 1)
+		if (control_selccion_pieza == 1)
 		{
 
 			if (movdatos == MovDatos::M_EJE_X && introdatos == IntroDatos::ESPERA)
@@ -637,7 +637,6 @@ void Partida::Tecla(unsigned char c)
 			pieza = "00";
 			turno = Turno::NEGRAS;
 			diosita->Set_color('r');
-			//control_selccion_pieza = 0;
 		}
 	}
 	if (turno == Turno::CAMBIO2)
@@ -647,18 +646,17 @@ void Partida::Tecla(unsigned char c)
 			pieza = '00';
 			turno = Turno::BLANCAS;
 			diosita->Set_color('v');
-			//control_seleccion_pieza = 0;
 		}
 	}
 
 
 	if (turno == Turno::NEGRAS)
 	{
-		if (control_seleccion_pieza == 0 && pieza == "00")
+		if (control_selccion_pieza == 0 && pieza == "00")
 		{
 			if (introdatos == IntroDatos::EJE_X && movdatos == MovDatos::M_ESPERA)
 			{
-				control_seleccion_pieza = 0;
+				control_selccion_pieza = 0;
 
 				diosita->Set_color('r');
 				for (int i = 0, j = 7; i < 8; i++, j--)
@@ -804,7 +802,7 @@ void Partida::Tecla(unsigned char c)
 			}
 		}
 
-		if (control_seleccion_pieza == 1)
+		if (control_selccion_pieza == 1)
 		{
 
 			if (movdatos == MovDatos::M_EJE_X && introdatos == IntroDatos::ESPERA)
@@ -1153,16 +1151,16 @@ void Partida::Mueve()
 {
 	//PARA CONOCER LA POSICION DE LA PIEZA QUE QUEREMOS MOVER
 
-	if (turno == Turno::BLANCAS && introdatos == IntroDatos::ESPERA && movdatos == MovDatos::M_EJE_X  && control_seleccion_pieza == 0)
+	if (turno == Turno::BLANCAS && introdatos == IntroDatos::ESPERA && movdatos == MovDatos::M_EJE_X  && control_selccion_pieza == 0)
 	{
 		posicion_pieza_seleccionada = Interaccion::Seleccionar(*diosita);
-		control_seleccion_pieza = 1;
+		control_selccion_pieza = 1;
 	}
 
-	if (turno == Turno::NEGRAS && introdatos == IntroDatos::ESPERA && movdatos == MovDatos::M_EJE_X && control_seleccion_pieza==0)
+	if (turno == Turno::NEGRAS && introdatos == IntroDatos::ESPERA && movdatos == MovDatos::M_EJE_X && control_selccion_pieza==0)
 	{
 		posicion_pieza_seleccionada = Interaccion::Seleccionar(*diosita);
-		control_seleccion_pieza = 1;//creemos que esto deberia ir aqui
+		control_selccion_pieza = 1;//creemos que esto deberia ir aqui
 	}
 
 
@@ -1170,7 +1168,7 @@ void Partida::Mueve()
 
 	if (turno == Turno::CAMBIO)
 	{
-		control_seleccion_pieza = 0;
+		control_selccion_pieza = 0;
 
 		//se puede hacer con un for
 		if (posicion_pieza_seleccionada == peon[0].Get_pos()) //con sobrecarga del operador == para comparar Vector3d
