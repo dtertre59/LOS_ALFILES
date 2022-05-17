@@ -81,13 +81,13 @@ void Rey::Dibuja()
 	glutSolidCube(escala * 0.4);
 	glTranslatef(-posicion.x, -posicion.y, -(posicion.z + (escala * 13.3)));
 
-	glTranslatef(posicion.x + (escala * 0.4), posicion.y, posicion.z + (escala * 13.3));
+	glTranslatef(posicion.x , posicion.y + (escala * 0.4), posicion.z + (escala * 13.3));
 	glutSolidCube(escala * 0.4);
-	glTranslatef(-(posicion.x + (escala * 0.4)), -posicion.y, -(posicion.z + (escala * 13.3)));
+	glTranslatef(-(posicion.x ), -(posicion.y + (escala * 0.4)), -(posicion.z + (escala * 13.3)));
 
-	glTranslatef(posicion.x + (escala * -0.4), posicion.y, posicion.z + (escala * 13.3));
+	glTranslatef(posicion.x, posicion.y + (escala * -0.4), posicion.z + (escala * 13.3));
 	glutSolidCube(escala * 0.4);
-	glTranslatef(-(posicion.x + (escala * -0.4)), -posicion.y, -(posicion.z + (escala * 13.3)));
+	glTranslatef(-(posicion.x ), -(posicion.y + (escala * -0.4)), -(posicion.z + (escala * 13.3)));
 
 	glTranslatef(posicion.x, posicion.y, posicion.z + (escala * 13.7));
 	glutSolidCube(escala * 0.4);
@@ -107,19 +107,84 @@ void Rey::Escala(unsigned char c)
 
 bool Rey::Movimiento(const Vector3d& muevo_a)
 {
-	if (muevo_a.x == posicion.x - 10 && muevo_a.y == posicion.y ||
-		muevo_a.x == posicion.x + 10 && muevo_a.y == posicion.y ||
-		muevo_a.x == posicion.x && muevo_a.y == posicion.y - 10 ||
-		muevo_a.x == posicion.x && muevo_a.y == posicion.y + 10 ||
-		muevo_a.x == posicion.x - 10 && muevo_a.y == posicion.y -10 ||
-		muevo_a.x == posicion.x + 10 && muevo_a.y == posicion.y -10 ||
-		muevo_a.x == posicion.x + 10 && muevo_a.y == posicion.y +10 ||
-		muevo_a.x == posicion.x -10 && muevo_a.y == posicion.y + 10)
+	int flag = 0;
+	int npx = muevo_a.x;
+	int npy = muevo_a.y;
+	int x = muevo_a.x - posicion.x;
+	int y = muevo_a.y - posicion.y;
+
+	//movimientos posibles -2/-1
+	if (x == -10 && y == 0)
+	{
+		if (npx > 00 && npx < 80)
+			if (npy >= 00 && npy <= 70)
+			{
+				flag = 1;;
+			}
+	}
+	if (x == -10 && y == -10)
+	{
+		if (npx > 00 && npx < 80)
+			if (npy >= 00 && npy <= 70)
+			{
+				flag = 1;;
+			}
+	}
+	if (x == -10 && y == 10)
+	{
+		if (npx > 00 && npx < 80)
+			if (npy >= 00 && npy <= 70)
+			{
+				flag = 1;;
+			}
+	}
+	if (x == 0 && y == -10)
+	{
+		if (npx > 00 && npx < 80)
+			if (npy >= 00 && npy <= 70)
+			{
+				flag = 1;;
+			}
+	}
+	if (x == 0 && y == 10)
+	{
+		if (npx > 00 && npx < 80)
+			if (npy >= 00 && npy <= 70)
+			{
+				flag = 1;;
+			}
+	}
+	if (x == 10 && y == -10)
+	{
+		if (npx > 00 && npx < 80)
+			if (npy >= 00 && npy <= 70)
+			{
+				flag = 1;;
+			}
+	}
+	if (x == 10 && y == 0)
+	{
+		if (npx > 00 && npx < 80)
+			if (npy >= 00 && npy <= 70)
+			{
+				flag = 1;;
+			}
+	}
+	if (x == 10 && y == 10)
+	{
+		if (npx > 00 && npx < 80)
+			if (npy >= 00 && npy <= 70)
+			{
+				flag = 1;;
+			}
+	}
+	if (flag == 1)
 	{
 		return 1;
 	}
 	else
 		return 0;
+
 }
 
 
@@ -135,7 +200,7 @@ bool Rey::Movimiento(const Vector3d& muevo_a)
 
 
 //MOVER FIGURA CON TECLADO
-
+/*
 bool Rey::pos_Movimiento(int i2, int j2)
 {
 	int i, j;
@@ -151,7 +216,7 @@ bool Rey::pos_Movimiento(int i2, int j2)
 		j2 = j0 + j2;
 		mov = true;
 	}
-	/**
+	
 	//movimientos posibles	
 	if ((i2 + 1 > 0 && i2 +1 <= 7) && (j2  >= 0 && j2  <= 7))
 	{
@@ -210,11 +275,11 @@ bool Rey::pos_Movimiento(int i2, int j2)
 		j2 = j0 + 1;
 		mov = true;
 	}
-	*/
-	/*
+	
+	
 	else
 		movimiento = false;
-		*/
+		
 	///i0 = i2;
 	//j0 = j2;
 	return mov;
@@ -223,7 +288,7 @@ bool Rey::pos_Movimiento(int i2, int j2)
 
 void Rey::Mover(int x,int y)
 {
-	/*
+	
 	bool mov;
 	if (posicion.x > 00 && posicion.x < 80)
 		if (posicion.y > 00 && posicion.y < 70)
@@ -232,7 +297,7 @@ void Rey::Mover(int x,int y)
 			if(mov==true)
 				posicion.MoverVect(-10 * x, 10 * y, 0);
 		}
-		*/
+		
 	int npx, npy;
 
 	//movimiento normal
@@ -348,4 +413,5 @@ void Rey::Mover(int x,int y)
 					posicion.MoverVect(10 * x, 10 * y, 0);
 	}
 }
+*/
 	

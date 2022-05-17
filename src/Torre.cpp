@@ -38,7 +38,7 @@ void Torre::Dibuja()
 	glTranslatef(posicion.x, posicion.y, posicion.z + (escala * 1.55));
 	glutSolidTorus((escala * 1.5 - 0.35), (escala * 3 - 0.85), 40, 40);   //  innerRadius, outerRadius, sides, rings
 	glTranslatef(-posicion.x, -posicion.y, -(posicion.z + (escala * 1.55)));
-
+	
 	glTranslatef(posicion.x, posicion.y, posicion.z + (escala * 2));
 	glutSolidCone((escala * 3), (escala * 6), 100, 100); //   radio base, height, slices, stacks
 	glTranslatef(-posicion.x, -posicion.y, -(posicion.z + (escala * 2)));

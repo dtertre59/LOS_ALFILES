@@ -32,7 +32,7 @@ void Coordinador_ajedrez::Dibuja()
 			0.0, 1.0, 0.0); // definimos hacia arriba (eje Y)
 		
 		ETSIDI::setTextColor(1, 1, 0);
-		ETSIDI::setFont("fuentes/fast99.ttf", 20);
+		ETSIDI::setFont("fuentes/fast99.ttf", 28);
 		ETSIDI::printxy("AJEDREZ", -4, 13);
 
 		ETSIDI::setTextColor(1, 1, 1);
@@ -50,14 +50,14 @@ void Coordinador_ajedrez::Dibuja()
 		ETSIDI::setTextColor(1, 1, 1);
 		ETSIDI::setFont("fuentes/Bitwise.ttf", 18);
 	
-			ETSIDI::printxy("A", 78, 0);
-			ETSIDI::printxy("B", 78, 10);
-			ETSIDI::printxy("C", 78, 20);
-			ETSIDI::printxy("D", 78, 30);
-			ETSIDI::printxy("E", 78, 40);
-			ETSIDI::printxy("F", 78, 50);
-			ETSIDI::printxy("G", 78, 60);
-			ETSIDI::printxy("H", 78, 70);
+		ETSIDI::printxy("A", 78, 0);
+		ETSIDI::printxy("B", 78, 10);
+		ETSIDI::printxy("C", 78, 20);
+		ETSIDI::printxy("D", 78, 30);
+		ETSIDI::printxy("E", 78, 40);
+		ETSIDI::printxy("F", 78, 50);
+		ETSIDI::printxy("G", 78, 60);
+		ETSIDI::printxy("H", 78, 70);
 		
 		ETSIDI::printxy("1", 70, -10);
 		ETSIDI::printxy("2", 60, -10);
@@ -106,7 +106,14 @@ void Coordinador_ajedrez::Dibuja()
 
 		ETSIDI::setTextColor(1, 1, 1);
 		ETSIDI::setFont("fuentes/Bitwise.ttf", 15);
-		ETSIDI::printxy("PULSA -ESC- PARA VOLVER al inicio", -8, 8);		
+		ETSIDI::printxy("PULSA -ESC- PARA VOLVER al inicio", -13, 10);
+		ETSIDI::printxy("Por TECLADO introduzca primero NUMERO y despues LETRA ", -13, 8);
+		ETSIDI::printxy("de la ubicacion de la pieza que desee mover ", -13, 7);
+		ETSIDI::printxy("Presione RETURN para cambiar la pieza seleccioanda ", -13, 5);
+		ETSIDI::printxy("Presione ESPACIO para cambiar de turno ", -13, 4);
+		ETSIDI::printxy("Despues, introduzca la POSICION a la que desees MOVER la pieza ", -13, 2);
+		ETSIDI::printxy("indicando primero NUMERO y luego LETRA ", -13, 1); 
+
 	}
 
 	else if (estado == Estado::PAUSA)

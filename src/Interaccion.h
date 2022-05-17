@@ -34,4 +34,5 @@ public:
 	static void Desplazar(Pieza& diosita, Pieza& pieza);
 	static bool Comprobar_movimiento(Pieza& diosita, Pieza& pieza);
 	static bool Comprobar_choque_piezas(Pieza& diosita, Pieza& pieza);
+	//static bool Comprobar_camino(Pieza& diosita, Pieza& pieza);
 };
