@@ -61,6 +61,7 @@ void Color_RGB::Set_color(unsigned char  c)
 		verde = 0;
 		azul = 0;
 		bn = 2;
+
 	}
 
 	else
