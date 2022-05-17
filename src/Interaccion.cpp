@@ -37,6 +37,8 @@ bool Interaccion::Comprobar_movimiento(Pieza& diosita, Pieza& pieza)
 	return verificacion;
 	
 }
+
+
 bool Interaccion::Comprobar_choque_piezas(Pieza& diosita, Pieza& pieza)
 {
 	/*
@@ -45,94 +47,38 @@ bool Interaccion::Comprobar_choque_piezas(Pieza& diosita, Pieza& pieza)
 	Vector3d r =diosita.Get_pos()-pieza.Get_pos();
 	int flag = 0;
 	*/
+
 	if (diosita.Get_pos() == pieza.Get_pos())
 	{
 		return 0;
 	}
-	/*
-	else if (r.y == 0 && r.x < 0)
-	{
-		for (p.x; p.x<=d.x; p.x - 10)
-		{
-			if (p.x == pieza.posicion.x)
-				flag=1;
-
-		}
-		if (flag == 1)
-		{
-			return 0;
-		}
-		else
-			return 1;
-	}
-	*/
-	/*
-	else if (r.y == 0 && r.x > 0)
-	{
-		for (p.x; d.x; p.x + 10)
-		{
-			if (p.x == pieza.posicion.x)
-				return 0;
-		}
-	}
-	else if (r.x == 0 && r.y > 0)
-	{
-		for (p.y; d.y; p.y + 10)
-		{
-			if (p.y == pieza.posicion.y)
-				return 0;
-		}
-	}
-	else if (r.x == 0 && r.y < 0)
-	{
-		for (p.y; d.y; p.y - 10)
-		{
-			if (p.y == pieza.posicion.y)
-				return 0;
-		}
-	}
-	*/
-	/*
-	else if (r.x == r.y && r.x > 0)
-	{
-		for (p.x, p.y; p.x+r.x,p.y+r.y; p.x + 10, p.y + 10)
-		{
-			if (p.y == pieza.posicion.y)
-				if(p.x==pieza.posicion.x)
-					return 0;
-		}
-	}
-	else if (r.x == -r.y && r.x > 0)
-	{
-		for (p.x, p.y; p.x + r.x, p.y - r.y; p.x + 10, p.y - 10)
-		{
-			if (p.y == pieza.posicion.y)
-				if (p.x == pieza.posicion.x)
-					return 0;
-		}
-	}
-	else if (r.x == r.y && r.x < 0)
-	{
-		for (p.x, p.y; p.x - r.x, p.y - r.y; p.x - 10, p.y - 10)
-		{
-			if (p.y == pieza.posicion.y)
-				if (p.x == pieza.posicion.x)
-					return 0;
-		}
-	}
-	else if (r.x == -r.y && r.x < 0)
-	{
-		for (p.x, p.y; p.x - r.x, p.y + r.y; p.x - 10, p.y + 10)
-		{
-			if (p.y == pieza.posicion.y)
-				if (p.x == pieza.posicion.x)
-					return 0;
-		}
-	}
-	*/
 	else 
 		return 1;
 }
+
+
+bool Interaccion::Comprobar_comer(Pieza& diosita, Pieza& pieza)
+{
+	if (pieza.color.bn == 1)
+	{
+		
+	}
+	return 1;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*
 bool Interaccion::Comprobar_camino(Pieza& diosita, Pieza& pieza)
 {

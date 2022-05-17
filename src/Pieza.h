@@ -3,8 +3,11 @@
 #include"Vector3d.h"
 #include"Color_RGB.h"
 
+#include<iostream>
+
 //#include"Interaccion.h"
 
+using namespace std;
 
 class Pieza 
 {
@@ -14,6 +17,9 @@ protected:
 	Vector3d posicion;
 	Color_RGB color;
 	float escala;
+
+	//string dni;
+
 public:
 	
 	//METODOS

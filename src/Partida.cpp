@@ -12,6 +12,18 @@ Partida::Partida()
 
 	diosita = new DIOSITA;
 
+
+	//TABLERITO
+
+	/*
+	tablerito = new string * [8];
+	for (int i = 0; i < 8; i++)
+	{
+		tablerito[i] = new string;
+	}
+	*/
+
+
 	pieza_seleccionada = 'w'; //w es wait espera a que sle ponfa el primer valor
 
 	turno = Turno::BLANCAS;
@@ -24,6 +36,19 @@ Partida::Partida()
 void Partida::Inicializa()
 {
 	tablero->Inicializa();
+
+
+	//INICILALIZAR TABLERITO
+	/*
+	for (int i = 0; i < 8; i++)
+	{
+		for (int j = 0; j < 8; j++)
+		{
+			tablerito[i][j] = "00000";//color tipo numero ejex ejey
+		}
+	}
+	*/
+
 
 	//inicializar peones
 	for (int i = 0; i < 16; i++)
@@ -75,7 +100,8 @@ void Partida::Inicializa()
 
 	//diosita->Inicializa();
 
-	
+
+	//creo que se puede quitar 
 	pieza_seleccionada = 'w';
 
 
@@ -90,7 +116,7 @@ void Partida::Dibuja()
 	if (turno == Turno::BLANCAS)
 		vista.Camara(0);
 	else if (turno == Turno::NEGRAS)
-		vista.Camara(1);//vista.Camara(1);
+		vista.Camara(0);//vista.Camara(1);
 	else if (turno== Turno::CAMBIO)
 		vista.Camara(0);
 	else if (turno == Turno::CAMBIO2)
@@ -635,7 +661,10 @@ void Partida::Tecla(unsigned char c)
 		if (c == 32)
 		{
 			pieza = "00";
+			control_selccion_pieza = 0;
 			turno = Turno::NEGRAS;
+			introdatos = IntroDatos::EJE_X;
+			movdatos = MovDatos::M_ESPERA;
 			diosita->Set_color('r');
 		}
 	}
@@ -643,8 +672,11 @@ void Partida::Tecla(unsigned char c)
 	{
 		if (c == 32)
 		{
-			pieza = '00';
+			pieza = "00";
+			control_selccion_pieza = 0;
 			turno = Turno::BLANCAS;
+			introdatos = IntroDatos::EJE_X;
+			movdatos = MovDatos::M_ESPERA;
 			diosita->Set_color('v');
 		}
 	}
@@ -656,7 +688,7 @@ void Partida::Tecla(unsigned char c)
 		{
 			if (introdatos == IntroDatos::EJE_X && movdatos == MovDatos::M_ESPERA)
 			{
-				control_selccion_pieza = 0;
+				//control_selccion_pieza = 0;
 
 				diosita->Set_color('r');
 				for (int i = 0, j = 7; i < 8; i++, j--)
@@ -795,7 +827,7 @@ void Partida::Tecla(unsigned char c)
 						else //si no has seleccionado ninguna tienes que repietir. meter eje x y luego y
 						{
 							introdatos = IntroDatos::EJE_X;
-							diosita->Set_color('a'); //diosita se pone de color azul si no seleccionas ninguna casilla con pieza
+							diosita->Set_color('a'); //diosita se pone de color amarillo si no seleccionas ninguna casilla con pieza
 						}
 					}
 				}
@@ -1124,8 +1156,6 @@ void Partida::Tecla(unsigned char c)
 								turno = Turno::NEGRAS;
 							}
 						}
-
-
 						//si no se ha puesto una posicion alcanzable
 						else //retrocedemos para volver a poner el sitio donde decimos a donde queremos mover la pieza
 						{
@@ -1239,42 +1269,10 @@ void Partida::Mueve()
 		{
 			Interaccion::Desplazar(*diosita, caballo[1]);
 		}
+	}
 
 
-		//mover BLANCAS
 
-
-		//mover rey
-		//if (posicion_pieza_seleccionada.x == rey[0].devPosx() && posicion_pieza_seleccionada.y == rey[0].devPosy())
-			//Interaccion::Desplazar(*diosita, rey[0]);
-		//mover dama
-
-		/*
-		if (posicion_pieza_seleccionada.x == dama[0].devPosx() && posicion_pieza_seleccionada.y == dama[0].devPosy())
-			Interaccion::Desplazar(*diosita, dama[0]);
-
-		for (int i = 0; i < 8; i++)
-		{
-			//mover peon
-			//if (posicion_pieza_seleccionada.x == peon[i].devPosx() && posicion_pieza_seleccionada.y == peon[i].devPosy())
-				//Interaccion::Desplazar(*diosita, peon[i]);
-
-			//mover caballo,torre,alfil
-			if (i < 4)
-			{
-				if (posicion_pieza_seleccionada.x == torre[i].devPosx() && posicion_pieza_seleccionada.y == torre[i].devPosy())
-					Interaccion::Desplazar(*diosita, torre[i]);
-
-			//	if (aux.x == caballo[i].devPosx() && aux.y == caballo[i].devPosy())
-			//		Interaccion::Desplazar(*diosita, caballo[i]);
-
-				if (posicion_pieza_seleccionada.x == alfil[i].devPosx() && posicion_pieza_seleccionada.y == alfil[i].devPosy())
-					Interaccion::Desplazar(*diosita, alfil[i]);
-			}
-		}
-		*/
-
-	};
 	if (turno == Turno::CAMBIO2)
 	{
 
@@ -1346,44 +1344,5 @@ void Partida::Mueve()
 		{
 			Interaccion::Desplazar(*diosita, caballo[3]);
 		}
-
-
-
-
-
-
-
-		/*
-		//mover rey
-		if (posicion_pieza_seleccionada.x == rey[1].devPosx() && posicion_pieza_seleccionada.y == rey[1].devPosy())
-			Interaccion::Desplazar(*diosita, rey[1]);
-		//mover dama
-		if (posicion_pieza_seleccionada.x == dama[1].devPosx() && posicion_pieza_seleccionada.y == dama[1].devPosy())
-			Interaccion::Desplazar(*diosita, dama[1]);
-
-		for (int i = 0; i < 8; i++)
-		{
-			//mover peon
-			int j = i + 7;
-			if (posicion_pieza_seleccionada.x == peon[j].devPosx() && posicion_pieza_seleccionada.y == peon[j].devPosy())
-				Interaccion::Desplazar(*diosita, peon[j]);
-
-			//mover caballo,torre,alfil
-			if (i >= 4)
-			{
-				if (posicion_pieza_seleccionada.x == torre[i].devPosx() && posicion_pieza_seleccionada.y == torre[i].devPosy())
-					Interaccion::Desplazar(*diosita, torre[i]);
-
-				//	if (aux.x == caballo[i].devPosx() && aux.y == caballo[i].devPosy())
-				//		Interaccion::Desplazar(*diosita, caballo[i]);
-
-				if (posicion_pieza_seleccionada.x == alfil[i].devPosx() && posicion_pieza_seleccionada.y == alfil[i].devPosy())
-					Interaccion::Desplazar(*diosita, alfil[i]);
-			}
-		}
-		*/
 	}
-
-
-
 }

@@ -45,8 +45,12 @@ public:
 
 	Vista vista;
 
+
+	//comprobar que no se usa
 	unsigned char pieza_seleccionada;
 
+
+	//string** tablerito; //5 caracteres
 
 
 	string pieza;

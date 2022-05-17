@@ -17,6 +17,23 @@ void Peon::Inicializa(unsigned char c, float x,float y,float z)
 	posicion.Set_vector(x,y,z);
 	color.Set_color(c);
 	escala = 1;
+
+	/*
+	dni[0] = c;  //color
+	dni[1] = 'p';
+
+	if (x == 60)
+		dni[3] = '2';
+	else
+		dni[3] = '7';
+
+	if (y == 0)
+		dni[4] = 1;
+	else
+		dni[4] = 1 + (y / 10);
+
+	dni[2] = dni[4];
+	*/
 }
 
 void Peon::Inicializa(unsigned char c)
@@ -26,6 +43,8 @@ void Peon::Inicializa(unsigned char c)
 	ColPieza();
 	escala = 1;
 }
+
+
 void Peon::ColPieza()
 {
 	int i = 0;
@@ -93,7 +112,7 @@ bool Peon::Movimiento(const Vector3d& muevo_a)
 	int npy = muevo_a.y;
 	int x = muevo_a.x - posicion.x;
 	int y = muevo_a.y - posicion.y;
-	if (color.bn == 1)
+	if (color.bn == 1) //color blanco
 	{
 		if (x == -10 && y == 0)
 		{
@@ -109,13 +128,13 @@ bool Peon::Movimiento(const Vector3d& muevo_a)
 		else
 			flag = 0;
 	}
-	if (color.bn == 2)
+	if (color.bn == 2) //color negro
 	{
 		if (x == 10 && y == 0)
 		{
 			flag = 1;
 		}
-		if (x == 20 && y == 0)
+		else if (x == 20 && y == 0)
 		{
 			if (posicion.x == 10)
 			{
