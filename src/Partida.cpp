@@ -94,7 +94,7 @@ void Partida::Dibuja()
 	else if (turno== Turno::CAMBIO)
 		vista.Camara(0);
 	else if (turno == Turno::CAMBIO2)
-		vista.Camara(1);
+		vista.Camara(0);
 	else 
 		vista.Camara(0);
 
