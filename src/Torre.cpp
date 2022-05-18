@@ -13,6 +13,25 @@ void Torre::Inicializa(unsigned char c, float x, float y, float z)
 	posicion.Set_vector(x, y, z);
 	color.Set_color(c);
 	escala = 1;
+
+	dni[0] = c - 32;  //-32 para ponerlo en mayusculas
+	dni[1] = 'T'; //torre
+	if (y == 0)
+		dni[2] = '1';   
+	else
+		dni[2] = '2';
+
+	//fila
+	if (x == 70)
+		dni[3] = '1';
+	else
+		dni[3] = '8';
+	//columna
+	if (y == 0)
+		dni[4] = 'A';
+	else
+		dni[4] = 'H';
+
 }
 void Torre::Inicializa(unsigned char c)
 {

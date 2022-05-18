@@ -32,6 +32,7 @@
     <ClCompile Include="src\Pieza.cpp" />
     <ClCompile Include="src\Dama.cpp" />
     <ClCompile Include="src\Rey.cpp" />
+    <ClCompile Include="src\Tablerito.cpp" />
     <ClCompile Include="src\Tablero.cpp" />
     <ClCompile Include="src\Torre.cpp" />
     <ClCompile Include="src\Vector3d.cpp" />
@@ -42,7 +43,6 @@
     <ClInclude Include="src\Alfil.h" />
     <ClInclude Include="src\Caballo.h" />
     <ClInclude Include="src\Casilla.h" />
-    <ClInclude Include="src\Clase_Prueba.h" />
     <ClInclude Include="src\Color_RGB.h" />
     <ClInclude Include="src\Coordinador_ajedrez.h" />
     <ClInclude Include="src\DIOSITA.h" />
@@ -52,6 +52,7 @@
     <ClInclude Include="src\Pieza.h" />
     <ClInclude Include="src\Dama.h" />
     <ClInclude Include="src\Rey.h" />
+    <ClInclude Include="src\Tablerito.h" />
     <ClInclude Include="src\Tablero.h" />
     <ClInclude Include="src\Torre.h" />
     <ClInclude Include="src\Vector3d.h" />

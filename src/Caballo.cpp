@@ -16,6 +16,26 @@ void Caballo::Inicializa(unsigned char c, float x, float y, float z)
 	posicion.Set_vector(x, y, z);
 	color.Set_color(c);
 	escala = 1;
+
+
+	dni[0] = c - 32;  
+	dni[1] = 'C'; 
+	if (y == 10)
+		dni[2] = '1';
+	else
+		dni[2] = '2';
+
+	//fila
+	if (x == 70)
+		dni[3] = '1';
+	else
+		dni[3] = '8';
+	//columna
+	if (y == 10)
+		dni[4] = 'B';
+	else
+		dni[4] = 'G';
+
 }
 
 void Caballo::Inicializa(unsigned char c)
@@ -23,6 +43,8 @@ void Caballo::Inicializa(unsigned char c)
 	posicion.Set_vector(0, 0, 0);
 	color.Set_color(c);
 	escala =1;
+
+	//no sirve para nada lo de abajo
 	if (c == 'b')
 	{
 		i0 = 2;

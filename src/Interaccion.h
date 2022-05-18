@@ -10,7 +10,6 @@
 #include"Peon.h"
 #include"Rey.h"
 
-#include"Clase_Prueba.h"
 
 class Interaccion
 {

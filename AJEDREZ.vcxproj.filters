@@ -19,21 +19,21 @@
     <Filter Include="Archivos de origen\piezas">
       <UniqueIdentifier>{14363fd4-58dc-4e07-b74d-2131ca557fe1}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Archivos de origen\DIOSES">
+      <UniqueIdentifier>{b4069d2e-e77a-4c7b-88f2-b23a0d48b909}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de encabezado\DIOSES">
+      <UniqueIdentifier>{fb3597a8-30c7-4efc-99ba-d7da747a625f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de encabezado\AYUDAS">
+      <UniqueIdentifier>{6a704a82-60fc-4d32-912c-9dd4d70e386e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de origen\AYUDAS">
+      <UniqueIdentifier>{b7521387-42a3-4f39-9cbf-09444a09807b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\AJEDREZ.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Vector3d.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Color_RGB.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Vista.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Tablero.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
     <ClCompile Include="src\Coordinador_ajedrez.cpp">
@@ -69,26 +69,29 @@
     <ClCompile Include="src\Rey.cpp">
       <Filter>Archivos de origen\piezas</Filter>
     </ClCompile>
+    <ClCompile Include="src\Tablerito.cpp">
+      <Filter>Archivos de origen\DIOSES</Filter>
+    </ClCompile>
     <ClCompile Include="src\DIOSITA.cpp">
-      <Filter>Archivos de origen\piezas</Filter>
+      <Filter>Archivos de origen\DIOSES</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Color_RGB.cpp">
+      <Filter>Archivos de origen\AYUDAS</Filter>
     </ClCompile>
     <ClCompile Include="src\Interaccion.cpp">
-      <Filter>Archivos de origen</Filter>
+      <Filter>Archivos de origen\AYUDAS</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Tablero.cpp">
+      <Filter>Archivos de origen\piezas</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Vector3d.cpp">
+      <Filter>Archivos de origen\AYUDAS</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Vista.cpp">
+      <Filter>Archivos de origen\AYUDAS</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\Vector3d.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Color_RGB.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Vista.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Tablero.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
     <ClInclude Include="src\Coordinador_ajedrez.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
@@ -123,13 +126,25 @@
       <Filter>Archivos de encabezado\piezas</Filter>
     </ClInclude>
     <ClInclude Include="src\DIOSITA.h">
-      <Filter>Archivos de encabezado\piezas</Filter>
+      <Filter>Archivos de encabezado\DIOSES</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Tablerito.h">
+      <Filter>Archivos de encabezado\DIOSES</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Color_RGB.h">
+      <Filter>Archivos de encabezado\AYUDAS</Filter>
     </ClInclude>
     <ClInclude Include="src\Interaccion.h">
-      <Filter>Archivos de encabezado</Filter>
+      <Filter>Archivos de encabezado\AYUDAS</Filter>
     </ClInclude>
-    <ClInclude Include="src\Clase_Prueba.h">
-      <Filter>Archivos de encabezado</Filter>
+    <ClInclude Include="src\Vector3d.h">
+      <Filter>Archivos de encabezado\AYUDAS</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Vista.h">
+      <Filter>Archivos de encabezado\AYUDAS</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Tablero.h">
+      <Filter>Archivos de encabezado\piezas</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

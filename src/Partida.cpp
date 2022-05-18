@@ -11,7 +11,7 @@ Partida::Partida()
 	rey = new Rey[2];
 
 	diosita = new DIOSITA;
-
+	tablerito = new Tablerito;
 
 	//TABLERITO
 
@@ -36,18 +36,6 @@ Partida::Partida()
 void Partida::Inicializa()
 {
 	tablero->Inicializa();
-
-
-	//INICILALIZAR TABLERITO
-	/*
-	for (int i = 0; i < 8; i++)
-	{
-		for (int j = 0; j < 8; j++)
-		{
-			tablerito[i][j] = "00000";//color tipo numero ejex ejey
-		}
-	}
-	*/
 
 
 	//inicializar peones
@@ -99,7 +87,7 @@ void Partida::Inicializa()
 	vista.Set_vista(140, 35, 40, 35, 35, 5);
 
 	//diosita->Inicializa();
-
+	tablerito->Inicializa();
 
 	//creo que se puede quitar 
 	pieza_seleccionada = 'w';
@@ -113,6 +101,7 @@ void Partida::Inicializa()
 
 void Partida::Dibuja()
 {
+
 	if (turno == Turno::BLANCAS)
 		vista.Camara(0);
 	else if (turno == Turno::NEGRAS)

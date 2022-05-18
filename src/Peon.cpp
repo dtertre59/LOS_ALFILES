@@ -18,22 +18,23 @@ void Peon::Inicializa(unsigned char c, float x,float y,float z)
 	color.Set_color(c);
 	escala = 1;
 
-	/*
-	dni[0] = c;  //color
-	dni[1] = 'p';
+	
+	dni[0] = c-32;  //-32 para ponerlo en mayusculas
+	dni[1] = 'P'; //P de peon
+	if (y == 0)
+		dni[2] = '1';   //numero de peon, segun la columna
+	else
+		dni[2] = (y / 10) + 49;
 
+	//fila
 	if (x == 60)
 		dni[3] = '2';
 	else
 		dni[3] = '7';
+	//columna
 
-	if (y == 0)
-		dni[4] = 1;
-	else
-		dni[4] = 1 + (y / 10);
-
-	dni[2] = dni[4];
-	*/
+	dni[4] = dni[2] + 16;
+	
 }
 
 void Peon::Inicializa(unsigned char c)

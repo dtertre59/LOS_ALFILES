@@ -13,7 +13,10 @@
 #include "Dama.h"
 #include "Rey.h"
 #include "Pieza.h"
+
+
 #include"DIOSITA.h"
+#include"Tablerito.h"
 
 #include"Vista.h"
 
@@ -33,6 +36,7 @@ public:
 	Dama* dama;
 
 	DIOSITA* diosita;
+	Tablerito* tablerito;
 
 	
 	enum class Turno { BLANCAS, NEGRAS, CAMBIO,CAMBIO2};
