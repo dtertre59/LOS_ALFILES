@@ -47,14 +47,14 @@ void Coordinador_ajedrez::Dibuja()
 		/// 
 		ETSIDI::setTextColor(1, 1, 0);
 		ETSIDI::setFont("fuentes/fast99.ttf", 28);
-		ETSIDI::printxy("AJEDREZ", -4, 13);
+		ETSIDI::printxy("AJEDREZ", -4, 11);
 
 		ETSIDI::setTextColor(1, 1, 1);
 		ETSIDI::setFont("fuentes/Bitwise.ttf", 15);
-		ETSIDI::printxy("PULSA -P- PARA EMPEZAR PARTIDA MULTIJUGADOR", -8, 8);
-		ETSIDI::printxy("PULSA -V- PARA VER PIEZAS", -8, 6);
-		ETSIDI::printxy("PULSA -C- PARA VER CONTOLES", -8, 4);
-		ETSIDI::printxy("PULSA -ESC- PARA SALIR", -8, 2);
+		ETSIDI::printxy("PULSA -P- PARA EMPEZAR PARTIDA MULTIJUGADOR", -12, 7.5);
+		ETSIDI::printxy("PULSA -V- PARA VER PIEZAS", -12, 5.5);
+		ETSIDI::printxy("PULSA -C- PARA VER CONTOLES", -12, 2.5);
+		ETSIDI::printxy("PULSA -ESC- PARA SALIR", -12, 1.5);
 		
 	}
 
@@ -89,7 +89,7 @@ void Coordinador_ajedrez::Dibuja()
 		glDisable(GL_TEXTURE_2D);
 		//pared lado->
 		glEnable(GL_TEXTURE_2D);
-		glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/madera.png").id);
+		glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/pared.png").id);
 		glDisable(GL_LIGHTING);
 		glBegin(GL_POLYGON);
 		glColor3f(1, 1, 1);
