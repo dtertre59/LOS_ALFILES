@@ -50,7 +50,7 @@ void Coordinador_ajedrez::Dibuja()
 		ETSIDI::printxy("AJEDREZ", -4, 11);
 
 		ETSIDI::setTextColor(1, 1, 1);
-		ETSIDI::setFont("fuentes/Bitwise.ttf", 15);
+		ETSIDI::setFont("fuentes/White On Black.ttf", 15);
 		ETSIDI::printxy("PULSA -P- PARA EMPEZAR PARTIDA MULTIJUGADOR", -12, 7.5);
 		ETSIDI::printxy("PULSA -V- PARA VER PIEZAS", -12, 5.5);
 		ETSIDI::printxy("PULSA -C- PARA VER CONTOLES", -12, 2.5);
