@@ -936,7 +936,7 @@ void Partida::Tecla(unsigned char c)
 								turno = Turno::NEGRAS;
 							}
 						}
-						else if (pieza == "p12" && Interaccion::Comprobar_movimiento(*diosita, peon[2]))//si se cumple la condicion 
+						else if (pieza == "p12" && Interaccion::Comprobar_movimiento(*diosita, peon[12]))//si se cumple la condicion 
 						{
 							if (Interaccion::Comprobar_choque_piezas(*diosita, torre[2]) && Interaccion::Comprobar_choque_piezas(*diosita, torre[3]) && Interaccion::Comprobar_choque_piezas(*diosita, alfil[2]) && Interaccion::Comprobar_choque_piezas(*diosita, alfil[3]) && Interaccion::Comprobar_choque_piezas(*diosita, rey[1]) && Interaccion::Comprobar_choque_piezas(*diosita, dama[1]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[11]) && Interaccion::Comprobar_choque_piezas(*diosita, caballo[2]) && Interaccion::Comprobar_choque_piezas(*diosita, caballo[3]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[8]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[9]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[10]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[13]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[14]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[15]))
 							{
