@@ -46,15 +46,15 @@ void Coordinador_ajedrez::Dibuja()
 		glDisable(GL_TEXTURE_2D);
 		/// 
 		ETSIDI::setTextColor(1, 1, 0);
-		ETSIDI::setFont("fuentes/fast99.ttf", 28);
+		ETSIDI::setFont("fuentes/Rock's Death.ttf", 35);
 		ETSIDI::printxy("AJEDREZ", -4, 11);
 
 		ETSIDI::setTextColor(1, 1, 1);
-		ETSIDI::setFont("fuentes/White On Black.ttf", 15);
-		ETSIDI::printxy("PULSA -P- PARA EMPEZAR PARTIDA MULTIJUGADOR", -12, 7.5);
+		ETSIDI::setFont("fuentes/Rock's Death.ttf", 20);
+		ETSIDI::printxy("PULSA -P- PARA EMPEZAR PARTIDA MULTIJUGADOR", -12, 7);
 		ETSIDI::printxy("PULSA -V- PARA VER PIEZAS", -12, 5.5);
-		ETSIDI::printxy("PULSA -C- PARA VER CONTOLES", -12, 2.5);
-		ETSIDI::printxy("PULSA -ESC- PARA SALIR", -12, 1.5);
+		ETSIDI::printxy("PULSA -C- PARA VER CONTROLES", -12, 2.5);
+		ETSIDI::printxy("PULSA -ESC- PARA SALIR", -12, 0);
 		
 	}
 
@@ -216,9 +216,10 @@ void Coordinador_ajedrez::Dibuja()
 		glDisable(GL_TEXTURE_2D);
 
 		ETSIDI::setTextColor(1, 1, 1);
-		ETSIDI::setFont("fuentes/Bitwise.ttf", 15);
+		ETSIDI::setFont("fuentes/Rock's Death.ttf", 15);
 		ETSIDI::printxy("PULSA -I- PARA VOLVER al inicio", -8, 8);
-		ETSIDI::printxy("PULSA -C- PARA  continuar la partida", -8, 6);
+		ETSIDI::printxy("PULSA -R- PARA  continuar la partida", -8, 6);
+		ETSIDI::printxy("PULSA -C- PARA VER CONTROLES", -8, 4);
 		
 
 	}
@@ -297,6 +298,10 @@ void Coordinador_ajedrez::Tecla(unsigned char key)
 		{
 			estado = Estado::INICIO;
 		}
+		if (key == 'p' || key == 'P')
+		{
+			estado = Estado::PARTIDA_M;
+		}
 		
 	}
 
@@ -307,9 +312,13 @@ void Coordinador_ajedrez::Tecla(unsigned char key)
 		{
 			estado = Estado::INICIO;
 		}
-		if (key == 'c' || key == 'C')
+		if (key == 'r' || key == 'R')
 		{
 			estado = Estado::PARTIDA_M;
+		}
+		if (key == 'c' || key == 'C')
+		{
+			estado = Estado::CONTROLES;
 		}
 	}
 	
