@@ -30,7 +30,20 @@ void Coordinador_ajedrez::Dibuja()
 		gluLookAt(0, 7.5, 30, // posicion del ojo
 			0.0, 7.5, 0.0, // hacia que punto mira (0,7.5,0)
 			0.0, 1.0, 0.0); // definimos hacia arriba (eje Y)
-		
+		//fondo
+		glEnable(GL_TEXTURE_2D);
+		glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/madera.png").id);
+		glDisable(GL_LIGHTING);
+		glBegin(GL_POLYGON);
+		glColor3f(1, 1, 1);
+		glTexCoord2d(0, 1); glVertex3f(-8, -18, -5);
+		glTexCoord2d(1, 1); glVertex3f(-8, 85, -5);
+		glTexCoord2d(1, 0); glVertex3f(-8, 85, 70);
+		glTexCoord2d(0, 0); glVertex3f(-8, -18, 80);
+		glEnd();
+		glEnable(GL_LIGHTING);
+		glDisable(GL_TEXTURE_2D);
+		/// 
 		ETSIDI::setTextColor(1, 1, 0);
 		ETSIDI::setFont("fuentes/fast99.ttf", 28);
 		ETSIDI::printxy("AJEDREZ", -4, 13);
@@ -41,7 +54,7 @@ void Coordinador_ajedrez::Dibuja()
 		ETSIDI::printxy("PULSA -V- PARA VER PIEZAS", -8, 6);
 		ETSIDI::printxy("PULSA -C- PARA VER CONTOLES", -8, 4);
 		ETSIDI::printxy("PULSA -ESC- PARA SALIR", -8, 2);
-
+		
 	}
 
 	else if (estado == Estado::PARTIDA_M)
@@ -55,40 +68,40 @@ void Coordinador_ajedrez::Dibuja()
 		glColor3f(1, 1, 1);
 		glTexCoord2d(0, 1); glVertex3f(-8, -18, -5);
 		glTexCoord2d(1, 1); glVertex3f(-8, 85, -5);
-		glTexCoord2d(1, 0); glVertex3f(-8, 85, 70);
-		glTexCoord2d(0, 0); glVertex3f(-8, -18, 70);
+		glTexCoord2d(1, 0); glVertex3f(-8, 85, 40);
+		glTexCoord2d(0, 0); glVertex3f(-8, -18, 40);
 		glEnd();
 		glEnable(GL_LIGHTING);
 		glDisable(GL_TEXTURE_2D);
 		//pared lado <-
 		glEnable(GL_TEXTURE_2D);
-		glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/fondo.png").id);
+		glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/madera.png").id);
 		glDisable(GL_LIGHTING);
 		glBegin(GL_POLYGON);
 		glColor3f(1, 1, 1);
 		glTexCoord2d(0, 1); glVertex3f(80, -15, -5);
 		glTexCoord2d(1, 1); glVertex3f(-8, -15, -5);
-		glTexCoord2d(1, 0); glVertex3f(-8, -15, 70);
-		glTexCoord2d(0, 0); glVertex3f(80, -15, 70);
+		glTexCoord2d(1, 0); glVertex3f(-8, -15, 40);
+		glTexCoord2d(0, 0); glVertex3f(80, -15, 40);
 		glEnd();
 		glEnable(GL_LIGHTING);
 		glDisable(GL_TEXTURE_2D);
 		//pared lado->
 		glEnable(GL_TEXTURE_2D);
-		glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/fondo.png").id);
+		glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/madera.png").id);
 		glDisable(GL_LIGHTING);
 		glBegin(GL_POLYGON);
 		glColor3f(1, 1, 1);
 		glTexCoord2d(0, 1); glVertex3f(-8, 85, -5);
 		glTexCoord2d(1, 1); glVertex3f(80, 85, -5);
-		glTexCoord2d(1, 0); glVertex3f(80, 85, 70);
-		glTexCoord2d(0, 0); glVertex3f(-8, 85, 70);
+		glTexCoord2d(1, 0); glVertex3f(80, 85, 40);
+		glTexCoord2d(0, 0); glVertex3f(-8, 85, 40);
 		glEnd();
 		glEnable(GL_LIGHTING);
 		glDisable(GL_TEXTURE_2D);
 		//suelo
 		glEnable(GL_TEXTURE_2D);
-		glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/fondo.png").id);
+		glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/madera.png").id);
 		glDisable(GL_LIGHTING);
 		glBegin(GL_POLYGON);
 		glColor3f(1, 1, 1);
