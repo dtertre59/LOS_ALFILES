@@ -47,9 +47,61 @@ void Coordinador_ajedrez::Dibuja()
 	else if (estado == Estado::PARTIDA_M)
 	{	
 		partida->Dibuja();
+		// pared fondo
+		glEnable(GL_TEXTURE_2D);
+		glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/fondo.png").id);
+		glDisable(GL_LIGHTING);
+		glBegin(GL_POLYGON);
+		glColor3f(1, 1, 1);
+		glTexCoord2d(0, 1); glVertex3f(-8, -18, -5);
+		glTexCoord2d(1, 1); glVertex3f(-8, 85, -5);
+		glTexCoord2d(1, 0); glVertex3f(-8, 85, 70);
+		glTexCoord2d(0, 0); glVertex3f(-8, -18, 70);
+		glEnd();
+		glEnable(GL_LIGHTING);
+		glDisable(GL_TEXTURE_2D);
+		//pared lado <-
+		glEnable(GL_TEXTURE_2D);
+		glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/fondo.png").id);
+		glDisable(GL_LIGHTING);
+		glBegin(GL_POLYGON);
+		glColor3f(1, 1, 1);
+		glTexCoord2d(0, 1); glVertex3f(80, -15, -5);
+		glTexCoord2d(1, 1); glVertex3f(-8, -15, -5);
+		glTexCoord2d(1, 0); glVertex3f(-8, -15, 70);
+		glTexCoord2d(0, 0); glVertex3f(80, -15, 70);
+		glEnd();
+		glEnable(GL_LIGHTING);
+		glDisable(GL_TEXTURE_2D);
+		//pared lado->
+		glEnable(GL_TEXTURE_2D);
+		glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/fondo.png").id);
+		glDisable(GL_LIGHTING);
+		glBegin(GL_POLYGON);
+		glColor3f(1, 1, 1);
+		glTexCoord2d(0, 1); glVertex3f(-8, 85, -5);
+		glTexCoord2d(1, 1); glVertex3f(80, 85, -5);
+		glTexCoord2d(1, 0); glVertex3f(80, 85, 70);
+		glTexCoord2d(0, 0); glVertex3f(-8, 85, 70);
+		glEnd();
+		glEnable(GL_LIGHTING);
+		glDisable(GL_TEXTURE_2D);
+		//suelo
+		glEnable(GL_TEXTURE_2D);
+		glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/fondo.png").id);
+		glDisable(GL_LIGHTING);
+		glBegin(GL_POLYGON);
+		glColor3f(1, 1, 1);
+		glTexCoord2d(0, 1); glVertex3f(-8, 85, -1);
+		glTexCoord2d(1, 1); glVertex3f(80, 85, -1);
+		glTexCoord2d(1, 0); glVertex3f(80, -15, -1);
+		glTexCoord2d(0, 0); glVertex3f(-8, -15, -1);
+		glEnd();
+		glEnable(GL_LIGHTING);
+		glDisable(GL_TEXTURE_2D);
+
 		ETSIDI::setTextColor(1, 1, 1);
 		ETSIDI::setFont("fuentes/Bitwise.ttf", 18);
-	
 		ETSIDI::printxy("A", 78, 0);
 		ETSIDI::printxy("B", 78, 10);
 		ETSIDI::printxy("C", 78, 20);
@@ -67,6 +119,7 @@ void Coordinador_ajedrez::Dibuja()
 		ETSIDI::printxy("6", 20, -10);
 		ETSIDI::printxy("7", 10, -10);
 		ETSIDI::printxy("8", 0, -10);
+		partida->Dibuja();
 	}
 
 	else if (estado == Estado::VISTA_PIEZA)
