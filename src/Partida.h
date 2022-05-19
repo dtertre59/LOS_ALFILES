@@ -1,7 +1,7 @@
 #pragma once
 
 #include<iostream>
-
+#include"ETSIDI.h"
 #include"Tablero.h"
 
 //PIEZAS
