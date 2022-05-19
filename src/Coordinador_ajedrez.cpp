@@ -4,7 +4,7 @@
 
 Coordinador_ajedrez::Coordinador_ajedrez()
 {
-	estado = Estado::INICIO;
+	estado = Estado::PREINICIO;
 	partida = new Partida;
 	visualizarp = new Visualizar_piezas;
 
@@ -28,7 +28,32 @@ void Coordinador_ajedrez::Inicializa()
 void Coordinador_ajedrez::Dibuja()
 {
 
-	
+	if (estado == Estado::PREINICIO)
+	{
+		gluLookAt(0, 7.5, 30, // posicion del ojo
+			0.0, 7.5, 0.0, // hacia que punto mira (0,7.5,0)
+			0.0, 1.0, 0.0);
+
+		glEnable(GL_TEXTURE_2D);
+		glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/inicio.png").id);
+		glDisable(GL_LIGHTING);
+		glBegin(GL_POLYGON);
+		glColor3f(1, 1, 1);
+		glTexCoord2d(0, 1); glVertex3f(-25, 30, -5);
+		glTexCoord2d(1, 1); glVertex3f(20, 30, -5);
+		glTexCoord2d(1, 0); glVertex3f(20, -10, -5);
+		glTexCoord2d(0, 0); glVertex3f(-25, -10, -5);
+		glEnd();
+		glEnable(GL_LIGHTING);
+		glDisable(GL_TEXTURE_2D);
+
+		ETSIDI::setTextColor(1, 1, 0);
+		ETSIDI::setFont("fuentes/Rock's Death.ttf", 30);
+		ETSIDI::printxy("LOS ALFILES", -4, 11);
+		ETSIDI::printxy("TRABAJO INFORMATICA INDUSTRIAL", -8, 6);
+
+
+	}
 
 	if (estado == Estado::INICIO)
 	{
@@ -243,6 +268,13 @@ void Coordinador_ajedrez::Dibuja()
 
 void Coordinador_ajedrez::Tecla(unsigned char key)
 {
+	if (estado == Estado::PREINICIO)
+	{
+		if (key == 13)
+		{
+			estado = Estado::INICIO;
+		}
+	}
 	if (estado == Estado::INICIO)
 	{
 

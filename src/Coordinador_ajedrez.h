@@ -22,7 +22,7 @@ private:
 	unsigned char pi;
 
 protected:
-	enum class Estado { INICIO, PARTIDA_M, VISTA_PIEZA, CONTROLES, PAUSA, EXIT };
+	enum class Estado { PREINICIO, INICIO, PARTIDA_M, VISTA_PIEZA, CONTROLES, PAUSA, EXIT };
 
 	Estado estado;
 	
