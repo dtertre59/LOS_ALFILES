@@ -19,12 +19,17 @@ void Coordinador_ajedrez::Inicializa()
 	partida->Inicializa();
 	visualizarp->Inicializa();
 
+	//	ETSIDI::play("sonidos/musica.wav");
+	
 }
 
 //DIBUJAR
 
 void Coordinador_ajedrez::Dibuja()
 {
+
+	
+
 	if (estado == Estado::INICIO)
 	{
 		gluLookAt(0, 7.5, 30, // posicion del ojo
@@ -60,6 +65,7 @@ void Coordinador_ajedrez::Dibuja()
 
 	else if (estado == Estado::PARTIDA_M)
 	{	
+		
 		partida->Dibuja();
 		// pared fondo
 		glEnable(GL_TEXTURE_2D);

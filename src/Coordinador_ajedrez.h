@@ -23,12 +23,14 @@ private:
 
 protected:
 	enum class Estado { INICIO, PARTIDA_M, VISTA_PIEZA, CONTROLES, PAUSA, EXIT };
-	Estado estado;
 
+	Estado estado;
+	
 
 	Partida *partida;
 	Visualizar_piezas* visualizarp;
 	Vista vista;
+
 
 
 public:
