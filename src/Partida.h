@@ -50,16 +50,16 @@ public:
 	Vista vista;
 
 
-	//comprobar que no se usa
-	unsigned char pieza_seleccionada;
 
+	string pieza_selec; //BR
+	string dni_pieza_selec; //BR11E
 
-	//string** tablerito; //5 caracteres
-
-
-	string pieza;
 	int control_selccion_pieza; //para saber si ya se ha seleccionadado la ficha
 	Vector3d posicion_pieza_seleccionada;
+
+	int flag_seleccion_pieza;
+	int flag_numero_pieza;
+
 
 
 	Partida();

@@ -16,7 +16,7 @@ public:
 	void Inicializa();
 	string Localizar_pieza(int x, int y);  //devuelve el id de la pe3iza
 	string Localizar_pieza(char x, char y); //devuelve el id de la pieza
-
+	string Localizar_pieza(Vector3d& mov);
 	//Vector3d Localizar_pieza(Pieza& p);
 	//Vector3d Localizar_pieza(string& dni_);
 

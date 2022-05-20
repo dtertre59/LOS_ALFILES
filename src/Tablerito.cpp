@@ -88,6 +88,14 @@ string Tablerito::Localizar_pieza(char x, char y) //con la nomenclaturadel table
 	return tablerito[fila][columna];
 }
 
+string Tablerito::Localizar_pieza(Vector3d& mov)  //con la nomnclatura de la matriz
+{
+	int fila = mov.x / 10;
+	int columna = mov.y / 10;
+
+	return tablerito[fila][columna];
+}
+
 //te dice la posicion de la pieza que metas
 
 /*
@@ -133,17 +141,15 @@ int Tablerito::Comprobar_posicion_movimiento(int x, int y)  //METR POSICION DE d
 }
 
 
+
 //COMPROBAR TODOS LOS TIPOS DE MOVIMIENTO Y VER SI SE PUEDE MOVER
 
-int Comprobar_movimiento_completo(Pieza& pieza, Vector3d& move)
+int Tablerito::Comprobar_movimiento_completo(Pieza& pieza, Vector3d& move)
 {
 
 	if (pieza.Movimiento(move)) //si se puede mover, comprobar camino
 	{
 		return 1;
-
-
-
 
 	}
 	/*
