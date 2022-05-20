@@ -1,7 +1,7 @@
 #pragma once
 
 #include"Vector3d.h"
-
+#include"ETSIDI.h"
 #include"DIOSITA.h"
 #include"Tablero.h"
 

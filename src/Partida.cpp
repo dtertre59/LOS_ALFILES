@@ -348,6 +348,7 @@ void Partida::Tecla(unsigned char c)
 								introdatos = IntroDatos::ESPERA;
 								movdatos = MovDatos::M_EJE_X;
 								turno = Turno::BLANCAS;
+								ETSIDI::play("sonidos/disparo.wav");
 							}
 						}
 						else if (pieza == "p1" && Interaccion::Comprobar_movimiento(*diosita, peon[1]))//si se cumple la condicion 
@@ -366,6 +367,7 @@ void Partida::Tecla(unsigned char c)
 								introdatos = IntroDatos::ESPERA;
 								movdatos = MovDatos::M_EJE_X;
 								turno = Turno::BLANCAS;
+								ETSIDI::play("sonidos/disparo.wav");
 							}
 						}
 						else if (pieza == "p2" && Interaccion::Comprobar_movimiento(*diosita, peon[2]))//si se cumple la condicion 
@@ -384,6 +386,7 @@ void Partida::Tecla(unsigned char c)
 								introdatos = IntroDatos::ESPERA;
 								movdatos = MovDatos::M_EJE_X;
 								turno = Turno::BLANCAS;
+								ETSIDI::play("sonidos/disparo.wav");
 							}
 						}
 						else if (pieza=="p3"&&Interaccion::Comprobar_movimiento(*diosita, peon[3]))//si se cumple la condicion 
@@ -395,6 +398,7 @@ void Partida::Tecla(unsigned char c)
 								introdatos = IntroDatos::EJE_X;
 								movdatos = MovDatos::M_ESPERA;
 								turno = Turno::CAMBIO;
+
 							}
 							else
 							{
@@ -402,6 +406,7 @@ void Partida::Tecla(unsigned char c)
 								introdatos = IntroDatos::ESPERA;
 								movdatos = MovDatos::M_EJE_X;
 								turno = Turno::BLANCAS;
+								ETSIDI::play("sonidos/disparo.wav");
 							}
 						}
 						else if (pieza == "p4" && Interaccion::Comprobar_movimiento(*diosita, peon[4]))//si se cumple la condicion 
@@ -420,6 +425,7 @@ void Partida::Tecla(unsigned char c)
 								introdatos = IntroDatos::ESPERA;
 								movdatos = MovDatos::M_EJE_X;
 								turno = Turno::BLANCAS;
+								ETSIDI::play("sonidos/disparo.wav");
 							}
 						}
 						else if (pieza == "p5"&&Interaccion::Comprobar_movimiento(*diosita, peon[5]))//si se cumple la condicion 
@@ -438,6 +444,7 @@ void Partida::Tecla(unsigned char c)
 								introdatos = IntroDatos::ESPERA;
 								movdatos = MovDatos::M_EJE_X;
 								turno = Turno::BLANCAS;
+								ETSIDI::play("sonidos/disparo.wav");
 							}
 						}
 						else if (pieza == "p6" && Interaccion::Comprobar_movimiento(*diosita, peon[6]))//si se cumple la condicion 
@@ -456,6 +463,7 @@ void Partida::Tecla(unsigned char c)
 								introdatos = IntroDatos::ESPERA;
 								movdatos = MovDatos::M_EJE_X;
 								turno = Turno::BLANCAS;
+								ETSIDI::play("sonidos/disparo.wav");
 							}
 						}
 						else if (pieza == "p7" && Interaccion::Comprobar_movimiento(*diosita, peon[7]))//si se cumple la condicion 
@@ -474,6 +482,7 @@ void Partida::Tecla(unsigned char c)
 								introdatos = IntroDatos::ESPERA;
 								movdatos = MovDatos::M_EJE_X;
 								turno = Turno::BLANCAS;
+								ETSIDI::play("sonidos/disparo.wav");
 							}
 						}
 						else if (pieza == "r0" && Interaccion::Comprobar_movimiento(*diosita, rey[0]))//si se cumple la condicion 
@@ -492,6 +501,7 @@ void Partida::Tecla(unsigned char c)
 								introdatos = IntroDatos::ESPERA;
 								movdatos = MovDatos::M_EJE_X;
 								turno = Turno::BLANCAS;
+								ETSIDI::play("sonidos/disparo.wav");
 							}
 						}
 						
@@ -512,6 +522,7 @@ void Partida::Tecla(unsigned char c)
 								introdatos = IntroDatos::ESPERA;
 								movdatos = MovDatos::M_EJE_X;
 								turno = Turno::BLANCAS;
+								ETSIDI::play("sonidos/disparo.wav");
 							}
 						}
 						else if (pieza == "a1" && Interaccion::Comprobar_movimiento(*diosita, alfil[1]))//si se cumple la condicion 
@@ -531,6 +542,7 @@ void Partida::Tecla(unsigned char c)
 								introdatos = IntroDatos::ESPERA;
 								movdatos = MovDatos::M_EJE_X;
 								turno = Turno::BLANCAS;
+								ETSIDI::play("sonidos/disparo.wav");
 							}
 						}
 						else if (pieza == "t0" && Interaccion::Comprobar_movimiento(*diosita, torre[0]))//si se cumple la condicion 
@@ -550,6 +562,7 @@ void Partida::Tecla(unsigned char c)
 								introdatos = IntroDatos::ESPERA;
 								movdatos = MovDatos::M_EJE_X;
 								turno = Turno::BLANCAS;
+								ETSIDI::play("sonidos/disparo.wav");
 							}
 							
 						}
@@ -570,6 +583,7 @@ void Partida::Tecla(unsigned char c)
 								introdatos = IntroDatos::ESPERA;
 								movdatos = MovDatos::M_EJE_X;
 								turno = Turno::BLANCAS;
+								ETSIDI::play("sonidos/disparo.wav");
 							}
 						}
 						else if (pieza == "d0" && Interaccion::Comprobar_movimiento(*diosita, dama[0]))//si se cumple la condicion 
@@ -589,6 +603,7 @@ void Partida::Tecla(unsigned char c)
 								introdatos = IntroDatos::ESPERA;
 								movdatos = MovDatos::M_EJE_X;
 								turno = Turno::BLANCAS;
+								ETSIDI::play("sonidos/disparo.wav");
 							}
 						}
 						else if (pieza == "c0" && Interaccion::Comprobar_movimiento(*diosita, caballo[0]))//si se cumple la condicion 
@@ -608,6 +623,7 @@ void Partida::Tecla(unsigned char c)
 								introdatos = IntroDatos::ESPERA;
 								movdatos = MovDatos::M_EJE_X;
 								turno = Turno::BLANCAS;
+								ETSIDI::play("sonidos/disparo.wav");
 							}
 						}
 						else if (pieza == "c1" && Interaccion::Comprobar_movimiento(*diosita, caballo[1]))//si se cumple la condicion 
@@ -617,6 +633,7 @@ void Partida::Tecla(unsigned char c)
 							{
 								diosita->Set_color('b');
 								caballo[1].Set_color('b');
+							
 								introdatos = IntroDatos::EJE_X;
 								movdatos = MovDatos::M_ESPERA;
 								turno = Turno::CAMBIO;
@@ -627,6 +644,7 @@ void Partida::Tecla(unsigned char c)
 								introdatos = IntroDatos::ESPERA;
 								movdatos = MovDatos::M_EJE_X;
 								turno = Turno::BLANCAS;
+								ETSIDI::play("sonidos/disparo.wav");
 							}
 						}
 						
@@ -635,6 +653,7 @@ void Partida::Tecla(unsigned char c)
 						else //retrocedemos para volver a poner el sitio donde decimos a donde queremos mover la pieza
 						{
 							diosita->Set_color('m');
+							ETSIDI::play("sonidos/disparo.wav");
 							introdatos = IntroDatos::ESPERA;
 							movdatos = MovDatos::M_EJE_X;
 							turno = Turno::BLANCAS;
@@ -866,9 +885,11 @@ void Partida::Tecla(unsigned char c)
 							else
 							{
 								diosita->Set_color('m');
+								ETSIDI::play("sonidos/disparo.wav");
 								introdatos = IntroDatos::ESPERA;
 								movdatos = MovDatos::M_EJE_X;
 								turno = Turno::NEGRAS;
+							
 							}
 						}
 						else if (pieza == "p9" && Interaccion::Comprobar_movimiento(*diosita, peon[9]))//si se cumple la condicion 
@@ -884,9 +905,11 @@ void Partida::Tecla(unsigned char c)
 							else
 							{
 								diosita->Set_color('m');
+								ETSIDI::play("sonidos/disparo.wav");
 								introdatos = IntroDatos::ESPERA;
 								movdatos = MovDatos::M_EJE_X;
 								turno = Turno::NEGRAS;
+								
 							}
 						}
 						else if (pieza == "p10" && Interaccion::Comprobar_movimiento(*diosita, peon[10]))//si se cumple la condicion 
@@ -902,9 +925,11 @@ void Partida::Tecla(unsigned char c)
 							else
 							{
 								diosita->Set_color('m');
+								ETSIDI::play("sonidos/disparo.wav");
 								introdatos = IntroDatos::ESPERA;
 								movdatos = MovDatos::M_EJE_X;
 								turno = Turno::NEGRAS;
+								
 							}
 						}
 						else if (pieza == "p11" && Interaccion::Comprobar_movimiento(*diosita, peon[11]))//si se cumple la condicion 
@@ -920,9 +945,11 @@ void Partida::Tecla(unsigned char c)
 							else
 							{
 								diosita->Set_color('m');
+								ETSIDI::play("sonidos/disparo.wav");
 								introdatos = IntroDatos::ESPERA;
 								movdatos = MovDatos::M_EJE_X;
 								turno = Turno::NEGRAS;
+							
 							}
 						}
 						else if (pieza == "p12" && Interaccion::Comprobar_movimiento(*diosita, peon[12]))//si se cumple la condicion 
@@ -938,9 +965,11 @@ void Partida::Tecla(unsigned char c)
 							else
 							{
 								diosita->Set_color('m');
+								ETSIDI::play("sonidos/disparo.wav");
 								introdatos = IntroDatos::ESPERA;
 								movdatos = MovDatos::M_EJE_X;
 								turno = Turno::NEGRAS;
+								
 							}
 						}
 						else if (pieza == "p13" && Interaccion::Comprobar_movimiento(*diosita, peon[13]))//si se cumple la condicion 
@@ -956,9 +985,11 @@ void Partida::Tecla(unsigned char c)
 							else
 							{
 								diosita->Set_color('m');
+								ETSIDI::play("sonidos/disparo.wav");
 								introdatos = IntroDatos::ESPERA;
 								movdatos = MovDatos::M_EJE_X;
 								turno = Turno::NEGRAS;
+								
 							}
 						}
 						else if (pieza == "p14" && Interaccion::Comprobar_movimiento(*diosita, peon[14]))//si se cumple la condicion 
@@ -974,9 +1005,11 @@ void Partida::Tecla(unsigned char c)
 							else
 							{
 								diosita->Set_color('m');
+								ETSIDI::play("sonidos/disparo.wav");
 								introdatos = IntroDatos::ESPERA;
 								movdatos = MovDatos::M_EJE_X;
 								turno = Turno::NEGRAS;
+								
 							}
 						}
 						else if (pieza == "p15" && Interaccion::Comprobar_movimiento(*diosita, peon[15]))//si se cumple la condicion 
@@ -992,9 +1025,11 @@ void Partida::Tecla(unsigned char c)
 							else
 							{
 								diosita->Set_color('m');
+								ETSIDI::play("sonidos/disparo.wav");
 								introdatos = IntroDatos::ESPERA;
 								movdatos = MovDatos::M_EJE_X;
 								turno = Turno::NEGRAS;
+								
 							}
 						}
 						else if (pieza == "r1" && Interaccion::Comprobar_movimiento(*diosita, rey[1]))//si se cumple la condicion 
@@ -1010,9 +1045,11 @@ void Partida::Tecla(unsigned char c)
 							else
 							{
 								diosita->Set_color('m');
+								ETSIDI::play("sonidos/disparo.wav");
 								introdatos = IntroDatos::ESPERA;
 								movdatos = MovDatos::M_EJE_X;
 								turno = Turno::NEGRAS;
+								
 							}
 						}
 
@@ -1030,9 +1067,11 @@ void Partida::Tecla(unsigned char c)
 							else
 							{
 								diosita->Set_color('m');
+								ETSIDI::play("sonidos/disparo.wav");
 								introdatos = IntroDatos::ESPERA;
 								movdatos = MovDatos::M_EJE_X;
 								turno = Turno::NEGRAS;
+								
 							}
 						}
 						else if (pieza == "a3" && Interaccion::Comprobar_movimiento(*diosita, alfil[3]))//si se cumple la condicion 
@@ -1048,9 +1087,11 @@ void Partida::Tecla(unsigned char c)
 							else
 							{
 								diosita->Set_color('m');
+								ETSIDI::play("sonidos/disparo.wav");
 								introdatos = IntroDatos::ESPERA;
 								movdatos = MovDatos::M_EJE_X;
 								turno = Turno::NEGRAS;
+								
 							}
 						}
 						else if (pieza == "t2" && Interaccion::Comprobar_movimiento(*diosita, torre[2]))//si se cumple la condicion 
@@ -1067,9 +1108,11 @@ void Partida::Tecla(unsigned char c)
 							else
 							{
 								diosita->Set_color('m');
+								ETSIDI::play("sonidos/disparo.wav");
 								introdatos = IntroDatos::ESPERA;
 								movdatos = MovDatos::M_EJE_X;
 								turno = Turno::NEGRAS;
+								
 							}
 
 						}
@@ -1086,9 +1129,11 @@ void Partida::Tecla(unsigned char c)
 							else
 							{
 								diosita->Set_color('m');
+								ETSIDI::play("sonidos/disparo.wav");
 								introdatos = IntroDatos::ESPERA;
 								movdatos = MovDatos::M_EJE_X;
 								turno = Turno::NEGRAS;
+							
 							}
 						}
 						else if (pieza == "d1" && Interaccion::Comprobar_movimiento(*diosita, dama[1]))//si se cumple la condicion 
@@ -1104,9 +1149,11 @@ void Partida::Tecla(unsigned char c)
 							else
 							{
 								diosita->Set_color('m');
+								ETSIDI::play("sonidos/disparo.wav");
 								introdatos = IntroDatos::ESPERA;
 								movdatos = MovDatos::M_EJE_X;
 								turno = Turno::NEGRAS;
+								
 							}
 						}
 						else if (pieza == "c2" && Interaccion::Comprobar_movimiento(*diosita, caballo[2]))//si se cumple la condicion 
@@ -1122,9 +1169,11 @@ void Partida::Tecla(unsigned char c)
 							else
 							{
 								diosita->Set_color('m');
+								ETSIDI::play("sonidos/disparo.wav");
 								introdatos = IntroDatos::ESPERA;
 								movdatos = MovDatos::M_EJE_X;
 								turno = Turno::NEGRAS;
+								
 							}
 						}
 						else if (pieza == "c3" && Interaccion::Comprobar_movimiento(*diosita, caballo[3]))//si se cumple la condicion 
@@ -1140,9 +1189,11 @@ void Partida::Tecla(unsigned char c)
 							else
 							{
 								diosita->Set_color('m');
+								ETSIDI::play("sonidos/disparo.wav");
 								introdatos = IntroDatos::ESPERA;
 								movdatos = MovDatos::M_EJE_X;
 								turno = Turno::NEGRAS;
+								
 							}
 						}
 						//si no se ha puesto una posicion alcanzable

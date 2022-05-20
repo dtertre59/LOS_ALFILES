@@ -24,6 +24,7 @@ Vector3d Interaccion::Seleccionar(Pieza& diosita)
 void Interaccion::Desplazar(Pieza& diosita, Pieza& pieza)
 {
 	pieza.posicion = diosita.posicion;
+	ETSIDI::play("sonidos/mover.wav");
 }
 
 

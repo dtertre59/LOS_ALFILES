@@ -274,67 +274,43 @@ bool Caballo::Movimiento(const Vector3d& muevo_a)
 	//movimientos posibles -2/-1
 	if (x == -20 && y == -10)
 	{
-		if (npx > 00 && npx < 80)
+		/*
+		if (npx > 00 && npx <= 80)
 			if (npy >= 00 && npy <= 70)
 			{
 				flag = 1;;
 			}
+			*/
+		flag = 1;
 	}
+
 	if (x == -20 && y == 10)
 	{
-		if (npx > 00 && npx < 80)
-			if (npy >= 00 && npy <= 70)
-			{
-				flag = 1;;
-			}
+		flag = 1;
 	}
 	if (x == -10 && y == -20)
 	{
-		if (npx > 00 && npx < 80)
-			if (npy >= 00 && npy <= 70)
-			{
-				flag = 1;;
-			}
+		flag = 1;
 	}
 	if (x == -10 && y == 20)
 	{
-		if (npx > 00 && npx < 80)
-			if (npy >= 00 && npy <= 70)
-			{
-				flag = 1;;
-			}
+		flag = 1;
 	}
 	if (x == 10 && y == -20)
 	{
-		if (npx > 00 && npx < 80)
-			if (npy >= 00 && npy <= 70)
-			{
-				flag = 1;;
-			}
+		flag = 1;
 	}
 	if (x == 10 && y == 20)
 	{
-		if (npx > 00 && npx < 80)
-			if (npy >= 00 && npy <= 70)
-			{
-				flag = 1;;
-			}
+		flag = 1;
 	}
 	if (x == 20 && y == -10)
 	{
-		if (npx > 00 && npx < 80)
-			if (npy >= 00 && npy <= 70)
-			{
-				flag = 1;;
-			}
+		flag = 1;
 	}
-	if (x == 20 && y == -10)
+	if (x == 20 && y == 10)
 	{
-		if (npx > 00 && npx < 80)
-			if (npy >= 00 && npy <= 70)
-			{
-				flag = 1;;
-			}
+		flag = 1;
 	}
 	if (flag == 1)
 	{
