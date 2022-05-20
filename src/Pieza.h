@@ -9,7 +9,7 @@
 
 using namespace std;
 
-class Pieza 
+class Pieza
 {
 protected:
 
@@ -21,12 +21,14 @@ protected:
 	string dni;
 
 public:
+
 	
+
 	//METODOS
 	Pieza() : posicion(), color(), escala(1), dni("00000") {};
 	void Set_color(unsigned char c);
 
-	void Set_pos(Vector3d v) { posicion= v; }
+	void Set_pos(Vector3d v) { posicion = v; }
 	Vector3d Get_pos() { return posicion; }
 
 	float devPosx() { return posicion.x; }
@@ -35,14 +37,13 @@ public:
 	void Cambiar_dni(string s);
 
 	virtual bool Movimiento(const Vector3d&) { return 0; };
-	virtual void Dibuja()=0;
+	virtual void Dibuja() = 0;
 	virtual void ColPieza() {
 		int i = 0;
 	}
-	//friend void Gestor_dibuja(Pieza&);
 
 	friend class Interaccion;
 	friend class Partida;
+	friend class Tablerito;
+
 };
-
-

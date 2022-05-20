@@ -140,6 +140,35 @@ int Tablerito::Comprobar_posicion_movimiento(int x, int y)  //METR POSICION DE d
 	}
 }
 
+int Tablerito::Comprobar_posicion_movimiento(Vector3d muevoa)  //METR POSICION DE diosita
+{
+	int fila = muevoa.x / 10;
+	int columna = muevoa.y / 10;
+
+	if (tablerito[fila][columna][0] == '0') //si no hay fichas
+	{
+		return 0;
+	}
+	else if (tablerito[fila][columna][0] == 'B' && tablerito[fila][columna][1] != 'R') //si la ficha que hay es blanca
+	{
+		return 1;
+	}
+	else if (tablerito[fila][columna][0] == 'N' && tablerito[fila][columna][1] != 'R')
+	{
+		return 2;
+	}
+	else if (tablerito[fila][columna][0] == 'B' && tablerito[fila][columna][1] == 'R')
+	{
+		return 3;
+		//si es un rey blaco
+	}
+	else if (tablerito[fila][columna][0] == 'N' && tablerito[fila][columna][1] == 'R')
+	{
+		return 4;
+		//si es un rey negro
+	}
+}
+
 
 
 //COMPROBAR TODOS LOS TIPOS DE MOVIMIENTO Y VER SI SE PUEDE MOVER
@@ -170,7 +199,7 @@ int Tablerito::Comprobar_movimiento_completo(Pieza& pieza, Vector3d& move)
 
 //MOVER FICHA EN TABLERITO, te cambia el dni de la pieza
 
-bool Tablerito::Mover(string& pieza, char x, char y)
+void Tablerito::Mover(string& pieza, char x, char y)
 {
 	//a donde mueves
 	int fila;
@@ -210,13 +239,56 @@ bool Tablerito::Mover(string& pieza, char x, char y)
 
 
 	tablerito[fila_ant][columna_ant] = "00000";
-	if (tablerito[fila_ant][columna_ant] == "00000")
-		return 1;
-	else
-		return 0;
-
-
 }
+
+
+
+void Tablerito::Mover(Pieza& pieza, Vector3d diosita_pos)
+{
+	//a donde mueves
+
+	int x = diosita_pos.x / 10;
+	int y = diosita_pos.y / 10;
+
+	char fila = '0';
+	//cout << pieza;
+
+	//cambiar el tablerito con la pieza movida
+	
+	tablerito[x][y] = pieza.dni;
+
+
+	for (int i = 0, j = 8; i < 8; i++, j--) //para la fila, que va al reves
+	{
+		if (x == i)
+			fila = j + 48;
+	}
+
+	tablerito[x][y][3] = fila;
+	tablerito[x][y][4] = y + 65;
+
+
+	//poner a 0 en tablerito la posicion pasada
+
+	char fila_anterior = pieza.dni[3];
+	char columna_anterior = pieza.dni[4];
+	int fila_ant = 0;
+	int columna_ant = 0;
+
+	for (int i = 0, j = 7; i < 8; i++, j--)
+	{
+		if (fila_anterior == 49 + i)
+			fila_ant = j; //bien
+		if (columna_anterior == 65 + i)
+			columna_ant = i;
+	}
+
+	//cambiar el dni de la pieza
+	pieza.dni = tablerito[x][y];
+
+	tablerito[fila_ant][columna_ant] = "00000";
+}
+
 
 
 
