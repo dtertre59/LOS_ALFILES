@@ -16,7 +16,7 @@ void Tablerito::Inicializa()
 	{
 		for (int j = 0; j < 8; j++)  //coliunns
 		{
-			tablerito[i][j]="00000";  //FILA I , COLUMNA J
+			tablerito[i][j] = "00000";  //FILA I , COLUMNA J
 		}
 	}
 
@@ -24,11 +24,11 @@ void Tablerito::Inicializa()
 
 	tablerito[0][0] = "NT18A"; //LA FILA 8 ES EN X=0; LA COLUMNA A ES EN Y=0;
 	tablerito[0][1] = "NC18B";
-	tablerito[0][2] = "NA18C"; 
+	tablerito[0][2] = "NA18C";
 	tablerito[0][3] = "ND18D";
 	tablerito[0][4] = "NR18E";
 	tablerito[0][5] = "NA18F";
-	tablerito[0][6] = "NC18G"; 
+	tablerito[0][6] = "NC18G";
 	tablerito[0][7] = "NT18H";
 
 	//PEONES NEGROS
@@ -36,7 +36,7 @@ void Tablerito::Inicializa()
 	for (int i = 0; i < 8; i++)
 	{
 		tablerito[1][i] = "NP000";
-		tablerito[1][i][2] = 49+i;
+		tablerito[1][i][2] = 49 + i;
 		tablerito[1][i][3] = '7';
 		tablerito[1][i][4] = 65 + i;
 	}
@@ -53,7 +53,7 @@ void Tablerito::Inicializa()
 
 	//FIGURAS BLACAS
 
-	tablerito[7][0] = "BT11A"; 
+	tablerito[7][0] = "BT11A";
 	tablerito[7][1] = "BC11B";
 	tablerito[7][2] = "BA11C";
 	tablerito[7][3] = "BD11D";
@@ -66,7 +66,7 @@ void Tablerito::Inicializa()
 
 
 //sobrecarga de la funcion localizar pieza 
-//te dice que pieza hay en la posicion
+//te dice que pieza hay en la posicion (te devuelve el dni
 
 string Tablerito::Localizar_pieza(int x, int y)  //con la nomnclatura de la matriz
 {
@@ -79,20 +79,31 @@ string Tablerito::Localizar_pieza(int x, int y)  //con la nomnclatura de la matr
 string Tablerito::Localizar_pieza(char x, char y) //con la nomenclaturadel tablero
 {
 	int fila;
-	for (int i = 0, j=7 ; i < 8; i++,j--)
+	for (int i = 0, j = 7; i < 8; i++, j--)
 	{
-		if (x ==49+i)
+		if (x == 49 + i)
 			fila = j;
-	}	
-	int columna = y-65;
+	}
+	int columna = y - 65;
 	return tablerito[fila][columna];
 }
 
+//te dice la posicion de la pieza que metas
 
-//COMPROBAR MOVIMIENTO, TE DEVUELVE UN 1 SI PUEDES MOVER Y UN 0 SI NO PUEDES MOVER
+/*
+Vector3d Tablerito::Localizar_pieza(Pieza& p)
+{
+//	return p.Get_pos();
+}
+*/
+
+
+
+
+//COMPROBAR MOVIMIENTO, TE DEVUELVE UN NUMERO SEGUN LO QUE HAY EN LA CASILLA A DONDE MUEVAS
 //EL STRING QUE ENTRA ES 
 
-int Tablerito::Comprobar_movimiento(int x, int y)  //COLOR TIPO NUMERO FILA COLUMNA
+int Tablerito::Comprobar_posicion_movimiento(int x, int y)  //METR POSICION DE diosita
 {
 	int fila = x / 10;
 	int columna = y / 10;
@@ -101,15 +112,15 @@ int Tablerito::Comprobar_movimiento(int x, int y)  //COLOR TIPO NUMERO FILA COLU
 	{
 		return 0;
 	}
-	else if(tablerito[fila][columna][0] == 'B' && tablerito[fila][columna][1] != 'R') //si la ficha que hay es blanca
+	else if (tablerito[fila][columna][0] == 'B' && tablerito[fila][columna][1] != 'R') //si la ficha que hay es blanca
 	{
 		return 1;
 	}
-	else if (tablerito[fila][columna][0] == 'N' && tablerito[fila][columna][1] != 'R') 
+	else if (tablerito[fila][columna][0] == 'N' && tablerito[fila][columna][1] != 'R')
 	{
 		return 2;
 	}
-	else if(tablerito[fila][columna][0] == 'B' && tablerito[fila][columna][1] == 'R')
+	else if (tablerito[fila][columna][0] == 'B' && tablerito[fila][columna][1] == 'R')
 	{
 		return 3;
 		//si es un rey blaco
@@ -118,13 +129,42 @@ int Tablerito::Comprobar_movimiento(int x, int y)  //COLOR TIPO NUMERO FILA COLU
 	{
 		return 4;
 		//si es un rey negro
-	} 
+	}
 }
 
 
-//MOVER FICHA EN EL TABLERO
+//COMPROBAR TODOS LOS TIPOS DE MOVIMIENTO Y VER SI SE PUEDE MOVER
 
-bool Tablerito::Mover(char x, char y, string& pieza)
+int Comprobar_movimiento_completo(Pieza& pieza, Vector3d& move)
+{
+
+	if (pieza.Movimiento(move)) //si se puede mover, comprobar camino
+	{
+		return 1;
+
+
+
+
+	}
+	/*
+
+	return 3; //si acaba comiendo
+
+	return 2; //si tiene camino
+
+	return 1; //si se puede mover
+	*/
+	return 0; //si no se puede mover
+
+}
+
+
+
+
+
+//MOVER FICHA EN TABLERITO, te cambia el dni de la pieza
+
+bool Tablerito::Mover(string& pieza, char x, char y)
 {
 	//a donde mueves
 	int fila;
@@ -135,18 +175,20 @@ bool Tablerito::Mover(char x, char y, string& pieza)
 	}
 	int columna = y - 65;
 
-	cout << pieza;
+	//cout << pieza;
+
+	//cambiar el tablerito con la pieza movida
 	tablerito[fila][columna] = pieza;
 	tablerito[fila][columna][3] = x;
 	tablerito[fila][columna][4] = y;
 
 
-	//poner a 0 donde estabas
-	
+	//poner a 0 en tablerito la posicion pasada
+
 	char fila_anterior = pieza[3];
 	char columna_anterior = pieza[4];
-	int fila_ant=0;
-	int columna_ant=0;
+	int fila_ant = 0;
+	int columna_ant = 0;
 
 	for (int i = 0, j = 7; i < 8; i++, j--)
 	{
@@ -155,8 +197,11 @@ bool Tablerito::Mover(char x, char y, string& pieza)
 		if (columna_anterior == 65 + i)
 			columna_ant = i;
 	}
-	
-	
+
+	//cambiar el dni de la pieza
+	pieza[3] = tablerito[fila][columna][3] = x;
+	pieza[4] = tablerito[fila][columna][4] = y;
+
 
 	tablerito[fila_ant][columna_ant] = "00000";
 	if (tablerito[fila_ant][columna_ant] == "00000")
@@ -168,46 +213,8 @@ bool Tablerito::Mover(char x, char y, string& pieza)
 }
 
 
-/*
-bool Tablerito::Mover(int x, int y, string& pieza)
-{
-	int fila = x / 10;
-	int columna = y / 10;
 
-	tablerito[fila][columna] = pieza;
-
-	//comprobar
-	tablerito[fila][columna][3] = x;
-	tablerito[fila][columna][4] = y+97;
-
-
-	//poner a 0 donde estabas
-	char fila_anterior = pieza[3];
-	char columna_anterior = pieza[4];
-	int fila_ant = 0;
-	int columna_ant = 0;
-	
-		for (int i = 0, j = 7; i < 8; i++, j--)
-		{
-			if (fila_anterior == 49 + i)
-				fila_ant = j;
-		}
-		
-		//columna_ant = columna_anterior - 97;
-
-	tablerito[fila_ant][columna_ant] = "00000";
-	if (tablerito[fila_ant][columna_ant] == "00000")
-		return 1;
-	else
-		return 0;
-
-
-
-}
-
-*/
-
-
+//IMPRESION POR PANTALLA DE LA MATRIZ TABLERITO
 
 ostream& Tablerito::to_string(ostream& o)
 {
@@ -215,10 +222,10 @@ ostream& Tablerito::to_string(ostream& o)
 	{
 		for (int j = 0; j < 8; j++)  //coliunns
 		{
-			o<<tablerito[i][j]<<" ";
+			o << tablerito[i][j] << " ";
 		}
 		o << endl;
 	}
 	return o;
-	
+
 }
