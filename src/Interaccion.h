@@ -11,6 +11,8 @@
 #include"Rey.h"
 
 
+
+
 class Interaccion
 {
 	
