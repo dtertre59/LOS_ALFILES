@@ -326,14 +326,20 @@ void Partida::Tecla(unsigned char c)
 
 
 
-						flag_a_donde_movemos = tablerito->Comprobar_posicion_movimiento(diosita->Get_pos());
 
 
-						//SABINEDO EL FLAG DE ARRIBA HAY QUE SABER SI EL MOVIMIENTO ESTA PERMITIDO Y SI SE SALTAN PIEZAS
+							//////////////////////////////////////////////////////////////////////////////////////////
+						
 
-						//HACER FUNCCION DENTRO DE TABLERITO->int Comprobar_movimiento_completo(Pieza& pieza, Vector3d& move);
-						//Q SEGUN LA PIEZA QUE ENTRE MIRE EL MOVIMIENTO Y TODO
+							//poner el flag geberal de reestriccion de movimientos y comidas
 
+							//flag_a_donde_movemos = tablerito->Comprobar_posicion_movimiento(diosita->Get_pos());
+
+
+
+					
+						//SEGUN COMO QUE DEL FLAG DE TODO ARRIBA HACEMOS UNA COSA U OTRA. EN EL FLAG HAY Q METRLE TAMBIEN LA PIEZA SELECCIONADA
+						//NO HARIA FALTA TODO LO DE ABAJO
 
 						if (pieza_selec == "BP" && Interaccion::Comprobar_movimiento(*diosita, peon[flag_numero_pieza]))//si se cumple la condicion 
 						{

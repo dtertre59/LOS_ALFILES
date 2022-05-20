@@ -20,10 +20,11 @@ public:
 	//Vector3d Localizar_pieza(Pieza& p);
 	//Vector3d Localizar_pieza(string& dni_);
 
-	int Comprobar_posicion_movimiento(int x, int y); //devuelve un numero segun lo que haya en la casilla
-	int Comprobar_posicion_movimiento(Vector3d muevoa);
+	int Comprobar_posicion_movimiento(Pieza& pieza, Vector3d move); //devuelve un numero segun lo que haya en la casilla
 
-	int Comprobar_movimiento_completo(Pieza& pieza, Vector3d& move);
+	int Comprobar_camino(Pieza& pieza, Vector3d move);
+
+	int Comprobar_movimiento_completo(Pieza& pieza, Vector3d move);
 
 	void Mover(string& pieza, char x, char y);
 	void Mover(Pieza& pieza, Vector3d diosita_pos);

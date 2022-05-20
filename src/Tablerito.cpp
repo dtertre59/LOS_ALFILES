@@ -106,93 +106,111 @@ Vector3d Tablerito::Localizar_pieza(Pieza& p)
 */
 
 
-
-
 //COMPROBAR MOVIMIENTO, TE DEVUELVE UN NUMERO SEGUN LO QUE HAY EN LA CASILLA A DONDE MUEVAS
-//EL STRING QUE ENTRA ES 
 
-int Tablerito::Comprobar_posicion_movimiento(int x, int y)  //METR POSICION DE diosita
+int Tablerito::Comprobar_posicion_movimiento(Pieza& pieza, Vector3d move)  //METR POSICION DE diosita
 {
-	int fila = x / 10;
-	int columna = y / 10;
 
-	if (tablerito[fila][columna][0] == '0') //si no hay fichas
+	char turno = pieza.dni[0];
+
+	int fila = move.x / 10;
+	int columna = move.y / 10;
+
+	if (tablerito[fila][columna][0] == '0')
 	{
-		return 0;
+		return 0;	//si no hay fichas
 	}
-	else if (tablerito[fila][columna][0] == 'B' && tablerito[fila][columna][1] != 'R') //si la ficha que hay es blanca
+	else if (((turno == 'B' && tablerito[fila][columna][0] == 'N') || (turno == 'N' && tablerito[fila][columna][0] == 'B')) && tablerito[fila][columna][1] != 'R') //si la ficha que hay es blanca
+	{
+		return 1;	//donde muevas va a comer una ficha del rival que no es el rey
+	}
+	else if (tablerito[fila][columna][1] == 'R')
+	{
+		return 2;	//si te comes el rey
+	}
+	else
+		return 3; //no entra en ninguno
+}
+
+//COMPROBAR CAMINO
+
+int Tablerito::Comprobar_camino(Pieza& pieza, Vector3d move)
+{
+	if (pieza.dni[1] == 'C' || pieza.dni[1] == 'R')      //no importa el camino
+		return 1; //pueden pasar
+
+	else if (pieza.dni[1] == 'T')
 	{
 		return 1;
+		//return 0; //si no puede pasar
+
 	}
-	else if (tablerito[fila][columna][0] == 'N' && tablerito[fila][columna][1] != 'R')
+
+	else if (pieza.dni[1] == 'A')
 	{
+		return 1;
+		//return 0; //si no puede pasar
+
+	}
+
+	if (pieza.dni[1] == 'D')
+	{
+		return 1;
+		//return 0; //si no puede pasar
+
+	}
+
+	if (pieza.dni[1] == 'P')
+	{
+		/*
+		return 0;  //si tiene alguin delante y no puedde moverse
+
+		return 1;   //si es uno de frente
+
+		return 2;  //si es de lado y podria comer
+		*/
 		return 2;
 	}
-	else if (tablerito[fila][columna][0] == 'B' && tablerito[fila][columna][1] == 'R')
-	{
-		return 3;
-		//si es un rey blaco
-	}
-	else if (tablerito[fila][columna][0] == 'N' && tablerito[fila][columna][1] == 'R')
-	{
-		return 4;
-		//si es un rey negro
-	}
 }
 
-int Tablerito::Comprobar_posicion_movimiento(Vector3d muevoa)  //METR POSICION DE diosita
+
+
+//COMPROBAR TODOS LOS TIPOS DE MOVIMIENTO, VER SI SE PUEDE MOVER, ver aquin COMER y si se come al REY
+
+int Tablerito::Comprobar_movimiento_completo(Pieza& pieza, Vector3d move)
 {
-	int fila = muevoa.x / 10;
-	int columna = muevoa.y / 10;
+	char turno = pieza.dni[0]; //te dice si es blaca B o negra N el turno
 
-	if (tablerito[fila][columna][0] == '0') //si no hay fichas
+	int flag_posicion_movimiento = Tablerito::Comprobar_posicion_movimiento(pieza, move); //te dice que hay en la casilla a donde te mueves
+
+	int flag_camino = Tablerito::Comprobar_camino(pieza, move);  //te dice si esta permitido el camino
+
+	if (flag_camino == 0)
 	{
-		return 0;
+		return 0; //no se puede pasar y se debe volver a seleccionar la casilla a donde vas a mover
 	}
-	else if (tablerito[fila][columna][0] == 'B' && tablerito[fila][columna][1] != 'R') //si la ficha que hay es blanca
+	else if (flag_camino == 1) //si se puede mover tode menosla excepcion del peon
 	{
-		return 1;
+
+		if (pieza.Movimiento(move) && flag_posicion_movimiento == 0) //si se puede mover, comprobar camino
+		{
+			return 1; //se mueve a un sitio que esta vacio
+
+		}
+		else if (pieza.Movimiento(move) && flag_posicion_movimiento == 1) //si donde mueves come
+		{
+			return 2; //donde se mueva COME
+		}
+		else if (pieza.Movimiento(move) && flag_posicion_movimiento == 2) //COME REY
+		{
+			return 4; //come rey
+		}
 	}
-	else if (tablerito[fila][columna][0] == 'N' && tablerito[fila][columna][1] != 'R')
+	else if (flag_camino == 2) //excepcion del peon de comer de lado
 	{
-		return 2;
-	}
-	else if (tablerito[fila][columna][0] == 'B' && tablerito[fila][columna][1] == 'R')
-	{
-		return 3;
-		//si es un rey blaco
-	}
-	else if (tablerito[fila][columna][0] == 'N' && tablerito[fila][columna][1] == 'R')
-	{
-		return 4;
-		//si es un rey negro
+		return 3; //peon come de lado
 	}
 }
-
-
-
-//COMPROBAR TODOS LOS TIPOS DE MOVIMIENTO Y VER SI SE PUEDE MOVER
-
-int Tablerito::Comprobar_movimiento_completo(Pieza& pieza, Vector3d& move)
-{
-
-	if (pieza.Movimiento(move)) //si se puede mover, comprobar camino
-	{
-		return 1;
-
-	}
-	/*
-
-	return 3; //si acaba comiendo
-
-	return 2; //si tiene camino
-
-	return 1; //si se puede mover
-	*/
-	return 0; //si no se puede mover
-
-}
-
 
 
 
