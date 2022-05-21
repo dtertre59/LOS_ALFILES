@@ -113,7 +113,7 @@ bool Peon::Movimiento(const Vector3d& muevo_a)
 	int npy = muevo_a.y;
 	int x = muevo_a.x - posicion.x;
 	int y = muevo_a.y - posicion.y;
-	if (color.bn == 1) //color blanco
+	if (dni[0]=='B') //color blanco
 	{
 		if (x == -10 && y == 0)
 		{
@@ -137,7 +137,7 @@ bool Peon::Movimiento(const Vector3d& muevo_a)
 		else
 			flag = 0;
 	}
-	if (color.bn == 2) //color negro
+	if (dni[0] == 'N') //color negro
 	{
 		if (x == 10 && y == 0)
 		{
