@@ -34,6 +34,6 @@ public:
 	//te imprime el tablero por teclado
 	ostream& to_string(ostream& o);
 
-
+	friend class Partida;
 };
 

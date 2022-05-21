@@ -1,4 +1,5 @@
 #include "Interaccion.h"
+#include "Tablerito.h"
 
 //te devuelve la posicion seleccionada. falta comprobar si la posiccion seleccionada tiene alguna pieza
 Vector3d Interaccion::Seleccionar(Pieza& diosita)
@@ -65,6 +66,38 @@ bool Interaccion::Comprobar_comer(Pieza& diosita, Pieza& pieza)
 		
 	}
 	return 1;
+}
+
+void Interaccion::Comer(Vector3d& move,Tablerito& tablerito)
+{
+	/*
+	int pos_x = move.x / 10;
+	int pos_y = move.y / 10;
+	int n;
+
+	if (tablerito[pos_x][pos_y][1] == 'P')
+	{
+		n = tablerito[pos_x][pos_y][2];
+		peon[n].setPos(150, 150, 0);
+	}
+	else if (tablerito[pos_x][pos_y][1] == 'T')
+	{
+		n = tablerito[pos_x][pos_y][2];
+	}
+	else if (tablerito[pos_x][pos_y][1] == 'A')
+	{
+		n = tablerito[pos_x][pos_y][2];
+	}
+	else if (tablerito[pos_x][pos_y][1] == 'C')
+	{
+		n = tablerito[pos_x][pos_y][2];
+	}
+	else if (tablerito[pos_x][pos_y][1] == 'D')
+	{
+		n = tablerito[pos_x][pos_y][2];
+	}
+	*/
+	
 }
 
 

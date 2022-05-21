@@ -1,4 +1,5 @@
 #include "Tablerito.h"
+#include "Interaccion.h"
 
 Tablerito::Tablerito()
 {
@@ -157,7 +158,7 @@ int Tablerito::Comprobar_camino(Pieza& pieza, Vector3d move)
 
 		if ((dif_pos_x>0)&&(dif_pos_y==0))//hacia abajo
 		{
-			for (int i = pos_pieza_x+1; i > pos_diosita_x; i++)
+			for (int i = pos_pieza_x+1; i < pos_diosita_x; i++)
 			{
 				if (tablerito[i][pos_pieza_y][0] != '0')
 				{
@@ -167,7 +168,7 @@ int Tablerito::Comprobar_camino(Pieza& pieza, Vector3d move)
 		}
 		else if ((dif_pos_x < 0) && (dif_pos_y == 0))//hacia arriiba
 		{
-			for (int i = pos_pieza_x-1; i < pos_diosita_x; i--)
+			for (int i = pos_pieza_x-1; i > pos_diosita_x; i--)
 			{
 				if (tablerito[i][pos_pieza_y][0] != '0')
 				{
@@ -212,7 +213,7 @@ int Tablerito::Comprobar_camino(Pieza& pieza, Vector3d move)
 		if (dif_pos_x<0 && dif_pos_y>0)//arriba ->
 		{
 			int d = 1;
-			for (int i = pos_pieza_x-1; i < pos_diosita_x; i--)
+			for (int i = pos_pieza_x-1; i > pos_diosita_x; i--)
 			{
 				
 				if (tablerito[i][pos_pieza_y+d][0] != '0')
@@ -226,7 +227,7 @@ int Tablerito::Comprobar_camino(Pieza& pieza, Vector3d move)
 		else if (dif_pos_x < 0 && dif_pos_y < 0)//arriba <-
 		{
 			int d = 1;
-			for (int i = pos_pieza_x - 1; i < pos_diosita_x; i--)
+			for (int i = pos_pieza_x - 1; i > pos_diosita_x; i--)
 			{
 
 				if (tablerito[i][pos_pieza_y - d][0] != '0')
@@ -277,7 +278,7 @@ int Tablerito::Comprobar_camino(Pieza& pieza, Vector3d move)
 	//mov torre
 	if ((dif_pos_x > 0) && (dif_pos_y == 0))//hacia abajo
 	{
-		for (int i = pos_pieza_x + 1; i > pos_diosita_x; i++)
+		for (int i = pos_pieza_x + 1; i < pos_diosita_x; i++)
 		{
 			if (tablerito[i][pos_pieza_y][0] != '0')
 			{
@@ -287,7 +288,7 @@ int Tablerito::Comprobar_camino(Pieza& pieza, Vector3d move)
 	}
 	else if ((dif_pos_x < 0) && (dif_pos_y == 0))//hacia arriiba
 	{
-		for (int i = pos_pieza_x - 1; i < pos_diosita_x; i--)
+		for (int i = pos_pieza_x - 1; i > pos_diosita_x; i--)
 		{
 			if (tablerito[i][pos_pieza_y][0] != '0')
 			{
@@ -320,7 +321,7 @@ int Tablerito::Comprobar_camino(Pieza& pieza, Vector3d move)
 	else if (dif_pos_x < 0 && dif_pos_y>0)//arriba ->
 	{
 		int d = 1;
-		for (int i = pos_pieza_x - 1; i < pos_diosita_x; i--)
+		for (int i = pos_pieza_x - 1; i > pos_diosita_x; i--)
 		{
 
 			if (tablerito[i][pos_pieza_y + d][0] != '0')
@@ -334,7 +335,7 @@ int Tablerito::Comprobar_camino(Pieza& pieza, Vector3d move)
 	else if (dif_pos_x < 0 && dif_pos_y < 0)//arriba <-
 	{
 		int d = 1;
-		for (int i = pos_pieza_x - 1; i < pos_diosita_x; i--)
+		for (int i = pos_pieza_x - 1; i > pos_diosita_x; i--)
 		{
 
 			if (tablerito[i][pos_pieza_y - d][0] != '0')
