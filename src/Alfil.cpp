@@ -95,25 +95,11 @@ bool Alfil::Movimiento(const Vector3d& muevo_a)
 	
 	if (x == y)
 	{
-		if (npx > 00 && npx < 80)
-		{
-			if (npy >= 00 && npy <= 70)
-			{
-				flag = 1;
-			}
-			
-		}
+		flag = 1;
 	}
-	if (x == -y)
+	else if (x == -y)
 	{
-		if (npx > 00 && npx < 80)
-			{
-			if (npy >= 00 && npy <= 70)
-			{
-				flag = 1;
-			}
-			
-			}
+		flag = 1;
 	}
 		
 	

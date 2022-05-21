@@ -442,6 +442,12 @@ int Tablerito::Comprobar_movimiento_completo(Pieza& pieza, Vector3d move)
 		{
 			return 4; //come rey
 		}
+		
+		else if (pieza.Movimiento(move) && flag_posicion_movimiento == 3) //COME REY
+		{
+			return 0; //come rey
+		}
+		
 	}
 	else if (flag_camino == 2) //excepcion del peon de comer de lado
 	{
