@@ -955,8 +955,8 @@ void Partida::Tecla(unsigned char c)
 
 							//if (Interaccion::Comprobar_choque_piezas(*diosita, torre[0]) && Interaccion::Comprobar_choque_piezas(*diosita, torre[1]) && Interaccion::Comprobar_choque_piezas(*diosita, alfil[0]) && Interaccion::Comprobar_choque_piezas(*diosita, alfil[1]) && Interaccion::Comprobar_choque_piezas(*diosita, rey[0]) && Interaccion::Comprobar_choque_piezas(*diosita, dama[0]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[5]) && Interaccion::Comprobar_choque_piezas(*diosita, caballo[0]) && Interaccion::Comprobar_choque_piezas(*diosita, caballo[1]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[3]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[1]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[2]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[4]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[6]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[7]))
 							//{
-							if (tablerito->Comprobar_movimiento_completo(peon[flag_numero_pieza], diosita->Get_pos()) == 1)
-							{
+							//if (tablerito->Comprobar_movimiento_completo(peon[flag_numero_pieza], diosita->Get_pos()) == 1)
+							//{
 								diosita->Set_color('n');
 								peon[flag_numero_pieza].Set_color('n');
 
@@ -965,11 +965,13 @@ void Partida::Tecla(unsigned char c)
 								introdatos = IntroDatos::EJE_X;
 								movdatos = MovDatos::M_ESPERA;
 								turno = Turno::CAMBIO2;
-							}
-							if (tablerito->Comprobar_movimiento_completo(peon[flag_numero_pieza], diosita->Get_pos()) == 2)
-							{
+							//}
+							
+							//if (tablerito->Comprobar_movimiento_completo(peon[flag_numero_pieza], diosita->Get_pos()) == 2)
+							//{
 								//comer
-							}
+							//}
+							
 							/*
 						}
 						else
@@ -1124,7 +1126,7 @@ void Partida::Tecla(unsigned char c)
 
 
 
-						else if (pieza_selec == "NR" && Interaccion::Comprobar_movimiento(*diosita, rey[flag_numero_pieza]))//si se cumple la condicion //se podria poner rey[flag_numero_pieza
+						else if (pieza_selec == "NR" && Interaccion::Comprobar_movimiento(*diosita, rey[flag_numero_pieza])!=0)//si se cumple la condicion //se podria poner rey[flag_numero_pieza
 						{
 							//if (Interaccion::Comprobar_choque_piezas(*diosita, torre[0]) && Interaccion::Comprobar_choque_piezas(*diosita, torre[1]) && Interaccion::Comprobar_choque_piezas(*diosita, alfil[0]) && Interaccion::Comprobar_choque_piezas(*diosita, alfil[1]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[5]) && Interaccion::Comprobar_choque_piezas(*diosita, dama[0]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[3]) && Interaccion::Comprobar_choque_piezas(*diosita, caballo[0]) && Interaccion::Comprobar_choque_piezas(*diosita, caballo[1]) &&Interaccion::Comprobar_choque_piezas(*diosita,peon[0]) &&Interaccion::Comprobar_choque_piezas(*diosita,peon[1]) &&Interaccion::Comprobar_choque_piezas(*diosita,peon[2]) &&Interaccion::Comprobar_choque_piezas(*diosita,peon[4])&&Interaccion::Comprobar_choque_piezas(*diosita,peon[6])&&Interaccion::Comprobar_choque_piezas(*diosita,peon[7]))
 							//{
