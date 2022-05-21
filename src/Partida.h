@@ -50,24 +50,15 @@ public:
 	Vista vista;
 
 
-
 	string pieza_selec; //BR
 	string dni_pieza_selec; //BR11E
 
 	int control_selccion_pieza; //para saber si ya se ha seleccionadado la ficha
 	Vector3d posicion_pieza_seleccionada;
 
-
-	
-
-	
 	int flag_seleccion_pieza;  //1 si la pieza ha sido seleccionada
 
 	int flag_numero_pieza;  // enumeracion de las peizas  //los peones del 0 al 7
-
-	//SOLO HACE FALTA UN FLAG GLOBAL DE TIPO DE MOV
-
-	//int flag_a_donde_movemos; //para saber que tiene la casilla donde vamos a mover
 	
 	int comi;
 

@@ -149,264 +149,263 @@ int Tablerito::Comprobar_camino(Pieza& pieza, Vector3d move)
 
 	int flag = 1;
 
-	if (pieza.dni[1] == 'C' || pieza.dni[1] == 'R')      //no importa el camino
-		return 1; //pueden pasar
 
-	else if (pieza.dni[1] == 'T')
-	{
-		
+		if (pieza.dni[1] == 'C' || pieza.dni[1] == 'R')      //no importa el camino
+			return 1; //pueden pasar
 
-		if ((dif_pos_x>0)&&(dif_pos_y==0))//hacia abajo
+		else if (pieza.dni[1] == 'T')
 		{
-			for (int i = pos_pieza_x+1; i < pos_diosita_x; i++)
+
+
+			if ((dif_pos_x > 0) && (dif_pos_y == 0))//hacia abajo
 			{
-				tablerito[i][pos_pieza_y][0] != '0';
-				flag = 0;
+				for (int i = pos_pieza_x + 1; i < pos_diosita_x; i++)
+				{
+					if (tablerito[i][pos_pieza_y][0] != '0')
+						flag = 0;
+				}
 			}
-		}
-		if (flag == 1)
-		{
-			for (int i = pos_pieza_x-1; i > pos_diosita_x; i--)
+			if (flag == 1)
 			{
-				if (tablerito[i][pos_pieza_y][0] != '0')
+				for (int i = pos_pieza_x - 1; i > pos_diosita_x; i--)
+				{
+					if (tablerito[i][pos_pieza_y][0] != '0')
+					{
+						flag = 0;
+					}
+				}
+			}
+			else if ((dif_pos_y > 0) && (dif_pos_x == 0))//hacia ->
+			{
+				for (int i = pos_pieza_y + 1; i < pos_diosita_y; i++)
+				{
+					if (tablerito[pos_pieza_x][i][0] != '0')
+					{
+						flag = 0;
+					}
+				}
+			}
+			else if ((dif_pos_y < 0) && (dif_pos_x == 0))//hacia <-
+			{
+				for (int i = pos_pieza_y - 1; i > pos_diosita_y; i--)
+				{
+					if (tablerito[pos_pieza_x][i][0] != '0')
+					{
+						flag = 0;
+					}
+				}
+			}
+			if (flag == 1)
+			{
+				return 1;
+			}
+			else
+			{
+				return 0;
+			}
+			//return 0; //si no puede pasar
+
+		}
+
+		else if (pieza.dni[1] == 'A')
+		{
+			if (dif_pos_x < 0 && dif_pos_y>0)//arriba ->
+			{
+				int d = 1;
+				for (int i = pos_pieza_x - 1; i > pos_diosita_x; i--)
+				{
+
+					if (tablerito[i][pos_pieza_y + d][0] != '0')
+					{
+
+						flag = 0;
+					}
+					d++;
+				}
+			}
+			else if (dif_pos_x < 0 && dif_pos_y < 0)//arriba <-
+			{
+				int d = 1;
+				for (int i = pos_pieza_x - 1; i > pos_diosita_x; i--)
+				{
+
+					if (tablerito[i][pos_pieza_y - d][0] != '0')
+					{
+
+						flag = 0;
+					}
+					d++;
+				}
+			}
+			else if (dif_pos_x > 0 && dif_pos_y > 0)//abajo ->
+			{
+				int d = 1;
+				for (int i = pos_pieza_x + 1; i < pos_diosita_x; i++)
+				{
+
+					if (tablerito[i][pos_pieza_y + d][0] != '0')
+					{
+
+						flag = 0;
+					}
+					d++;
+				}
+			}
+			else if (dif_pos_x > 0 && dif_pos_y < 0)//abajo <-
+			{
+				int d = 1;
+				for (int i = pos_pieza_x + 1; i < pos_diosita_x; i++)
+				{
+
+					if (tablerito[i][pos_pieza_y - d][0] != '0')
+					{
+
+						flag = 0;
+					}
+					d++;
+				}
+			}
+			if (flag == 1)
+			{
+				return 1;
+			}
+			else { return 0; }
+		}
+
+		else if (pieza.dni[1] == 'D')
+		{
+			//mov torre
+			if ((dif_pos_x > 0) && (dif_pos_y == 0))//hacia abajo
+			{
+				for (int i = pos_pieza_x + 1; i < pos_diosita_x; i++)
+				{
+					if (tablerito[i][pos_pieza_y][0] != '0')
+					{
+						flag = 0;
+					}
+				}
+			}
+			else if ((dif_pos_x < 0) && (dif_pos_y == 0))//hacia arriiba
+			{
+				for (int i = pos_pieza_x - 1; i > pos_diosita_x; i--)
+				{
+					if (tablerito[i][pos_pieza_y][0] != '0')
+					{
+						flag = 0;
+					}
+				}
+			}
+			else if ((dif_pos_y > 0) && (dif_pos_x == 0))//hacia ->
+			{
+				for (int i = pos_pieza_y + 1; i < pos_diosita_y; i++)
+				{
+					if (tablerito[pos_pieza_x][i][0] != '0')
+					{
+						flag = 0;
+					}
+				}
+			}
+			else if ((dif_pos_y < 0) && (dif_pos_x == 0))//hacia <-
+			{
+				for (int i = pos_pieza_y - 1; i > pos_diosita_y; i--)
+				{
+					if (tablerito[pos_pieza_x][i][0] != '0')
+					{
+						flag = 0;
+					}
+				}
+			}
+			//mov alfil
+			else if (dif_pos_x < 0 && dif_pos_y>0)//arriba ->
+			{
+				int d = 1;
+				for (int i = pos_pieza_x - 1; i > pos_diosita_x; i--)
+				{
+
+					if (tablerito[i][pos_pieza_y + d][0] != '0')
+					{
+
+						flag = 0;
+					}
+					d++;
+				}
+			}
+			else if (dif_pos_x < 0 && dif_pos_y < 0)//arriba <-
+			{
+				int d = 1;
+				for (int i = pos_pieza_x - 1; i > pos_diosita_x; i--)
+				{
+
+					if (tablerito[i][pos_pieza_y - d][0] != '0')
+					{
+
+						flag = 0;
+					}
+					d++;
+				}
+			}
+			else if (dif_pos_x > 0 && dif_pos_y > 0)//abajo ->
+			{
+				int d = 1;
+				for (int i = pos_pieza_x + 1; i < pos_diosita_x; i++)
+				{
+
+					if (tablerito[i][pos_pieza_y + d][0] != '0')
+					{
+
+						flag = 0;
+					}
+					d++;
+				}
+			}
+			else if (dif_pos_x > 0 && dif_pos_y < 0)//abajo <-
+			{
+				int d = 1;
+				for (int i = pos_pieza_x + 1; i < pos_diosita_x; i++)
+				{
+
+					if (tablerito[i][pos_pieza_y - d][0] != '0')
+					{
+
+						flag = 0;
+					}
+					d++;
+				}
+			}
+			//mov alfil
+			if (flag == 1)
+			{
+				return 1;
+			}
+			else { return 0; }//return 0; //si no puede pasar
+
+		}
+
+		else if (pieza.dni[1] == 'P')
+		{
+			if (tablerito[6][pos_pieza_y][0] == 'B')
+			{
+
+				if (tablerito[pos_pieza_x - 1][pos_pieza_y][0] != '0')
 				{
 					flag = 0;
 				}
+
 			}
-		}
-		else if ((dif_pos_y > 0) && (dif_pos_x == 0))//hacia ->
-		{
-			for (int i = pos_pieza_y+1; i < pos_diosita_y; i++)
+			else if (tablerito[1][pos_pieza_y][0] == 'N')
 			{
-				if (tablerito[pos_pieza_x][i][0] != '0')
-				{
-					flag = 0;
-				}
-			}
-		}
-		else if ((dif_pos_y < 0) && (dif_pos_x == 0))//hacia <-
-		{
-			for (int i = pos_pieza_y-1; i > pos_diosita_y; i--)
-			{
-				if (tablerito[pos_pieza_x][i][0] != '0')
-				{
-					flag = 0;
-				}
-			}
-		}
-		if (flag == 1)
-		{
-			return 1;
-		}
-		else
-		{
-			return 0;
-		}
-		//return 0; //si no puede pasar
-
-	}
-
-	else if (pieza.dni[1] == 'A')
-	{
-		if (dif_pos_x<0 && dif_pos_y>0)//arriba ->
-		{
-			int d = 1;
-			for (int i = pos_pieza_x-1; i > pos_diosita_x; i--)
-			{
-				
-				if (tablerito[i][pos_pieza_y+d][0] != '0')
-				{
-					
-					flag = 0;
-				}
-				d++;
-			}
-		}
-		else if (dif_pos_x < 0 && dif_pos_y < 0)//arriba <-
-		{
-			int d = 1;
-			for (int i = pos_pieza_x - 1; i > pos_diosita_x; i--)
-			{
-
-				if (tablerito[i][pos_pieza_y - d][0] != '0')
-				{
-
-					flag = 0;
-				}
-				d++;
-			}
-		}
-		else if (dif_pos_x > 0 && dif_pos_y > 0)//abajo ->
-		{
-			int d = 1;
-			for (int i = pos_pieza_x + 1; i < pos_diosita_x; i++)
-			{
-
-				if (tablerito[i][pos_pieza_y + d][0] != '0')
-				{
-
-					flag = 0;
-				}
-				d++;
-			}
-		}
-		else if (dif_pos_x > 0 && dif_pos_y < 0)//abajo <-
-		{
-			int d = 1;
-			for (int i = pos_pieza_x + 1; i < pos_diosita_x; i++)
-			{
-
-				if (tablerito[i][pos_pieza_y - d][0] != '0')
-				{
-
-					flag = 0;
-				}
-				d++;
-			}
-		}
-		if (flag == 1)
-		{
-			return 1;
-		}
-		else { return 0; }
-	}
-
-	else if (pieza.dni[1] == 'D')
-	{
-	//mov torre
-	if ((dif_pos_x > 0) && (dif_pos_y == 0))//hacia abajo
-	{
-		for (int i = pos_pieza_x + 1; i < pos_diosita_x; i++)
-		{
-			if (tablerito[i][pos_pieza_y][0] != '0')
-			{
-				flag = 0;
-			}
-		}
-	}
-	else if ((dif_pos_x < 0) && (dif_pos_y == 0))//hacia arriiba
-	{
-		for (int i = pos_pieza_x - 1; i > pos_diosita_x; i--)
-		{
-			if (tablerito[i][pos_pieza_y][0] != '0')
-			{
-				flag = 0;
-			}
-		}
-	}
-	else if ((dif_pos_y > 0) && (dif_pos_x == 0))//hacia ->
-	{
-		for (int i = pos_pieza_y + 1; i < pos_diosita_y; i++)
-		{
-			if (tablerito[pos_pieza_x][i][0] != '0')
-			{
-				flag = 0;
-			}
-		}
-	}
-	else if ((dif_pos_y < 0) && (dif_pos_x == 0))//hacia <-
-	{
-		for (int i = pos_pieza_y - 1; i > pos_diosita_y; i--)
-		{
-			if (tablerito[pos_pieza_x][i][0] != '0')
-			{
-				flag = 0;
-			}
-		}
-	}
-	//mov alfil
-	else if (dif_pos_x < 0 && dif_pos_y>0)//arriba ->
-	{
-		int d = 1;
-		for (int i = pos_pieza_x - 1; i > pos_diosita_x; i--)
-		{
-
-			if (tablerito[i][pos_pieza_y + d][0] != '0')
-			{
-
-				flag = 0;
-			}
-			d++;
-		}
-	}
-	else if (dif_pos_x < 0 && dif_pos_y < 0)//arriba <-
-	{
-		int d = 1;
-		for (int i = pos_pieza_x - 1; i > pos_diosita_x; i--)
-		{
-
-			if (tablerito[i][pos_pieza_y - d][0] != '0')
-			{
-
-				flag = 0;
-			}
-			d++;
-		}
-	}
-	else if (dif_pos_x > 0 && dif_pos_y > 0)//abajo ->
-	{
-		int d = 1;
-		for (int i = pos_pieza_x + 1; i < pos_diosita_x; i++)
-		{
-
-			if (tablerito[i][pos_pieza_y + d][0] != '0')
-			{
-
-				flag = 0;
-			}
-			d++;
-		}
-	}
-	else if (dif_pos_x > 0 && dif_pos_y < 0)//abajo <-
-	{
-		int d = 1;
-		for (int i = pos_pieza_x + 1; i < pos_diosita_x; i++)
-		{
-
-			if (tablerito[i][pos_pieza_y - d][0] != '0')
-			{
-
-				flag = 0;
-			}
-			d++;
-		}
-	}
-	//mov alfil
-	if (flag == 1)
-	{
-		return 1;
-	}
-	else { return 0; }//return 0; //si no puede pasar
-
-	}
-
-	else if (pieza.dni[1] == 'P')
-	{
-		if(tablerito[6][pos_pieza_y][0]=='B')
-		{ 
-		 
-			if (tablerito[pos_pieza_x - 1][pos_pieza_y][0] != '0')
-			{
-				flag = 0;
-			}
-			
-		}
-		else if (tablerito[1][pos_pieza_y][0] == 'N')
-		{
 				if (tablerito[pos_pieza_x + 1][pos_pieza_y][0] != '0')
 				{
 					flag = 0;
 				}
 
-		}
-		
-		if (flag == 1)
-		{
-			return 1;
-		}
-		else { return 0; }
-	
-	}
+			}
+			if (flag == 1)
+			{
+				return 1;
+			}
+			else { return 0; }
+		}	
 }
 
 
@@ -437,7 +436,7 @@ int Tablerito::Comprobar_movimiento_completo(Pieza& pieza, Vector3d move)
 					return 1;
 				}
 				else
-					return 0;
+					return 0; //no mover
 			}
 			else
 			{
@@ -473,6 +472,9 @@ int Tablerito::Comprobar_movimiento_completo(Pieza& pieza, Vector3d move)
 		{
 			return 0; // 
 		}
+
+
+
 		
 	}
 	else if (flag_camino == 2) //excepcion del peon de comer de lado

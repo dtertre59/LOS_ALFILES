@@ -132,7 +132,7 @@ bool Rey::Movimiento(const Vector3d& muevo_a)
 	//movimientos posibles -2/-1
 	if (x == -10 && y == 0)
 	{
-		if (npx > 00 && npx < 80)
+		if (npx >= 00 && npx < 80)
 			if (npy >= 00 && npy <= 70)
 			{
 				flag = 1;;
@@ -140,7 +140,7 @@ bool Rey::Movimiento(const Vector3d& muevo_a)
 	}
 	if (x == -10 && y == -10)
 	{
-		if (npx > 00 && npx < 80)
+		if (npx >= 00 && npx < 80)
 			if (npy >= 00 && npy <= 70)
 			{
 				flag = 1;;
@@ -148,7 +148,7 @@ bool Rey::Movimiento(const Vector3d& muevo_a)
 	}
 	if (x == -10 && y == 10)
 	{
-		if (npx > 00 && npx < 80)
+		if (npx >= 00 && npx < 80)
 			if (npy >= 00 && npy <= 70)
 			{
 				flag = 1;;
@@ -156,7 +156,7 @@ bool Rey::Movimiento(const Vector3d& muevo_a)
 	}
 	if (x == 0 && y == -10)
 	{
-		if (npx > 00 && npx < 80)
+		if (npx >= 00 && npx < 80)
 			if (npy >= 00 && npy <= 70)
 			{
 				flag = 1;;
@@ -164,7 +164,7 @@ bool Rey::Movimiento(const Vector3d& muevo_a)
 	}
 	if (x == 0 && y == 10)
 	{
-		if (npx > 00 && npx < 80)
+		if (npx >= 00 && npx < 80)
 			if (npy >= 00 && npy <= 70)
 			{
 				flag = 1;;
@@ -172,7 +172,7 @@ bool Rey::Movimiento(const Vector3d& muevo_a)
 	}
 	if (x == 10 && y == -10)
 	{
-		if (npx > 00 && npx < 80)
+		if (npx >= 00 && npx < 80)
 			if (npy >= 00 && npy <= 70)
 			{
 				flag = 1;;
@@ -180,7 +180,7 @@ bool Rey::Movimiento(const Vector3d& muevo_a)
 	}
 	if (x == 10 && y == 0)
 	{
-		if (npx > 00 && npx < 80)
+		if (npx >= 00 && npx < 80)
 			if (npy >= 00 && npy <= 70)
 			{
 				flag = 1;;
@@ -188,7 +188,7 @@ bool Rey::Movimiento(const Vector3d& muevo_a)
 	}
 	if (x == 10 && y == 10)
 	{
-		if (npx > 00 && npx < 80)
+		if (npx >= 00 && npx < 80)
 			if (npy >= 00 && npy <= 70)
 			{
 				flag = 1;;
@@ -202,232 +202,3 @@ bool Rey::Movimiento(const Vector3d& muevo_a)
 		return 0;
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-//MOVER FIGURA CON TECLADO
-/*
-bool Rey::pos_Movimiento(int i2, int j2)
-{
-	int i, j;
-	i = posicion.x / 10;
-	j = posicion.y / 10;
-	int t = 0;
-	bool mov = false;
-
-	if ((i2 + i0 > 0 && i2 + i0 <= 7) && (j2 +j0 >= 0 && j2 +j0 <= 7))
-	{
-
-		i2 = i0 + i2;
-		j2 = j0 + j2;
-		mov = true;
-	}
-	
-	//movimientos posibles	
-	if ((i2 + 1 > 0 && i2 +1 <= 7) && (j2  >= 0 && j2  <= 7))
-	{
-		
-		i2 = i0 +1;
-		j2 = j0 ;
-		mov = true;
-	}
-	if ((i2 +1 > 0 && i2 -1<= 7) && (j2 -1 >= 0 && j2 - 1 <= 7))
-	{
-		
-		i2 = i0 + 1;
-		j2 = j0 - 1;
-		mov = true;
-	}
-	if ((i2 > 0 && i2 <= 7) && (j2 - 1 >= 0 && j2 - 1 <= 7))
-	{
-		
-		i2 = i0;
-		j2 = j0 - 1;
-		mov = true;
-	}
-	if ((i2 - 1 > 0 && i2 - 1 <= 7) && (j2 + 1 >= 0 && j2 + 1 <= 7))
-	{
-		
-		i2 = i0 - 1;
-		j2 = j0 + 1;
-		mov = true;
-	}
-	
-	if ((i2 - 1 > 0 && i2 - 1 <= 7) && (j2  >= 0 && j2  <= 7))
-	{
-		
-		i2 = i0 - 1;
-		j2 = j0 ;
-		mov = true;
-	}
-	if ((i2 - 1 > 0 && i2 - 1 <= 7) && (j2+ 1 >= 0 && j2 + 1 <= 7))
-	{
-		
-		i2 = i0 - 1;
-		j2 = j0 + 1;
-		mov = true;
-	}
-	if ((i2  > 0 && i2  <= 7) && (j2 + 1 >= 0 && j2 + 1 <= 7))
-	{
-		
-		i2 = i0 ;
-		j2 = j0 + 1;
-		mov = true;
-	}
-	if ((i2 + 1 > 0 && i2 + 1 <= 7) && (j2 + 1 >= 0 && j2 + 1 <= 7))
-	{
-		
-		i2 = i0 + 1;
-		j2 = j0 + 1;
-		mov = true;
-	}
-	
-	
-	else
-		movimiento = false;
-		
-	///i0 = i2;
-	//j0 = j2;
-	return mov;
-
-}
-
-void Rey::Mover(int x,int y)
-{
-	
-	bool mov;
-	if (posicion.x > 00 && posicion.x < 80)
-		if (posicion.y > 00 && posicion.y < 70)
-		{
-			mov = pos_Movimiento(x, y);
-			if(mov==true)
-				posicion.MoverVect(-10 * x, 10 * y, 0);
-		}
-		
-	int npx, npy;
-
-	//movimiento normal
-	if (color.bn == 1)
-	{
-		x = x * (-1);
-		int difx = 10 * x;
-		int dify = 10 * y;
-		npx = posicion.x + difx; //nueva posicion
-		npy = posicion.y + dify; //nueva posicion
-		//movimiento 1/0
-		if (difx == -10 && dify == 0)
-			if (npx > 00 && npx < 80)
-				if (npy >= 00 && npy < 70)
-					posicion.MoverVect(10 * x, 10*y, 0);
-
-		//movimiento 1/-1
-		if (difx == -10 && dify == -10)
-			if (npx > 00 && npx < 80)
-				if (npy >= 00 && npy < 70)
-					posicion.MoverVect(10 * x, 10 * y, 0);
-
-		//movimiento 0/-1
-		if (difx == 0 && dify == 10)
-			if (npx > 00 && npx < 80)
-				if (npy >= 00 && npy < 70)
-					posicion.MoverVect(10 * x, 10 * y, 0);
-
-		//movimiento -1/-1
-		if (difx == 10 && dify == -10)
-			if (npx > 00 && npx < 80)
-				if (npy >= 00 && npy < 70)
-					posicion.MoverVect(10 * x, 10 * y, 0);
-
-		//movimiento -1/0
-		if (difx == 10 && dify == 0)
-			if (npx > 00 && npx < 80)
-				if (npy >= 00 && npy < 70)
-					posicion.MoverVect(10 * x, 10 * y, 0);
-
-		//movimiento -1/1
-		if (difx == 10 && dify == 10)
-			if (npx > 00 && npx < 80)
-				if (npy >= 00 && npy < 70)
-					posicion.MoverVect(10 * x, 10 * y, 0);
-
-		//movimiento 0/1
-		if (difx == 0 && dify == 10)
-			if (npx > 00 && npx < 80)
-				if (npy >= 00 && npy < 70)
-					posicion.MoverVect(10 * x, 10 * y, 0);
-
-		//movimiento 1/1
-		if (difx == -10 && dify == 10)
-			if (npx > 00 && npx < 80)
-				if (npy >= 00 && npy < 70)
-					posicion.MoverVect(10 * x, 10 * y, 0);
-	}
-
-	if (color.bn == 2)
-	{
-		y = y * (-1);
-		int difx = 10 * x;
-		int dify = 10 * y;
-		npx = posicion.x + difx; //nueva posicion
-		npy = posicion.y + dify; //nueva posicion
-		//movimiento 1/0
-		if (difx == 10 && dify == 0)
-			if (npx > 00 && npx < 80)
-				if (npy >= 00 && npy < 70)
-					posicion.MoverVect(10 * x, 10 * y, 0);
-
-		//movimiento 1/-1
-		if (difx == 10 && dify == 10)
-			if (npx > 00 && npx < 80)
-				if (npy >= 00 && npy < 70)
-					posicion.MoverVect(10 * x, 10 * y, 0);
-
-		//movimiento 0/-1
-		if (difx == 0 && dify == 10)
-			if (npx > 00 && npx < 80)
-				if (npy >= 00 && npy < 70)
-					posicion.MoverVect(10 * x, 10 * y, 0);
-
-		//movimiento -1/-1
-		if (difx == -10 && dify == 10)
-			if (npx > 00 && npx < 80)
-				if (npy >= 00 && npy < 70)
-					posicion.MoverVect(10 * x, 10 * y, 0);
-
-		//movimiento -1/0
-		if (difx == -10 && dify == 0)
-			if (npx > 00 && npx < 80)
-				if (npy >= 00 && npy < 70)
-					posicion.MoverVect(10 * x, 10 * y, 0);
-
-		//movimiento -1/1
-		if (difx == -10 && dify == -10)
-			if (npx > 00 && npx < 80)
-				if (npy >= 00 && npy < 70)
-					posicion.MoverVect(10 * x, 10 * y, 0);
-
-		//movimiento 0/1
-		if (difx == 0 && dify == -10)
-			if (npx > 00 && npx < 80)
-				if (npy >= 00 && npy < 70)
-					posicion.MoverVect(10 * x, 10 * y, 0);
-
-		//movimiento 1/1
-		if (difx == 10 && dify == -10)
-			if (npx > 00 && npx < 80)
-				if (npy >= 00 && npy < 70)
-					posicion.MoverVect(10 * x, 10 * y, 0);
-	}
-}
-*/
-	

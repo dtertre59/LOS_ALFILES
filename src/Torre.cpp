@@ -281,8 +281,6 @@ bool Torre::Movimiento(const Vector3d& muevo_a)
 {
 	int npx, npy;
 	int flag = 0;
-
-	//if (color.bn == 1)
 	
 		npx = muevo_a.x;
 		npy = muevo_a.y;
@@ -290,71 +288,25 @@ bool Torre::Movimiento(const Vector3d& muevo_a)
 		int y = muevo_a.y - posicion.y;
 		if (x == 0 && y != 0)
 		{
-			//for (int i = -7; i < 8; i++)
-			//{
-				//if (i == y)
-					if (npx > 00 && npx < 80)
-						if (npy >= 00 && npy <= 70)
-						{
-							flag = 1;;
-						}
-							
-			//}
+			if (npx >= 00 && npx < 80)
+				if (npy >= 00 && npy <= 70)
+				{
+					flag = 1;;
+				}			
 		}
 	
 		if (x != 0 && y == 0)
 		{
-			//for (int i = -7; i < 8; i++)
-			//{
-			//	if (i == x)
-			if (npx > 00 && npx < 80)
+			if (npx >= 00 && npx < 80)
 				if (npy >= 00 && npy <= 70)
 				{
 					flag=1;
 				}
-			//}
 		}
 		if (flag == 1)
 		{
 			return 1;
 		}
 		else
-			return 0;
-	
-
-/*	if (color.bn == 2)
-	{
-		npx = muevo_a.x;
-		npy = muevo_a.y;
-		int x = muevo_a.x - posicion.x;
-		int y = muevo_a.y - posicion.y;
-		if (x == 0 && y != 0)
-		{
-			for (int i = 1; i < 8; i++)
-			{
-				if (i == y)
-					if (npx > 00 && npx < 80)
-						if (npy >= 00 && npy < 70)
-						{
-							flag = 1;
-						}
-
-			}
-		}
-		if (x != 0 && y == 0)
-		{
-			for (int i = 1; i < 8; i++)
-			{
-				if (i == x)
-					if (npx > 00 && npx < 80)
-						if (npy >= 00 && npy < 70)
-						{
-							flag = 1;
-						}
-			}
-		}
-	}*/
-	
-	
-	
+			return 0;	
 }

@@ -98,142 +98,7 @@ void Dama::Escala(unsigned char c)
 		escala = escala / 1.2;
 }
 
-//MOVER FIGURA CON TECLADO
-/*
-void Dama::Mover(int x,int y)
-{
-	int npx, npy;
 
-	//pieza blanca
-	if (color.bn == 1)
-	{
-		npx = posicion.x - 10 * x;
-		npy = posicion.y + 10 * y;
-
-		//igual que el alfil
-		if (x == y)
-		{
-			for (int i = -7, int j = -7; i < 8, j < 8; i++, j++)
-			{
-				if (x == y == i == j)
-					if (npx > 00 && npx < 80)
-						if (npy >= 00 && npy < 70)
-						{
-							x = x * (-1);
-							posicion.MoverVect(10 * x, 10 * y, 0);
-						}
-			}
-		}
-		if (x == -y)
-		{
-			for (int i = -7, int j = 7; i < 8, j < 8; i++, j--)
-			{
-				if (x == y == i == j)
-					if (npx > 00 && npx < 80)
-						if (npy >= 00 && npy < 70)
-						{
-							x = x * (-1);
-							posicion.MoverVect(10 * x, 10 * y, 0);
-						}
-			}
-		}
-
-		//igual que la torre
-		if (x == 0 && y != 0)
-		{
-			for (int i = -7; i < 8; i++)
-			{
-				if (i == y)
-					if (npx > 00 && npx < 80)
-						if (npy >= 00 && npy < 70)
-						{
-							posicion.MoverVect(0, 10 * y, 0);
-						}
-
-			}
-		}
-
-		if (x != 0 && y == 0)
-		{
-			for (int i = -7; i < 8; i++)
-			{
-				if (i == x)
-					if (npx > 00 && npx < 80)
-						if (npy >= 00 && npy < 70)
-						{
-							x = x * (-1);
-							posicion.MoverVect(10 * x, 0, 0);
-						}
-			}
-		}
-	}
-
-
-	// pieza negra
-	if (color.bn == 2)
-	{
-		npx = posicion.x + 10 * x;
-		npy = posicion.y - 10 * y;
-
-		//igual que el alfil
-		if (x == y)
-		{
-			for (int i = -7, int j = -7; i < 8, j < 8; i++, j++)
-			{
-				if (x == y == i == j)
-					if (npx > 00 && npx < 80)
-						if (npy >= 00 && npy < 70)
-						{
-							y = y * (-1);
-							posicion.MoverVect(10 * x, 10 * y, 0);
-						}
-			}
-		}
-		if (x == -y)
-		{
-			for (int i = -7, int j = 7; i < 8, j < 8; i++, j--)
-			{
-				if (x == -y == i == -j)
-					if (npx > 00 && npx < 80)
-						if (npy >= 00 && npy < 70)
-						{
-							y = y * (-1);
-							posicion.MoverVect(10 * x, 10 * y, 0);
-						}
-			}
-		}
-
-		//igual que la torre
-		if (x == 0 && y != 0)
-		{
-			for (int i = 1; i < 8; i++)
-			{
-				if (i == y)
-					if (npx > 00 && npx < 80)
-						if (npy >= 00 && npy < 70)
-						{
-							y = y * (-1);
-							posicion.MoverVect(0, 10 * y, 0);
-						}
-
-			}
-		}
-
-		if (x != 0 && y == 0)
-		{
-			for (int i = 1; i < 8; i++)
-			{
-				if (i == x)
-					if (npx > 00 && npx < 80)
-						if (npy >= 00 && npy < 70)
-						{
-							posicion.MoverVect(10 * x, 0, 0);
-						}
-			}
-		}
-	}
-}
-*/
 bool Dama::Movimiento(const Vector3d& muevo_a)
 {
 	int flag = 0;
@@ -266,7 +131,7 @@ bool Dama::Movimiento(const Vector3d& muevo_a)
 			for (int j = -7; j < 8; j++)
 			{
 				if (i == -j)
-					if (npx > 00 && npx < 80)
+					if (npx >= 00 && npx < 80)
 					{
 						if (npy >= 00 && npy <= 70)
 						{
@@ -278,28 +143,21 @@ bool Dama::Movimiento(const Vector3d& muevo_a)
 	}
 	if (x == 0 && y != 0)
 	{
-		//for (int i = -7; i < 8; i++)
-		//{
-			//if (i == y)
-		if (npx > 00 && npx < 80)
+
+		if (npx >= 00 && npx < 80)
 			if (npy >= 00 && npy <= 70)
 			{
 				flag = 1;
 			}
 
-		//}
 	}
 	if (x != 0 && y == 0)
 	{
-		//for (int i = -7; i < 8; i++)
-		//{
-		//	if (i == x)
-		if (npx > 00 && npx < 80)
+		if (npx >= 00 && npx < 80)
 			if (npy >= 00 && npy <= 70)
 			{
 				flag = 1;
 			}
-		//}
 	}
 	if (flag == 1)
 	{

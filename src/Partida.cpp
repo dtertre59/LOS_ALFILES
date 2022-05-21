@@ -1555,7 +1555,7 @@ void Partida::Comida(string& dni_pieza_comer)
 	float esc = 0.5;
 
 	Vector3d aux;
-	aux.Set_vector(comi * 2.5, 80.0, 0.0);
+	aux.Set_vector(comi * 3.5, 80.0, 0.0);
 
 	if (dni_pieza_comer[0] == 'B')
 	{
