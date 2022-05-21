@@ -682,6 +682,8 @@ void Partida::Tecla(unsigned char c)
 			turno = Turno::NEGRAS;
 			introdatos = IntroDatos::EJE_X;
 			movdatos = MovDatos::M_ESPERA;
+
+			ETSIDI::play("sonidos/negras.wav");
 			
 		}
 	}
@@ -708,6 +710,8 @@ void Partida::Tecla(unsigned char c)
 			turno = Turno::BLANCAS;
 			introdatos = IntroDatos::EJE_X;
 			movdatos = MovDatos::M_ESPERA;
+
+			ETSIDI::play("sonidos/blancas.wav");
 			
 		}
 	}
