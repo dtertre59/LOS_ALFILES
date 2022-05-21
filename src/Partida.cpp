@@ -368,144 +368,7 @@ void Partida::Tecla(unsigned char c)
 						*/
 						}
 
-						//SE PODRIA BORRAR
-						/*
-						else if (pieza_selec == "p1" && Interaccion::Comprobar_movimiento(*diosita, peon[1]))//si se cumple la condicion
-						{
-							if (Interaccion::Comprobar_choque_piezas(*diosita, torre[0]) && Interaccion::Comprobar_choque_piezas(*diosita, torre[1]) && Interaccion::Comprobar_choque_piezas(*diosita, alfil[0]) && Interaccion::Comprobar_choque_piezas(*diosita, alfil[1]) && Interaccion::Comprobar_choque_piezas(*diosita, rey[0]) && Interaccion::Comprobar_choque_piezas(*diosita, dama[0]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[5]) && Interaccion::Comprobar_choque_piezas(*diosita, caballo[0]) && Interaccion::Comprobar_choque_piezas(*diosita, caballo[1]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[0]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[3]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[2]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[4]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[6]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[7]))
-							{
-								diosita->Set_color('b');
-								peon[1].Set_color('b');
-								introdatos = IntroDatos::EJE_X;
-								movdatos = MovDatos::M_ESPERA;
-								turno = Turno::CAMBIO;
-							}
-							else
-							{
-								diosita->Set_color('m');
-								introdatos = IntroDatos::ESPERA;
-								movdatos = MovDatos::M_EJE_X;
-								turno = Turno::BLANCAS;
-								ETSIDI::play("sonidos/disparo.wav");
-							}
-						}
-						else if (pieza_selec == "p2" && Interaccion::Comprobar_movimiento(*diosita, peon[2]))//si se cumple la condicion
-						{
-							if (Interaccion::Comprobar_choque_piezas(*diosita, torre[0]) && Interaccion::Comprobar_choque_piezas(*diosita, torre[1]) && Interaccion::Comprobar_choque_piezas(*diosita, alfil[0]) && Interaccion::Comprobar_choque_piezas(*diosita, alfil[1]) && Interaccion::Comprobar_choque_piezas(*diosita, rey[0]) && Interaccion::Comprobar_choque_piezas(*diosita, dama[0]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[5]) && Interaccion::Comprobar_choque_piezas(*diosita, caballo[0]) && Interaccion::Comprobar_choque_piezas(*diosita, caballo[1]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[0]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[3]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[1]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[4]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[6]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[7]))
-							{
-								diosita->Set_color('b');
-								peon[2].Set_color('b');
-								introdatos = IntroDatos::EJE_X;
-								movdatos = MovDatos::M_ESPERA;
-								turno = Turno::CAMBIO;
-							}
-							else
-							{
-								diosita->Set_color('m');
-								introdatos = IntroDatos::ESPERA;
-								movdatos = MovDatos::M_EJE_X;
-								turno = Turno::BLANCAS;
-								ETSIDI::play("sonidos/disparo.wav");
-							}
-						}
-						else if (pieza_selec=="p3"&&Interaccion::Comprobar_movimiento(*diosita, peon[3]))//si se cumple la condicion
-						{
-							if (Interaccion::Comprobar_choque_piezas(*diosita, torre[0])&&Interaccion::Comprobar_choque_piezas(*diosita, torre[1]) && Interaccion::Comprobar_choque_piezas(*diosita, alfil[0]) && Interaccion::Comprobar_choque_piezas(*diosita, alfil[1]) && Interaccion::Comprobar_choque_piezas(*diosita, rey[0]) && Interaccion::Comprobar_choque_piezas(*diosita, dama[0])&& Interaccion::Comprobar_choque_piezas(*diosita, peon[5]) && Interaccion::Comprobar_choque_piezas(*diosita, caballo[0]) && Interaccion::Comprobar_choque_piezas(*diosita, caballo[1])&& Interaccion::Comprobar_choque_piezas(*diosita,peon[0])&& Interaccion::Comprobar_choque_piezas(*diosita,peon[1]) && Interaccion::Comprobar_choque_piezas(*diosita,peon[2]) &&Interaccion::Comprobar_choque_piezas(*diosita,peon[4])&&Interaccion::Comprobar_choque_piezas(*diosita,peon[6])&&Interaccion::Comprobar_choque_piezas(*diosita,peon[7]))
-							{
-								diosita->Set_color('b');
-								peon[3].Set_color('b');
-								introdatos = IntroDatos::EJE_X;
-								movdatos = MovDatos::M_ESPERA;
-								turno = Turno::CAMBIO;
-
-							}
-							else
-							{
-								diosita->Set_color('m');
-								introdatos = IntroDatos::ESPERA;
-								movdatos = MovDatos::M_EJE_X;
-								turno = Turno::BLANCAS;
-								ETSIDI::play("sonidos/disparo.wav");
-							}
-						}
-						else if (pieza_selec == "p4" && Interaccion::Comprobar_movimiento(*diosita, peon[4]))//si se cumple la condicion
-						{
-							if (Interaccion::Comprobar_choque_piezas(*diosita, torre[0]) && Interaccion::Comprobar_choque_piezas(*diosita, torre[1]) && Interaccion::Comprobar_choque_piezas(*diosita, alfil[0]) && Interaccion::Comprobar_choque_piezas(*diosita, alfil[1]) && Interaccion::Comprobar_choque_piezas(*diosita, rey[0]) && Interaccion::Comprobar_choque_piezas(*diosita, dama[0]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[3]) && Interaccion::Comprobar_choque_piezas(*diosita, caballo[0]) && Interaccion::Comprobar_choque_piezas(*diosita, caballo[1]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[0]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[1]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[2]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[5]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[6]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[7]))
-							{
-								diosita->Set_color('b');
-								peon[4].Set_color('b');
-								introdatos = IntroDatos::EJE_X;
-								movdatos = MovDatos::M_ESPERA;
-								turno = Turno::CAMBIO;
-							}
-							else
-							{
-								diosita->Set_color('m');
-								introdatos = IntroDatos::ESPERA;
-								movdatos = MovDatos::M_EJE_X;
-								turno = Turno::BLANCAS;
-								ETSIDI::play("sonidos/disparo.wav");
-							}
-						}
-						else if (pieza_selec == "p5"&&Interaccion::Comprobar_movimiento(*diosita, peon[5]))//si se cumple la condicion
-						{
-							if (Interaccion::Comprobar_choque_piezas(*diosita, torre[0]) && Interaccion::Comprobar_choque_piezas(*diosita, torre[1]) && Interaccion::Comprobar_choque_piezas(*diosita, alfil[0]) && Interaccion::Comprobar_choque_piezas(*diosita, alfil[1]) && Interaccion::Comprobar_choque_piezas(*diosita, rey[0]) && Interaccion::Comprobar_choque_piezas(*diosita, dama[0]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[3]) && Interaccion::Comprobar_choque_piezas(*diosita, caballo[0]) && Interaccion::Comprobar_choque_piezas(*diosita, caballo[1]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[0]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[1]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[2]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[4]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[6]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[7]))
-							{
-								diosita->Set_color('b');
-								peon[5].Set_color('b');
-								introdatos = IntroDatos::EJE_X;
-								movdatos = MovDatos::M_ESPERA;
-								turno = Turno::CAMBIO;
-							}
-							else
-							{
-								diosita->Set_color('m');
-								introdatos = IntroDatos::ESPERA;
-								movdatos = MovDatos::M_EJE_X;
-								turno = Turno::BLANCAS;
-								ETSIDI::play("sonidos/disparo.wav");
-							}
-						}
-						else if (pieza_selec == "p6" && Interaccion::Comprobar_movimiento(*diosita, peon[6]))//si se cumple la condicion
-						{
-							if (Interaccion::Comprobar_choque_piezas(*diosita, torre[0]) && Interaccion::Comprobar_choque_piezas(*diosita, torre[1]) && Interaccion::Comprobar_choque_piezas(*diosita, alfil[0]) && Interaccion::Comprobar_choque_piezas(*diosita, alfil[1]) && Interaccion::Comprobar_choque_piezas(*diosita, rey[0]) && Interaccion::Comprobar_choque_piezas(*diosita, dama[0]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[3]) && Interaccion::Comprobar_choque_piezas(*diosita, caballo[0]) && Interaccion::Comprobar_choque_piezas(*diosita, caballo[1]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[0]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[1]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[2]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[4]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[5]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[7]))
-							{
-								diosita->Set_color('b');
-								peon[6].Set_color('b');
-								introdatos = IntroDatos::EJE_X;
-								movdatos = MovDatos::M_ESPERA;
-								turno = Turno::CAMBIO;
-							}
-							else
-							{
-								diosita->Set_color('m');
-								introdatos = IntroDatos::ESPERA;
-								movdatos = MovDatos::M_EJE_X;
-								turno = Turno::BLANCAS;
-								ETSIDI::play("sonidos/disparo.wav");
-							}
-						}
-						else if (pieza_selec == "p7" && Interaccion::Comprobar_movimiento(*diosita, peon[7]))//si se cumple la condicion
-						{
-							if (Interaccion::Comprobar_choque_piezas(*diosita, torre[0]) && Interaccion::Comprobar_choque_piezas(*diosita, torre[1]) && Interaccion::Comprobar_choque_piezas(*diosita, alfil[0]) && Interaccion::Comprobar_choque_piezas(*diosita, alfil[1]) && Interaccion::Comprobar_choque_piezas(*diosita, rey[0]) && Interaccion::Comprobar_choque_piezas(*diosita, dama[0]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[3]) && Interaccion::Comprobar_choque_piezas(*diosita, caballo[0]) && Interaccion::Comprobar_choque_piezas(*diosita, caballo[1]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[0]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[1]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[2]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[4]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[5]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[6]))
-							{
-								diosita->Set_color('b');
-								peon[7].Set_color('b');
-								introdatos = IntroDatos::EJE_X;
-								movdatos = MovDatos::M_ESPERA;
-								turno = Turno::CAMBIO;
-							}
-							else
-							{
-								diosita->Set_color('m');
-								introdatos = IntroDatos::ESPERA;
-								movdatos = MovDatos::M_EJE_X;
-								turno = Turno::BLANCAS;
-								ETSIDI::play("sonidos/disparo.wav");
-							}
-						}
-						*/
-
+						
 
 
 						else if (pieza_selec == "BR" && Interaccion::Comprobar_movimiento(*diosita, rey[flag_numero_pieza]))//si se cumple la condicion //se podria poner rey[flag_numero_pieza
@@ -711,37 +574,63 @@ void Partida::Tecla(unsigned char c)
 	{
 		if (c == 32)
 		{
+			//RESETEAMOS LOS FLAGS Y LAS VARIABLES PARA PODER CAMBIAR DE TURNO
+
 			pieza_selec = "00";
+			dni_pieza_selec = "00000";
+
+
 			control_selccion_pieza = 0;
+			posicion_pieza_seleccionada.Set_vector(0.0, 0.0, 0.0);
+
+			flag_seleccion_pieza = 0;
+			flag_numero_pieza = 0;
+
+			diosita->Set_color('r');
+
 			turno = Turno::NEGRAS;
 			introdatos = IntroDatos::EJE_X;
 			movdatos = MovDatos::M_ESPERA;
-			diosita->Set_color('r');
+			
 		}
 	}
+
+
 	if (turno == Turno::CAMBIO2)
 	{
 		if (c == 32)
 		{
+			//RESETEAMOS LOS FLAGS Y LAS VARIABLES PARA PODER CAMBIAR DE TURNO
+
 			pieza_selec = "00";
+			dni_pieza_selec = "00000";
+
+
 			control_selccion_pieza = 0;
+			posicion_pieza_seleccionada.Set_vector(0.0, 0.0, 0.0);
+
+			flag_seleccion_pieza = 0;
+			flag_numero_pieza = 0;
+
+			diosita->Set_color('v');
+
 			turno = Turno::BLANCAS;
 			introdatos = IntroDatos::EJE_X;
 			movdatos = MovDatos::M_ESPERA;
-			diosita->Set_color('v');
+			
 		}
 	}
 
 
 	if (turno == Turno::NEGRAS)
 	{
+		//METER POSICION DE LA PIEZA QUE QUIERES MOVER
 		if (control_selccion_pieza == 0 && pieza_selec == "00")
 		{
 			if (introdatos == IntroDatos::EJE_X && movdatos == MovDatos::M_ESPERA)
 			{
-				//control_selccion_pieza = 0;
+				control_selccion_pieza = 0;
 
-				diosita->Set_color('r');
 				for (int i = 0, j = 7; i < 8; i++, j--)
 				{
 					if (c == 49 + i)
@@ -752,138 +641,142 @@ void Partida::Tecla(unsigned char c)
 					}
 				}
 			}
+
 			if (introdatos == IntroDatos::EJE_Y && movdatos == MovDatos::M_ESPERA)
 			{
+
+
 				for (int i = 0; i < 8; i++)
 				{
 					if (c == 97 + i)
 					{
 						diosita->SetPosY(i * 10);
 
+						//AQUI YA TENEMOS LA POSICION DE DIOSITA PARA SELECCIONAR PIEZAS
 
-						//PIEZAS BLANCAS EN EL TABLERO---->COMPARARLAS CON DIOSITA PARA SABER CUAL ES LA SELECCIONADA
-						if (diosita->Get_pos() == peon[8].Get_pos())
-						{
-							peon[8].Set_color('r'); //para ambiarle el color al peon si es el sdeleccionado. luego faltaria quitarselo cuando terminas de mover
-							pieza_selec = "p8";
-							introdatos = IntroDatos::ESPERA;
-							movdatos = MovDatos::M_EJE_X;
-						}
-						else if (diosita->Get_pos() == peon[9].Get_pos())
-						{
-							peon[9].Set_color('r'); //para ambiarle el color al peon si es el sdeleccionado. luego faltaria quitarselo cuando terminas de mover
-							pieza_selec = "p9";
-							introdatos = IntroDatos::ESPERA;
-							movdatos = MovDatos::M_EJE_X;
-						}
-						else if (diosita->Get_pos() == peon[10].Get_pos())
-						{
-							peon[10].Set_color('r'); //para ambiarle el color al peon si es el sdeleccionado. luego faltaria quitarselo cuando terminas de mover
-							pieza_selec = "p10";
-							introdatos = IntroDatos::ESPERA;
-							movdatos = MovDatos::M_EJE_X;
-						}
-						else if (diosita->Get_pos() == peon[11].Get_pos())
-						{
-							peon[11].Set_color('r'); //para ambiarle el color al peon si es el sdeleccionado. luego faltaria quitarselo cuando terminas de mover
-							pieza_selec = "p11";
-							introdatos = IntroDatos::ESPERA;
-							movdatos = MovDatos::M_EJE_X;
-						}
-						else if (diosita->Get_pos() == peon[12].Get_pos())
-						{
-							peon[12].Set_color('r'); //para ambiarle el color al peon si es el sdeleccionado. luego faltaria quitarselo cuando terminas de mover
-							pieza_selec = "p12";
-							introdatos = IntroDatos::ESPERA;
-							movdatos = MovDatos::M_EJE_X;
-						}
-						else if (diosita->Get_pos() == peon[13].Get_pos())
-						{
-							peon[13].Set_color('r');
-							pieza_selec = "p13";
-							introdatos = IntroDatos::ESPERA;
-							movdatos = MovDatos::M_EJE_X;
-						}
-						else if (diosita->Get_pos() == peon[14].Get_pos())
-						{
-							peon[14].Set_color('r');
-							pieza_selec = "p14";
-							introdatos = IntroDatos::ESPERA;
-							movdatos = MovDatos::M_EJE_X;
-						}
-						else if (diosita->Get_pos() == peon[15].Get_pos())
-						{
-							peon[15].Set_color('r');
-							pieza_selec = "p15";
-							introdatos = IntroDatos::ESPERA;
-							movdatos = MovDatos::M_EJE_X;
-						}
-						else if (diosita->Get_pos() == rey[1].Get_pos())
-						{
-							rey[1].Set_color('r');
-							pieza_selec = "r1";
-							introdatos = IntroDatos::ESPERA;
-							movdatos = MovDatos::M_EJE_X;
-						}
-						else if (diosita->Get_pos() == alfil[2].Get_pos())
-						{
-							alfil[2].Set_color('r');
-							pieza_selec = "a2";
-							introdatos = IntroDatos::ESPERA;
-							movdatos = MovDatos::M_EJE_X;
-						}
-						else if (diosita->Get_pos() == alfil[3].Get_pos())
-						{
-							alfil[3].Set_color('r');
-							pieza_selec = "a3";
-							introdatos = IntroDatos::ESPERA;
-							movdatos = MovDatos::M_EJE_X;
-						}
-						else if (diosita->Get_pos() == torre[2].Get_pos())
-						{
-							torre[2].Set_color('r');
-							pieza_selec = "t2";
-							introdatos = IntroDatos::ESPERA;
-							movdatos = MovDatos::M_EJE_X;
-						}
-						else if (diosita->Get_pos() == torre[3].Get_pos())
-						{
-							torre[3].Set_color('r');
-							pieza_selec = "t3";
-							introdatos = IntroDatos::ESPERA;
-							movdatos = MovDatos::M_EJE_X;
-						}
-						else if (diosita->Get_pos() == dama[1].Get_pos())
-						{
-							dama[1].Set_color('r');
-							pieza_selec = "d1";
-							introdatos = IntroDatos::ESPERA;
-							movdatos = MovDatos::M_EJE_X;
-						}
-						else if (diosita->Get_pos() == caballo[2].Get_pos())
-						{
-							caballo[2].Set_color('r');
-							pieza_selec = "c2";
-							introdatos = IntroDatos::ESPERA;
-							movdatos = MovDatos::M_EJE_X;
-						}
-						else if (diosita->Get_pos() == caballo[3].Get_pos())
-						{
-							caballo[3].Set_color('r');
-							pieza_selec = "c3";
-							introdatos = IntroDatos::ESPERA;
-							movdatos = MovDatos::M_EJE_X;
-						}
 
-						else //si no has seleccionado ninguna tienes que repietir. meter eje x y luego y
+
+						//PIEZAS NEGERAS EN EL TABLERO---->COMPARARLAS CON DIOSITA PARA SABER CUAL ES LA SELECCIONADA
+						if (flag_seleccion_pieza == 0)
 						{
-							introdatos = IntroDatos::EJE_X;
-							diosita->Set_color('a'); //diosita se pone de color amarillo si no seleccionas ninguna casilla con pieza
+							int w = 8;
+							int p = 2;
+							do
+							{
+								if (diosita->Get_pos() == peon[w].Get_pos())
+								{
+									peon[w].Set_color('r'); //para ambiarle el color al peon si es el sdeleccionado. luego faltaria quitarselo cuando terminas de mover
+
+									posicion_pieza_seleccionada = Interaccion::Seleccionar(*diosita);
+									dni_pieza_selec = tablerito->Localizar_pieza(posicion_pieza_seleccionada); //NP1
+
+									//NP saber que es el peon NEGRO
+									pieza_selec[0] = dni_pieza_selec[0];
+									pieza_selec[1] = dni_pieza_selec[1];
+
+									introdatos = IntroDatos::ESPERA;
+									movdatos = MovDatos::M_EJE_X;
+
+									flag_seleccion_pieza = 1;  //saber que hemos seleccionado una pieza
+									flag_numero_pieza = w;     //saber que numero de pieza hemos seleccionado
+
+								}
+
+								else if (diosita->Get_pos() == rey[1].Get_pos())
+								{
+									rey[1].Set_color('r');
+									posicion_pieza_seleccionada = Interaccion::Seleccionar(*diosita);
+									dni_pieza_selec = tablerito->Localizar_pieza(posicion_pieza_seleccionada);
+
+									//BR saber que es el REY blanco
+									pieza_selec[0] = dni_pieza_selec[0];
+									pieza_selec[1] = dni_pieza_selec[1];
+
+									introdatos = IntroDatos::ESPERA;
+									movdatos = MovDatos::M_EJE_X;
+
+									flag_seleccion_pieza = 1;  //saber que hemos seleccionado una pieza
+									flag_numero_pieza = 1;     //el rey 1 es negro
+								}
+								else if (diosita->Get_pos() == alfil[p].Get_pos() && p < 4)
+								{
+									alfil[p].Set_color('r');
+									posicion_pieza_seleccionada = Interaccion::Seleccionar(*diosita);
+									dni_pieza_selec = tablerito->Localizar_pieza(posicion_pieza_seleccionada);
+
+									pieza_selec[0] = dni_pieza_selec[0];
+									pieza_selec[1] = dni_pieza_selec[1];
+
+									introdatos = IntroDatos::ESPERA;
+									movdatos = MovDatos::M_EJE_X;
+
+									flag_seleccion_pieza = 1;
+									flag_numero_pieza = p;
+								}
+
+								else if (diosita->Get_pos() == torre[p].Get_pos() && p < 4)
+								{
+									torre[p].Set_color('r');
+									posicion_pieza_seleccionada = Interaccion::Seleccionar(*diosita);
+									dni_pieza_selec = tablerito->Localizar_pieza(posicion_pieza_seleccionada);
+
+									pieza_selec[0] = dni_pieza_selec[0];
+									pieza_selec[1] = dni_pieza_selec[1];
+
+									introdatos = IntroDatos::ESPERA;
+									movdatos = MovDatos::M_EJE_X;
+
+									flag_seleccion_pieza = 1;
+									flag_numero_pieza = p;
+								}
+								else if (diosita->Get_pos() == caballo[w].Get_pos() && p < 4)
+								{
+									caballo[p].Set_color('r');
+									posicion_pieza_seleccionada = Interaccion::Seleccionar(*diosita);
+									dni_pieza_selec = tablerito->Localizar_pieza(posicion_pieza_seleccionada);
+
+									pieza_selec[0] = dni_pieza_selec[0];
+									pieza_selec[1] = dni_pieza_selec[1];
+
+									introdatos = IntroDatos::ESPERA;
+									movdatos = MovDatos::M_EJE_X;
+
+									flag_seleccion_pieza = 1;
+									flag_numero_pieza = p;
+								}
+								else if (diosita->Get_pos() == dama[1].Get_pos())
+								{
+									dama[1].Set_color('r');
+									posicion_pieza_seleccionada = Interaccion::Seleccionar(*diosita);
+									dni_pieza_selec = tablerito->Localizar_pieza(posicion_pieza_seleccionada);
+
+									pieza_selec[0] = dni_pieza_selec[0];
+									pieza_selec[1] = dni_pieza_selec[1];
+
+									introdatos = IntroDatos::ESPERA;
+									movdatos = MovDatos::M_EJE_X;
+
+									flag_seleccion_pieza = 1;
+									flag_numero_pieza = 1;
+								}
+								p++;
+								w++;
+							} while (w < 16 && flag_seleccion_pieza != 1);
+
+							if (flag_seleccion_pieza == 0)
+							{
+								introdatos = IntroDatos::EJE_X;
+								diosita->Set_color('a'); //diosita se pone de color azul si no seleccionas ninguna casilla con pieza
+							}
 						}
 					}
 				}
 			}
 		}
+
+
+
+		//METER POSICION DE DONDE QUIERES MOVER LA PIEZA
 
 		if (control_selccion_pieza == 1)
 		{
@@ -891,14 +784,13 @@ void Partida::Tecla(unsigned char c)
 			if (movdatos == MovDatos::M_EJE_X && introdatos == IntroDatos::ESPERA)
 			{
 				diosita->Set_color('c');
+
 				for (int i = 0, j = 7; i < 8; i++, j--)
 				{
 					if (c == 49 + i)
 					{
 						diosita->SetPosX(j * 10);
-						//diosita->ColPieza();
 
-						//movdatos = MovDatos::M_ESPERA;
 						movdatos = MovDatos::M_EJE_Y;
 					}
 				}
@@ -906,7 +798,6 @@ void Partida::Tecla(unsigned char c)
 
 			if (movdatos == MovDatos::M_EJE_Y && introdatos == IntroDatos::ESPERA)
 			{
-				//diosita->Set_color('A');
 				for (int i = 0; i < 8; i++)
 				{
 					if (c == 97 + i)
@@ -915,343 +806,386 @@ void Partida::Tecla(unsigned char c)
 						//con esto ya tendriamos la posicion del movimiento con diosita
 						//ahora tenemos que comprobar si es posible el movimiento con la pieza seleccionada anteriormente
 
-						if (pieza_selec == "p8" && Interaccion::Comprobar_movimiento(*diosita, peon[8]))//si se cumple la condicion 
+
+
+
+
+							//////////////////////////////////////////////////////////////////////////////////////////
+
+
+							//poner el flag geberal de reestriccion de movimientos y comidas
+
+							//flag_a_donde_movemos = tablerito->Comprobar_posicion_movimiento(diosita->Get_pos());
+
+
+
+
+						//SEGUN COMO QUE DEL FLAG DE TODO ARRIBA HACEMOS UNA COSA U OTRA. EN EL FLAG HAY Q METRLE TAMBIEN LA PIEZA SELECCIONADA
+						//NO HARIA FALTA TODO LO DE ABAJO
+
+						if (pieza_selec == "NP" && Interaccion::Comprobar_movimiento(*diosita, peon[flag_numero_pieza]))//si se cumple la condicion 
 						{
-							if (Interaccion::Comprobar_choque_piezas(*diosita, torre[2]) && Interaccion::Comprobar_choque_piezas(*diosita, torre[3]) && Interaccion::Comprobar_choque_piezas(*diosita, alfil[2]) && Interaccion::Comprobar_choque_piezas(*diosita, alfil[3]) && Interaccion::Comprobar_choque_piezas(*diosita, rey[1]) && Interaccion::Comprobar_choque_piezas(*diosita, dama[1]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[13]) && Interaccion::Comprobar_choque_piezas(*diosita, caballo[2]) && Interaccion::Comprobar_choque_piezas(*diosita, caballo[3]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[11]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[9]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[10]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[12]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[14]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[15]))
-							{
-								diosita->Set_color('n');
-								peon[8].Set_color('n');
-								introdatos = IntroDatos::EJE_X;
-								movdatos = MovDatos::M_ESPERA;
-								turno = Turno::CAMBIO2;
-							}
-							else
-							{
-								diosita->Set_color('m');
-								ETSIDI::play("sonidos/disparo.wav");
-								introdatos = IntroDatos::ESPERA;
-								movdatos = MovDatos::M_EJE_X;
-								turno = Turno::NEGRAS;
-							
-							}
+
+							//if (Interaccion::Comprobar_choque_piezas(*diosita, torre[0]) && Interaccion::Comprobar_choque_piezas(*diosita, torre[1]) && Interaccion::Comprobar_choque_piezas(*diosita, alfil[0]) && Interaccion::Comprobar_choque_piezas(*diosita, alfil[1]) && Interaccion::Comprobar_choque_piezas(*diosita, rey[0]) && Interaccion::Comprobar_choque_piezas(*diosita, dama[0]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[5]) && Interaccion::Comprobar_choque_piezas(*diosita, caballo[0]) && Interaccion::Comprobar_choque_piezas(*diosita, caballo[1]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[3]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[1]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[2]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[4]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[6]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[7]))
+							//{
+							diosita->Set_color('b');
+							peon[flag_numero_pieza].Set_color('n');
+
+							tablerito->Mover(peon[flag_numero_pieza], diosita->Get_pos());
+
+							introdatos = IntroDatos::EJE_X;
+							movdatos = MovDatos::M_ESPERA;
+							turno = Turno::CAMBIO2;
+							/*
 						}
-						else if (pieza_selec == "p9" && Interaccion::Comprobar_movimiento(*diosita, peon[9]))//si se cumple la condicion 
+						else
 						{
-							if (Interaccion::Comprobar_choque_piezas(*diosita, torre[2]) && Interaccion::Comprobar_choque_piezas(*diosita, torre[3]) && Interaccion::Comprobar_choque_piezas(*diosita, alfil[2]) && Interaccion::Comprobar_choque_piezas(*diosita, alfil[3]) && Interaccion::Comprobar_choque_piezas(*diosita, rey[1]) && Interaccion::Comprobar_choque_piezas(*diosita, dama[1]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[13]) && Interaccion::Comprobar_choque_piezas(*diosita, caballo[2]) && Interaccion::Comprobar_choque_piezas(*diosita, caballo[3]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[8]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[11]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[10]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[12]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[14]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[15]))
-							{
-								diosita->Set_color('n');
-								peon[9].Set_color('n');
-								introdatos = IntroDatos::EJE_X;
-								movdatos = MovDatos::M_ESPERA;
-								turno = Turno::CAMBIO2;
-							}
-							else
-							{
-								diosita->Set_color('m');
-								ETSIDI::play("sonidos/disparo.wav");
-								introdatos = IntroDatos::ESPERA;
-								movdatos = MovDatos::M_EJE_X;
-								turno = Turno::NEGRAS;
-								
-							}
+
+							diosita->Set_color('m');
+							introdatos = IntroDatos::ESPERA;
+							movdatos = MovDatos::M_EJE_X;
+							turno = Turno::BLANCAS;
+							ETSIDI::play("sonidos/disparo.wav");
 						}
-						else if (pieza_selec == "p10" && Interaccion::Comprobar_movimiento(*diosita, peon[10]))//si se cumple la condicion 
-						{
-							if (Interaccion::Comprobar_choque_piezas(*diosita, torre[2]) && Interaccion::Comprobar_choque_piezas(*diosita, torre[3]) && Interaccion::Comprobar_choque_piezas(*diosita, alfil[2]) && Interaccion::Comprobar_choque_piezas(*diosita, alfil[3]) && Interaccion::Comprobar_choque_piezas(*diosita, rey[1]) && Interaccion::Comprobar_choque_piezas(*diosita, dama[1]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[13]) && Interaccion::Comprobar_choque_piezas(*diosita, caballo[2]) && Interaccion::Comprobar_choque_piezas(*diosita, caballo[3]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[8]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[11]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[9]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[12]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[14]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[15]))
-							{
-								diosita->Set_color('n');
-								peon[10].Set_color('n');
-								introdatos = IntroDatos::EJE_X;
-								movdatos = MovDatos::M_ESPERA;
-								turno = Turno::CAMBIO2;
-							}
-							else
-							{
-								diosita->Set_color('m');
-								ETSIDI::play("sonidos/disparo.wav");
-								introdatos = IntroDatos::ESPERA;
-								movdatos = MovDatos::M_EJE_X;
-								turno = Turno::NEGRAS;
-								
-							}
-						}
-						else if (pieza_selec == "p11" && Interaccion::Comprobar_movimiento(*diosita, peon[11]))//si se cumple la condicion 
-						{
-							if (Interaccion::Comprobar_choque_piezas(*diosita, torre[2]) && Interaccion::Comprobar_choque_piezas(*diosita, torre[3]) && Interaccion::Comprobar_choque_piezas(*diosita, alfil[2]) && Interaccion::Comprobar_choque_piezas(*diosita, alfil[3]) && Interaccion::Comprobar_choque_piezas(*diosita, rey[1]) && Interaccion::Comprobar_choque_piezas(*diosita, dama[1]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[13]) && Interaccion::Comprobar_choque_piezas(*diosita, caballo[2]) && Interaccion::Comprobar_choque_piezas(*diosita, caballo[3]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[8]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[9]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[10]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[12]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[14]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[15]))
-							{
-								diosita->Set_color('n');
-								peon[11].Set_color('n');
-								introdatos = IntroDatos::EJE_X;
-								movdatos = MovDatos::M_ESPERA;
-								turno = Turno::CAMBIO2;
-							}
-							else
-							{
-								diosita->Set_color('m');
-								ETSIDI::play("sonidos/disparo.wav");
-								introdatos = IntroDatos::ESPERA;
-								movdatos = MovDatos::M_EJE_X;
-								turno = Turno::NEGRAS;
-							
-							}
-						}
-						else if (pieza_selec == "p12" && Interaccion::Comprobar_movimiento(*diosita, peon[12]))//si se cumple la condicion 
-						{
-							if (Interaccion::Comprobar_choque_piezas(*diosita, torre[2]) && Interaccion::Comprobar_choque_piezas(*diosita, torre[3]) && Interaccion::Comprobar_choque_piezas(*diosita, alfil[2]) && Interaccion::Comprobar_choque_piezas(*diosita, alfil[3]) && Interaccion::Comprobar_choque_piezas(*diosita, rey[1]) && Interaccion::Comprobar_choque_piezas(*diosita, dama[1]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[11]) && Interaccion::Comprobar_choque_piezas(*diosita, caballo[2]) && Interaccion::Comprobar_choque_piezas(*diosita, caballo[3]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[8]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[9]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[10]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[13]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[14]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[15]))
-							{
-								diosita->Set_color('n');
-								peon[12].Set_color('n');
-								introdatos = IntroDatos::EJE_X;
-								movdatos = MovDatos::M_ESPERA;
-								turno = Turno::CAMBIO2;
-							}
-							else
-							{
-								diosita->Set_color('m');
-								ETSIDI::play("sonidos/disparo.wav");
-								introdatos = IntroDatos::ESPERA;
-								movdatos = MovDatos::M_EJE_X;
-								turno = Turno::NEGRAS;
-								
-							}
-						}
-						else if (pieza_selec == "p13" && Interaccion::Comprobar_movimiento(*diosita, peon[13]))//si se cumple la condicion 
-						{
-							if (Interaccion::Comprobar_choque_piezas(*diosita, torre[2]) && Interaccion::Comprobar_choque_piezas(*diosita, torre[3]) && Interaccion::Comprobar_choque_piezas(*diosita, alfil[2]) && Interaccion::Comprobar_choque_piezas(*diosita, alfil[3]) && Interaccion::Comprobar_choque_piezas(*diosita, rey[1]) && Interaccion::Comprobar_choque_piezas(*diosita, dama[1]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[11]) && Interaccion::Comprobar_choque_piezas(*diosita, caballo[2]) && Interaccion::Comprobar_choque_piezas(*diosita, caballo[3]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[8]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[9]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[10]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[12]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[14]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[15]))
-							{
-								diosita->Set_color('n');
-								peon[13].Set_color('n');
-								introdatos = IntroDatos::EJE_X;
-								movdatos = MovDatos::M_ESPERA;
-								turno = Turno::CAMBIO2;
-							}
-							else
-							{
-								diosita->Set_color('m');
-								ETSIDI::play("sonidos/disparo.wav");
-								introdatos = IntroDatos::ESPERA;
-								movdatos = MovDatos::M_EJE_X;
-								turno = Turno::NEGRAS;
-								
-							}
-						}
-						else if (pieza_selec == "p14" && Interaccion::Comprobar_movimiento(*diosita, peon[14]))//si se cumple la condicion 
-						{
-							if (Interaccion::Comprobar_choque_piezas(*diosita, torre[2]) && Interaccion::Comprobar_choque_piezas(*diosita, torre[3]) && Interaccion::Comprobar_choque_piezas(*diosita, alfil[2]) && Interaccion::Comprobar_choque_piezas(*diosita, alfil[3]) && Interaccion::Comprobar_choque_piezas(*diosita, rey[1]) && Interaccion::Comprobar_choque_piezas(*diosita, dama[3]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[11]) && Interaccion::Comprobar_choque_piezas(*diosita, caballo[2]) && Interaccion::Comprobar_choque_piezas(*diosita, caballo[3]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[8]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[9]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[10]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[12]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[13]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[15]))
-							{
-								diosita->Set_color('n');
-								peon[14].Set_color('n');
-								introdatos = IntroDatos::EJE_X;
-								movdatos = MovDatos::M_ESPERA;
-								turno = Turno::CAMBIO2;
-							}
-							else
-							{
-								diosita->Set_color('m');
-								ETSIDI::play("sonidos/disparo.wav");
-								introdatos = IntroDatos::ESPERA;
-								movdatos = MovDatos::M_EJE_X;
-								turno = Turno::NEGRAS;
-								
-							}
-						}
-						else if (pieza_selec == "p15" && Interaccion::Comprobar_movimiento(*diosita, peon[15]))//si se cumple la condicion 
-						{
-							if (Interaccion::Comprobar_choque_piezas(*diosita, torre[2]) && Interaccion::Comprobar_choque_piezas(*diosita, torre[3]) && Interaccion::Comprobar_choque_piezas(*diosita, alfil[2]) && Interaccion::Comprobar_choque_piezas(*diosita, alfil[3]) && Interaccion::Comprobar_choque_piezas(*diosita, rey[1]) && Interaccion::Comprobar_choque_piezas(*diosita, dama[1]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[11]) && Interaccion::Comprobar_choque_piezas(*diosita, caballo[2]) && Interaccion::Comprobar_choque_piezas(*diosita, caballo[3]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[8]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[9]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[10]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[12]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[13]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[14]))
-							{
-								diosita->Set_color('n');
-								peon[15].Set_color('n');
-								introdatos = IntroDatos::EJE_X;
-								movdatos = MovDatos::M_ESPERA;
-								turno = Turno::CAMBIO2;
-							}
-							else
-							{
-								diosita->Set_color('m');
-								ETSIDI::play("sonidos/disparo.wav");
-								introdatos = IntroDatos::ESPERA;
-								movdatos = MovDatos::M_EJE_X;
-								turno = Turno::NEGRAS;
-								
-							}
-						}
-						else if (pieza_selec == "r1" && Interaccion::Comprobar_movimiento(*diosita, rey[1]))//si se cumple la condicion 
-						{
-							if (Interaccion::Comprobar_choque_piezas(*diosita, torre[2]) && Interaccion::Comprobar_choque_piezas(*diosita, torre[3]) && Interaccion::Comprobar_choque_piezas(*diosita, alfil[2]) && Interaccion::Comprobar_choque_piezas(*diosita, alfil[3]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[13]) && Interaccion::Comprobar_choque_piezas(*diosita, dama[1]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[11]) && Interaccion::Comprobar_choque_piezas(*diosita, caballo[2]) && Interaccion::Comprobar_choque_piezas(*diosita, caballo[3]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[8]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[9]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[10]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[12]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[14]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[15]))
-							{
-								diosita->Set_color('n');
-								rey[1].Set_color('n');
-								introdatos = IntroDatos::EJE_X;
-								movdatos = MovDatos::M_ESPERA;
-								turno = Turno::CAMBIO2;
-							}
-							else
-							{
-								diosita->Set_color('m');
-								ETSIDI::play("sonidos/disparo.wav");
-								introdatos = IntroDatos::ESPERA;
-								movdatos = MovDatos::M_EJE_X;
-								turno = Turno::NEGRAS;
-								
-							}
+						*/
 						}
 
-						else if (pieza_selec == "a2" && Interaccion::Comprobar_movimiento(*diosita, alfil[2]))//si se cumple la condicion 
+						//SE PODRIA BORRAR
+						/*
+						else if (pieza_selec == "p1" && Interaccion::Comprobar_movimiento(*diosita, peon[1]))//si se cumple la condicion
 						{
-							if (Interaccion::Comprobar_choque_piezas(*diosita, torre[2]) && Interaccion::Comprobar_choque_piezas(*diosita, torre[3]) && Interaccion::Comprobar_choque_piezas(*diosita, rey[1]) && Interaccion::Comprobar_choque_piezas(*diosita, alfil[3]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[13]) && Interaccion::Comprobar_choque_piezas(*diosita, dama[1]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[11]) && Interaccion::Comprobar_choque_piezas(*diosita, caballo[2]) && Interaccion::Comprobar_choque_piezas(*diosita, caballo[3]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[8]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[9]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[10]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[12]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[14]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[15]))
+							if (Interaccion::Comprobar_choque_piezas(*diosita, torre[0]) && Interaccion::Comprobar_choque_piezas(*diosita, torre[1]) && Interaccion::Comprobar_choque_piezas(*diosita, alfil[0]) && Interaccion::Comprobar_choque_piezas(*diosita, alfil[1]) && Interaccion::Comprobar_choque_piezas(*diosita, rey[0]) && Interaccion::Comprobar_choque_piezas(*diosita, dama[0]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[5]) && Interaccion::Comprobar_choque_piezas(*diosita, caballo[0]) && Interaccion::Comprobar_choque_piezas(*diosita, caballo[1]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[0]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[3]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[2]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[4]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[6]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[7]))
 							{
-								diosita->Set_color('n');
-								alfil[2].Set_color('n');
+								diosita->Set_color('b');
+								peon[1].Set_color('b');
 								introdatos = IntroDatos::EJE_X;
 								movdatos = MovDatos::M_ESPERA;
-								turno = Turno::CAMBIO2;
+								turno = Turno::CAMBIO;
+							}
+							else
+							{
+								diosita->Set_color('m');
+								introdatos = IntroDatos::ESPERA;
+								movdatos = MovDatos::M_EJE_X;
+								turno = Turno::BLANCAS;
+								ETSIDI::play("sonidos/disparo.wav");
+							}
+						}
+						else if (pieza_selec == "p2" && Interaccion::Comprobar_movimiento(*diosita, peon[2]))//si se cumple la condicion
+						{
+							if (Interaccion::Comprobar_choque_piezas(*diosita, torre[0]) && Interaccion::Comprobar_choque_piezas(*diosita, torre[1]) && Interaccion::Comprobar_choque_piezas(*diosita, alfil[0]) && Interaccion::Comprobar_choque_piezas(*diosita, alfil[1]) && Interaccion::Comprobar_choque_piezas(*diosita, rey[0]) && Interaccion::Comprobar_choque_piezas(*diosita, dama[0]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[5]) && Interaccion::Comprobar_choque_piezas(*diosita, caballo[0]) && Interaccion::Comprobar_choque_piezas(*diosita, caballo[1]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[0]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[3]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[1]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[4]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[6]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[7]))
+							{
+								diosita->Set_color('b');
+								peon[2].Set_color('b');
+								introdatos = IntroDatos::EJE_X;
+								movdatos = MovDatos::M_ESPERA;
+								turno = Turno::CAMBIO;
+							}
+							else
+							{
+								diosita->Set_color('m');
+								introdatos = IntroDatos::ESPERA;
+								movdatos = MovDatos::M_EJE_X;
+								turno = Turno::BLANCAS;
+								ETSIDI::play("sonidos/disparo.wav");
+							}
+						}
+						else if (pieza_selec=="p3"&&Interaccion::Comprobar_movimiento(*diosita, peon[3]))//si se cumple la condicion
+						{
+							if (Interaccion::Comprobar_choque_piezas(*diosita, torre[0])&&Interaccion::Comprobar_choque_piezas(*diosita, torre[1]) && Interaccion::Comprobar_choque_piezas(*diosita, alfil[0]) && Interaccion::Comprobar_choque_piezas(*diosita, alfil[1]) && Interaccion::Comprobar_choque_piezas(*diosita, rey[0]) && Interaccion::Comprobar_choque_piezas(*diosita, dama[0])&& Interaccion::Comprobar_choque_piezas(*diosita, peon[5]) && Interaccion::Comprobar_choque_piezas(*diosita, caballo[0]) && Interaccion::Comprobar_choque_piezas(*diosita, caballo[1])&& Interaccion::Comprobar_choque_piezas(*diosita,peon[0])&& Interaccion::Comprobar_choque_piezas(*diosita,peon[1]) && Interaccion::Comprobar_choque_piezas(*diosita,peon[2]) &&Interaccion::Comprobar_choque_piezas(*diosita,peon[4])&&Interaccion::Comprobar_choque_piezas(*diosita,peon[6])&&Interaccion::Comprobar_choque_piezas(*diosita,peon[7]))
+							{
+								diosita->Set_color('b');
+								peon[3].Set_color('b');
+								introdatos = IntroDatos::EJE_X;
+								movdatos = MovDatos::M_ESPERA;
+								turno = Turno::CAMBIO;
 
 							}
 							else
 							{
 								diosita->Set_color('m');
-								ETSIDI::play("sonidos/disparo.wav");
 								introdatos = IntroDatos::ESPERA;
 								movdatos = MovDatos::M_EJE_X;
-								turno = Turno::NEGRAS;
-								
+								turno = Turno::BLANCAS;
+								ETSIDI::play("sonidos/disparo.wav");
 							}
 						}
-						else if (pieza_selec == "a3" && Interaccion::Comprobar_movimiento(*diosita, alfil[3]))//si se cumple la condicion 
+						else if (pieza_selec == "p4" && Interaccion::Comprobar_movimiento(*diosita, peon[4]))//si se cumple la condicion
 						{
-							if (Interaccion::Comprobar_choque_piezas(*diosita, torre[2]) && Interaccion::Comprobar_choque_piezas(*diosita, torre[3]) && Interaccion::Comprobar_choque_piezas(*diosita, rey[1]) && Interaccion::Comprobar_choque_piezas(*diosita, alfil[2]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[13]) && Interaccion::Comprobar_choque_piezas(*diosita, dama[1]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[11]) && Interaccion::Comprobar_choque_piezas(*diosita, caballo[2]) && Interaccion::Comprobar_choque_piezas(*diosita, caballo[3]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[8]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[9]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[10]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[12]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[14]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[15]))
+							if (Interaccion::Comprobar_choque_piezas(*diosita, torre[0]) && Interaccion::Comprobar_choque_piezas(*diosita, torre[1]) && Interaccion::Comprobar_choque_piezas(*diosita, alfil[0]) && Interaccion::Comprobar_choque_piezas(*diosita, alfil[1]) && Interaccion::Comprobar_choque_piezas(*diosita, rey[0]) && Interaccion::Comprobar_choque_piezas(*diosita, dama[0]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[3]) && Interaccion::Comprobar_choque_piezas(*diosita, caballo[0]) && Interaccion::Comprobar_choque_piezas(*diosita, caballo[1]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[0]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[1]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[2]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[5]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[6]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[7]))
 							{
-								diosita->Set_color('n');
-								alfil[3].Set_color('n');
+								diosita->Set_color('b');
+								peon[4].Set_color('b');
 								introdatos = IntroDatos::EJE_X;
 								movdatos = MovDatos::M_ESPERA;
-								turno = Turno::CAMBIO2;
+								turno = Turno::CAMBIO;
 							}
 							else
 							{
 								diosita->Set_color('m');
-								ETSIDI::play("sonidos/disparo.wav");
 								introdatos = IntroDatos::ESPERA;
 								movdatos = MovDatos::M_EJE_X;
-								turno = Turno::NEGRAS;
-								
+								turno = Turno::BLANCAS;
+								ETSIDI::play("sonidos/disparo.wav");
 							}
 						}
-						else if (pieza_selec == "t2" && Interaccion::Comprobar_movimiento(*diosita, torre[2]))//si se cumple la condicion 
+						else if (pieza_selec == "p5"&&Interaccion::Comprobar_movimiento(*diosita, peon[5]))//si se cumple la condicion
 						{
-							if (Interaccion::Comprobar_choque_piezas(*diosita, torre[3]) && Interaccion::Comprobar_choque_piezas(*diosita, alfil[2]) && Interaccion::Comprobar_choque_piezas(*diosita, alfil[3]) && Interaccion::Comprobar_choque_piezas(*diosita, rey[1]) && Interaccion::Comprobar_choque_piezas(*diosita, dama[1]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[11]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[13]) && Interaccion::Comprobar_choque_piezas(*diosita, caballo[2]) && Interaccion::Comprobar_choque_piezas(*diosita, caballo[3]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[8]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[9]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[10]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[12]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[14]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[15]))
+							if (Interaccion::Comprobar_choque_piezas(*diosita, torre[0]) && Interaccion::Comprobar_choque_piezas(*diosita, torre[1]) && Interaccion::Comprobar_choque_piezas(*diosita, alfil[0]) && Interaccion::Comprobar_choque_piezas(*diosita, alfil[1]) && Interaccion::Comprobar_choque_piezas(*diosita, rey[0]) && Interaccion::Comprobar_choque_piezas(*diosita, dama[0]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[3]) && Interaccion::Comprobar_choque_piezas(*diosita, caballo[0]) && Interaccion::Comprobar_choque_piezas(*diosita, caballo[1]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[0]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[1]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[2]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[4]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[6]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[7]))
 							{
-								diosita->Set_color('n');
-								torre[2].Set_color('n');
+								diosita->Set_color('b');
+								peon[5].Set_color('b');
 								introdatos = IntroDatos::EJE_X;
 								movdatos = MovDatos::M_ESPERA;
-								turno = Turno::CAMBIO2;
+								turno = Turno::CAMBIO;
+							}
+							else
+							{
+								diosita->Set_color('m');
+								introdatos = IntroDatos::ESPERA;
+								movdatos = MovDatos::M_EJE_X;
+								turno = Turno::BLANCAS;
+								ETSIDI::play("sonidos/disparo.wav");
+							}
+						}
+						else if (pieza_selec == "p6" && Interaccion::Comprobar_movimiento(*diosita, peon[6]))//si se cumple la condicion
+						{
+							if (Interaccion::Comprobar_choque_piezas(*diosita, torre[0]) && Interaccion::Comprobar_choque_piezas(*diosita, torre[1]) && Interaccion::Comprobar_choque_piezas(*diosita, alfil[0]) && Interaccion::Comprobar_choque_piezas(*diosita, alfil[1]) && Interaccion::Comprobar_choque_piezas(*diosita, rey[0]) && Interaccion::Comprobar_choque_piezas(*diosita, dama[0]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[3]) && Interaccion::Comprobar_choque_piezas(*diosita, caballo[0]) && Interaccion::Comprobar_choque_piezas(*diosita, caballo[1]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[0]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[1]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[2]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[4]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[5]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[7]))
+							{
+								diosita->Set_color('b');
+								peon[6].Set_color('b');
+								introdatos = IntroDatos::EJE_X;
+								movdatos = MovDatos::M_ESPERA;
+								turno = Turno::CAMBIO;
+							}
+							else
+							{
+								diosita->Set_color('m');
+								introdatos = IntroDatos::ESPERA;
+								movdatos = MovDatos::M_EJE_X;
+								turno = Turno::BLANCAS;
+								ETSIDI::play("sonidos/disparo.wav");
+							}
+						}
+						else if (pieza_selec == "p7" && Interaccion::Comprobar_movimiento(*diosita, peon[7]))//si se cumple la condicion
+						{
+							if (Interaccion::Comprobar_choque_piezas(*diosita, torre[0]) && Interaccion::Comprobar_choque_piezas(*diosita, torre[1]) && Interaccion::Comprobar_choque_piezas(*diosita, alfil[0]) && Interaccion::Comprobar_choque_piezas(*diosita, alfil[1]) && Interaccion::Comprobar_choque_piezas(*diosita, rey[0]) && Interaccion::Comprobar_choque_piezas(*diosita, dama[0]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[3]) && Interaccion::Comprobar_choque_piezas(*diosita, caballo[0]) && Interaccion::Comprobar_choque_piezas(*diosita, caballo[1]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[0]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[1]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[2]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[4]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[5]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[6]))
+							{
+								diosita->Set_color('b');
+								peon[7].Set_color('b');
+								introdatos = IntroDatos::EJE_X;
+								movdatos = MovDatos::M_ESPERA;
+								turno = Turno::CAMBIO;
+							}
+							else
+							{
+								diosita->Set_color('m');
+								introdatos = IntroDatos::ESPERA;
+								movdatos = MovDatos::M_EJE_X;
+								turno = Turno::BLANCAS;
+								ETSIDI::play("sonidos/disparo.wav");
+							}
+						}
+						*/
 
-							}
-							else
-							{
-								diosita->Set_color('m');
-								ETSIDI::play("sonidos/disparo.wav");
-								introdatos = IntroDatos::ESPERA;
-								movdatos = MovDatos::M_EJE_X;
-								turno = Turno::NEGRAS;
-								
-							}
 
-						}
-						else if (pieza_selec == "t3" && Interaccion::Comprobar_movimiento(*diosita, torre[3]))//si se cumple la condicion 
+
+						else if (pieza_selec == "NR" && Interaccion::Comprobar_movimiento(*diosita, rey[flag_numero_pieza]))//si se cumple la condicion //se podria poner rey[flag_numero_pieza
 						{
-							if (Interaccion::Comprobar_choque_piezas(*diosita, torre[2]) && Interaccion::Comprobar_choque_piezas(*diosita, alfil[3]) && Interaccion::Comprobar_choque_piezas(*diosita, rey[1]) && Interaccion::Comprobar_choque_piezas(*diosita, alfil[2]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[13]) && Interaccion::Comprobar_choque_piezas(*diosita, dama[1]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[11]) && Interaccion::Comprobar_choque_piezas(*diosita, caballo[2]) && Interaccion::Comprobar_choque_piezas(*diosita, caballo[3]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[8]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[9]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[10]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[12]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[14]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[15]))
-							{
-								diosita->Set_color('n');
-								torre[3].Set_color('n');
-								introdatos = IntroDatos::EJE_X;
-								movdatos = MovDatos::M_ESPERA;
-								turno = Turno::CAMBIO2;
-							}
-							else
-							{
-								diosita->Set_color('m');
-								ETSIDI::play("sonidos/disparo.wav");
-								introdatos = IntroDatos::ESPERA;
-								movdatos = MovDatos::M_EJE_X;
-								turno = Turno::NEGRAS;
-							
-							}
+							//if (Interaccion::Comprobar_choque_piezas(*diosita, torre[0]) && Interaccion::Comprobar_choque_piezas(*diosita, torre[1]) && Interaccion::Comprobar_choque_piezas(*diosita, alfil[0]) && Interaccion::Comprobar_choque_piezas(*diosita, alfil[1]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[5]) && Interaccion::Comprobar_choque_piezas(*diosita, dama[0]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[3]) && Interaccion::Comprobar_choque_piezas(*diosita, caballo[0]) && Interaccion::Comprobar_choque_piezas(*diosita, caballo[1]) &&Interaccion::Comprobar_choque_piezas(*diosita,peon[0]) &&Interaccion::Comprobar_choque_piezas(*diosita,peon[1]) &&Interaccion::Comprobar_choque_piezas(*diosita,peon[2]) &&Interaccion::Comprobar_choque_piezas(*diosita,peon[4])&&Interaccion::Comprobar_choque_piezas(*diosita,peon[6])&&Interaccion::Comprobar_choque_piezas(*diosita,peon[7]))
+							//{
+							diosita->Set_color('b');
+							rey[flag_numero_pieza].Set_color('n');
+							introdatos = IntroDatos::EJE_X;
+							movdatos = MovDatos::M_ESPERA;
+							turno = Turno::CAMBIO2;
+							/*
 						}
-						else if (pieza_selec == "d1" && Interaccion::Comprobar_movimiento(*diosita, dama[1]))//si se cumple la condicion 
-						{
-							if (Interaccion::Comprobar_choque_piezas(*diosita, torre[2]) && Interaccion::Comprobar_choque_piezas(*diosita, alfil[3]) && Interaccion::Comprobar_choque_piezas(*diosita, rey[1]) && Interaccion::Comprobar_choque_piezas(*diosita, alfil[2]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[13]) && Interaccion::Comprobar_choque_piezas(*diosita, torre[3]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[11]) && Interaccion::Comprobar_choque_piezas(*diosita, caballo[2]) && Interaccion::Comprobar_choque_piezas(*diosita, caballo[3]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[8]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[9]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[10]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[12]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[14]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[15]))
-							{
-								diosita->Set_color('n');
-								dama[1].Set_color('n');
-								introdatos = IntroDatos::EJE_X;
-								movdatos = MovDatos::M_ESPERA;
-								turno = Turno::CAMBIO2;
-							}
-							else
-							{
-								diosita->Set_color('m');
-								ETSIDI::play("sonidos/disparo.wav");
-								introdatos = IntroDatos::ESPERA;
-								movdatos = MovDatos::M_EJE_X;
-								turno = Turno::NEGRAS;
-								
-							}
-						}
-						else if (pieza_selec == "c2" && Interaccion::Comprobar_movimiento(*diosita, caballo[2]))//si se cumple la condicion 
-						{
-							if (Interaccion::Comprobar_choque_piezas(*diosita, torre[2]) && Interaccion::Comprobar_choque_piezas(*diosita, alfil[3]) && Interaccion::Comprobar_choque_piezas(*diosita, rey[1]) && Interaccion::Comprobar_choque_piezas(*diosita, alfil[2]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[13]) && Interaccion::Comprobar_choque_piezas(*diosita, torre[9]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[11]) && Interaccion::Comprobar_choque_piezas(*diosita, dama[1]) && Interaccion::Comprobar_choque_piezas(*diosita, caballo[3]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[8]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[9]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[10]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[12]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[14]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[15]))
-							{
-								diosita->Set_color('n');
-								caballo[2].Set_color('n');
-								introdatos = IntroDatos::EJE_X;
-								movdatos = MovDatos::M_ESPERA;
-								turno = Turno::CAMBIO2;
-							}
-							else
-							{
-								diosita->Set_color('m');
-								ETSIDI::play("sonidos/disparo.wav");
-								introdatos = IntroDatos::ESPERA;
-								movdatos = MovDatos::M_EJE_X;
-								turno = Turno::NEGRAS;
-								
-							}
-						}
-						else if (pieza_selec == "c3" && Interaccion::Comprobar_movimiento(*diosita, caballo[3]))//si se cumple la condicion 
-						{
-							if (Interaccion::Comprobar_choque_piezas(*diosita, torre[2]) && Interaccion::Comprobar_choque_piezas(*diosita, alfil[3]) && Interaccion::Comprobar_choque_piezas(*diosita, rey[1]) && Interaccion::Comprobar_choque_piezas(*diosita, alfil[2]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[13]) && Interaccion::Comprobar_choque_piezas(*diosita, torre[3]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[11]) && Interaccion::Comprobar_choque_piezas(*diosita, dama[1]) && Interaccion::Comprobar_choque_piezas(*diosita, caballo[2]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[8]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[9]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[0]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[12]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[14]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[15]))
-							{
-								diosita->Set_color('n');
-								caballo[3].Set_color('n');
-								introdatos = IntroDatos::EJE_X;
-								movdatos = MovDatos::M_ESPERA;
-								turno = Turno::CAMBIO2;
-							}
-							else
-							{
-								diosita->Set_color('m');
-								ETSIDI::play("sonidos/disparo.wav");
-								introdatos = IntroDatos::ESPERA;
-								movdatos = MovDatos::M_EJE_X;
-								turno = Turno::NEGRAS;
-								
-							}
-						}
-						//si no se ha puesto una posicion alcanzable
-						else //retrocedemos para volver a poner el sitio donde decimos a donde queremos mover la pieza
+						else
 						{
 							diosita->Set_color('m');
 							introdatos = IntroDatos::ESPERA;
 							movdatos = MovDatos::M_EJE_X;
-							turno = Turno::NEGRAS;
+							turno = Turno::BLANCAS;
+							ETSIDI::play("sonidos/disparo.wav");
+						}
+						*/
+						}
+
+						else if (pieza_selec == "NA" && Interaccion::Comprobar_movimiento(*diosita, alfil[flag_numero_pieza]))//si se cumple la condicion 
+						{
+							//if (Interaccion::Comprobar_choque_piezas(*diosita, torre[0]) && Interaccion::Comprobar_choque_piezas(*diosita, torre[1]) && Interaccion::Comprobar_choque_piezas(*diosita, rey[0]) && Interaccion::Comprobar_choque_piezas(*diosita, alfil[1]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[5]) && Interaccion::Comprobar_choque_piezas(*diosita, dama[0]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[3]) && Interaccion::Comprobar_choque_piezas(*diosita, caballo[0]) && Interaccion::Comprobar_choque_piezas(*diosita, caballo[1]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[0]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[1]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[2]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[4]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[6]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[7]))
+							//{
+							diosita->Set_color('A');
+							alfil[flag_numero_pieza].Set_color('n');
+							introdatos = IntroDatos::EJE_X;
+							movdatos = MovDatos::M_ESPERA;
+							turno = Turno::CAMBIO2;
+
+							/* }
+							else
+							{
+								diosita->Set_color('m');
+								introdatos = IntroDatos::ESPERA;
+								movdatos = MovDatos::M_EJE_X;
+								turno = Turno::BLANCAS;
+								ETSIDI::play("sonidos/disparo.wav");
+							}
+							*/
+						}
+						/*
+						else if (pieza_selec == "a1" && Interaccion::Comprobar_movimiento(*diosita, alfil[1]))//si se cumple la condicion
+						{
+							if (Interaccion::Comprobar_choque_piezas(*diosita, torre[0]) && Interaccion::Comprobar_choque_piezas(*diosita, torre[1]) && Interaccion::Comprobar_choque_piezas(*diosita, rey[0]) && Interaccion::Comprobar_choque_piezas(*diosita, alfil[0]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[5]) && Interaccion::Comprobar_choque_piezas(*diosita, dama[0]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[3]) && Interaccion::Comprobar_choque_piezas(*diosita, caballo[0]) && Interaccion::Comprobar_choque_piezas(*diosita, caballo[1]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[0]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[1]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[2]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[4]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[6]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[7]))
+
+							{
+								diosita->Set_color('b');
+								alfil[1].Set_color('b');
+								introdatos = IntroDatos::EJE_X;
+								movdatos = MovDatos::M_ESPERA;
+								turno = Turno::CAMBIO;
+							}
+							else
+							{
+								diosita->Set_color('m');
+								introdatos = IntroDatos::ESPERA;
+								movdatos = MovDatos::M_EJE_X;
+								turno = Turno::BLANCAS;
+								ETSIDI::play("sonidos/disparo.wav");
+							}
+						}
+						*/
+						else if (pieza_selec == "NT" && Interaccion::Comprobar_movimiento(*diosita, torre[flag_numero_pieza]))//si se cumple la condicion 
+						{
+							//if (Interaccion::Comprobar_choque_piezas(*diosita, torre[1])&&Interaccion::Comprobar_choque_piezas(*diosita,alfil[0])&&Interaccion::Comprobar_choque_piezas(*diosita, alfil[1])&& Interaccion::Comprobar_choque_piezas(*diosita, rey[0]) && Interaccion::Comprobar_choque_piezas(*diosita, dama[0])&& Interaccion::Comprobar_choque_piezas(*diosita, peon[3])&& Interaccion::Comprobar_choque_piezas(*diosita, peon[5])&& Interaccion::Comprobar_choque_piezas(*diosita,caballo[0])&& Interaccion::Comprobar_choque_piezas(*diosita,caballo[1]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[0]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[1]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[2]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[4]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[6]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[7]))
+							//{
+							diosita->Set_color('b');
+							torre[flag_numero_pieza].Set_color('n');
+							introdatos = IntroDatos::EJE_X;
+							movdatos = MovDatos::M_ESPERA;
+							turno = Turno::CAMBIO2;
+							/*
+							}
+							else
+							{
+								diosita->Set_color('m');
+								introdatos = IntroDatos::ESPERA;
+								movdatos = MovDatos::M_EJE_X;
+								turno = Turno::BLANCAS;
+								ETSIDI::play("sonidos/disparo.wav");
+							}
+							*/
+
+						}
+						/*
+						else if (pieza_selec == "t1" && Interaccion::Comprobar_movimiento(*diosita, torre[1]))//si se cumple la condicion
+						{
+							if (Interaccion::Comprobar_choque_piezas(*diosita, torre[0]) && Interaccion::Comprobar_choque_piezas(*diosita, alfil[1]) && Interaccion::Comprobar_choque_piezas(*diosita, rey[0]) && Interaccion::Comprobar_choque_piezas(*diosita, alfil[0]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[5]) && Interaccion::Comprobar_choque_piezas(*diosita, dama[0]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[3]) && Interaccion::Comprobar_choque_piezas(*diosita, caballo[0]) && Interaccion::Comprobar_choque_piezas(*diosita, caballo[1]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[0]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[1]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[2]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[4]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[6]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[7]))
+
+							{
+								diosita->Set_color('b');
+								torre[1].Set_color('b');
+								introdatos = IntroDatos::EJE_X;
+								movdatos = MovDatos::M_ESPERA;
+								turno = Turno::CAMBIO;
+							}
+							else
+							{
+								diosita->Set_color('m');
+								introdatos = IntroDatos::ESPERA;
+								movdatos = MovDatos::M_EJE_X;
+								turno = Turno::BLANCAS;
+								ETSIDI::play("sonidos/disparo.wav");
+							}
+						}
+						*/
+
+						else if (pieza_selec == "ND" && Interaccion::Comprobar_movimiento(*diosita, dama[1]))//si se cumple la condicion 
+						{
+							//if (Interaccion::Comprobar_choque_piezas(*diosita, torre[0]) && Interaccion::Comprobar_choque_piezas(*diosita, alfil[1]) && Interaccion::Comprobar_choque_piezas(*diosita, rey[0]) && Interaccion::Comprobar_choque_piezas(*diosita, alfil[0]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[5]) && Interaccion::Comprobar_choque_piezas(*diosita, torre[1]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[3]) && Interaccion::Comprobar_choque_piezas(*diosita, caballo[0]) && Interaccion::Comprobar_choque_piezas(*diosita, caballo[1]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[0]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[1]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[2]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[4]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[6]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[7]))
+
+							//{
+							diosita->Set_color('b');
+							dama[1].Set_color('n');
+							introdatos = IntroDatos::EJE_X;
+							movdatos = MovDatos::M_ESPERA;
+							turno = Turno::CAMBIO2;
+						}
+						/*
+						else
+						{
+							diosita->Set_color('m');
+							introdatos = IntroDatos::ESPERA;
+							movdatos = MovDatos::M_EJE_X;
+							turno = Turno::BLANCAS;
+							ETSIDI::play("sonidos/disparo.wav");
+						}
+						*/
+
+						else if (pieza_selec == "NC" && Interaccion::Comprobar_movimiento(*diosita, caballo[flag_numero_pieza]))//si se cumple la condicion 
+						{
+							//if (Interaccion::Comprobar_choque_piezas(*diosita, torre[0]) && Interaccion::Comprobar_choque_piezas(*diosita, alfil[1]) && Interaccion::Comprobar_choque_piezas(*diosita, rey[0]) && Interaccion::Comprobar_choque_piezas(*diosita, alfil[0]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[5]) && Interaccion::Comprobar_choque_piezas(*diosita, torre[1]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[3]) && Interaccion::Comprobar_choque_piezas(*diosita, dama[0]) && Interaccion::Comprobar_choque_piezas(*diosita, caballo[1]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[0]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[1]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[2]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[4]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[6]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[7]))
+
+							//{
+							diosita->Set_color('b');
+							caballo[flag_numero_pieza].Set_color('n');
+							introdatos = IntroDatos::EJE_X;
+							movdatos = MovDatos::M_ESPERA;
+							turno = Turno::CAMBIO2;
+							/*
+							}
+
+							else
+							{
+								diosita->Set_color('m');
+								introdatos = IntroDatos::ESPERA;
+								movdatos = MovDatos::M_EJE_X;
+								turno = Turno::BLANCAS;
+								ETSIDI::play("sonidos/disparo.wav");
+							}
+							*/
+
+
+						}
+
+
+						/*
+						else if (pieza_selec == "c1" && Interaccion::Comprobar_movimiento(*diosita, caballo[1]))//si se cumple la condicion
+						{
+							if (Interaccion::Comprobar_choque_piezas(*diosita, torre[0]) && Interaccion::Comprobar_choque_piezas(*diosita, alfil[1]) && Interaccion::Comprobar_choque_piezas(*diosita, rey[0]) && Interaccion::Comprobar_choque_piezas(*diosita, alfil[0]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[5]) && Interaccion::Comprobar_choque_piezas(*diosita, torre[1]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[3]) && Interaccion::Comprobar_choque_piezas(*diosita, dama[0]) && Interaccion::Comprobar_choque_piezas(*diosita, caballo[0]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[0]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[1]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[2]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[4]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[6]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[7]))
+
+							{
+								diosita->Set_color('b');
+								caballo[1].Set_color('b');
+
+								introdatos = IntroDatos::EJE_X;
+								movdatos = MovDatos::M_ESPERA;
+								turno = Turno::CAMBIO;
+							}
+							else
+							{
+								diosita->Set_color('m');
+								introdatos = IntroDatos::ESPERA;
+								movdatos = MovDatos::M_EJE_X;
+								turno = Turno::BLANCAS;
+								ETSIDI::play("sonidos/disparo.wav");
+							}
+						}
+						*/
+
+						//si no se ha puesto una posicion alcanzable
+						else //retrocedemos para volver a poner el sitio donde decimos a donde queremos mover la pieza
+						{
+							diosita->Set_color('m');
+							ETSIDI::play("sonidos/disparo.wav");
+							introdatos = IntroDatos::ESPERA;
+							movdatos = MovDatos::M_EJE_X;
+							turno = Turno::BLANCAS;
 						}
 					}
 				}
 			}
 		}
-		
 	}
 }
 
@@ -1359,6 +1293,8 @@ void Partida::Mueve()
 
 	if (turno == Turno::CAMBIO2)
 	{
+
+		control_selccion_pieza = 0;
 
 		//mover negras
 		if (posicion_pieza_seleccionada == peon[8].Get_pos()) //con sobrecarga del operador == para comparar Vector3d

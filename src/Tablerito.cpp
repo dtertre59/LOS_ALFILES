@@ -27,9 +27,9 @@ void Tablerito::Inicializa()
 	tablerito[0][2] = "NA18C";
 	tablerito[0][3] = "ND18D";
 	tablerito[0][4] = "NR18E";
-	tablerito[0][5] = "NA18F";
-	tablerito[0][6] = "NC18G";
-	tablerito[0][7] = "NT18H";
+	tablerito[0][5] = "NA28F";
+	tablerito[0][6] = "NC28G";
+	tablerito[0][7] = "NT28H";
 
 	//PEONES NEGROS
 
@@ -58,9 +58,9 @@ void Tablerito::Inicializa()
 	tablerito[7][2] = "BA11C";
 	tablerito[7][3] = "BD11D";
 	tablerito[7][4] = "BR11E";
-	tablerito[7][5] = "BA11F";
-	tablerito[7][6] = "BC11G";
-	tablerito[7][7] = "BT11H";
+	tablerito[7][5] = "BA21F";
+	tablerito[7][6] = "BC21G";
+	tablerito[7][7] = "BT21H";
 
 }
 
@@ -163,7 +163,7 @@ int Tablerito::Comprobar_camino(Pieza& pieza, Vector3d move)
 				flag = 0;
 			}
 		}
-		if (flag == = 1)
+		if (flag == 1)
 		{
 			return 1;
 		}
