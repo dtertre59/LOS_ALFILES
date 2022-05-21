@@ -392,14 +392,18 @@ int Tablerito::Comprobar_camino(Pieza& pieza, Vector3d move)
 				}
 
 			}
+			
 			else if (tablerito[1][pos_pieza_y][0] == 'N')
 			{
 				if (tablerito[pos_pieza_x + 1][pos_pieza_y][0] != '0')
 				{
 					flag = 0;
 				}
+				else
+					flag = 1;
 
 			}
+			
 			if (flag == 1)
 			{
 				return 1;
@@ -426,7 +430,7 @@ int Tablerito::Comprobar_movimiento_completo(Pieza& pieza, Vector3d move)
 	}
 	else if (flag_camino == 1) //si se puede mover tode menosla excepcion del peon
 	{
-
+		
 		if (pieza.Movimiento(move) && flag_posicion_movimiento == 0) //si se puede mover, comprobar camino
 		{
 			if (pieza.dni[1] == 'P')
@@ -472,15 +476,18 @@ int Tablerito::Comprobar_movimiento_completo(Pieza& pieza, Vector3d move)
 		{
 			return 0; // 
 		}
+		
 
 
 
 		
 	}
+	/*
 	else if (flag_camino == 2) //excepcion del peon de comer de lado
 	{
 		return 3; //peon come de lado
 	}
+	*/
 }
 
 
