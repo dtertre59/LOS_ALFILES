@@ -136,12 +136,39 @@ int Tablerito::Comprobar_posicion_movimiento(Pieza& pieza, Vector3d move)  //MET
 
 int Tablerito::Comprobar_camino(Pieza& pieza, Vector3d move)
 {
+	Vector3d pos_pieza = pieza.Get_pos();
+	int pos_pieza_x = pos_pieza.x / 10;
+	int pos_pieza_y = pos_pieza.y / 10;
+
+	int pos_diosita_x = move.x / 10;
+	int pos_diosita_y = move.y / 10;
+
+	int dif_pos_x = pos_diosita_x - pos_pieza_x;
+	int dif_pos_y = pos_diosita_y - pos_pieza_y;
+
+
+
 	if (pieza.dni[1] == 'C' || pieza.dni[1] == 'R')      //no importa el camino
 		return 1; //pueden pasar
 
 	else if (pieza.dni[1] == 'T')
 	{
-		return 1;
+		int flag = 1;
+
+		if ((dif_pos_x>0)&&(dif_pos_y==0))
+		{
+			for (int i = pos_pieza_x; i < pos_diosita_x; i++)
+			{
+				tablerito[i][pos_pieza_y][0] != '0';
+				flag = 0;
+			}
+		}
+		if (flag == = 1)
+		{
+			return 1;
+		}
+		else
+			return 0;
 		//return 0; //si no puede pasar
 
 	}
