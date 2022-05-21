@@ -380,7 +380,24 @@ int Tablerito::Comprobar_camino(Pieza& pieza, Vector3d move)
 			else { return 0; }//return 0; //si no puede pasar
 
 		}
-
+		else if (pieza.dni[1] == 'P')
+		{
+			if (tablerito[pos_pieza_x][pos_pieza_y][3] == '7' && tablerito[pos_pieza_x][pos_pieza_y][0]=='B')
+			{
+				if (tablerito[pos_pieza_x - 1][pos_pieza_y][0] != '0')
+				{
+					flag = 0;
+				}
+			}
+			else if (tablerito[pos_pieza_x][pos_pieza_y][3] == '2' && tablerito[pos_pieza_x][pos_pieza_y][0] == 'N')
+			{
+				if (tablerito[pos_pieza_x + 1][pos_pieza_y][0] != '0')
+				{
+					flag = 0;
+				}
+			}
+		}
+		/*
 		else if (pieza.dni[1] == 'P')
 		{
 			if (tablerito[6][pos_pieza_y][0] == 'B')
@@ -392,7 +409,7 @@ int Tablerito::Comprobar_camino(Pieza& pieza, Vector3d move)
 				}
 
 			}
-			
+
 			else if (tablerito[1][pos_pieza_y][0] == 'N')
 			{
 				if (tablerito[pos_pieza_x + 1][pos_pieza_y][0] != '0')
@@ -402,14 +419,17 @@ int Tablerito::Comprobar_camino(Pieza& pieza, Vector3d move)
 				else
 					flag = 1;
 
-			}
-			
-			if (flag == 1)
-			{
-				return 1;
-			}
-			else { return 0; }
-		}	
+		}
+		*/
+
+		
+		if (flag == 1)
+		{
+			return 1;
+		}
+		else { return 0; }
+		
+		
 }
 
 
