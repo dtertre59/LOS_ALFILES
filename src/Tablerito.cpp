@@ -431,21 +431,36 @@ int Tablerito::Comprobar_movimiento_completo(Pieza& pieza, Vector3d move)
 
 		if (pieza.Movimiento(move) && flag_posicion_movimiento == 0) //si se puede mover, comprobar camino
 		{
-			return 1; //se mueve a un sitio que esta vacio
+			if (pieza.dni[1] == 'P')
+			{
+				if (move.y == pieza.posicion.y)
+				{
+					return 1;
+				}
+				else
+					return 0;
+			}
+			else
+			{
+				return 1;
+			}
+			
+			 //se mueve a un sitio que esta vacio
 
 		}
 		else if (pieza.Movimiento(move) && flag_posicion_movimiento == 1) //si donde mueves come
 		{
+
 			return 2; //donde se mueva COME
 		}
 		else if (pieza.Movimiento(move) && flag_posicion_movimiento == 2) //COME REY
 		{
-			return 4; //come rey
+			return 4; //come rey, jaque
 		}
 		
-		else if (pieza.Movimiento(move) && flag_posicion_movimiento == 3) //COME REY
+		else if (pieza.Movimiento(move) && flag_posicion_movimiento == 3) 
 		{
-			return 0; //come rey
+			return 0; // 
 		}
 		
 	}

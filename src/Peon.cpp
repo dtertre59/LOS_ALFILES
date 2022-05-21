@@ -126,6 +126,14 @@ bool Peon::Movimiento(const Vector3d& muevo_a)
 				flag = 1;
 			}
 		}
+		else if (x == -10 && y == -10)
+		{
+			flag = 1;
+		}
+		else if (x == -10 && y == 10)
+		{
+			flag = 1;
+		}
 		else
 			flag = 0;
 	}
@@ -142,6 +150,7 @@ bool Peon::Movimiento(const Vector3d& muevo_a)
 				flag = 1;
 			}
 		}
+		
 		else
 			flag = 0;
 	}
