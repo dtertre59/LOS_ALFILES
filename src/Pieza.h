@@ -1,11 +1,7 @@
 #pragma once
-
 #include"Vector3d.h"
 #include"Color_RGB.h"
-
 #include<iostream>
-
-//#include"Interaccion.h"
 
 using namespace std;
 
@@ -17,12 +13,9 @@ protected:
 	Vector3d posicion;
 	Color_RGB color;
 	float escala;
-
 	string dni;
 
 public:
-
-	
 
 	//METODOS
 	Pieza() : posicion(), color(), escala(1), dni("00000") {};
@@ -36,21 +29,14 @@ public:
 
 	void Cambiar_dni(string s);
 
-	void Cambiar_escala(float es) {escala = es;}
+	void Cambiar_escala(float es);
 
-
+	//funciones virtuales
 	virtual bool Movimiento(const Vector3d&) { return 0; };
 	virtual void Dibuja() = 0;
-
 	
-
-	//borrR
-	virtual void ColPieza() {
-		int i = 0;
-	}
-	
+	//clases amigas
 	friend class Interaccion;
 	friend class Partida;
 	friend class Tablerito;
-
 };

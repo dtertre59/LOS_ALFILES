@@ -62,14 +62,13 @@ void Tablerito::Inicializa()
 	tablerito[7][5] = "BA21F";
 	tablerito[7][6] = "BC21G";
 	tablerito[7][7] = "BT21H";
-
 }
 
 
 //sobrecarga de la funcion localizar pieza 
-//te dice que pieza hay en la posicion (te devuelve el dni
+//te dice que pieza hay en la posicion. Devuelve el dni de la pieza
 
-string Tablerito::Localizar_pieza(int x, int y)  //con la nomnclatura de la matriz
+string Tablerito::Localizar_pieza(int x, int y)  //con la nomenclatura de la matriz
 {
 	int fila = x / 10;
 	int columna = y / 10;
@@ -96,16 +95,6 @@ string Tablerito::Localizar_pieza(Vector3d& mov)  //con la nomnclatura de la mat
 
 	return tablerito[fila][columna];
 }
-
-//te dice la posicion de la pieza que metas
-
-/*
-Vector3d Tablerito::Localizar_pieza(Pieza& p)
-{
-//	return p.Get_pos();
-}
-*/
-
 
 //COMPROBAR MOVIMIENTO, TE DEVUELVE UN NUMERO SEGUN LO QUE HAY EN LA CASILLA A DONDE MUEVAS
 
@@ -203,8 +192,6 @@ int Tablerito::Comprobar_camino(Pieza& pieza, Vector3d move)
 			{
 				return 0;
 			}
-			//return 0; //si no puede pasar
-
 		}
 
 		else if (pieza.dni[1] == 'A')
@@ -397,32 +384,7 @@ int Tablerito::Comprobar_camino(Pieza& pieza, Vector3d move)
 				}
 			}
 		}
-		/*
-		else if (pieza.dni[1] == 'P')
-		{
-			if (tablerito[6][pos_pieza_y][0] == 'B')
-			{
 
-				if (tablerito[pos_pieza_x - 1][pos_pieza_y][0] != '0')
-				{
-					flag = 0;
-				}
-
-			}
-
-			else if (tablerito[1][pos_pieza_y][0] == 'N')
-			{
-				if (tablerito[pos_pieza_x + 1][pos_pieza_y][0] != '0')
-				{
-					flag = 0;
-				}
-				else
-					flag = 1;
-
-		}
-		*/
-
-		
 		if (flag == 1)
 		{
 			return 1;
@@ -466,9 +428,6 @@ int Tablerito::Comprobar_movimiento_completo(Pieza& pieza, Vector3d move)
 			{
 				return 1;
 			}
-			
-			 //se mueve a un sitio que esta vacio
-
 		}
 		else if (pieza.Movimiento(move) && flag_posicion_movimiento == 1) //si donde mueves come
 		{
@@ -484,8 +443,7 @@ int Tablerito::Comprobar_movimiento_completo(Pieza& pieza, Vector3d move)
 			else
 			{
 				return 2; //donde se mueva COME
-			}
-			
+			}			
 		}
 		else if (pieza.Movimiento(move) && flag_posicion_movimiento == 2) //COME REY
 		{
@@ -494,23 +452,10 @@ int Tablerito::Comprobar_movimiento_completo(Pieza& pieza, Vector3d move)
 		
 		else if (pieza.Movimiento(move) && flag_posicion_movimiento == 3) 
 		{
-			return 0; // 
-		}
-		
-
-
-
-		
+			return 0; 
+		}		
 	}
-	/*
-	else if (flag_camino == 2) //excepcion del peon de comer de lado
-	{
-		return 3; //peon come de lado
-	}
-	*/
 }
-
-
 
 
 //MOVER FICHA EN TABLERITO, te cambia el dni de la pieza
@@ -525,8 +470,6 @@ void Tablerito::Mover(string& pieza, char x, char y)
 			fila = j;
 	}
 	int columna = y - 65;
-
-	//cout << pieza;
 
 	//cambiar el tablerito con la pieza movida
 	tablerito[fila][columna] = pieza;
@@ -553,7 +496,6 @@ void Tablerito::Mover(string& pieza, char x, char y)
 	pieza[3] = tablerito[fila][columna][3] = x;
 	pieza[4] = tablerito[fila][columna][4] = y;
 
-
 	tablerito[fila_ant][columna_ant] = "00000";
 }
 
@@ -567,10 +509,8 @@ void Tablerito::Mover(Pieza& pieza, Vector3d diosita_pos)
 	int y = diosita_pos.y / 10;
 
 	char fila = '0';
-	//cout << pieza;
 
 	//cambiar el tablerito con la pieza movida
-	
 	tablerito[x][y] = pieza.dni;
 
 
@@ -582,7 +522,6 @@ void Tablerito::Mover(Pieza& pieza, Vector3d diosita_pos)
 
 	tablerito[x][y][3] = fila;
 	tablerito[x][y][4] = y + 65;
-
 
 	//poner a 0 en tablerito la posicion pasada
 
@@ -604,8 +543,6 @@ void Tablerito::Mover(Pieza& pieza, Vector3d diosita_pos)
 
 	tablerito[fila_ant][columna_ant] = "00000";
 }
-
-
 
 
 //IMPRESION POR PANTALLA DE LA MATRIZ TABLERITO

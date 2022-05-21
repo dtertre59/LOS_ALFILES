@@ -13,12 +13,9 @@ Partida::Partida()
 	diosita = new DIOSITA;
 	tablerito = new Tablerito;
 
-
 	turno = Turno::BLANCAS;
 	introdatos = IntroDatos::EJE_X;
 	movdatos = MovDatos::M_ESPERA;
-
-
 
 	pieza_selec = "00";
 	dni_pieza_selec = "00000";
@@ -28,15 +25,12 @@ Partida::Partida()
 	flag_seleccion_pieza = 0;
 	flag_numero_pieza = 0;
 
-
-	comi = 0; //piezas comidas
-	
+	comi = 0; //piezas comidas	
 }
 
 void Partida::Inicializa()
 {
 	tablero->Inicializa();
-
 
 	//inicializar peones
 	for (int i = 0; i < 16; i++)
@@ -144,14 +138,11 @@ void Partida::Dibuja()
 void Partida::Tecla(unsigned char c)
 {
 	if (turno == Turno::BLANCAS)
-	{
-		
+	{		
 		if (c == 8)
-		{
-			
+		{			
 			pieza_selec = "00";
 			dni_pieza_selec = "00000";
-
 
 			control_selccion_pieza = 0;
 			posicion_pieza_seleccionada.Set_vector(0.0, 0.0, 0.0);
@@ -175,12 +166,9 @@ void Partida::Tecla(unsigned char c)
 					dama[i].Set_color('b');
 				}
 			}
-
 			turno = Turno::BLANCAS;
 			introdatos = IntroDatos::EJE_X;
 			movdatos = MovDatos::M_ESPERA;
-
-
 		}
 		
 		//METER POSICION DE LA PIEZA QUE QUIERES MOVER
@@ -204,8 +192,6 @@ void Partida::Tecla(unsigned char c)
 
 			if (introdatos == IntroDatos::EJE_Y && movdatos == MovDatos::M_ESPERA)
 			{
-				
-
 				for (int i = 0; i < 8; i++)
 				{
 					if (c == 97 + i)
@@ -213,8 +199,6 @@ void Partida::Tecla(unsigned char c)
 						diosita->SetPosY(i * 10);
 
 						//AQUI YA TENEMOS LA POSICION DE DIOSITA PARA SELECCIONAR PIEZAS
-
-
 
 						//PIEZAS BLANCAS EN EL TABLERO---->COMPARARLAS CON DIOSITA PARA SABER CUAL ES LA SELECCIONADA
 						if (flag_seleccion_pieza == 0 )
@@ -363,25 +347,10 @@ void Partida::Tecla(unsigned char c)
 						diosita->SetPosY(i * 10);
 						//con esto ya tendriamos la posicion del movimiento con diosita
 						//ahora tenemos que comprobar si es posible el movimiento con la pieza seleccionada anteriormente
-
-
-
-
-
-							//////////////////////////////////////////////////////////////////////////////////////////
-						
-
-							//poner el flag geberal de reestriccion de movimientos y comidas
-
-							//flag_a_donde_movemos = tablerito->Comprobar_posicion_movimiento(diosita->Get_pos());
-
-
-
 					
 						//SEGUN COMO QUE DEL FLAG DE TODO ARRIBA HACEMOS UNA COSA U OTRA. EN EL FLAG HAY Q METRLE TAMBIEN LA PIEZA SELECCIONADA
 						//NO HARIA FALTA TODO LO DE ABAJO
 
-						//if (pieza_selec == "BP" && Interaccion::Comprobar_movimiento(*diosita, peon[flag_numero_pieza]))//si se cumple la condicion 
 						if(pieza_selec == "BP" && tablerito->Comprobar_movimiento_completo(peon[flag_numero_pieza],diosita->Get_pos())!=0)
 						{
 							Vector3d aux = diosita->Get_pos();
@@ -410,13 +379,9 @@ void Partida::Tecla(unsigned char c)
 
 								introdatos = IntroDatos::EJE_X;
 								movdatos = MovDatos::M_ESPERA;
-								turno = Turno::CAMBIO;
-								
+								turno = Turno::CAMBIO;				
 							}
 						}
-
-						
-
 
 						else if (pieza_selec == "BR" && tablerito->Comprobar_movimiento_completo(rey[flag_numero_pieza], diosita->Get_pos())!=0)//si se cumple la condicion //se podria poner rey[flag_numero_pieza
 						{
@@ -535,11 +500,9 @@ void Partida::Tecla(unsigned char c)
 								introdatos = IntroDatos::EJE_X;
 								movdatos = MovDatos::M_ESPERA;
 								turno = Turno::CAMBIO;
-							}
-								
+							}							
 						}
 						
-
 						else if (pieza_selec == "BC" && tablerito->Comprobar_movimiento_completo(caballo[flag_numero_pieza], diosita->Get_pos()) != 0)//si se cumple la condicion 
 						{
 							Vector3d aux = diosita->Get_pos();
@@ -593,7 +556,6 @@ void Partida::Tecla(unsigned char c)
 			pieza_selec = "00";
 			dni_pieza_selec = "00000";
 
-
 			control_selccion_pieza = 0;
 			posicion_pieza_seleccionada.Set_vector(0.0, 0.0, 0.0);
 
@@ -606,11 +568,9 @@ void Partida::Tecla(unsigned char c)
 			introdatos = IntroDatos::EJE_X;
 			movdatos = MovDatos::M_ESPERA;
 
-			ETSIDI::play("sonidos/negras.wav");
-			
+			ETSIDI::play("sonidos/negras.wav");		
 		}
 	}
-
 
 	if (turno == Turno::CAMBIO2)
 	{
@@ -620,7 +580,6 @@ void Partida::Tecla(unsigned char c)
 
 			pieza_selec = "00";
 			dni_pieza_selec = "00000";
-
 
 			control_selccion_pieza = 0;
 			posicion_pieza_seleccionada.Set_vector(0.0, 0.0, 0.0);
@@ -634,17 +593,14 @@ void Partida::Tecla(unsigned char c)
 			introdatos = IntroDatos::EJE_X;
 			movdatos = MovDatos::M_ESPERA;
 
-			ETSIDI::play("sonidos/blancas.wav");
-			
+			ETSIDI::play("sonidos/blancas.wav");			
 		}
 	}
-
 
 	if (turno == Turno::NEGRAS)
 	{
 		if (c == 8)
 		{
-
 			pieza_selec = "00";
 			dni_pieza_selec = "00000";
 
@@ -671,13 +627,11 @@ void Partida::Tecla(unsigned char c)
 					dama[i+1].Set_color('n');
 				}
 			}
-
 			turno = Turno::NEGRAS;
 			introdatos = IntroDatos::EJE_X;
 			movdatos = MovDatos::M_ESPERA;
-
-
 		}
+
 		//METER POSICION DE LA PIEZA QUE QUIERES MOVER
 		if (control_selccion_pieza == 0 && pieza_selec == "00")
 		{
@@ -698,8 +652,6 @@ void Partida::Tecla(unsigned char c)
 
 			if (introdatos == IntroDatos::EJE_Y && movdatos == MovDatos::M_ESPERA)
 			{
-
-
 				for (int i = 0; i < 8; i++)
 				{
 					if (c == 97 + i)
@@ -707,8 +659,6 @@ void Partida::Tecla(unsigned char c)
 						diosita->SetPosY(i * 10);
 
 						//AQUI YA TENEMOS LA POSICION DE DIOSITA PARA SELECCIONAR PIEZAS
-
-
 
 						//PIEZAS NEGERAS EN EL TABLERO---->COMPARARLAS CON DIOSITA PARA SABER CUAL ES LA SELECCIONADA
 						if (flag_seleccion_pieza == 0)
@@ -733,7 +683,6 @@ void Partida::Tecla(unsigned char c)
 
 									flag_seleccion_pieza = 1;  //saber que hemos seleccionado una pieza
 									flag_numero_pieza = w;     //saber que numero de pieza hemos seleccionado
-
 								}
 
 								else if (diosita->Get_pos() == rey[1].Get_pos())
@@ -827,9 +776,6 @@ void Partida::Tecla(unsigned char c)
 				}
 			}
 		}
-
-
-
 		//METER POSICION DE DONDE QUIERES MOVER LA PIEZA
 
 		if (control_selccion_pieza == 1)
@@ -849,7 +795,6 @@ void Partida::Tecla(unsigned char c)
 					}
 				}
 			}
-
 			if (movdatos == MovDatos::M_EJE_Y && introdatos == IntroDatos::ESPERA)
 			{
 				for (int i = 0; i < 8; i++)
@@ -859,20 +804,6 @@ void Partida::Tecla(unsigned char c)
 						diosita->SetPosY(i * 10);
 						//con esto ya tendriamos la posicion del movimiento con diosita
 						//ahora tenemos que comprobar si es posible el movimiento con la pieza seleccionada anteriormente
-
-
-
-
-
-							//////////////////////////////////////////////////////////////////////////////////////////
-
-
-							//poner el flag geberal de reestriccion de movimientos y comidas
-
-							//flag_a_donde_movemos = tablerito->Comprobar_posicion_movimiento(diosita->Get_pos());
-
-
-
 
 						//SEGUN COMO QUE DEL FLAG DE TODO ARRIBA HACEMOS UNA COSA U OTRA. EN EL FLAG HAY Q METRLE TAMBIEN LA PIEZA SELECCIONADA
 						//NO HARIA FALTA TODO LO DE ABAJO
@@ -966,8 +897,7 @@ void Partida::Tecla(unsigned char c)
 								introdatos = IntroDatos::EJE_X;
 								movdatos = MovDatos::M_ESPERA;
 								turno = Turno::CAMBIO2;
-							}
-					
+							}			
 						}
 						
 						else if (pieza_selec == "NT" && Interaccion::Comprobar_movimiento(*diosita, torre[flag_numero_pieza])!=0)//si se cumple la condicion 
@@ -998,11 +928,7 @@ void Partida::Tecla(unsigned char c)
 								movdatos = MovDatos::M_ESPERA;
 								turno = Turno::CAMBIO2;
 							}
-							
-
-						}
-						
-						
+						}						
 
 						else if (pieza_selec == "ND" && Interaccion::Comprobar_movimiento(*diosita, dama[1])!=0)//si se cumple la condicion 
 						{
@@ -1062,11 +988,7 @@ void Partida::Tecla(unsigned char c)
 								movdatos = MovDatos::M_ESPERA;
 								turno = Turno::CAMBIO2;
 							}
-							
-
-
 						}
-
 						//si no se ha puesto una posicion alcanzable
 						else //retrocedemos para volver a poner el sitio donde decimos a donde queremos mover la pieza
 						{
@@ -1082,8 +1004,6 @@ void Partida::Tecla(unsigned char c)
 		}
 	}
 }
-
-
 
 
 //MOVIMIENTOS DE PARTIDFA
@@ -1104,7 +1024,6 @@ void Partida::Mueve()
 		posicion_pieza_seleccionada = Interaccion::Seleccionar(*diosita);
 		control_selccion_pieza = 1;//creemos que esto deberia ir aqui
 	}
-
 
 	//PARA MOVER LA PIEZA QUE ESTABA EN LA POSICION DE ANTES DONDE HAYAMOS MOVIDO A DIOSITA
 
@@ -1183,11 +1102,8 @@ void Partida::Mueve()
 		}
 	}
 
-
-
 	if (turno == Turno::CAMBIO2)
 	{
-
 		control_selccion_pieza = 0;
 
 		//mover negras
@@ -1262,8 +1178,7 @@ void Partida::Mueve()
 }
 
 
-
-//COMIDA PEIZA
+//COMIDA PieZA
 
 void Partida::Comida(string& dni_pieza_comer)
 {

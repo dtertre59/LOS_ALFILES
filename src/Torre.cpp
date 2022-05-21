@@ -40,7 +40,6 @@ void Torre::Inicializa(unsigned char c)
 	escala = 1;
 }
 
-
 //PINTAR FIGURA
 
 void Torre::Dibuja()
@@ -125,7 +124,6 @@ void Torre::Dibuja()
 	glTranslatef(posicion.x + 2, posicion.y + 2, posicion.z + (escala * 6.5) - 4);
 	glutSolidCube(1);
 	glTranslatef(-(posicion.x + 2), -(posicion.y + 2), -(posicion.z + (escala * 6.5) -4));
-	/// 
 
 	glTranslatef(posicion.x - 2, posicion.y + 2, posicion.z + (escala * 6.5) + 5);
 	glutSolidCube(1);
@@ -212,7 +210,6 @@ void Torre::Dibuja()
 	glTranslatef(posicion.x + 2, posicion.y - 2, posicion.z + (escala * 6.5) -4);
 	glutSolidCube(1);
 	glTranslatef(-(posicion.x + 2), -(posicion.y - 2), -(posicion.z + (escala * 6.5) -4));
-	/// 
 
 	glTranslatef(posicion.x - 2, posicion.y - 2, posicion.z + (escala * 6.5) + 5);
 	glutSolidCube(1);
@@ -246,7 +243,7 @@ void Torre::Dibuja()
 	glTranslatef(posicion.x - 2, posicion.y - 2, posicion.z + (escala * 6.5) - 4);
 	glutSolidCube(1);
 	glTranslatef(-(posicion.x - 2), -(posicion.y - 2), -(posicion.z + (escala * 6.5) - 4));
-	///
+	
 	glTranslatef(posicion.x - 2, posicion.y , posicion.z + (escala * 6.5) + 5);
 	glutSolidCube(1);
 	glTranslatef(-(posicion.x - 2), -(posicion.y ), -(posicion.z + (escala * 6.5) + 5));
@@ -264,9 +261,6 @@ void Torre::Dibuja()
 	glTranslatef(-(posicion.x + 2), -(posicion.y), -(posicion.z + (escala * 6.5) + 4));
 }
 	
-
-
-
 void Torre::Escala(unsigned char c)
 {
 	if (c == 'q')

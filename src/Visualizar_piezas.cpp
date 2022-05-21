@@ -9,7 +9,6 @@ void Gestor_dibuja(Pieza& p)
 	p.Dibuja();
 }
 
-
 Visualizar_piezas::Visualizar_piezas()
 {
 	peon = new Peon;
@@ -24,8 +23,6 @@ Visualizar_piezas::Visualizar_piezas()
 void Visualizar_piezas::visualizar(unsigned char pi)
 {
 	vista.Camara();
-
-	//vista.Camara();
 	
 	if (pi == 'P')
 	{
@@ -51,7 +48,6 @@ void Visualizar_piezas::visualizar(unsigned char pi)
 	{
 		rey->Dibuja();
 	}
-
 }
 
 void Visualizar_piezas::Mover_vista()
@@ -59,9 +55,7 @@ void Visualizar_piezas::Mover_vista()
 	vista.Mover('d');
 }
 
-
 void Visualizar_piezas::Inicializa()
 {
 	vista.Inicializa();
-
 }

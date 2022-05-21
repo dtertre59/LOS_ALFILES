@@ -1,7 +1,5 @@
 #pragma once
-
 #include"Pieza.h"
-
 
 class Casilla:public Pieza
 {

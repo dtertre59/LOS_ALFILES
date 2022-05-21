@@ -1,7 +1,5 @@
 #pragma once
-
 //PIEZAS
-
 #include"Peon.h"
 #include"Torre.h"
 #include"Caballo.h"
@@ -10,10 +8,7 @@
 #include"Rey.h"
 
 //VISTA
-
 #include"Vista.h"
-
-
 
 class Visualizar_piezas
 {

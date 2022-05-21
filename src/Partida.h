@@ -3,8 +3,10 @@
 #include<iostream>
 #include"ETSIDI.h"
 #include"Tablero.h"
+#include"Vista.h"
+#include"Interaccion.h"
 
-//PIEZAS
+#include "Pieza.h"
 
 #include"Peon.h"
 #include"Torre.h"
@@ -12,21 +14,15 @@
 #include"Caballo.h"
 #include "Dama.h"
 #include "Rey.h"
-#include "Pieza.h"
-
 
 #include"DIOSITA.h"
 #include"Tablerito.h"
 
-#include"Vista.h"
-
-#include"Interaccion.h"
-
-
 using namespace std;
 
-class Partida {
-public:
+class Partida 
+{
+protected:
 	Tablero* tablero;
 	Peon* peon;
 	Caballo* caballo;
@@ -38,7 +34,6 @@ public:
 	DIOSITA* diosita;
 	Tablerito* tablerito;
 
-	
 	enum class Turno { BLANCAS, NEGRAS, CAMBIO,CAMBIO2};
 	enum class IntroDatos { EJE_X, EJE_Y, ESPERA };
 	enum class MovDatos { M_EJE_X, M_EJE_Y, M_ESPERA };
@@ -49,7 +44,6 @@ public:
 
 	Vista vista;
 
-
 	string pieza_selec; //BR
 	string dni_pieza_selec; //BR11E
 
@@ -58,21 +52,16 @@ public:
 
 	int flag_seleccion_pieza;  //1 si la pieza ha sido seleccionada
 
-	int flag_numero_pieza;  // enumeracion de las peizas  //los peones del 0 al 7
+	int flag_numero_pieza;  // enumeracion de las piezas  //los peones del 0 al 7
 	
-	int comi;
+	int comi; //contador piezas comidas
 
+public:
 
 	Partida();
 	void Inicializa();
 	void Dibuja();
 	void Tecla(unsigned char c);
 	void Mueve();
-
 	void Comida(string& dni_pieza_comer);
-
-	friend class Pieza;
-	friend class Peon;
-	friend class DIOSITA;
-	friend class Interaccion;
 };

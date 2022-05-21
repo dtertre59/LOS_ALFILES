@@ -50,8 +50,6 @@ void Vista::Set_vista(float px, float py, float pz, float mx, float my, float mz
 }
 
 
-
-
 //SITUA CAMARA
 
 void Vista::Camara()
@@ -76,7 +74,6 @@ void Vista::Camara(int opt)
 			0.0, 0.0, 1.0);
 	}	
 }
-
 
 //MOVIMIENTO DE CAMARA Y ZOOM
 

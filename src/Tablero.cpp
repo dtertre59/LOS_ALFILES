@@ -1,15 +1,12 @@
 #include"Tablero.h"
 
-
 Tablero::Tablero()
 {
 	pcasilla = new Casilla * [8];
-	tablerito = new char* [8];
 
 	for (int i = 0; i < 8; i++)
 	{
 		pcasilla[i] = new Casilla[8];
-		tablerito[i] = new char[8];
 	}
 
 
@@ -28,20 +25,7 @@ Tablero::Tablero()
 			}
 		}
 	}
-
-	//crear  tablerito vacio
-	for (int i = 0; i < 8; i++)
-	{
-		for (int j = 0; j < 8; j++)
-		{
-			tablerito[i][j] = '0';
-		}
-	}
-
 }
-
-
-
 
 void Tablero::Inicializa()
 {
@@ -67,18 +51,6 @@ void Tablero::Inicializa()
 			}
 		}
 	}
-
-
-
-	//inicializar  tablerito con las fichas en sus posiciones
-	//LO HE COMENTADO PQ SE INICIALIZA EN PEON.INICIALIZA SE METE COLPIEZA()
-	/*for (int i = 0; i < 8; i++)
-	{
-		tablerito[6][i] = 'p';
-		tablerito[1][i] = 'p';
-	}
-	tablerito[7][4] = 'r';
-	tablerito[0][4] = 'r';*/
 }
 
 void Tablero::Dibuja()
@@ -91,22 +63,3 @@ void Tablero::Dibuja()
 		}
 	}
 }
-
-/*
-void Tablero::InicializaT()
-{
-	tablerito= new float * [8];
-	for (int i = 0; i < 8; i++)
-		{
-			tablerito[i] = new float[8];
-		
-		}
-	for (int i = 0; i < 8; i++)
-	{
-		for (int j = 0; j < 8; j++)
-		{
-			tablerito[i][j]=0.0;
-		}
-	}
-}
-*/

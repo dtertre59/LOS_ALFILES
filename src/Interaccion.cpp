@@ -1,9 +1,6 @@
 #include "Interaccion.h"
-#include "Tablerito.h"
-#include <Partida.h>
-#include"Peon.h"
 
-//te devuelve la posicion seleccionada. falta comprobar si la posiccion seleccionada tiene alguna pieza
+//te devuelve la posicion seleccionada
 Vector3d Interaccion::Seleccionar(Pieza& diosita)
 {
 	for (int i = 0; i < 8; i++)
@@ -18,8 +15,7 @@ Vector3d Interaccion::Seleccionar(Pieza& diosita)
 	}
 }
 
-
-//solo puede ocurrir cuando el punto a donde lo desplazas es valido
+//Mueve la pieza donde esté Diosita
 void Interaccion::Desplazar(Pieza& diosita, Pieza& pieza)
 {
 	pieza.posicion = diosita.posicion;
@@ -27,7 +23,6 @@ void Interaccion::Desplazar(Pieza& diosita, Pieza& pieza)
 }
 
 //devuelve un 1 si el movimiento esta permitido y un 0 si no esta permitido
-
 bool Interaccion::Comprobar_movimiento(Pieza& diosita, Pieza& pieza)
 {
 	bool verificacion;

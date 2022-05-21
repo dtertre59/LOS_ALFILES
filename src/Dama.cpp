@@ -1,7 +1,6 @@
 #include"Dama.h"
 #include"freeglut.h"
 
-
 Dama::Dama()
 {
 	posicion.Set_vector(-1, 3, 0);
@@ -60,7 +59,6 @@ void Dama::Dibuja()
 	glTranslatef(-posicion.x, -posicion.y, -(posicion.z + (escala * 5)));
 
 	glTranslatef(posicion.x, posicion.y, posicion.z + (escala * 5));
-	//glutSolidCone((escala * 2), (escala * 10), 40, 40); //   radio base, height, slices, stacks
 	gluCylinder(gluNewQuadric(), escala * 2, escala * 1, escala * 5, 40, 40);
 	glTranslatef(-posicion.x, -posicion.y, -(posicion.z + (escala * 5)));
 
@@ -87,7 +85,6 @@ void Dama::Dibuja()
 	glTranslatef(posicion.x, posicion.y, posicion.z + (escala * 13.5));
 	glutSolidSphere((escala * 0.5), 40, 40); //   radio, slices, stacks
 	glTranslatef(-posicion.x, -posicion.y, -(posicion.z + (escala * 13.5)));
-
 }
 
 void Dama::Escala(unsigned char c)
@@ -97,7 +94,6 @@ void Dama::Escala(unsigned char c)
 	if (c == 'e')
 		escala = escala / 1.2;
 }
-
 
 bool Dama::Movimiento(const Vector3d& muevo_a)
 {
@@ -165,6 +161,4 @@ bool Dama::Movimiento(const Vector3d& muevo_a)
 	}
 	else
 		return 0;
-
-
 }

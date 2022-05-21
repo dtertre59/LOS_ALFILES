@@ -1,10 +1,12 @@
 #include"Vector3d.h"
 
+//CONSTRUCTOR INICIALIZA A 0
 Vector3d::Vector3d()
 {
 	x = y = z = 0;
 }
 
+//SOBRECARGA DE LA FUNCION SET_VECTOR
 void Vector3d::Set_vector(float equis,float i, float ceta)
 {
 	x = equis;
@@ -33,6 +35,8 @@ float Vector3d::GetVect()
 	return z;
 }
 
+//SOBRECARGA DEL OPERADOR - CON FUNCION MIEMBRO
+
 Vector3d Vector3d:: operator - (Vector3d v)
 {
 	Vector3d res;
@@ -43,7 +47,7 @@ Vector3d Vector3d:: operator - (Vector3d v)
 }
 
 
-//FINCION INDEPENDIENTE SOBRECARGA DEL OPERADOR ==
+//FUNCION INDEPENDIENTE SOBRECARGA DEL OPERADOR ==
 
 bool operator==(const Vector3d& v1, const Vector3d& v2)
 {
@@ -52,4 +56,3 @@ bool operator==(const Vector3d& v1, const Vector3d& v2)
 	else
 		return 0;
 }
-

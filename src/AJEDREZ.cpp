@@ -3,7 +3,6 @@
 
 Coordinador_ajedrez coord;
 
-
 //los callback, funciones que seran llamadas automaticamente por la glut
 //cuando sucedan eventos
 //NO HACE FALTA LLAMARLAS EXPLICITAMENTE
@@ -33,11 +32,8 @@ int main(int argc, char* argv[])
 	glutTimerFunc(25, OnTimer, 0);//le decimos que dentro de 25ms llame 1 vez a la funcion OnTimer()
 	glutKeyboardFunc(OnKeyboardDown);
 
-
 	//INICIALIZAR TODO
-
 	coord.Inicializa();
-
 
 	//pasarle el control a GLUT,que llamara a los callbacks
 	glutMainLoop();
@@ -52,12 +48,8 @@ void OnDraw(void)
 	glMatrixMode(GL_MODELVIEW);
 	glLoadIdentity();
 
-
 	//DIBUJAR TODO
-
 	coord.Dibuja();
-	
-
 
 	//no borrar esta linea ni poner nada despues
 	glutSwapBuffers();
@@ -66,10 +58,8 @@ void OnDraw(void)
 
 void OnKeyboardDown(unsigned char key, int x_t, int y_t)
 {
-	//PONER AQUI CODIGO DEL TECLADO
-	
+	//PONER AQUI CODIGO DEL TECLADO	
 	coord.Tecla(key);
-
 
 	//no borrar linea
 	glutPostRedisplay();
@@ -77,8 +67,7 @@ void OnKeyboardDown(unsigned char key, int x_t, int y_t)
 
 void OnTimer(int value)
 {
-	//PONER AQUÍ CODIGO DE LA ANIMACIÓN
-	
+	//PONER AQUÍ CODIGO DE LA ANIMACIÓN	
 	coord.mueve();
 
 	//no borrar estas lineas

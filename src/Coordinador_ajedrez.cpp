@@ -8,7 +8,6 @@ Coordinador_ajedrez::Coordinador_ajedrez()
 	partida = new Partida;
 	visualizarp = new Visualizar_piezas;
 
-
 	pi = 'P';
 }
 
@@ -18,9 +17,7 @@ void Coordinador_ajedrez::Inicializa()
 {
 	partida->Inicializa();
 	visualizarp->Inicializa();
-
-	//	ETSIDI::play("sonidos/musica.wav");
-	
+	//	ETSIDI::play("sonidos/musica.wav");	
 }
 
 //DIBUJAR
@@ -51,8 +48,6 @@ void Coordinador_ajedrez::Dibuja()
 		ETSIDI::setFont("fuentes/Rock's Death.ttf", 30);
 		ETSIDI::printxy("LOS ALFILES", -4, 11);
 		ETSIDI::printxy("TRABAJO INFORMATICA INDUSTRIAL", -10, 6);
-
-
 	}
 
 	if (estado == Estado::INICIO)
@@ -185,7 +180,6 @@ void Coordinador_ajedrez::Dibuja()
 		ETSIDI::printxy("Pulsa -D- para ver dama", -13, 10);
 		ETSIDI::printxy("Pulsa -R- para ver rey", -13, 9);
 
-		
 		// ver piezas 
 		
 		visualizarp->visualizar(pi);
@@ -255,16 +249,12 @@ void Coordinador_ajedrez::Dibuja()
 		ETSIDI::printxy("PULSA -I- PARA VOLVER al inicio", -8, 7.5);
 		ETSIDI::printxy("PULSA -P- PARA  continuar la PARTIDA", -8, 6.5);
 		ETSIDI::printxy("PULSA -C- PARA VER CONTROLES", -8, 5);
-		
-
 	}
 
 	else if (estado == Estado::EXIT)
 	{
 		exit(0);
 	}
-		
-
 }
 
 
@@ -366,8 +356,6 @@ void Coordinador_ajedrez::Tecla(unsigned char key)
 	
 }
 
-
-
 void Coordinador_ajedrez::mueve()
 {
 	
@@ -378,6 +366,5 @@ void Coordinador_ajedrez::mueve()
 	if (estado == Estado::PARTIDA_M)
 	{
 		partida->Mueve();
-	}
-	
+	}	
 }

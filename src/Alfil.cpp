@@ -111,13 +111,3 @@ bool Alfil::Movimiento(const Vector3d& muevo_a)
 		return 0;
 	
 }
-/*
-bool Alfil::Movimiento(const Vector3d& muevo_a)
-{
-	if ((muevo_a.x-posicion.x)==(muevo_a.y-posicion.y)|| (muevo_a.x - posicion.x) == -(muevo_a.y - posicion.y))
-	{
-		return 1;
-	}
-	else
-		return 0;
-}*/

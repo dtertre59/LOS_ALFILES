@@ -1,22 +1,18 @@
 #include "Caballo.h"
 #include "freeglut.h"
-#include "Color_RGB.h"
-
 
 Caballo::Caballo()
 {
 	posicion.Set_vector(-1, 3, 0);
 	color.Set_color('b');
 	escala = 1;
-	i0 = 0;
-	j0 = 0;
 }
+
 void Caballo::Inicializa(unsigned char c, float x, float y, float z)
 {
 	posicion.Set_vector(x, y, z);
 	color.Set_color(c);
 	escala = 1;
-
 
 	dni[0] = c - 32;  
 	dni[1] = 'C'; 
@@ -43,33 +39,10 @@ void Caballo::Inicializa(unsigned char c)
 	posicion.Set_vector(0, 0, 0);
 	color.Set_color(c);
 	escala =1;
-
-	//no sirve para nada lo de abajo
-	if (c == 'b')
-	{
-		i0 = 2;
-		j0 = 1;
-	}
-	if (c == 'n')
-	{
-		//glRotatef(180, 0, 0, 1);
-		i0 = 2;
-		j0 = 8;
-		
-		//glRotatef(-180, 0, 0,- 1);
-	}
-
 }
 
 void Caballo::Dibuja()
 {
-	/*
-	color;
-	if (color=color.Get_color = (109, 76, 65))
-	{
-		glRotatef(180, 0, 0, 1);
-	}
-	*/
 	glColor3ub(color.rojo, color.verde, color.azul);
 	//glRotatef(180, 0,0 , 1);
 	//base toroide
@@ -232,10 +205,8 @@ void Caballo::Dibuja()
 	glTranslatef(posicion.x + (escala * 1.875), posicion.y + (escala * (1.125)), posicion.z + (escala * 5.475));
 	glutSolidCube(0.75 * escala);
 	glTranslatef(-(posicion.x + (escala * (1.875))), -(posicion.y + (escala * (1.125))), -(posicion.z + (escala * 5.475)));
-
-
-	//glRotatef(-180, 0,0 , 1);
 }
+
 void Caballo::Escala(unsigned char c)
 {
 	if (c == 'q')
@@ -263,6 +234,7 @@ void Caballo::Mover(unsigned char c)
 		posicion.y = posicion.y + 10;
 	}
 }
+
 bool Caballo::Movimiento(const Vector3d& muevo_a)
 {
 	int flag = 0;
@@ -274,13 +246,6 @@ bool Caballo::Movimiento(const Vector3d& muevo_a)
 	//movimientos posibles -2/-1
 	if (x == -20 && y == -10)
 	{
-		/*
-		if (npx > 00 && npx <= 80)
-			if (npy >= 00 && npy <= 70)
-			{
-				flag = 1;;
-			}
-			*/
 		flag = 1;
 	}
 
@@ -318,5 +283,4 @@ bool Caballo::Movimiento(const Vector3d& muevo_a)
 	}
 	else
 		return 0;
-
 }
