@@ -36,12 +36,19 @@ public:
 
 	void Cambiar_dni(string s);
 
+	void Cambiar_escala(float es) {escala = es;}
+
+
 	virtual bool Movimiento(const Vector3d&) { return 0; };
 	virtual void Dibuja() = 0;
+
+	
+
+	//borrR
 	virtual void ColPieza() {
 		int i = 0;
 	}
-
+	
 	friend class Interaccion;
 	friend class Partida;
 	friend class Tablerito;

@@ -314,7 +314,6 @@ int Tablerito::Comprobar_camino(Pieza& pieza, Vector3d move)
 			}
 		}
 	}
-	//mov torre
 	//mov alfil
 	else if (dif_pos_x < 0 && dif_pos_y>0)//arriba ->
 	{
@@ -450,8 +449,20 @@ int Tablerito::Comprobar_movimiento_completo(Pieza& pieza, Vector3d move)
 		}
 		else if (pieza.Movimiento(move) && flag_posicion_movimiento == 1) //si donde mueves come
 		{
-
-			return 2; //donde se mueva COME
+			if (pieza.dni[1] == 'P')
+			{
+				if (move.y != pieza.posicion.y)
+				{
+					return 2;
+				}
+				else
+					return 0;
+			}
+			else
+			{
+				return 2; //donde se mueva COME
+			}
+			
 		}
 		else if (pieza.Movimiento(move) && flag_posicion_movimiento == 2) //COME REY
 		{

@@ -27,6 +27,9 @@ Partida::Partida()
 
 	flag_seleccion_pieza = 0;
 	flag_numero_pieza = 0;
+
+
+	comi = 0; //piezas comidas
 	
 }
 
@@ -381,10 +384,9 @@ void Partida::Tecla(unsigned char c)
 						//if (pieza_selec == "BP" && Interaccion::Comprobar_movimiento(*diosita, peon[flag_numero_pieza]))//si se cumple la condicion 
 						if(pieza_selec == "BP" && tablerito->Comprobar_movimiento_completo(peon[flag_numero_pieza],diosita->Get_pos())!=0)
 						{
-
-							//if (Interaccion::Comprobar_choque_piezas(*diosita, torre[0]) && Interaccion::Comprobar_choque_piezas(*diosita, torre[1]) && Interaccion::Comprobar_choque_piezas(*diosita, alfil[0]) && Interaccion::Comprobar_choque_piezas(*diosita, alfil[1]) && Interaccion::Comprobar_choque_piezas(*diosita, rey[0]) && Interaccion::Comprobar_choque_piezas(*diosita, dama[0]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[5]) && Interaccion::Comprobar_choque_piezas(*diosita, caballo[0]) && Interaccion::Comprobar_choque_piezas(*diosita, caballo[1]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[3]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[1]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[2]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[4]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[6]) && Interaccion::Comprobar_choque_piezas(*diosita, peon[7]))
-							//{
-							
+							Vector3d aux = diosita->Get_pos();
+							string dni_pieza_comer = tablerito->Localizar_pieza(aux);
+						
 							if (tablerito->Comprobar_movimiento_completo(peon[flag_numero_pieza], diosita->Get_pos()) == 1)
 							{
 								diosita->Set_color('b');
@@ -396,25 +398,21 @@ void Partida::Tecla(unsigned char c)
 								movdatos = MovDatos::M_ESPERA;
 								turno = Turno::CAMBIO;
 							}
-							if (tablerito->Comprobar_movimiento_completo(peon[flag_numero_pieza], diosita->Get_pos()) == 2)
+							else if (tablerito->Comprobar_movimiento_completo(peon[flag_numero_pieza], diosita->Get_pos()) == 2)
 							{
-								//comer
-							}
+								Partida::Comida(dni_pieza_comer);
+
+
+								diosita->Set_color('b');
+								peon[flag_numero_pieza].Set_color('b');
+
+								tablerito->Mover(peon[flag_numero_pieza], diosita->Get_pos());
+
+								introdatos = IntroDatos::EJE_X;
+								movdatos = MovDatos::M_ESPERA;
+								turno = Turno::CAMBIO;
 								
-
-							
-							/*
-						}
-						else
-						{
-
-							diosita->Set_color('m');
-							introdatos = IntroDatos::ESPERA;
-							movdatos = MovDatos::M_EJE_X;
-							turno = Turno::BLANCAS;
-							ETSIDI::play("sonidos/disparo.wav");
-						}
-						*/
+							}
 						}
 
 						
@@ -1545,3 +1543,85 @@ void Partida::Mueve()
 		}
 	}
 }
+
+
+
+//COMIDA PEIZA
+
+void Partida::Comida(string& dni_pieza_comer)
+{
+	int num = dni_pieza_comer[2] - '1'; //el peon 1 tiene dentro [0]
+
+	float esc = 0.5;
+
+	Vector3d aux;
+	aux.Set_vector(comi * 2.5, 80.0, 0.0);
+
+	if (dni_pieza_comer[0] == 'B')
+	{
+		if (dni_pieza_comer[1] == 'P')
+		{
+			peon[num].Set_pos(aux);
+			peon[num].Cambiar_escala(esc);
+			comi++;
+		}
+		else if (dni_pieza_comer[1] == 'T')
+		{
+			torre[num].Set_pos(aux);
+			torre[num].Cambiar_escala(esc);
+			comi++;
+		}
+		else if (dni_pieza_comer[1] == 'A')
+		{
+			alfil[num].Set_pos(aux);
+			alfil[num].Cambiar_escala(esc);
+			comi++;
+		}
+		else if (dni_pieza_comer[1] == 'C')
+		{
+			caballo[num].Set_pos(aux);
+			caballo[num].Cambiar_escala(esc);
+			comi++;
+		}
+		else if (dni_pieza_comer[1] == 'D')
+		{
+			dama[num].Set_pos(aux);
+			dama[num].Cambiar_escala(esc);
+			comi++;
+		}
+	}
+	else
+	{
+		if (dni_pieza_comer[1] == 'P')
+		{
+			peon[num+8].Set_pos(aux);
+			peon[num+8].Cambiar_escala(esc);
+			comi++;
+		}
+		else if (dni_pieza_comer[1] == 'T')
+		{
+			torre[num+2].Set_pos(aux);
+			torre[num+2].Cambiar_escala(esc);
+			comi++;
+		}
+		else if (dni_pieza_comer[1] == 'A')
+		{
+			alfil[num+2].Set_pos(aux);
+			alfil[num+2].Cambiar_escala(esc);
+			comi++;
+		}
+		else if (dni_pieza_comer[1] == 'C')
+		{
+			caballo[num+2].Set_pos(aux);
+			caballo[num+2].Cambiar_escala(esc);
+			comi++;
+		}
+		else if (dni_pieza_comer[1] == 'D')
+		{
+			dama[num+1].Set_pos(aux);
+			dama[num+1].Cambiar_escala(esc);
+			comi++;
+		}
+	}
+}
+

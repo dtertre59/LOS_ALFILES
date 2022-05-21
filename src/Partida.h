@@ -69,7 +69,7 @@ public:
 
 	//int flag_a_donde_movemos; //para saber que tiene la casilla donde vamos a mover
 	
-
+	int comi;
 
 
 	Partida();
@@ -78,8 +78,10 @@ public:
 	void Tecla(unsigned char c);
 	void Mueve();
 
+	void Comida(string& dni_pieza_comer);
 
 	friend class Pieza;
 	friend class Peon;
 	friend class DIOSITA;
+	friend class Interaccion;
 };

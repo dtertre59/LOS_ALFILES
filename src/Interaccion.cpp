@@ -1,13 +1,11 @@
 #include "Interaccion.h"
 #include "Tablerito.h"
+#include <Partida.h>
+#include"Peon.h"
 
 //te devuelve la posicion seleccionada. falta comprobar si la posiccion seleccionada tiene alguna pieza
 Vector3d Interaccion::Seleccionar(Pieza& diosita)
 {
-	//Vector3d ini;
-	//ini.Set_vector(35, 35, 5);
-
-
 	for (int i = 0; i < 8; i++)
 	{
 		for (int j = 0; j < 8; j++)
@@ -28,7 +26,6 @@ void Interaccion::Desplazar(Pieza& diosita, Pieza& pieza)
 	ETSIDI::play("sonidos/mover.wav");
 }
 
-
 //devuelve un 1 si el movimiento esta permitido y un 0 si no esta permitido
 
 bool Interaccion::Comprobar_movimiento(Pieza& diosita, Pieza& pieza)
@@ -41,185 +38,47 @@ bool Interaccion::Comprobar_movimiento(Pieza& diosita, Pieza& pieza)
 }
 
 
-bool Interaccion::Comprobar_choque_piezas(Pieza& diosita, Pieza& pieza)
-{
-	/*
-	Vector3d p = pieza.Get_pos();
-	Vector3d d = diosita.Get_pos();
-	Vector3d r =diosita.Get_pos()-pieza.Get_pos();
-	int flag = 0;
-	*/
 
-	if (diosita.Get_pos() == pieza.Get_pos())
+
+//COMER PIEZAS
+/*
+void Interaccion::Seleccionar_Comer(Vector3d pos_mover, Tablerito& tab)
+{
+	
+	int pos_x = pos_mover.x / 10;
+	int pos_y = pos_mover.y / 10;
+	
+	string dni_pieza_comer = tab.Localizar_pieza(pos_mover);
+
+	int num = dni_pieza_comer[2] - 49; //el peon 1 tiene dentro [0]
+
+
+	
+	
+	if (dni_pieza_comer[1] == 'P')
 	{
-		return 0;
+		
+
+
+		
 	}
-	else 
-		return 1;
-}
-
-
-bool Interaccion::Comprobar_comer(Pieza& diosita, Pieza& pieza)
-{
-	if (pieza.color.bn == 1)
+	else if (dni_pieza_comer[1] == 'T')
 	{
 		
 	}
-	return 1;
-}
-
-void Interaccion::Comer(Vector3d& move,Tablerito& tablerito)
-{
-	/*
-	int pos_x = move.x / 10;
-	int pos_y = move.y / 10;
-	int n;
-
-	if (tablerito[pos_x][pos_y][1] == 'P')
+	else if (dni_pieza_comer[1] == 'A')
 	{
-		n = tablerito[pos_x][pos_y][2];
-		peon[n].setPos(150, 150, 0);
-	}
-	else if (tablerito[pos_x][pos_y][1] == 'T')
-	{
-		n = tablerito[pos_x][pos_y][2];
-	}
-	else if (tablerito[pos_x][pos_y][1] == 'A')
-	{
-		n = tablerito[pos_x][pos_y][2];
-	}
-	else if (tablerito[pos_x][pos_y][1] == 'C')
-	{
-		n = tablerito[pos_x][pos_y][2];
-	}
-	else if (tablerito[pos_x][pos_y][1] == 'D')
-	{
-		n = tablerito[pos_x][pos_y][2];
-	}
-	*/
-	
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-bool Interaccion::Comprobar_camino(Pieza& diosita, Pieza& pieza)
-{
-	Vector3d p = pieza.Get_pos();
-	Vector3d d = diosita.Get_pos();
-	Vector3d r;
-	r.Set_vector(0, 0, 0);
-	r.x = d.x - p.x;
-	r.y = d.y - p.y;
-	int verificacion=0;
-
-	if (r.y == 0 && r.x>0) //si
-	{
-		for (p.x; d.x; p.x + 10)
-		{
-			if (Comprobar_choque_piezas(diosita, pieza))
-				verificacion = 1;
-		}
-	}
-	else if (r.y == 0 && r.x < 0) //si
-	{
-		for (p.x; d.x; p.x - 10)
-		{
-			if (Comprobar_choque_piezas(diosita, pieza))
-				verificacion = 1;
-		}
-	}
-	else if (r.x == 0 && r.y>0) //si
-	{
-		for (p.y; d.y; p.y + 10)
-		{
-			if (Comprobar_choque_piezas(diosita, pieza))
-				verificacion = 1;
-		}
-	}
-	else if (r.x == 0 && r.y < 0)
-	{
-		for (p.y; d.y; p.y - 10)
-		{
-			if (Comprobar_choque_piezas(diosita, pieza))
-				verificacion = 1;
-		}
-	}
-
-	
-	if (r.x == r.y && r.x > 0)
-	{
-		for (p.x, p.y; d.x, d.y; p.x + 10, p.y + 10)
-		{
-			verificacion = Comprobar_choque_piezas(diosita, pieza);
-		}
-	}
-	if (r.x == -r.y && r.x > 0)
-	{
-		for (p.x, p.y; d.x, d.y; p.x + 10, p.y - 10)
-		{
-			verificacion =Comprobar_choque_piezas(diosita, pieza);
-		}
-	}
-	if (r.x ==r.y && r.x < 0)
-	{
-		for (p.x, p.y; d.x, d.y; p.x - 10, p.y - 10)
-		{
-			verificacion =Comprobar_choque_piezas(diosita, pieza);
-		}
-	}
-	if (r.x == -r.y && r.x < 0)
-	{
-		for (p.x, p.y; d.x, d.y; p.x - 10, p.y + 10)
-		{
-			verificacion =Comprobar_choque_piezas(diosita, pieza);
-		}
-	}
-	
 		
-	if (verificacion == 1)
-	{
-		return 0;
 	}
-	else
-		return 1;
-	
-}
-*/
-
-
-
-
-
-
-/*
-char Interaccion::Seleccionar(Pieza& diosita, Tablero& tab)
-{
-	for (int i = 0; i < 8; i++)
+	else if (dni_pieza_comer[1] == 'C')
 	{
-		for (int j = 0; j < 8; j++)
-		{
-			if (i * 10 == diosita.posicion.x && j * 10 == diosita.posicion.y)
-			{
-				return tab.tablerito[i][j];
-			}
-			else
-				return '0';
-		}
+		
 	}
+	else if (dni_pieza_comer[1] == 'D')
+	{
+		
+	}
+		
 }
+
 */
-
-
-
