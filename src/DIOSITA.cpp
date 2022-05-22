@@ -20,7 +20,7 @@ void DIOSITA::Dibuja()
 	glColor3ub(color.rojo, color.verde, color.azul);
 
 	glTranslatef(posicion.x, posicion.y, posicion.z);
-	glutSolidSphere((escala * 4.5), 100, 100); //   radio base, height, slices, stacks
+	glutSolidSphere((escala * 2), 100, 100); //   radio base, height, slices, stacks
 	glTranslatef(-posicion.x, -posicion.y, -(posicion.z));
 }
 

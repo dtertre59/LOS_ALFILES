@@ -291,11 +291,11 @@ void Coordinador_ajedrez::Dibuja()
 		ETSIDI::printxy("PULSA -ESC- PARA VOLVER al inicio", -13, 10);
 		ETSIDI::printxy("Por TECLADO introduzca primero NUMERO y despues LETRA ", -13, 8);
 		ETSIDI::printxy("de la ubicacion de la pieza que desee mover ", -13, 7);
-		ETSIDI::printxy("Presione RETURN para cambiar la pieza seleccioanda ", -13, 5);
+		ETSIDI::printxy("Presione RETURN para cambiar la pieza seleccioanda ", -13, 6);
 		ETSIDI::printxy("Presione ESPACIO para cambiar de turno ", -13, 4);
 		ETSIDI::printxy("Despues, introduzca la POSICION a la que desees MOVER la pieza ", -13, 2);
 		ETSIDI::printxy("indicando primero NUMERO y luego LETRA ", -13, 1); 
-
+		ETSIDI::printxy("EN CASO DE ERROR AL INTRODUCIR DATOS PULSA -RETURN- ", -13, -1);
 	}
 
 	else if (estado == Estado::PAUSA)
@@ -332,7 +332,6 @@ void Coordinador_ajedrez::Dibuja()
 		exit(0);
 	}
 }
-
 
 //TECLADO
 
@@ -380,8 +379,6 @@ void Coordinador_ajedrez::Tecla(unsigned char key)
 		{
 			estado = Estado::PAUSA;
 		}
-	
-
 	}
 
 	if (estado == Estado::VISTA_PIEZA)
@@ -416,7 +413,6 @@ void Coordinador_ajedrez::Tecla(unsigned char key)
 		}		
 	}
 
-
 	if (estado == Estado::PAUSA)
 	{
 		if (key == 'i' || key == 'I')
@@ -432,10 +428,7 @@ void Coordinador_ajedrez::Tecla(unsigned char key)
 		{
 			estado = Estado::CONTROLES;
 		}
-	}
-
-	
-	
+	}	
 }
 
 void Coordinador_ajedrez::mueve()
@@ -451,7 +444,6 @@ void Coordinador_ajedrez::mueve()
 		if (partida->fin_partida == 1)
 		{
 			estado = Estado::INICIO;
-		}
-		
+		}	
 	}	
 }
