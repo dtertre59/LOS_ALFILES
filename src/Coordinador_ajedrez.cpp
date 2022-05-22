@@ -333,7 +333,6 @@ void Coordinador_ajedrez::Dibuja()
 	}
 }
 
-
 //TECLADO
 
 void Coordinador_ajedrez::Tecla(unsigned char key)
@@ -380,8 +379,6 @@ void Coordinador_ajedrez::Tecla(unsigned char key)
 		{
 			estado = Estado::PAUSA;
 		}
-	
-
 	}
 
 	if (estado == Estado::VISTA_PIEZA)
@@ -416,7 +413,6 @@ void Coordinador_ajedrez::Tecla(unsigned char key)
 		}		
 	}
 
-
 	if (estado == Estado::PAUSA)
 	{
 		if (key == 'i' || key == 'I')
@@ -432,10 +428,7 @@ void Coordinador_ajedrez::Tecla(unsigned char key)
 		{
 			estado = Estado::CONTROLES;
 		}
-	}
-
-	
-	
+	}	
 }
 
 void Coordinador_ajedrez::mueve()
@@ -451,7 +444,6 @@ void Coordinador_ajedrez::mueve()
 		if (partida->fin_partida == 1)
 		{
 			estado = Estado::INICIO;
-		}
-		
+		}	
 	}	
 }

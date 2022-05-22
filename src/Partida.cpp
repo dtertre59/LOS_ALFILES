@@ -1383,4 +1383,3 @@ void Partida::Comida(string& dni_pieza_comer)
 		}
 	}
 }
-
