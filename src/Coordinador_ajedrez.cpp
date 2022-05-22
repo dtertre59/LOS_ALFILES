@@ -313,6 +313,7 @@ void Coordinador_ajedrez::Tecla(unsigned char key)
 		{
 			estado = Estado::PAUSA;
 		}
+	
 
 	}
 
@@ -365,6 +366,8 @@ void Coordinador_ajedrez::Tecla(unsigned char key)
 			estado = Estado::CONTROLES;
 		}
 	}
+
+	
 	
 }
 

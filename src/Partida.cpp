@@ -401,6 +401,10 @@ void Partida::Tecla(unsigned char c)
 								movdatos = MovDatos::M_ESPERA;
 								turno = Turno::CAMBIO;				
 							}
+							else if (tablerito->Comprobar_movimiento_completo(peon[flag_numero_pieza], diosita->Get_pos()) == 4)
+							{
+								turno = Turno::FIN_PARTIDA;
+							}
 						}
 
 						else if (pieza_selec == "BR" && tablerito->Comprobar_movimiento_completo(rey[flag_numero_pieza], diosita->Get_pos())!=0)//si se cumple la condicion //se podria poner rey[flag_numero_pieza
@@ -430,6 +434,10 @@ void Partida::Tecla(unsigned char c)
 								introdatos = IntroDatos::EJE_X;
 								movdatos = MovDatos::M_ESPERA;
 								turno = Turno::CAMBIO;
+							}
+							else if (tablerito->Comprobar_movimiento_completo(rey[flag_numero_pieza], diosita->Get_pos()) == 4)
+							{
+								turno = Turno::FIN_PARTIDA;
 							}
 						}
 
@@ -461,6 +469,10 @@ void Partida::Tecla(unsigned char c)
 								movdatos = MovDatos::M_ESPERA;
 								turno = Turno::CAMBIO;
 							}
+							else if (tablerito->Comprobar_movimiento_completo(alfil[flag_numero_pieza], diosita->Get_pos()) == 4)
+							{
+								turno = Turno::FIN_PARTIDA;
+							}
 						}
 						
 						else if (pieza_selec == "BT" && tablerito->Comprobar_movimiento_completo(torre[flag_numero_pieza], diosita->Get_pos()) != 0)//si se cumple la condicion 
@@ -491,6 +503,10 @@ void Partida::Tecla(unsigned char c)
 								movdatos = MovDatos::M_ESPERA;
 								turno = Turno::CAMBIO;
 							}
+							else if (tablerito->Comprobar_movimiento_completo(torre[flag_numero_pieza], diosita->Get_pos()) == 4)
+							{
+								turno = Turno::FIN_PARTIDA;
+							}
 						}
 
 						else if (pieza_selec == "BD" && tablerito->Comprobar_movimiento_completo(dama[0], diosita->Get_pos()) != 0)//si se cumple la condicion 
@@ -520,7 +536,11 @@ void Partida::Tecla(unsigned char c)
 								introdatos = IntroDatos::EJE_X;
 								movdatos = MovDatos::M_ESPERA;
 								turno = Turno::CAMBIO;
-							}							
+							}
+							else if (tablerito->Comprobar_movimiento_completo(dama[0], diosita->Get_pos()) == 4)
+							{
+								turno = Turno::FIN_PARTIDA;
+							}
 						}
 						
 						else if (pieza_selec == "BC" && tablerito->Comprobar_movimiento_completo(caballo[flag_numero_pieza], diosita->Get_pos()) != 0)//si se cumple la condicion 
@@ -550,6 +570,10 @@ void Partida::Tecla(unsigned char c)
 								introdatos = IntroDatos::EJE_X;
 								movdatos = MovDatos::M_ESPERA;
 								turno = Turno::CAMBIO;
+							}
+							else if (tablerito->Comprobar_movimiento_completo(caballo[flag_numero_pieza], diosita->Get_pos()) == 4)
+							{
+								turno = Turno::FIN_PARTIDA;
 							}
 						}
 						else //retrocedemos para volver a poner el sitio donde decimos a donde queremos mover la pieza
@@ -858,6 +882,10 @@ void Partida::Tecla(unsigned char c)
 								movdatos = MovDatos::M_ESPERA;
 								turno = Turno::CAMBIO2;
 							}
+							else if (tablerito->Comprobar_movimiento_completo(peon[flag_numero_pieza], diosita->Get_pos()) == 4)
+							{
+								turno = Turno::FIN_PARTIDA;
+							}
 						}
 			
 						else if (pieza_selec == "NR" && Interaccion::Comprobar_movimiento(*diosita, rey[flag_numero_pieza])!=0)//si se cumple la condicion //se podria poner rey[flag_numero_pieza
@@ -887,6 +915,10 @@ void Partida::Tecla(unsigned char c)
 								introdatos = IntroDatos::EJE_X;
 								movdatos = MovDatos::M_ESPERA;
 								turno = Turno::CAMBIO2;
+							}
+							else if (tablerito->Comprobar_movimiento_completo(rey[flag_numero_pieza], diosita->Get_pos()) == 4)
+							{
+								turno = Turno::FIN_PARTIDA;
 							}
 						}
 
@@ -918,6 +950,10 @@ void Partida::Tecla(unsigned char c)
 								movdatos = MovDatos::M_ESPERA;
 								turno = Turno::CAMBIO2;
 							}			
+							else if (tablerito->Comprobar_movimiento_completo(alfil[flag_numero_pieza], diosita->Get_pos()) == 4)
+							{
+								turno = Turno::FIN_PARTIDA;
+							}
 						}
 						
 						else if (pieza_selec == "NT" && Interaccion::Comprobar_movimiento(*diosita, torre[flag_numero_pieza])!=0)//si se cumple la condicion 
@@ -947,6 +983,10 @@ void Partida::Tecla(unsigned char c)
 								introdatos = IntroDatos::EJE_X;
 								movdatos = MovDatos::M_ESPERA;
 								turno = Turno::CAMBIO2;
+							}
+							else if (tablerito->Comprobar_movimiento_completo(torre[flag_numero_pieza], diosita->Get_pos()) == 4)
+							{
+								turno = Turno::FIN_PARTIDA;
 							}
 						}						
 
@@ -978,6 +1018,10 @@ void Partida::Tecla(unsigned char c)
 								movdatos = MovDatos::M_ESPERA;
 								turno = Turno::CAMBIO2;
 							}
+							else if (tablerito->Comprobar_movimiento_completo(dama[1], diosita->Get_pos()) == 4)
+							{
+								turno = Turno::FIN_PARTIDA;
+							}
 						}
 					
 
@@ -1008,6 +1052,10 @@ void Partida::Tecla(unsigned char c)
 								movdatos = MovDatos::M_ESPERA;
 								turno = Turno::CAMBIO2;
 							}
+							else if (tablerito->Comprobar_movimiento_completo(caballo[flag_numero_pieza], diosita->Get_pos()) == 4)
+							{
+								turno = Turno::FIN_PARTIDA;
+							}
 						}
 						//si no se ha puesto una posicion alcanzable
 						else //retrocedemos para volver a poner el sitio donde decimos a donde queremos mover la pieza
@@ -1024,15 +1072,12 @@ void Partida::Tecla(unsigned char c)
 		}
 	}
 
-	if (turno == Turno::JAQUE_MATE)
+	if (turno == Turno::FIN_PARTIDA)
 	{
-
-
-
-
-
-
-
+		if (c == 32)
+		{
+	
+		}
 
 	}
 }
@@ -1205,6 +1250,27 @@ void Partida::Mueve()
 		if (posicion_pieza_seleccionada == caballo[3].Get_pos())// && Interaccion::Comprobar_movimiento(rey[0]) //con sobrecarga del operador == para comparar Vector3d
 		{
 			Interaccion::Desplazar(*diosita, caballo[3]);
+		}
+	}
+	if (turno == Turno::FIN_PARTIDA)
+	{
+		Vector3d newPosDiosita;
+		newPosDiosita.Set_vector(0, 35.0, -20.0);
+		diosita->Set_pos(newPosDiosita);
+		if (pieza_selec[0] == 'B') {
+			if (rey[0].posicion.z < 20)
+			{
+				rey[0].setPosIncrementoZ(0.2);
+				rey[1].IncrementoEscala(-0.005);
+				rey[0].IncrementoEscala(+0.005);
+			}
+		}else {
+			if (rey[1].posicion.z < 16)
+			{
+				rey[1].setPosIncrementoZ(0.2);
+				rey[0].IncrementoEscala(-0.005);
+				rey[1].IncrementoEscala(+0.005);
+			}
 		}
 	}
 }

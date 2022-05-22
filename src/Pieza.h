@@ -28,9 +28,9 @@ public:
 
 	float devPosx() { return posicion.x; }
 	float devPosy() { return posicion.y; }
-
+	void setPosIncrementoZ(float z);
 	void Cambiar_dni(string s);
-
+	void IncrementoEscala(float e);
 	void Cambiar_escala(float es);
 
 	//funciones virtuales

@@ -5,7 +5,7 @@
 #include"Tablero.h"
 #include"Vista.h"
 #include"Interaccion.h"
-
+#include "Coordinador_ajedrez.h"
 #include "Pieza.h"
 
 #include"Peon.h"
@@ -34,7 +34,7 @@ protected:
 	DIOSITA* diosita;
 	Tablerito* tablerito;
 
-	enum class Turno { BLANCAS, NEGRAS, CAMBIO,CAMBIO2,JAQUE_MATE};
+	enum class Turno { BLANCAS, NEGRAS, CAMBIO,CAMBIO2,FIN_PARTIDA};
 	enum class IntroDatos { EJE_X, EJE_Y, ESPERA };
 	enum class MovDatos { M_EJE_X, M_EJE_Y, M_ESPERA };
 
@@ -57,7 +57,7 @@ protected:
 	int comi; //contador piezas comidas
 
 public:
-
+	
 	Partida();
 	~Partida();
 
@@ -66,4 +66,7 @@ public:
 	void Tecla(unsigned char c);
 	void Mueve();
 	void Comida(string& dni_pieza_comer);
+	
+
+	
 };

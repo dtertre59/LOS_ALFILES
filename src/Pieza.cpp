@@ -14,3 +14,11 @@ void Pieza::Cambiar_escala(float es)
 { 
 	escala = es; 
 }
+void Pieza::setPosIncrementoZ(float z)
+{
+	posicion.z = posicion.z + z;
+}
+void Pieza::IncrementoEscala(float e)
+{
+	escala = escala + e;
+}
