@@ -5,7 +5,7 @@
 #include"Tablero.h"
 #include"Vista.h"
 #include"Interaccion.h"
-#include "Coordinador_ajedrez.h"
+//#include "Coordinador_ajedrez.h"
 #include "Pieza.h"
 
 #include"Peon.h"
@@ -56,6 +56,8 @@ protected:
 	
 	int comi; //contador piezas comidas
 
+	int fin_partida; //1 si se acaba la partida
+
 public:
 	
 	Partida();
@@ -66,7 +68,6 @@ public:
 	void Tecla(unsigned char c);
 	void Mueve();
 	void Comida(string& dni_pieza_comer);
-	
 
-	
+	friend class Coordinador_ajedrez;
 };

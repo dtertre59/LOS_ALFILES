@@ -381,5 +381,9 @@ void Coordinador_ajedrez::mueve()
 	if (estado == Estado::PARTIDA_M)
 	{
 		partida->Mueve();
+		if (partida->fin_partida == 1)
+		{
+			estado = Estado::INICIO;
+		}
 	}	
 }

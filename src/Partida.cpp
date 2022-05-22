@@ -28,6 +28,7 @@ Partida::Partida()
 	flag_numero_pieza = 0;
 
 	comi = 0; //piezas comidas	
+	fin_partida = 0; //1 cuando se acabe la partida (jaque mate)
 }
 
 //DESTRUCTOR
@@ -1076,7 +1077,7 @@ void Partida::Tecla(unsigned char c)
 	{
 		if (c == 32)
 		{
-	
+			fin_partida = 1;
 		}
 
 	}

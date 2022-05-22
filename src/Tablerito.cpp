@@ -1,5 +1,6 @@
 #include "Tablerito.h"
 #include "Interaccion.h"
+#include"ETSIDI.h"
 
 //CONSTRUCTOR
 Tablerito::Tablerito()
@@ -457,6 +458,7 @@ int Tablerito::Comprobar_movimiento_completo(Pieza& pieza, Vector3d move)
 		}
 		else if (pieza.Movimiento(move) && flag_posicion_movimiento == 2) //COME REY
 		{
+			ETSIDI::play("sonidos/victoria.wav"); //MUSICA VICTORIA
 			return 4; //come rey, jaque
 		}
 		
