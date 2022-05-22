@@ -1,6 +1,7 @@
 #include "Tablerito.h"
 #include "Interaccion.h"
 
+//CONSTRUCTOR
 Tablerito::Tablerito()
 {
 	tablerito = new string * [8];
@@ -8,6 +9,15 @@ Tablerito::Tablerito()
 	{
 		tablerito[i] = new string[8];
 	}
+}
+
+//DESTRUCTOR
+Tablerito::~Tablerito()
+{
+	for (int f = 0; f < 8; f++) {
+		delete[] tablerito[f];
+	}
+	delete[] tablerito;
 }
 
 

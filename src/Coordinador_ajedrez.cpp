@@ -11,6 +11,15 @@ Coordinador_ajedrez::Coordinador_ajedrez()
 	pi = 'P';
 }
 
+//DESTRUCTOR
+
+Coordinador_ajedrez::~Coordinador_ajedrez()
+{
+	delete partida;
+	delete visualizarp;
+}
+
+
 //INICIALIZAR
 
 void Coordinador_ajedrez::Inicializa()
@@ -246,9 +255,9 @@ void Coordinador_ajedrez::Dibuja()
 
 		ETSIDI::setTextColor(1, 1, 1);
 		ETSIDI::setFont("fuentes/Rock's Death.ttf", 18);
-		ETSIDI::printxy("PULSA -I- PARA VOLVER al inicio", -8, 7.5);
-		ETSIDI::printxy("PULSA -P- PARA  continuar la PARTIDA", -8, 6.5);
-		ETSIDI::printxy("PULSA -C- PARA VER CONTROLES", -8, 5);
+		ETSIDI::printxy("PULSA -I- PARA VOLVER al inicio. Se perdera la PARTIDA", -10, 7.5);
+		ETSIDI::printxy("PULSA -P- PARA  continuar la PARTIDA", -10, 6.5);
+		ETSIDI::printxy("PULSA -C- PARA VER CONTROLES", -10, 5);
 	}
 
 	else if (estado == Estado::EXIT)
@@ -274,6 +283,9 @@ void Coordinador_ajedrez::Tecla(unsigned char key)
 
 		if (key == 'p' || key == 'P')
 		{
+			partida = new Partida;
+			partida->Inicializa();
+			ETSIDI::play("sonidos/blancas.wav");
 			estado = Estado::PARTIDA_M;
 		}
 
@@ -333,8 +345,7 @@ void Coordinador_ajedrez::Tecla(unsigned char key)
 		if (key == 'p' || key == 'P')
 		{
 			estado = Estado::PARTIDA_M;
-		}
-		
+		}		
 	}
 
 
@@ -343,6 +354,7 @@ void Coordinador_ajedrez::Tecla(unsigned char key)
 		if (key == 'i' || key == 'I')
 		{
 			estado = Estado::INICIO;
+			delete partida;
 		}
 		if (key == 'p' || key == 'P')
 		{

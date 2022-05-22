@@ -1,5 +1,7 @@
 #include"Partida.h"
 
+//CONSTRUCTOR
+
 Partida::Partida()
 {
 	tablero = new Tablero;
@@ -27,6 +29,24 @@ Partida::Partida()
 
 	comi = 0; //piezas comidas	
 }
+
+//DESTRUCTOR
+
+Partida::~Partida()
+{
+	delete tablero;
+	delete[] peon;
+	delete[] caballo;
+	delete[] alfil;
+	delete[] torre;
+	delete[] dama;
+	delete[] rey;
+
+	delete diosita;
+	delete tablerito;
+}
+
+
 
 void Partida::Inicializa()
 {
@@ -1002,6 +1022,18 @@ void Partida::Tecla(unsigned char c)
 				}
 			}
 		}
+	}
+
+	if (turno == Turno::JAQUE_MATE)
+	{
+
+
+
+
+
+
+
+
 	}
 }
 

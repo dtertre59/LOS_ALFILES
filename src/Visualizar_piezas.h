@@ -23,6 +23,7 @@ class Visualizar_piezas
 	
 public:
 	Visualizar_piezas();
+	~Visualizar_piezas();
 	void Inicializa();
 	void visualizar(unsigned char c);
 	void Mover_vista();

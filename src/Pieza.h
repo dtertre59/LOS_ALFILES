@@ -19,6 +19,8 @@ public:
 
 	//METODOS
 	Pieza() : posicion(), color(), escala(1), dni("00000") {};
+	//virtual ~Pieza();
+
 	void Set_color(unsigned char c);
 
 	void Set_pos(Vector3d v) { posicion = v; }

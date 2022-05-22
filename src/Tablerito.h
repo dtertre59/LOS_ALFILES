@@ -13,6 +13,8 @@ protected:
 public:
 
 	Tablerito();
+	~Tablerito();
+
 	void Inicializa();
 
 	//devuelve de dni de la pieza que se encuentra el la posicion que metes

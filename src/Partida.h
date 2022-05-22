@@ -34,7 +34,7 @@ protected:
 	DIOSITA* diosita;
 	Tablerito* tablerito;
 
-	enum class Turno { BLANCAS, NEGRAS, CAMBIO,CAMBIO2};
+	enum class Turno { BLANCAS, NEGRAS, CAMBIO,CAMBIO2,JAQUE_MATE};
 	enum class IntroDatos { EJE_X, EJE_Y, ESPERA };
 	enum class MovDatos { M_EJE_X, M_EJE_Y, M_ESPERA };
 
@@ -59,6 +59,8 @@ protected:
 public:
 
 	Partida();
+	~Partida();
+
 	void Inicializa();
 	void Dibuja();
 	void Tecla(unsigned char c);

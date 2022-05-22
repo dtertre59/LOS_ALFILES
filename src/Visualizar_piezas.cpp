@@ -20,6 +20,17 @@ Visualizar_piezas::Visualizar_piezas()
 	
 }
 
+Visualizar_piezas::~Visualizar_piezas()
+{
+	delete peon;
+	delete torre;
+	delete caballo;
+	delete alfil;
+	delete dama;
+	delete rey;
+}
+
+
 void Visualizar_piezas::visualizar(unsigned char pi)
 {
 	vista.Camara();

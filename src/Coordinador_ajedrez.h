@@ -22,6 +22,8 @@ protected:
 public:
 
 	Coordinador_ajedrez();
+	~Coordinador_ajedrez();
+
 	void Inicializa();
 	void Dibuja();
 	void Tecla(unsigned char key);
