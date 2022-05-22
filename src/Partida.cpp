@@ -1075,6 +1075,7 @@ void Partida::Tecla(unsigned char c)
 
 	if (turno == Turno::FIN_PARTIDA)
 	{
+		
 		if (c == 32)
 		{
 			fin_partida = 1;
@@ -1259,6 +1260,7 @@ void Partida::Mueve()
 		newPosDiosita.Set_vector(0, 35.0, -20.0);
 		diosita->Set_pos(newPosDiosita);
 		if (pieza_selec[0] == 'B') {
+			fin_partida = 2;
 			if (rey[0].posicion.z < 20)
 			{
 				rey[0].setPosIncrementoZ(0.2);
@@ -1266,6 +1268,7 @@ void Partida::Mueve()
 				rey[0].IncrementoEscala(+0.005);
 			}
 		}else {
+			fin_partida = 3;
 			if (rey[1].posicion.z < 16)
 			{
 				rey[1].setPosIncrementoZ(0.2);

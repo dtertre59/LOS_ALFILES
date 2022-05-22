@@ -96,19 +96,82 @@ void Coordinador_ajedrez::Dibuja()
 	{	
 		
 		partida->Dibuja();
+		
 		// pared fondo
-		glEnable(GL_TEXTURE_2D);
-		glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/fondo.png").id);
-		glDisable(GL_LIGHTING);
-		glBegin(GL_POLYGON);
-		glColor3f(1, 1, 1);
-		glTexCoord2d(0, 1); glVertex3f(-8, -18, -5);
-		glTexCoord2d(1, 1); glVertex3f(-8, 87, -5);
-		glTexCoord2d(1, 0); glVertex3f(-8, 87, 37);
-		glTexCoord2d(0, 0); glVertex3f(-8, -18, 37);
-		glEnd();
-		glEnable(GL_LIGHTING);
-		glDisable(GL_TEXTURE_2D);
+		if (partida->fin_partida==0)
+		{
+
+			glEnable(GL_TEXTURE_2D);
+			glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/fondo.png").id);
+			glDisable(GL_LIGHTING);
+			glBegin(GL_POLYGON);
+			glColor3f(1, 1, 1);
+			glTexCoord2d(0, 1); glVertex3f(-8, -18, -5);
+			glTexCoord2d(1, 1); glVertex3f(-8, 87, -5);
+			glTexCoord2d(1, 0); glVertex3f(-8, 87, 37);
+			glTexCoord2d(0, 0); glVertex3f(-8, -18, 37);
+			glEnd();
+			glEnable(GL_LIGHTING);
+			glDisable(GL_TEXTURE_2D);
+		}
+		else if (partida->fin_partida == 2)
+		{
+			glEnable(GL_TEXTURE_2D);
+			glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/GANADORBLANCASCARTEL.png").id);
+			glDisable(GL_LIGHTING);
+			glBegin(GL_POLYGON);
+			glColor3f(1, 1, 1);
+			glTexCoord2d(0, 1); glVertex3f(-5, 2, 0);
+			glTexCoord2d(1, 1); glVertex3f(-5, 67, 0);
+			glTexCoord2d(1, 0); glVertex3f(-5, 67, 35);
+			glTexCoord2d(0, 0); glVertex3f(-5, 2, 35);
+			glEnd();
+			glEnable(GL_LIGHTING);
+			glDisable(GL_TEXTURE_2D);
+
+			glEnable(GL_TEXTURE_2D);
+			glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/fondo.png").id);
+			glDisable(GL_LIGHTING);
+			glBegin(GL_POLYGON);
+			glColor3f(1, 1, 1);
+			glTexCoord2d(0, 1); glVertex3f(-8, -18, -5);
+			glTexCoord2d(1, 1); glVertex3f(-8, 87, -5);
+			glTexCoord2d(1, 0); glVertex3f(-8, 87, 37);
+			glTexCoord2d(0, 0); glVertex3f(-8, -18, 37);
+			glEnd();
+			glEnable(GL_LIGHTING);
+			glDisable(GL_TEXTURE_2D);
+
+			
+		}
+		else if (partida->fin_partida == 3)
+		{
+			glEnable(GL_TEXTURE_2D);
+			glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/GANADORNEGRASCARTEL.png").id);
+			glDisable(GL_LIGHTING);
+			glBegin(GL_POLYGON);
+			glColor3f(1, 1, 1);
+			glTexCoord2d(0, 1); glVertex3f(-5, 2, 0);
+			glTexCoord2d(1, 1); glVertex3f(-5, 67, 0);
+			glTexCoord2d(1, 0); glVertex3f(-5, 67, 35);
+			glTexCoord2d(0, 0); glVertex3f(-5, 2, 35);
+			glEnd();
+			glEnable(GL_LIGHTING);
+			glDisable(GL_TEXTURE_2D);
+
+			glEnable(GL_TEXTURE_2D);
+			glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/fondo.png").id);
+			glDisable(GL_LIGHTING);
+			glBegin(GL_POLYGON);
+			glColor3f(1, 1, 1);
+			glTexCoord2d(0, 1); glVertex3f(-8, -18, -5);
+			glTexCoord2d(1, 1); glVertex3f(-8, 87, -5);
+			glTexCoord2d(1, 0); glVertex3f(-8, 87, 37);
+			glTexCoord2d(0, 0); glVertex3f(-8, -18, 37);
+			glEnd();
+			glEnable(GL_LIGHTING);
+			glDisable(GL_TEXTURE_2D);
+		}
 		//pared lado <-
 		glEnable(GL_TEXTURE_2D);
 		glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/madera.png").id);
@@ -169,6 +232,7 @@ void Coordinador_ajedrez::Dibuja()
 		ETSIDI::printxy("7", 10, -10);
 		ETSIDI::printxy("8", 0, -10);
 		partida->Dibuja();
+		
 	}
 
 	else if (estado == Estado::VISTA_PIEZA)
@@ -385,5 +449,6 @@ void Coordinador_ajedrez::mueve()
 		{
 			estado = Estado::INICIO;
 		}
+		
 	}	
 }
