@@ -5,7 +5,7 @@
 #include"Tablero.h"
 #include"Vista.h"
 #include"Interaccion.h"
-//#include "Coordinador_ajedrez.h"
+
 #include "Pieza.h"
 
 #include"Peon.h"
