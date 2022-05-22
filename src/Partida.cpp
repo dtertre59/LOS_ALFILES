@@ -404,6 +404,8 @@ void Partida::Tecla(unsigned char c)
 							}
 							else if (tablerito->Comprobar_movimiento_completo(peon[flag_numero_pieza], diosita->Get_pos()) == 4)
 							{
+
+								ETSIDI::play("sonidos/vic.mp3");
 								turno = Turno::FIN_PARTIDA;
 							}
 						}
@@ -438,6 +440,8 @@ void Partida::Tecla(unsigned char c)
 							}
 							else if (tablerito->Comprobar_movimiento_completo(rey[flag_numero_pieza], diosita->Get_pos()) == 4)
 							{
+
+								ETSIDI::play("sonidos/vic.mp3");
 								turno = Turno::FIN_PARTIDA;
 							}
 						}
@@ -472,6 +476,8 @@ void Partida::Tecla(unsigned char c)
 							}
 							else if (tablerito->Comprobar_movimiento_completo(alfil[flag_numero_pieza], diosita->Get_pos()) == 4)
 							{
+
+								ETSIDI::play("sonidos/vic.mp3");
 								turno = Turno::FIN_PARTIDA;
 							}
 						}
@@ -506,6 +512,8 @@ void Partida::Tecla(unsigned char c)
 							}
 							else if (tablerito->Comprobar_movimiento_completo(torre[flag_numero_pieza], diosita->Get_pos()) == 4)
 							{
+
+								ETSIDI::play("sonidos/vic.mp3");
 								turno = Turno::FIN_PARTIDA;
 							}
 						}
@@ -540,6 +548,8 @@ void Partida::Tecla(unsigned char c)
 							}
 							else if (tablerito->Comprobar_movimiento_completo(dama[0], diosita->Get_pos()) == 4)
 							{
+
+								ETSIDI::play("sonidos/vic.mp3");
 								turno = Turno::FIN_PARTIDA;
 							}
 						}
@@ -574,6 +584,8 @@ void Partida::Tecla(unsigned char c)
 							}
 							else if (tablerito->Comprobar_movimiento_completo(caballo[flag_numero_pieza], diosita->Get_pos()) == 4)
 							{
+
+								ETSIDI::play("sonidos/vic.mp3");
 								turno = Turno::FIN_PARTIDA;
 							}
 						}
@@ -885,6 +897,8 @@ void Partida::Tecla(unsigned char c)
 							}
 							else if (tablerito->Comprobar_movimiento_completo(peon[flag_numero_pieza], diosita->Get_pos()) == 4)
 							{
+
+								ETSIDI::play("sonidos/vic.mp3");
 								turno = Turno::FIN_PARTIDA;
 							}
 						}
@@ -919,6 +933,8 @@ void Partida::Tecla(unsigned char c)
 							}
 							else if (tablerito->Comprobar_movimiento_completo(rey[flag_numero_pieza], diosita->Get_pos()) == 4)
 							{
+
+								ETSIDI::play("sonidos/vic.mp3");
 								turno = Turno::FIN_PARTIDA;
 							}
 						}
@@ -953,6 +969,8 @@ void Partida::Tecla(unsigned char c)
 							}			
 							else if (tablerito->Comprobar_movimiento_completo(alfil[flag_numero_pieza], diosita->Get_pos()) == 4)
 							{
+							
+								ETSIDI::play("sonidos/vic.mp3");
 								turno = Turno::FIN_PARTIDA;
 							}
 						}
@@ -987,6 +1005,8 @@ void Partida::Tecla(unsigned char c)
 							}
 							else if (tablerito->Comprobar_movimiento_completo(torre[flag_numero_pieza], diosita->Get_pos()) == 4)
 							{
+
+								ETSIDI::play("sonidos/vic.mp3");
 								turno = Turno::FIN_PARTIDA;
 							}
 						}						
@@ -1021,6 +1041,8 @@ void Partida::Tecla(unsigned char c)
 							}
 							else if (tablerito->Comprobar_movimiento_completo(dama[1], diosita->Get_pos()) == 4)
 							{
+
+								ETSIDI::play("sonidos/vic.mp3");
 								turno = Turno::FIN_PARTIDA;
 							}
 						}
@@ -1055,6 +1077,8 @@ void Partida::Tecla(unsigned char c)
 							}
 							else if (tablerito->Comprobar_movimiento_completo(caballo[flag_numero_pieza], diosita->Get_pos()) == 4)
 							{
+
+								ETSIDI::play("sonidos/vic.mp3");
 								turno = Turno::FIN_PARTIDA;
 							}
 						}
@@ -1256,10 +1280,11 @@ void Partida::Mueve()
 	}
 	if (turno == Turno::FIN_PARTIDA)
 	{
+		
 		Vector3d newPosDiosita;
 		newPosDiosita.Set_vector(0, 35.0, -20.0);
 		diosita->Set_pos(newPosDiosita);
-		if (pieza_selec[0] == 'B') {
+	 if(pieza_selec[0] == 'B') {
 			fin_partida = 2;
 			if (rey[0].posicion.z < 20)
 			{

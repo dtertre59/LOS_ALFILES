@@ -116,6 +116,7 @@ void Coordinador_ajedrez::Dibuja()
 		}
 		else if (partida->fin_partida == 2)
 		{
+
 			glEnable(GL_TEXTURE_2D);
 			glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/GANADORBLANCASCARTEL.png").id);
 			glDisable(GL_LIGHTING);
@@ -146,6 +147,8 @@ void Coordinador_ajedrez::Dibuja()
 		}
 		else if (partida->fin_partida == 3)
 		{
+			
+
 			glEnable(GL_TEXTURE_2D);
 			glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/GANADORNEGRASCARTEL.png").id);
 			glDisable(GL_LIGHTING);
