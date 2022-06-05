@@ -16,7 +16,7 @@ void Peon::Inicializa(unsigned char c, float x,float y,float z)
 	escala = 1;
 
 	
-	dni[0] = c-32;  //-32 para ponerlo en mayusculas
+	dni[0] = c-32;  //-32 para ponerlo en mayusculas(color)
 	dni[1] = 'P'; //P de peon
 	if (y == 0)
 		dni[2] = '1';   //numero de peon, segun la columna
@@ -64,7 +64,7 @@ void Peon::Dibuja()
 	glutSolidSphere((escala * 2), 100, 100); //   radio base, height, slices, stacks
 	glTranslatef(-posicion.x, -posicion.y, -(posicion.z + (escala * 8)));
 }
-
+// para cmabiar esca de piezas(se usaba al crear las piezas)
 void Peon::Escala(unsigned char c)
 {
 	if (c == 'q')

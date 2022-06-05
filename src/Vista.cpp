@@ -76,7 +76,7 @@ void Vista::Camara(int opt)
 }
 
 //MOVIMIENTO DE CAMARA Y ZOOM
-
+//no lo utilizamos en el programa fue una prueba para crear las piezas
 void Vista::Mover(unsigned char key)
 {
 	if (key == 'a')

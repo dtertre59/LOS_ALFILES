@@ -424,7 +424,7 @@ int Tablerito::Comprobar_movimiento_completo(Pieza& pieza, Vector3d move)
 	else if (flag_camino == 1) //si se puede mover tode menosla excepcion del peon
 	{
 		
-		if (pieza.Movimiento(move) && flag_posicion_movimiento == 0) //si se puede mover, comprobar camino
+		if (pieza.Movimiento(move) && flag_posicion_movimiento == 0) //si se puede mover, comprobar. camino.pieza.movimiento comprueba las restricciones de la pieza
 		{
 			if (pieza.dni[1] == 'P')
 			{
@@ -557,7 +557,7 @@ void Tablerito::Mover(Pieza& pieza, Vector3d diosita_pos)
 }
 
 
-//IMPRESION POR PANTALLA DE LA MATRIZ TABLERITO
+//IMPRESION POR PANTALLA DE LA MATRIZ TABLERITO (se usaba para comprobar el correto funcionamiento de tablerito)
 
 ostream& Tablerito::to_string(ostream& o)
 {

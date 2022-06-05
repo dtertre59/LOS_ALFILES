@@ -4,7 +4,7 @@
 #include "Tablero.h"
 #include"Interaccion.h"
 
-class Peon :public Pieza,public Tablero
+class Peon :public Pieza
 {
 public:
 	
