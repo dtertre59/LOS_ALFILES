@@ -105,6 +105,7 @@ bool Dama::Movimiento(const Vector3d& muevo_a)
 
 	if (x == y)
 	{
+		/*
 		for (int i = -7; i < 8; i++)
 		{
 			for (int j = -7; j < 8; j++)
@@ -119,9 +120,12 @@ bool Dama::Movimiento(const Vector3d& muevo_a)
 					}
 			}
 		}
+		*/
+		flag = 1;
 	}
 	if (x == -y)
 	{
+		/*
 		for (int i = -7; i < 8; i++)
 		{
 			for (int j = -7; j < 8; j++)
@@ -136,6 +140,8 @@ bool Dama::Movimiento(const Vector3d& muevo_a)
 					}
 			}
 		}
+		*/
+		flag = 1;
 	}
 	if (x == 0 && y != 0)
 	{
